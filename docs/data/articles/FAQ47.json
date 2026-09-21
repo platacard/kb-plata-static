@@ -1,0 +1,21 @@
+{
+  "id": "FAQ47",
+  "entry_point": "faq",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "BAF (Programa de referidos)",
+  "titulo": "¿Qué es el programa de referidos Trae a un Amigo?",
+  "resumen": "",
+  "contenido_html": "Es un programa en donde el cliente puede obtener una bonificación al invitar a amigos o conocidos a unirse a Banco Plata.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

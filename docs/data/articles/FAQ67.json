@@ -1,0 +1,21 @@
+{
+  "id": "FAQ67",
+  "entry_point": "faq",
+  "categoria": "Seguro de Crédito y Plata+",
+  "subcategoria": "Seguro de crédito",
+  "titulo": "¿Cuánto cubre el seguro de crédito?",
+  "resumen": "",
+  "contenido_html": "El importe asegurado dependerá del caso que se presente. <p><p>\nPérdida de empleo - monto variable: En este caso, el importe asegurado es el límite de crédito menos el saldo disponible, es decir, el importe gastado (saldo total) en el estado de cuenta anterior al reporte del caso. El importe que cubre el seguro de crédito se calculará en cada periodo, pero el monto puede ser de hasta $200,000 MXN. También incluye las operaciones que todavía están en proceso de autorización.<p><p>\n\nIncapacidad total y permanente - monto fijo: En el caso de incapacidad total y permanente, el importe asegurado es fijo por $10,000 MXN.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

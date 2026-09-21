@@ -1,0 +1,21 @@
+{
+  "id": "FAQ17",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Facturación, periodo de gracia y reembolsos",
+  "titulo": "¿Qué es un contrato?",
+  "resumen": "",
+  "contenido_html": "Es un acuerdo entre una entidad y un cliente, el cual contiene los términos, condiciones y obligaciones asociados con los productos ofrecidos.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

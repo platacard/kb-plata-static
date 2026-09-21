@@ -1,0 +1,21 @@
+{
+  "id": "FAQ20",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Cómo se activa la tarjeta una vez recibida?",
+  "resumen": "",
+  "contenido_html": "Durante la entrega con el Embajador, la tarjeta del cliente se vincula a su cuenta. Por lo cual, si la tarjeta es aprobada, la tarjeta se vinculará en automático a la cuenta del cliente.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-14T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

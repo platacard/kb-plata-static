@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT33",
+  "entry_point": "scripts",
+  "categoria": "Seguro de crédito",
+  "subcategoria": "Seguro de crédito",
+  "titulo": "Script para para mencionar el seguro de crédito",
+  "resumen": "",
+  "contenido_html": "Tenemos el beneficio de un mes gratis en tu seguro de desempleo, ¿podemos dejarlo activo?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FAQ80",
+  "entry_point": "faq",
+  "categoria": "Meses Sin Intereses",
+  "subcategoria": "Meses Sin Intereses",
+  "titulo": "¿Por qué se llaman Meses Sin Intereses si cobran una comisión?",
+  "resumen": "",
+  "contenido_html": "Porque Banco Plata le da la facilidad a los clientes de diferir a meses una transacción hecha con su límite de crédito al cliente, pero para hacerlo necesita pagar una comisión mostrada al momento de diferir el movimiento.<p><p>\n\nLos Meses Sin Intereses gratuitos son aquellos planes que ofrecen diferentes tiendas al pagar cierto monto mínimo o con alguna tarjeta en especial.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

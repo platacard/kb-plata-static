@@ -1,0 +1,21 @@
+{
+  "id": "FAQ14",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Costos, tasas y acuerdos",
+  "titulo": "¿Cuál es la comisión por retiro de efectivo?",
+  "resumen": "",
+  "contenido_html": "Normalmente, la comisión es del 10% + IVA del importe de la transacción y genera intereses ordinarios diarios.<p><p>Si el cliente utilizó un cajero automático de otro banco, es posible que dicho banco cobre una comisión adicional.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FAQ24",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Facturación, periodo de gracia y reembolsos",
+  "titulo": "¿Cómo recibiré los recordatorios de que tengo que pagar mi tarjeta?",
+  "resumen": "",
+  "contenido_html": "El cliente recibirá su estado de cuenta al cierre de cada ciclo con el saldo que debe pagar.<p><p>\n\nAdemás, en la app de Plata, verá cuánto es lo que debe pagar y además recibirá notificaciones que le indican la fecha y el monto.",
+  "imagen_url": "https://drive.google.com/file/d/1oAQq3LhG45tv9YZM4Nx-lt9ERukhHIQW/view",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

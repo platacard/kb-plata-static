@@ -1,0 +1,21 @@
+{
+  "id": "FAQ33",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Depósitos y transferencias entrantes",
+  "titulo": "¿Puedo recibir transferencias internacionales o fondos enviados desde Estados Unidos?",
+  "resumen": "",
+  "contenido_html": "Actualmente, los clientes NO PUEDEN efectuar transferencias internacionales desde su Plata Cuenta o cuentas de ahorro; sin embargo, sí pueden recibir dinero del extranjero.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FAQ96",
+  "entry_point": "faq",
+  "categoria": "Infraestructura bancaria y logística",
+  "subcategoria": "Seguridad de la cuenta",
+  "titulo": "¿Qué pasa si expira mi tarjeta?",
+  "resumen": "",
+  "contenido_html": "El cliente puede solicitar un reemplazo de tarjeta directamente desde la app de Plata.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

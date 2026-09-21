@@ -1,0 +1,21 @@
+{
+  "id": "FAQ43",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Retiros de efectivo y uso",
+  "titulo": "¿Cómo funciona el proceso de activación de Plata Cuenta?",
+  "resumen": "",
+  "contenido_html": "Durante la entrega con el Embajador, si el cliente acepta continuar con Plata Cuenta, se aperturará su cuenta con una tarjeta digital que puede comenzar a utilizar.<p><p>\n\nPosteriormente, el cliente puede solicitar una tarjeta física desde su app de Plata y cuando le llegue, solo presionar el botón que indica que ya tiene su tarjeta en la app y deberá escanear el QR de la parte posterior de su tarjeta.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT32",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para explicar la toma de la foto con el kit de bienvenida",
+  "resumen": "",
+  "contenido_html": "Tomaré una foto suya sosteniendo su kit de bienvenida para comprobar que fue entregado sellado, cerrado y en buen estado.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

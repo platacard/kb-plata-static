@@ -1,0 +1,21 @@
+{
+  "id": "FAQ40",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Límites de las cuentas, comisiones e infraestructura",
+  "titulo": "¿El límite de gasto mensual puede ser incrementado desde la app?",
+  "resumen": "",
+  "contenido_html": "Sí, desde la app el cliente puede establecer un límite de gasto mensual para su tarjeta. Es decir, si el cliente tiene una tarjeta física y tres digitales, podrá establecer límites para cada una.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FAQ36",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Depósitos y transferencias entrantes",
+  "titulo": "¿El dinero de Plata Cuenta se deposita a la cuenta o al plástico de la tarjeta?",
+  "resumen": "",
+  "contenido_html": "El dinero se deposita a la cuenta de débito del cliente.<p><p>Esto quiere decir que el cliente puede usar su tarjeta física o digital con el mismo dinero de su cuenta de débito.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

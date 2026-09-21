@@ -1,0 +1,21 @@
+{
+  "id": "FLOW14",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Cuánto recibo por cada comprobante de domicilio correctamente cargado?",
+  "resumen": "",
+  "contenido_html": "Recibirás $10 pesos extra por cada comprobante válido (aplica solo para clientes nacionales).",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

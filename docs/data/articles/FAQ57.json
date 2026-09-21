@@ -1,0 +1,21 @@
+{
+  "id": "FAQ57",
+  "entry_point": "faq",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "Seguridad de los referidos y privacidad",
+  "titulo": "¿Banco Plata le llamará a mis referidos agresivamente?",
+  "resumen": "",
+  "contenido_html": "De parte de Banco Plata realizaremos la llamada correspondiente al referido del cliente para brindarle mayor explicación sobre la tarjeta.<p><p>\n\nPero si el referido no desea la tarjeta o no quiere que Banco Plata lo llame, puede decirlo durante la interacción con el agente telefónico y de esta manera se le excluirá de la lista de llamadas.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

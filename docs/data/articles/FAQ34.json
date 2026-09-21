@@ -1,0 +1,21 @@
+{
+  "id": "FAQ34",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Depósitos y transferencias entrantes",
+  "titulo": "¿Dónde puedo encontrar la CLABE de mi cuenta de débito para recibir transferencias interbancarias?",
+  "resumen": "",
+  "contenido_html": "El cliente solo necesita abrir su aplicación de Plata y entrar a la sección de \"Cuenta\", en donde están las miniaturas de sus tarjetas de débito.<p><p>\n\nAl pulsar en esta sección, se abrirán los detalles de su cuenta y ahí podrá encontrar un campo que dice \"Depositar con CLABE\" con los 18 dígitos de su cuenta.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

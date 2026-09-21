@@ -1,0 +1,21 @@
+{
+  "id": "FAQ9",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Facturación, periodo de gracia y reembolsos",
+  "titulo": "¿Cuánto dura el periodo de gracia?",
+  "resumen": "",
+  "contenido_html": "El periodo de gracia tiene una duración de 60 días desde el comienzo del periodo de facturación, un día después de la fecha de corte. <p><p> El periodo de gracia comienza a partir de la primera compra / transferencia de la tarjeta. <p><p>\n\nPrimer periodo de gracia: debido a que el cliente recibe su primer estado de cuenta 10 a 15 días después de la primera operación de la cuenta, tendrá 30 días para pagarlo. Esto da una suma de hasta 45 días para pagar el primer estado de cuenta.<p><p>\n\nBeneficio de hasta 60 días para pagar: este periodo de gracia comienza a partir del segundo periodo de facturación. Es decir, el cliente tiene un periodo de facturación de 30 días aproximadamente más 30 días para realizar el pago, dando la suma de hasta 60 días.",
+  "imagen_url": "https://drive.google.com/file/d/1T86lZf0dpDCAtUMWrOc-Tw2A385KJAsp/view",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text + Image",
+  "ultima_actualizacion": "2026-07-14T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

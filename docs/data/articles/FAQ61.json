@@ -1,0 +1,21 @@
+{
+  "id": "FAQ61",
+  "entry_point": "faq",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "Beneficiarios Plata",
+  "titulo": "¿Cuál dirección, código postal y nombre debo brindar para que mis beneficiarios sean válidos?",
+  "resumen": "",
+  "contenido_html": "El cliente debe brindar el nombre completo de su beneficiario, junto con la dirección de residencia actual del beneficiario.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FAQ90",
+  "entry_point": "faq",
+  "categoria": "Infraestructura bancaria y logística",
+  "subcategoria": "Seguridad de la cuenta",
+  "titulo": "¿Puedo cambiar el código de acceso a la app en un futuro?",
+  "resumen": "",
+  "contenido_html": "Sí, el cliente debe dirigirse a su perfil, después buscar la opción \"configuración de la app\", en donde se encuentra la opción \"Cambiar código de acceso\". <p><p>\n\nEl cliente debe pulsar la opción y validar su identidad ya sea ingresando su código actual o mediante huella digital y después podrá ingresar los 6 dígitos de su nuevo código de acceso, el cual debe volver a ingresar para confirmarlo.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

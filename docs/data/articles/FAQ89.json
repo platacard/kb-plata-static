@@ -1,0 +1,21 @@
+{
+  "id": "FAQ89",
+  "entry_point": "faq",
+  "categoria": "Infraestructura bancaria y logística",
+  "subcategoria": "Seguridad de la cuenta",
+  "titulo": "¿Qué debo hacer si olvido mi código de acceso en el futuro?",
+  "resumen": "",
+  "contenido_html": "El cliente puede ingresar a su perfil dentro de la app de Plata,  acceder a configuración de la app y ahí verá una opción para cambiar su código de acceso.<p><p>\n\nSi el cliente había cerrado su sesión, al momento de volver a acceder, la app de Plata le pedirá que genere un nuevo código.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

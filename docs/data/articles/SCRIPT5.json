@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT5",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script obligatorio para pedir el comprobante de domicilio (cuando aplique. Único script obligatorio que puede adaptarse)",
+  "resumen": "",
+  "contenido_html": "Para continuar, necesitaremos un comprobante de domicilio no mayor a 3 meses. ¿Lo tiene en físico o en digital? Puede ser de luz, agua, internet o un estado de cuenta bancario con su domicilio actual.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

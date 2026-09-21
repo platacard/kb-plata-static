@@ -1,0 +1,21 @@
+{
+  "id": "FAQ26",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Cashback",
+  "titulo": "¿Qué es el cashback?",
+  "resumen": "",
+  "contenido_html": "El cashback es dinero que le regresamos al cliente por realizar compras en las categorías elegidas para el mes.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

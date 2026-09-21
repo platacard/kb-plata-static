@@ -1,0 +1,2022 @@
+[
+  {
+    "id": "FAQ1",
+    "entry_point": "faq",
+    "titulo": "¿Qué es mi límite de crédito?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "límite de crédito, limite de credito, aumento, aprobación",
+    "search_text": "¿qué es mi límite de crédito?  plata crédito parámetros del crédito y límites límite de crédito, limite de credito, aumento, aprobación"
+  },
+  {
+    "id": "FAQ2",
+    "entry_point": "faq",
+    "titulo": "¿Un mal historial afecta la aprobación de mi crédito?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "límite, crédito, limite, credito, aumento",
+    "search_text": "¿un mal historial afecta la aprobación de mi crédito?  plata crédito parámetros del crédito y límites límite, crédito, limite, credito, aumento"
+  },
+  {
+    "id": "FAQ3",
+    "entry_point": "faq",
+    "titulo": "¿Qué ocurre si me deniegan la solicitud de la tarjeta de crédito?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "mal, historial, buró, buro, credito",
+    "search_text": "¿qué ocurre si me deniegan la solicitud de la tarjeta de crédito?  plata crédito parámetros del crédito y límites mal, historial, buró, buro, credito"
+  },
+  {
+    "id": "FAQ4",
+    "entry_point": "faq",
+    "titulo": "¿Cuánto tiempo tengo que esperar para volver a presentar la solicitud si me la rechazan?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "mal, historial, buró, credito",
+    "search_text": "¿cuánto tiempo tengo que esperar para volver a presentar la solicitud si me la rechazan?  plata crédito parámetros del crédito y límites mal, historial, buró, credito"
+  },
+  {
+    "id": "FAQ5",
+    "entry_point": "faq",
+    "titulo": "¿En dónde aceptan esta tarjeta?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "mastercard, validez,",
+    "search_text": "¿en dónde aceptan esta tarjeta?  plata crédito parámetros del crédito y límites mastercard, validez,"
+  },
+  {
+    "id": "FAQ6",
+    "entry_point": "faq",
+    "titulo": "¿Existe una comisión de mantenimiento anual (anualidad)?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "keywords": "anualidad, mantenimiento",
+    "search_text": "¿existe una comisión de mantenimiento anual (anualidad)?  plata crédito costos, tasas y acuerdos anualidad, mantenimiento"
+  },
+  {
+    "id": "FAQ7",
+    "entry_point": "faq",
+    "titulo": "¿Necesito hacer depósitos de seguridad para abrir la línea de crédito?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "keywords": "depositos, seguridad",
+    "search_text": "¿necesito hacer depósitos de seguridad para abrir la línea de crédito?  plata crédito costos, tasas y acuerdos depositos, seguridad"
+  },
+  {
+    "id": "FAQ8",
+    "entry_point": "faq",
+    "titulo": "¿Qué pasa si activo la tarjeta pero no la utilizo?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "keywords": "reducir, linea, credito, falta, uso",
+    "search_text": "¿qué pasa si activo la tarjeta pero no la utilizo?  plata crédito costos, tasas y acuerdos reducir, linea, credito, falta, uso"
+  },
+  {
+    "id": "FAQ9",
+    "entry_point": "faq",
+    "titulo": "¿Cuánto dura el periodo de gracia?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Facturación, periodo de gracia y reembolsos",
+    "keywords": "gracia, periodo,",
+    "search_text": "¿cuánto dura el periodo de gracia?  plata crédito facturación, periodo de gracia y reembolsos gracia, periodo,"
+  },
+  {
+    "id": "FAQ10",
+    "entry_point": "faq",
+    "titulo": "¿Qué es Plata Crédito?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "plata,card,qué",
+    "search_text": "¿qué es plata crédito?  plata crédito parámetros del crédito y límites plata,card,qué"
+  },
+  {
+    "id": "FAQ11",
+    "entry_point": "faq",
+    "titulo": "¿Cómo se solicita Plata Crédito?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "solicitud,plata,tarjeta",
+    "search_text": "¿cómo se solicita plata crédito?  plata crédito parámetros del crédito y límites solicitud,plata,tarjeta"
+  },
+  {
+    "id": "FAQ12",
+    "entry_point": "faq",
+    "titulo": "¿Cuál es el costo de la anualidad?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "keywords": "anualidad, mantenimiento",
+    "search_text": "¿cuál es el costo de la anualidad?  plata crédito costos, tasas y acuerdos anualidad, mantenimiento"
+  },
+  {
+    "id": "FAQ13",
+    "entry_point": "faq",
+    "titulo": "¿Qué es la tasa de interés anual?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "keywords": "tasa,interés,anual",
+    "search_text": "¿qué es la tasa de interés anual?  plata crédito costos, tasas y acuerdos tasa,interés,anual"
+  },
+  {
+    "id": "FAQ14",
+    "entry_point": "faq",
+    "titulo": "¿Cuál es la comisión por retiro de efectivo?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "keywords": "comision, retiro, efectivo",
+    "search_text": "¿cuál es la comisión por retiro de efectivo?  plata crédito costos, tasas y acuerdos comision, retiro, efectivo"
+  },
+  {
+    "id": "FAQ15",
+    "entry_point": "faq",
+    "titulo": "¿Cuál es la comisión por pago tardío?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "keywords": "comision, pago, tardio",
+    "search_text": "¿cuál es la comisión por pago tardío?  plata crédito costos, tasas y acuerdos comision, pago, tardio"
+  },
+  {
+    "id": "FAQ16",
+    "entry_point": "faq",
+    "titulo": "¿Qué es el periodo de facturación?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Facturación, periodo de gracia y reembolsos",
+    "keywords": "facturacion, periodo",
+    "search_text": "¿qué es el periodo de facturación?  plata crédito facturación, periodo de gracia y reembolsos facturacion, periodo"
+  },
+  {
+    "id": "FAQ17",
+    "entry_point": "faq",
+    "titulo": "¿Qué es un contrato?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Facturación, periodo de gracia y reembolsos",
+    "keywords": "contrato",
+    "search_text": "¿qué es un contrato?  plata crédito facturación, periodo de gracia y reembolsos contrato"
+  },
+  {
+    "id": "FAQ18",
+    "entry_point": "faq",
+    "titulo": "¿Qué es una carátula?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Facturación, periodo de gracia y reembolsos",
+    "keywords": "caratula",
+    "search_text": "¿qué es una carátula?  plata crédito facturación, periodo de gracia y reembolsos caratula"
+  },
+  {
+    "id": "POD2",
+    "entry_point": "podcast",
+    "titulo": "Episodio 2 - El poder del seguro de crédito",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "seguro, credito",
+    "search_text": "episodio 2 - el poder del seguro de crédito  seguro de crédito y plata+ seguro de crédito seguro, credito"
+  },
+  {
+    "id": "POD1",
+    "entry_point": "podcast",
+    "titulo": "Episodio 1 - Trae a un Amigo y gana tu bono",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "BAF, trae, amigo, referido",
+    "search_text": "episodio 1 - trae a un amigo y gana tu bono  baf, contactos y beneficiarios baf (programa de referidos) baf, trae, amigo, referido"
+  },
+  {
+    "id": "FLOW1",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 1: Empezar la reunión",
+    "resumen": "",
+    "categoria": "Etapa 1: Empezar la reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "empezar, reunión",
+    "search_text": "etapa 1: empezar la reunión  etapa 1: empezar la reunión onboarding y descarga empezar, reunión"
+  },
+  {
+    "id": "SCRIPT1",
+    "entry_point": "scripts",
+    "titulo": "Script de confirmación por WhatsApp",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "WhatsApp, confirmación",
+    "search_text": "script de confirmación por whatsapp  flujo de la primera reunión onboarding y descarga whatsapp, confirmación"
+  },
+  {
+    "id": "SCRIPT2",
+    "entry_point": "scripts",
+    "titulo": "Script de registro para empezar la reunión",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "registro, inicio",
+    "search_text": "script de registro para empezar la reunión  flujo de la primera reunión onboarding y descarga registro, inicio"
+  },
+  {
+    "id": "SCRIPT3",
+    "entry_point": "scripts",
+    "titulo": "Script para anticipar al cliente sobre Trae a un Amigo",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "amigo, tip, oro",
+    "search_text": "script para anticipar al cliente sobre trae a un amigo  baf, contactos y beneficiarios onboarding y descarga amigo, tip, oro"
+  },
+  {
+    "id": "SCRIPT4",
+    "entry_point": "scripts",
+    "titulo": "Script para la explicación del proceso",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "amigo, tip, oro",
+    "search_text": "script para la explicación del proceso  flujo de la primera reunión onboarding y descarga amigo, tip, oro"
+  },
+  {
+    "id": "SCRIPT5",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio para pedir el comprobante de domicilio (cuando aplique. Único script obligatorio que puede adaptarse)",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script obligatorio para pedir el comprobante de domicilio (cuando aplique. único script obligatorio que puede adaptarse)  flujo de la primera reunión onboarding y descarga poa, comprobante, domicilio"
+  },
+  {
+    "id": "SCRIPT6",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente pregunta si el comprobante de domicilio es forzoso",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script si el cliente pregunta si el comprobante de domicilio es forzoso  flujo de la primera reunión onboarding y descarga poa, comprobante, domicilio"
+  },
+  {
+    "id": "SCRIPT7",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente se nota o expresa desconfianza por el comprobante de domicilio",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script si el cliente se nota o expresa desconfianza por el comprobante de domicilio  flujo de la primera reunión onboarding y descarga poa, comprobante, domicilio"
+  },
+  {
+    "id": "SCRIPT8",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente cuestiona por qué se pide si su dirección viene en la identificación",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script si el cliente cuestiona por qué se pide si su dirección viene en la identificación  flujo de la primera reunión onboarding y descarga poa, comprobante, domicilio"
+  },
+  {
+    "id": "SCRIPT9",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente acepta, pero dice: \"No tengo ningún recibo impreso aquí conmigo\"",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script si el cliente acepta, pero dice: \"no tengo ningún recibo impreso aquí conmigo\"  flujo de la primera reunión onboarding y descarga poa, comprobante, domicilio"
+  },
+  {
+    "id": "SCRIPT10",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio para solicitar contactos de referencia",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Contactos de emergencia Plata",
+    "keywords": "referencia, contactos",
+    "search_text": "script obligatorio para solicitar contactos de referencia  flujo de la primera reunión contactos de emergencia plata referencia, contactos"
+  },
+  {
+    "id": "SCRIPT11",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio para realizar las preguntas de AML",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "AML, lavado, dinero",
+    "search_text": "script obligatorio para realizar las preguntas de aml  flujo de la primera reunión onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "SCRIPT12",
+    "entry_point": "scripts",
+    "titulo": "Script en caso de que el cliente dude de las preguntas de AML",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "AML, lavado, dinero",
+    "search_text": "script en caso de que el cliente dude de las preguntas de aml  flujo de la primera reunión onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "SCRIPT13",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio para preguntar sobre los movimientos (AML)",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "AML, lavado, dinero",
+    "search_text": "script obligatorio para preguntar sobre los movimientos (aml)  flujo de la primera reunión onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "SCRIPT14",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio para preguntar sobre las fuentes de ingreso del cliente (AML)",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "AML, lavado, dinero",
+    "search_text": "script obligatorio para preguntar sobre las fuentes de ingreso del cliente (aml)  flujo de la primera reunión onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "SCRIPT15",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio para preguntar sobre el uso de los recursos (AML)",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "AML, lavado, dinero",
+    "search_text": "script obligatorio para preguntar sobre el uso de los recursos (aml)  flujo de la primera reunión onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "SCRIPT16",
+    "entry_point": "scripts",
+    "titulo": "1. Script para introducir Plata Cuenta",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "Plata, cuenta, debito",
+    "search_text": "1. script para introducir plata cuenta  plata cuenta onboarding y descarga plata, cuenta, debito"
+  },
+  {
+    "id": "SCRIPT18",
+    "entry_point": "scripts",
+    "titulo": "3. Script para cerrar la venta",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "3. script para cerrar la venta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
+  },
+  {
+    "id": "SCRIPT19",
+    "entry_point": "scripts",
+    "titulo": "2. Script para mencionar beneficios de Plata Cuenta",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "2. script para mencionar beneficios de plata cuenta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
+  },
+  {
+    "id": "SCRIPT28",
+    "entry_point": "scripts",
+    "titulo": "4. Script para fomentar el uso (solo si el cliente aceptó explícitamente que desea continuar con la Plata Cuenta)",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "4. script para fomentar el uso (solo si el cliente aceptó explícitamente que desea continuar con la plata cuenta)  plata cuenta onboarding y descarga cuenta, debito, duo pack"
+  },
+  {
+    "id": "SCRIPT30",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio de seguridad del NIP al ver la pantalla de vinculación de tarjeta",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "nip, pin",
+    "search_text": "script obligatorio de seguridad del nip al ver la pantalla de vinculación de tarjeta  flujo de la primera reunión onboarding y descarga nip, pin"
+  },
+  {
+    "id": "SCRIPT31",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio de seguridad del empaque",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "seguridad, empaque, kit, bienvenida",
+    "search_text": "script obligatorio de seguridad del empaque  flujo de la primera reunión onboarding y descarga seguridad, empaque, kit, bienvenida"
+  },
+  {
+    "id": "SCRIPT32",
+    "entry_point": "scripts",
+    "titulo": "Script para explicar la toma de la foto con el kit de bienvenida",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "kit, bienvenida, foto",
+    "search_text": "script para explicar la toma de la foto con el kit de bienvenida  flujo de la primera reunión onboarding y descarga kit, bienvenida, foto"
+  },
+  {
+    "id": "SCRIPT33",
+    "entry_point": "scripts",
+    "titulo": "Script para para mencionar el seguro de crédito",
+    "resumen": "",
+    "categoria": "Seguro de crédito",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "seguro, credito",
+    "search_text": "script para para mencionar el seguro de crédito  seguro de crédito seguro de crédito seguro, credito"
+  },
+  {
+    "id": "SCRIPT35",
+    "entry_point": "scripts",
+    "titulo": "Opción 1 para solicitar contactos referidos (directa, con un gancho de 5 contactos)",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "opción 1 para solicitar contactos referidos (directa, con un gancho de 5 contactos)  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "SCRIPT36",
+    "entry_point": "scripts",
+    "titulo": "Opción 2 para solicitar contactos referidos (suponiendo y preguntando por “quiénes”)",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "opción 2 para solicitar contactos referidos (suponiendo y preguntando por “quiénes”)  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "SCRIPT37",
+    "entry_point": "scripts",
+    "titulo": "Opción 3 para solicitar contactos referidos (reciprocidad y ganar-ganar)",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "opción 3 para solicitar contactos referidos (reciprocidad y ganar-ganar)  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "SCRIPT38",
+    "entry_point": "scripts",
+    "titulo": "Opción 4 para solicitar contactos referidos (personal / “écheme la mano”)",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "opción 4 para solicitar contactos referidos (personal / “écheme la mano”)  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "SCRIPT39",
+    "entry_point": "scripts",
+    "titulo": "Script para explicar las condiciones de “Traer a un amigo” SOLO si el cliente pregunta",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "script para explicar las condiciones de “traer a un amigo” solo si el cliente pregunta  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "SCRIPT40",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente tiene miedo a que los referidos reciban múltiples llamadas por parte de Plata",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Seguridad de los referidos y privacidad",
+    "keywords": "",
+    "search_text": "script si el cliente tiene miedo a que los referidos reciban múltiples llamadas por parte de plata  baf, contactos y beneficiarios seguridad de los referidos y privacidad "
+  },
+  {
+    "id": "SCRIPT41",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente dice: “Tengo que confirmarlo con mis contactos”, “No me atrevo a compartir sus datos”",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Seguridad de los referidos y privacidad",
+    "keywords": "",
+    "search_text": "script si el cliente dice: “tengo que confirmarlo con mis contactos”, “no me atrevo a compartir sus datos”  baf, contactos y beneficiarios seguridad de los referidos y privacidad "
+  },
+  {
+    "id": "SCRIPT42",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente dice: “No he utilizado la tarjeta, ¿por qué debería recomendarla con amigos?”",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Seguridad de los referidos y privacidad",
+    "keywords": "",
+    "search_text": "script si el cliente dice: “no he utilizado la tarjeta, ¿por qué debería recomendarla con amigos?”  baf, contactos y beneficiarios seguridad de los referidos y privacidad "
+  },
+  {
+    "id": "FAQ19",
+    "entry_point": "faq",
+    "titulo": "¿Cuál es la regla de oro al manejar objeciones?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "objecion, regla, oro",
+    "search_text": "¿cuál es la regla de oro al manejar objeciones?  plata crédito baf (programa de referidos) objecion, regla, oro"
+  },
+  {
+    "id": "SCRIPT43",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio de Activación de tarjeta al cierre de la reunión",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "recordatorios, finales, cierre, reunion",
+    "search_text": "script obligatorio de activación de tarjeta al cierre de la reunión  flujo de la primera reunión parámetros del crédito y límites recordatorios, finales, cierre, reunion"
+  },
+  {
+    "id": "SCRIPT44",
+    "entry_point": "scripts",
+    "titulo": "Script obligatorio de Medios de contacto al cierre de la reunión",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "recordatorios, finales, cierre, reunion",
+    "search_text": "script obligatorio de medios de contacto al cierre de la reunión  flujo de la primera reunión onboarding y descarga recordatorios, finales, cierre, reunion"
+  },
+  {
+    "id": "SCRIPT45",
+    "entry_point": "scripts",
+    "titulo": "Script para explicar la primera compra al cierre de la reunión",
+    "resumen": "",
+    "categoria": "Flujo de la primera reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "recordatorios, finales, cierre, reunion",
+    "search_text": "script para explicar la primera compra al cierre de la reunión  flujo de la primera reunión onboarding y descarga recordatorios, finales, cierre, reunion"
+  },
+  {
+    "id": "FAQ20",
+    "entry_point": "faq",
+    "titulo": "¿Cómo se activa la tarjeta una vez recibida?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "",
+    "search_text": "¿cómo se activa la tarjeta una vez recibida?  plata crédito parámetros del crédito y límites "
+  },
+  {
+    "id": "FAQ21",
+    "entry_point": "faq",
+    "titulo": "¿Los retiros de efectivo tienen periodo de gracia?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Facturación, periodo de gracia y reembolsos",
+    "keywords": "",
+    "search_text": "¿los retiros de efectivo tienen periodo de gracia?  plata crédito facturación, periodo de gracia y reembolsos "
+  },
+  {
+    "id": "FAQ22",
+    "entry_point": "faq",
+    "titulo": "¿Los fines de semana hay fechas de corte?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Facturación, periodo de gracia y reembolsos",
+    "keywords": "",
+    "search_text": "¿los fines de semana hay fechas de corte?  plata crédito facturación, periodo de gracia y reembolsos "
+  },
+  {
+    "id": "FAQ23",
+    "entry_point": "faq",
+    "titulo": "¿Cuáles son los métodos de pago disponibles?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Facturación, periodo de gracia y reembolsos",
+    "keywords": "",
+    "search_text": "¿cuáles son los métodos de pago disponibles?  plata crédito facturación, periodo de gracia y reembolsos "
+  },
+  {
+    "id": "FAQ24",
+    "entry_point": "faq",
+    "titulo": "¿Cómo recibiré los recordatorios de que tengo que pagar mi tarjeta?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Facturación, periodo de gracia y reembolsos",
+    "keywords": "",
+    "search_text": "¿cómo recibiré los recordatorios de que tengo que pagar mi tarjeta?  plata crédito facturación, periodo de gracia y reembolsos "
+  },
+  {
+    "id": "FAQ25",
+    "entry_point": "faq",
+    "titulo": "¿Puedo comenzar a realizar compras inmediatamente después de haber recibido mi tarjeta?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "",
+    "search_text": "¿puedo comenzar a realizar compras inmediatamente después de haber recibido mi tarjeta?  plata crédito parámetros del crédito y límites "
+  },
+  {
+    "id": "FAQ26",
+    "entry_point": "faq",
+    "titulo": "¿Qué es el cashback?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Cashback",
+    "keywords": "",
+    "search_text": "¿qué es el cashback?  plata crédito cashback "
+  },
+  {
+    "id": "FAQ27",
+    "entry_point": "faq",
+    "titulo": "¿Cómo se decide en qué categorías recibir cashback?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Cashback",
+    "keywords": "",
+    "search_text": "¿cómo se decide en qué categorías recibir cashback?  plata crédito cashback "
+  },
+  {
+    "id": "FAQ28",
+    "entry_point": "faq",
+    "titulo": "¿Cómo se recibe el cashback en la cuenta del cliente?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Cashback",
+    "keywords": "",
+    "search_text": "¿cómo se recibe el cashback en la cuenta del cliente?  plata crédito cashback "
+  },
+  {
+    "id": "FAQ29",
+    "entry_point": "faq",
+    "titulo": "¿El cashback reduce el monto de la deuda del cliente?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Cashback",
+    "keywords": "",
+    "search_text": "¿el cashback reduce el monto de la deuda del cliente?  plata crédito cashback "
+  },
+  {
+    "id": "FAQ30",
+    "entry_point": "faq",
+    "titulo": "¿Cuántas categorías de cashback se pueden elegir al mes?",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Cashback",
+    "keywords": "",
+    "search_text": "¿cuántas categorías de cashback se pueden elegir al mes?  plata crédito cashback "
+  },
+  {
+    "id": "FAQ31",
+    "entry_point": "faq",
+    "titulo": "¿Qué es Plata Cuenta?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Depósitos y transferencias entrantes",
+    "keywords": "",
+    "search_text": "¿qué es plata cuenta?  plata cuenta depósitos y transferencias entrantes "
+  },
+  {
+    "id": "FAQ32",
+    "entry_point": "faq",
+    "titulo": "¿Cómo puedo depositar en mi Plata Cuenta?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Depósitos y transferencias entrantes",
+    "keywords": "",
+    "search_text": "¿cómo puedo depositar en mi plata cuenta?  plata cuenta depósitos y transferencias entrantes "
+  },
+  {
+    "id": "FAQ33",
+    "entry_point": "faq",
+    "titulo": "¿Puedo recibir transferencias internacionales o fondos enviados desde Estados Unidos?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Depósitos y transferencias entrantes",
+    "keywords": "",
+    "search_text": "¿puedo recibir transferencias internacionales o fondos enviados desde estados unidos?  plata cuenta depósitos y transferencias entrantes "
+  },
+  {
+    "id": "FAQ34",
+    "entry_point": "faq",
+    "titulo": "¿Dónde puedo encontrar la CLABE de mi cuenta de débito para recibir transferencias interbancarias?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Depósitos y transferencias entrantes",
+    "keywords": "",
+    "search_text": "¿dónde puedo encontrar la clabe de mi cuenta de débito para recibir transferencias interbancarias?  plata cuenta depósitos y transferencias entrantes "
+  },
+  {
+    "id": "FAQ35",
+    "entry_point": "faq",
+    "titulo": "¿Puedo recibir transferencias en mi Plata Cuenta inmediatamente después de activarla?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Depósitos y transferencias entrantes",
+    "keywords": "",
+    "search_text": "¿puedo recibir transferencias en mi plata cuenta inmediatamente después de activarla?  plata cuenta depósitos y transferencias entrantes "
+  },
+  {
+    "id": "FAQ36",
+    "entry_point": "faq",
+    "titulo": "¿El dinero de Plata Cuenta se deposita a la cuenta o al plástico de la tarjeta?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Depósitos y transferencias entrantes",
+    "keywords": "",
+    "search_text": "¿el dinero de plata cuenta se deposita a la cuenta o al plástico de la tarjeta?  plata cuenta depósitos y transferencias entrantes "
+  },
+  {
+    "id": "FAQ37",
+    "entry_point": "faq",
+    "titulo": "¿Me penalizan o me cobran comisión si no hago el primer depósito sugerido de $100 pesos a mi Plata Cuenta?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Depósitos y transferencias entrantes",
+    "keywords": "",
+    "search_text": "¿me penalizan o me cobran comisión si no hago el primer depósito sugerido de $100 pesos a mi plata cuenta?  plata cuenta depósitos y transferencias entrantes "
+  },
+  {
+    "id": "FAQ38",
+    "entry_point": "faq",
+    "titulo": "¿Hay alguna comisión mensual de mantenimiento o cargos ocultos en la tarjeta de débito?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Límites de las cuentas, comisiones e infraestructura",
+    "keywords": "",
+    "search_text": "¿hay alguna comisión mensual de mantenimiento o cargos ocultos en la tarjeta de débito?  plata cuenta límites de las cuentas, comisiones e infraestructura "
+  },
+  {
+    "id": "FAQ39",
+    "entry_point": "faq",
+    "titulo": "¿Existe un saldo mínimo o algún depósito mensual para mantener la cuenta?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Límites de las cuentas, comisiones e infraestructura",
+    "keywords": "",
+    "search_text": "¿existe un saldo mínimo o algún depósito mensual para mantener la cuenta?  plata cuenta límites de las cuentas, comisiones e infraestructura "
+  },
+  {
+    "id": "FAQ40",
+    "entry_point": "faq",
+    "titulo": "¿El límite de gasto mensual puede ser incrementado desde la app?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Límites de las cuentas, comisiones e infraestructura",
+    "keywords": "",
+    "search_text": "¿el límite de gasto mensual puede ser incrementado desde la app?  plata cuenta límites de las cuentas, comisiones e infraestructura "
+  },
+  {
+    "id": "FAQ41",
+    "entry_point": "faq",
+    "titulo": "¿Perderé beneficios si declino la oferta de la tarjeta de crédito ahora?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Límites de las cuentas, comisiones e infraestructura",
+    "keywords": "",
+    "search_text": "¿perderé beneficios si declino la oferta de la tarjeta de crédito ahora?  plata cuenta límites de las cuentas, comisiones e infraestructura "
+  },
+  {
+    "id": "FAQ42",
+    "entry_point": "faq",
+    "titulo": "¿Plata Cuenta está pensada solo para depositar dinero o también la puedo utilizar para los gastos diarios?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Retiros de efectivo y uso",
+    "keywords": "",
+    "search_text": "¿plata cuenta está pensada solo para depositar dinero o también la puedo utilizar para los gastos diarios?  plata cuenta retiros de efectivo y uso "
+  },
+  {
+    "id": "FAQ43",
+    "entry_point": "faq",
+    "titulo": "¿Cómo funciona el proceso de activación de Plata Cuenta?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Retiros de efectivo y uso",
+    "keywords": "",
+    "search_text": "¿cómo funciona el proceso de activación de plata cuenta?  plata cuenta retiros de efectivo y uso "
+  },
+  {
+    "id": "FAQ44",
+    "entry_point": "faq",
+    "titulo": "¿Puedo comenzar a hacer compras inmediatamente después de haber recibido la tarjeta de débito Plata Cuenta?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Retiros de efectivo y uso",
+    "keywords": "",
+    "search_text": "¿puedo comenzar a hacer compras inmediatamente después de haber recibido la tarjeta de débito plata cuenta?  plata cuenta retiros de efectivo y uso "
+  },
+  {
+    "id": "FAQ45",
+    "entry_point": "faq",
+    "titulo": "¿La cuenta de débito genera algún interés o rendimiento sobre el saldo?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Ahorros y titularidad de fondos",
+    "keywords": "",
+    "search_text": "¿la cuenta de débito genera algún interés o rendimiento sobre el saldo?  plata cuenta ahorros y titularidad de fondos "
+  },
+  {
+    "id": "FAQ46",
+    "entry_point": "faq",
+    "titulo": "¿Los fondos depositados en la cuenta de débito siguen siendo de mi propiedad aunque los haya depositado?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Ahorros y titularidad de fondos",
+    "keywords": "",
+    "search_text": "¿los fondos depositados en la cuenta de débito siguen siendo de mi propiedad aunque los haya depositado?  plata cuenta ahorros y titularidad de fondos "
+  },
+  {
+    "id": "FAQ47",
+    "entry_point": "faq",
+    "titulo": "¿Qué es el programa de referidos Trae a un Amigo?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿qué es el programa de referidos trae a un amigo?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ48",
+    "entry_point": "faq",
+    "titulo": "¿Cómo funciona el programa de referidos Trae a un Amigo?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿cómo funciona el programa de referidos trae a un amigo?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ49",
+    "entry_point": "faq",
+    "titulo": "¿A cuántos amigos tengo permitido invitar en el programa Trae a un amigo?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿a cuántos amigos tengo permitido invitar en el programa trae a un amigo?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ50",
+    "entry_point": "faq",
+    "titulo": "¿Existe un mínimo de referidos que tengo que dar en el programa Trae a un amigo?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿existe un mínimo de referidos que tengo que dar en el programa trae a un amigo?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ51",
+    "entry_point": "faq",
+    "titulo": "¿A quién debería invitar al programa Trae a un amigo?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿a quién debería invitar al programa trae a un amigo?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ52",
+    "entry_point": "faq",
+    "titulo": "¿Puedo proporcionar solo el primer nombre o un apodo de un referido si no conozco su nombre completo con apellidos?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿puedo proporcionar solo el primer nombre o un apodo de un referido si no conozco su nombre completo con apellidos?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ53",
+    "entry_point": "faq",
+    "titulo": "¿Cuándo recibiré el bono por un referido que ya se volvió cliente de Plata?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿cuándo recibiré el bono por un referido que ya se volvió cliente de plata?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ54",
+    "entry_point": "faq",
+    "titulo": "¿Cuáles son las condiciones de Trae a un Amigo?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿cuáles son las condiciones de trae a un amigo?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ55",
+    "entry_point": "faq",
+    "titulo": "¿Puedo invitar a un referido que ya aplicó a Plata anteriormente pero fue rechazado?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "¿puedo invitar a un referido que ya aplicó a plata anteriormente pero fue rechazado?  baf, contactos y beneficiarios baf (programa de referidos) "
+  },
+  {
+    "id": "FAQ56",
+    "entry_point": "faq",
+    "titulo": "¿Referir a mis conocidos los convierte en mis avales de mi línea de crédito?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Seguridad de los referidos y privacidad",
+    "keywords": "",
+    "search_text": "¿referir a mis conocidos los convierte en mis avales de mi línea de crédito?  baf, contactos y beneficiarios seguridad de los referidos y privacidad "
+  },
+  {
+    "id": "FAQ57",
+    "entry_point": "faq",
+    "titulo": "¿Banco Plata le llamará a mis referidos agresivamente?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Seguridad de los referidos y privacidad",
+    "keywords": "",
+    "search_text": "¿banco plata le llamará a mis referidos agresivamente?  baf, contactos y beneficiarios seguridad de los referidos y privacidad "
+  },
+  {
+    "id": "FAQ58",
+    "entry_point": "faq",
+    "titulo": "¿Cómo recibirán la invitación mis referidos?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Seguridad de los referidos y privacidad",
+    "keywords": "",
+    "search_text": "¿cómo recibirán la invitación mis referidos?  baf, contactos y beneficiarios seguridad de los referidos y privacidad "
+  },
+  {
+    "id": "FAQ59",
+    "entry_point": "faq",
+    "titulo": "¿A quién puedo designar como beneficiario en mi cuenta?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Beneficiarios Plata",
+    "keywords": "",
+    "search_text": "¿a quién puedo designar como beneficiario en mi cuenta?  baf, contactos y beneficiarios beneficiarios plata "
+  },
+  {
+    "id": "FAQ60",
+    "entry_point": "faq",
+    "titulo": "¿Puedo nombrar como beneficiario de mi cuenta a un menor de edad?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Beneficiarios Plata",
+    "keywords": "",
+    "search_text": "¿puedo nombrar como beneficiario de mi cuenta a un menor de edad?  baf, contactos y beneficiarios beneficiarios plata "
+  },
+  {
+    "id": "FAQ61",
+    "entry_point": "faq",
+    "titulo": "¿Cuál dirección, código postal y nombre debo brindar para que mis beneficiarios sean válidos?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Beneficiarios Plata",
+    "keywords": "",
+    "search_text": "¿cuál dirección, código postal y nombre debo brindar para que mis beneficiarios sean válidos?  baf, contactos y beneficiarios beneficiarios plata "
+  },
+  {
+    "id": "FAQ62",
+    "entry_point": "faq",
+    "titulo": "¿Cuál es el propósito de los contactos de referencia?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Contactos de referencia Plata",
+    "keywords": "",
+    "search_text": "¿cuál es el propósito de los contactos de referencia?  baf, contactos y beneficiarios contactos de referencia plata "
+  },
+  {
+    "id": "FAQ63",
+    "entry_point": "faq",
+    "titulo": "¿Los contactos de referencia son obligatorios?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Contactos de referencia Plata",
+    "keywords": "",
+    "search_text": "¿los contactos de referencia son obligatorios?  baf, contactos y beneficiarios contactos de referencia plata "
+  },
+  {
+    "id": "FAQ64",
+    "entry_point": "faq",
+    "titulo": "¿Quién puede ser mi contacto de referencia?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Contactos de referencia Plata",
+    "keywords": "",
+    "search_text": "¿quién puede ser mi contacto de referencia?  baf, contactos y beneficiarios contactos de referencia plata "
+  },
+  {
+    "id": "FAQ65",
+    "entry_point": "faq",
+    "titulo": "¿Mi contacto de referencia necesita firmar algún documento?",
+    "resumen": "",
+    "categoria": "BAF, Contactos y Beneficiarios",
+    "subcategoria": "Contactos de referencia Plata",
+    "keywords": "",
+    "search_text": "¿mi contacto de referencia necesita firmar algún documento?  baf, contactos y beneficiarios contactos de referencia plata "
+  },
+  {
+    "id": "FAQ66",
+    "entry_point": "faq",
+    "titulo": "¿Tengo que aceptar el seguro de crédito obligatoriamente?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "",
+    "search_text": "¿tengo que aceptar el seguro de crédito obligatoriamente?  seguro de crédito y plata+ seguro de crédito "
+  },
+  {
+    "id": "FAQ67",
+    "entry_point": "faq",
+    "titulo": "¿Cuánto cubre el seguro de crédito?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "",
+    "search_text": "¿cuánto cubre el seguro de crédito?  seguro de crédito y plata+ seguro de crédito "
+  },
+  {
+    "id": "FAQ68",
+    "entry_point": "faq",
+    "titulo": "¿Cuánto dura el periodo de prueba del seguro de crédito?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "",
+    "search_text": "¿cuánto dura el periodo de prueba del seguro de crédito?  seguro de crédito y plata+ seguro de crédito "
+  },
+  {
+    "id": "FAQ69",
+    "entry_point": "faq",
+    "titulo": "¿Puedo desactivar o cancelar el seguro de crédito después desde la app de Plata?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "",
+    "search_text": "¿puedo desactivar o cancelar el seguro de crédito después desde la app de plata?  seguro de crédito y plata+ seguro de crédito "
+  },
+  {
+    "id": "FAQ70",
+    "entry_point": "faq",
+    "titulo": "¿Qué situaciones cubre el Seguro de Crédito?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "",
+    "search_text": "¿qué situaciones cubre el seguro de crédito?  seguro de crédito y plata+ seguro de crédito "
+  },
+  {
+    "id": "FAQ71",
+    "entry_point": "faq",
+    "titulo": "¿Es un seguro de crédito o un seguro médico?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "",
+    "search_text": "¿es un seguro de crédito o un seguro médico?  seguro de crédito y plata+ seguro de crédito "
+  },
+  {
+    "id": "FAQ72",
+    "entry_point": "faq",
+    "titulo": "¿Qué es Plata+?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Plata Plus",
+    "keywords": "",
+    "search_text": "¿qué es plata+?  seguro de crédito y plata+ plata plus "
+  },
+  {
+    "id": "FAQ73",
+    "entry_point": "faq",
+    "titulo": "¿Cuáles son los beneficios de Plata+?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Plata Plus",
+    "keywords": "",
+    "search_text": "¿cuáles son los beneficios de plata+?  seguro de crédito y plata+ plata plus "
+  },
+  {
+    "id": "FAQ74",
+    "entry_point": "faq",
+    "titulo": "¿Cuánto cuesta la suscripción Plata+?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Plata Plus",
+    "keywords": "",
+    "search_text": "¿cuánto cuesta la suscripción plata+?  seguro de crédito y plata+ plata plus "
+  },
+  {
+    "id": "FAQ75",
+    "entry_point": "faq",
+    "titulo": "¿Cuánto cuesta el seguro de crédito?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "",
+    "search_text": "¿cuánto cuesta el seguro de crédito?  seguro de crédito y plata+ seguro de crédito "
+  },
+  {
+    "id": "FAQ76",
+    "entry_point": "faq",
+    "titulo": "¿Puedo activar los beneficios de Plata+ después desde mi aplicación de Plata?",
+    "resumen": "",
+    "categoria": "Seguro de Crédito y Plata+",
+    "subcategoria": "Plata Plus",
+    "keywords": "",
+    "search_text": "¿puedo activar los beneficios de plata+ después desde mi aplicación de plata?  seguro de crédito y plata+ plata plus "
+  },
+  {
+    "id": "FAQ77",
+    "entry_point": "faq",
+    "titulo": "¿La tarjeta Plata Crédito ofrece Meses Sin Intereses gratuitos como un beneficio?",
+    "resumen": "",
+    "categoria": "Meses Sin Intereses",
+    "subcategoria": "Meses Sin Intereses",
+    "keywords": "",
+    "search_text": "¿la tarjeta plata crédito ofrece meses sin intereses gratuitos como un beneficio?  meses sin intereses meses sin intereses "
+  },
+  {
+    "id": "FAQ78",
+    "entry_point": "faq",
+    "titulo": "¿Qué negocios ofrecen Meses Sin Intereses pagando con Plata?",
+    "resumen": "",
+    "categoria": "Meses Sin Intereses",
+    "subcategoria": "Meses Sin Intereses",
+    "keywords": "",
+    "search_text": "¿qué negocios ofrecen meses sin intereses pagando con plata?  meses sin intereses meses sin intereses "
+  },
+  {
+    "id": "FAQ79",
+    "entry_point": "faq",
+    "titulo": "¿A cuántas mensualidades se puede diferir una transacción?",
+    "resumen": "",
+    "categoria": "Meses Sin Intereses",
+    "subcategoria": "Meses Sin Intereses",
+    "keywords": "",
+    "search_text": "¿a cuántas mensualidades se puede diferir una transacción?  meses sin intereses meses sin intereses "
+  },
+  {
+    "id": "FAQ80",
+    "entry_point": "faq",
+    "titulo": "¿Por qué se llaman Meses Sin Intereses si cobran una comisión?",
+    "resumen": "",
+    "categoria": "Meses Sin Intereses",
+    "subcategoria": "Meses Sin Intereses",
+    "keywords": "",
+    "search_text": "¿por qué se llaman meses sin intereses si cobran una comisión?  meses sin intereses meses sin intereses "
+  },
+  {
+    "id": "FAQ81",
+    "entry_point": "faq",
+    "titulo": "¿Qué operaciones son aplicables para diferir a Meses Sin Intereses?",
+    "resumen": "",
+    "categoria": "Meses Sin Intereses",
+    "subcategoria": "Meses Sin Intereses",
+    "keywords": "",
+    "search_text": "¿qué operaciones son aplicables para diferir a meses sin intereses?  meses sin intereses meses sin intereses "
+  },
+  {
+    "id": "FAQ82",
+    "entry_point": "faq",
+    "titulo": "¿Se puede diferir a Meses Sin Intereses cualquier operación pasada?",
+    "resumen": "",
+    "categoria": "Meses Sin Intereses",
+    "subcategoria": "Meses Sin Intereses",
+    "keywords": "",
+    "search_text": "¿se puede diferir a meses sin intereses cualquier operación pasada?  meses sin intereses meses sin intereses "
+  },
+  {
+    "id": "FAQ83",
+    "entry_point": "faq",
+    "titulo": "¿Cuál es el nombre oficial de su banco?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿cuál es el nombre oficial de su banco?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ84",
+    "entry_point": "faq",
+    "titulo": "¿De dónde es su Banco Plata?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿de dónde es su banco plata?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ85",
+    "entry_point": "faq",
+    "titulo": "¿Banco Plata tiene sucursales?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿banco plata tiene sucursales?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ86",
+    "entry_point": "faq",
+    "titulo": "¿Cómo creo un código de acceso para iniciar sesión en la aplicación por primera vez?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿cómo creo un código de acceso para iniciar sesión en la aplicación por primera vez?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ87",
+    "entry_point": "faq",
+    "titulo": "¿Cuál huella digital debería registrar para el inicio de sesión biométrico para que no se me olvide?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿cuál huella digital debería registrar para el inicio de sesión biométrico para que no se me olvide?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ88",
+    "entry_point": "faq",
+    "titulo": "¿Cuál es el formato de la contraseña para ingresar a la app de Plata?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿cuál es el formato de la contraseña para ingresar a la app de plata?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ89",
+    "entry_point": "faq",
+    "titulo": "¿Qué debo hacer si olvido mi código de acceso en el futuro?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿qué debo hacer si olvido mi código de acceso en el futuro?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ90",
+    "entry_point": "faq",
+    "titulo": "¿Puedo cambiar el código de acceso a la app en un futuro?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿puedo cambiar el código de acceso a la app en un futuro?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ91",
+    "entry_point": "faq",
+    "titulo": "¿Puedo cambiar el NIP de mi tarjeta por mi cuenta?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿puedo cambiar el nip de mi tarjeta por mi cuenta?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ92",
+    "entry_point": "faq",
+    "titulo": "¿Puedo vincular mi cuenta a un número de teléfono diferente si pierdo o cambio de tarjeta SIM?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿puedo vincular mi cuenta a un número de teléfono diferente si pierdo o cambio de tarjeta sim?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ93",
+    "entry_point": "faq",
+    "titulo": "¿Cómo puedo cancelar la tarjeta?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿cómo puedo cancelar la tarjeta?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ94",
+    "entry_point": "faq",
+    "titulo": "¿Cuánto tiempo tarda en cerrarse una cuenta de crédito después de cancelarla?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿cuánto tiempo tarda en cerrarse una cuenta de crédito después de cancelarla?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ95",
+    "entry_point": "faq",
+    "titulo": "¿La tarjeta soporta pagos sin contacto contactless?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿la tarjeta soporta pagos sin contacto contactless?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ96",
+    "entry_point": "faq",
+    "titulo": "¿Qué pasa si expira mi tarjeta?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Seguridad de la cuenta",
+    "keywords": "",
+    "search_text": "¿qué pasa si expira mi tarjeta?  infraestructura bancaria y logística seguridad de la cuenta "
+  },
+  {
+    "id": "FAQ97",
+    "entry_point": "faq",
+    "titulo": "¿Qué pasa si mi teléfono no tiene servicios de Google porque tengo un dispositivo Huawei u otro?",
+    "resumen": "",
+    "categoria": "Infraestructura bancaria y logística",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué pasa si mi teléfono no tiene servicios de google porque tengo un dispositivo huawei u otro?  infraestructura bancaria y logística onboarding y descarga "
+  },
+  {
+    "id": "FAQ98",
+    "entry_point": "faq",
+    "titulo": "¿Qué es Plata Garantizada?",
+    "resumen": "",
+    "categoria": "Plata Garantizada",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "",
+    "search_text": "¿qué es plata garantizada?  plata garantizada parámetros del crédito y límites "
+  },
+  {
+    "id": "FAQ99",
+    "entry_point": "faq",
+    "titulo": "¿Por qué se llama Garantizada?",
+    "resumen": "",
+    "categoria": "Plata Garantizada",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "",
+    "search_text": "¿por qué se llama garantizada?  plata garantizada parámetros del crédito y límites "
+  },
+  {
+    "id": "FAQ100",
+    "entry_point": "faq",
+    "titulo": "¿Me dieron Plata Garantizada por tener mal historial crediticio?",
+    "resumen": "",
+    "categoria": "Plata Garantizada",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "",
+    "search_text": "¿me dieron plata garantizada por tener mal historial crediticio?  plata garantizada parámetros del crédito y límites "
+  },
+  {
+    "id": "FAQ101",
+    "entry_point": "faq",
+    "titulo": "¿Los $500 pesos de comisión por apertura son mi límite de crédito?",
+    "resumen": "",
+    "categoria": "Plata Garantizada",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "",
+    "search_text": "¿los $500 pesos de comisión por apertura son mi límite de crédito?  plata garantizada parámetros del crédito y límites "
+  },
+  {
+    "id": "FAQ102",
+    "entry_point": "faq",
+    "titulo": "¿Puedo aumentar mi línea de crédito si tengo una Plata Garantizada?",
+    "resumen": "",
+    "categoria": "Plata Garantizada",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "",
+    "search_text": "¿puedo aumentar mi línea de crédito si tengo una plata garantizada?  plata garantizada parámetros del crédito y límites "
+  },
+  {
+    "id": "FLOW2",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿En dónde se puede realizar una reunión?",
+    "resumen": "",
+    "categoria": "Etapa 1: Empezar la reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿en dónde se puede realizar una reunión?  etapa 1: empezar la reunión onboarding y descarga "
+  },
+  {
+    "id": "FLOW3",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿En dónde NO se puede realizar una reunión?",
+    "resumen": "",
+    "categoria": "Etapa 1: Empezar la reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿en dónde no se puede realizar una reunión?  etapa 1: empezar la reunión onboarding y descarga "
+  },
+  {
+    "id": "FLOW4",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 2: Proceso de verificación del cliente",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW5",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de verificación de INE",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de verificación de ine  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW6",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de verificación de Comprobante de Domicilio",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de verificación de comprobante de domicilio  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW7",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de verificación de Pasaporte",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de verificación de pasaporte  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW8",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de verificación de Foto Selfie",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de verificación de foto selfie  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW9",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Hay excepciones en los pasaportes vencidos?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿hay excepciones en los pasaportes vencidos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW10",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Si veo la pantalla \"Análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿si veo la pantalla \"análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW11",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué hago si hay problemas de red y veo la pantalla \"Algo salió mal\"?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué hago si hay problemas de red y veo la pantalla \"algo salió mal\"?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW12",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿El comprobante de domicilio aplica para todos?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿el comprobante de domicilio aplica para todos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW13",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué tipo de comprobantes de domicilio son aceptados?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué tipo de comprobantes de domicilio son aceptados?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW14",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Cuánto recibo por cada comprobante de domicilio correctamente cargado?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿cuánto recibo por cada comprobante de domicilio correctamente cargado?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW15",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Se puede tomar foto a comprobantes de domicilio digitales si el cliente no lo tiene en físico?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿se puede tomar foto a comprobantes de domicilio digitales si el cliente no lo tiene en físico?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW16",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Es necesario que el comprobante de domicilio esté a nombre del cliente?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿es necesario que el comprobante de domicilio esté a nombre del cliente?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW17",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Se puede cargar un comprobante de domcilio en PDF?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿se puede cargar un comprobante de domcilio en pdf?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW18",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿En todos los casos se pide el comprobante de domicilio?",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿en todos los casos se pide el comprobante de domicilio?  etapa 2: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW19",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 3: Instalar la app",
+    "resumen": "",
+    "categoria": "Etapa 3: Instalar la app",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 3: instalar la app  etapa 3: instalar la app onboarding y descarga "
+  },
+  {
+    "id": "FLOW20",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas para instalar la app.",
+    "resumen": "",
+    "categoria": "Etapa 3: Instalar la app",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas para instalar la app.  etapa 3: instalar la app onboarding y descarga "
+  },
+  {
+    "id": "FLOW21",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 4: Cuestionario",
+    "resumen": "",
+    "categoria": "Etapa 4: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 4: cuestionario  etapa 4: cuestionario onboarding y descarga "
+  },
+  {
+    "id": "FLOW22",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué son las preguntas AML?",
+    "resumen": "",
+    "categoria": "Etapa 4: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué son las preguntas aml?  etapa 4: cuestionario onboarding y descarga "
+  },
+  {
+    "id": "FLOW23",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué pasa si el cliente no quiere dar contactos de referencia?",
+    "resumen": "",
+    "categoria": "Etapa 4: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué pasa si el cliente no quiere dar contactos de referencia?  etapa 4: cuestionario onboarding y descarga "
+  },
+  {
+    "id": "FLOW24",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas del cuestionario",
+    "resumen": "",
+    "categoria": "Etapa 4: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas del cuestionario  etapa 4: cuestionario onboarding y descarga "
+  },
+  {
+    "id": "FLOW25",
+    "entry_point": "flujo_reunion",
+    "titulo": "Venta Cruzada: Introduce Plata Crédito",
+    "resumen": "",
+    "categoria": "Venta Cruzada",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "venta cruzada: introduce plata crédito  venta cruzada onboarding y descarga "
+  },
+  {
+    "id": "FLOW26",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Cuáles son las reglas para la venta cruzada de Débito a Crédito?",
+    "resumen": "",
+    "categoria": "Venta Cruzada",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿cuáles son las reglas para la venta cruzada de débito a crédito?  venta cruzada onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT46",
+    "entry_point": "scripts",
+    "titulo": "1. Script para introducir Plata Crédito",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "1. script para introducir plata crédito  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT47",
+    "entry_point": "scripts",
+    "titulo": "2. Script para explicar los beneficios de Plata Crédito en venta cruzada",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "2. script para explicar los beneficios de plata crédito en venta cruzada  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT48",
+    "entry_point": "scripts",
+    "titulo": "3. Script para pedir consentimiento de Plata Crédito en ventaa cruzada",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "3. script para pedir consentimiento de plata crédito en ventaa cruzada  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT49",
+    "entry_point": "scripts",
+    "titulo": "4. Script para fomentar el uso de Plata Crédito en venta cruzada (solo después de una venta exitosa)",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "4. script para fomentar el uso de plata crédito en venta cruzada (solo después de una venta exitosa)  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT50",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente dice que tiene un mal historial crediticio, tiene miedo al rechazo en venta cruzada de Plata Crédito",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "script si el cliente dice que tiene un mal historial crediticio, tiene miedo al rechazo en venta cruzada de plata crédito  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT51",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente está preocupado por costos o intereses de la tarjeta de crédito en venta cruzada de Plata Crédito",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "script si el cliente está preocupado por costos o intereses de la tarjeta de crédito en venta cruzada de plata crédito  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT52",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente quiere Plata Crédito para después, porque quiere probar Débito primero",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "script si el cliente quiere plata crédito para después, porque quiere probar débito primero  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT53",
+    "entry_point": "scripts",
+    "titulo": "Script si el cliente simplemente no quiere o no está interesado, o ha dicho que no sin dar ninguna explicación en venta cruzada de Plata Crédito",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "script si el cliente simplemente no quiere o no está interesado, o ha dicho que no sin dar ninguna explicación en venta cruzada de plata crédito  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "FLOW27",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 5: Firma del contrato",
+    "resumen": "",
+    "categoria": "Etapa 5: Firma del contrato",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 5: firma del contrato  etapa 5: firma del contrato onboarding y descarga "
+  },
+  {
+    "id": "FLOW28",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 6: Benefeciarios, CSF/e firma",
+    "resumen": "",
+    "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 6: benefeciarios, csf/e firma  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
+  },
+  {
+    "id": "FLOW29",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Beneficiarios",
+    "resumen": "",
+    "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de beneficiarios  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
+  },
+  {
+    "id": "FLOW30",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Constancia de Situación Fiscal",
+    "resumen": "",
+    "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de constancia de situación fiscal  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
+  },
+  {
+    "id": "FLOW31",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantalla de e.firma",
+    "resumen": "",
+    "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantalla de e.firma  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
+  },
+  {
+    "id": "FLOW32",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 7: Preguntas extra",
+    "resumen": "",
+    "categoria": "Etapa 7: Preguntas extra",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 7: preguntas extra  etapa 7: preguntas extra onboarding y descarga "
+  },
+  {
+    "id": "FLOW33",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de preguntas extra",
+    "resumen": "",
+    "categoria": "Etapa 7: Preguntas extra",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de preguntas extra  etapa 7: preguntas extra onboarding y descarga "
+  },
+  {
+    "id": "FLOW34",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 8: Vinculación de la tarjeta",
+    "resumen": "",
+    "categoria": "Etapa 8: Vinculación de la tarjeta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 8: vinculación de la tarjeta  etapa 8: vinculación de la tarjeta onboarding y descarga "
+  },
+  {
+    "id": "FLOW35",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Se puede vincular la tarjeta manualmente?",
+    "resumen": "",
+    "categoria": "Etapa 8: Vinculación de la tarjeta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿se puede vincular la tarjeta manualmente?  etapa 8: vinculación de la tarjeta onboarding y descarga "
+  },
+  {
+    "id": "FLOW36",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Es necesario que el cliente ingrese su tarjeta a un cajero para activarla?",
+    "resumen": "",
+    "categoria": "Etapa 8: Vinculación de la tarjeta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿es necesario que el cliente ingrese su tarjeta a un cajero para activarla?  etapa 8: vinculación de la tarjeta onboarding y descarga "
+  },
+  {
+    "id": "FLOW37",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Vinculación de la tarjeta",
+    "resumen": "",
+    "categoria": "Etapa 8: Vinculación de la tarjeta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de vinculación de la tarjeta  etapa 8: vinculación de la tarjeta onboarding y descarga "
+  },
+  {
+    "id": "FLOW38",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 9: Foto de cliente con paquete",
+    "resumen": "",
+    "categoria": "Etapa 9: Foto de cliente con paquete",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 9: foto de cliente con paquete  etapa 9: foto de cliente con paquete onboarding y descarga "
+  },
+  {
+    "id": "FLOW39",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Foto de cliente con paquete",
+    "resumen": "",
+    "categoria": "Etapa 9: Foto de cliente con paquete",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de foto de cliente con paquete  etapa 9: foto de cliente con paquete onboarding y descarga "
+  },
+  {
+    "id": "FLOW40",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 10: Seguro de crédito",
+    "resumen": "",
+    "categoria": "Etapa 10: Seguro de crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 10: seguro de crédito  etapa 10: seguro de crédito onboarding y descarga "
+  },
+  {
+    "id": "FLOW41",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantalla de Seguro de crédito",
+    "resumen": "",
+    "categoria": "Etapa 10: Seguro de crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantalla de seguro de crédito  etapa 10: seguro de crédito onboarding y descarga "
+  },
+  {
+    "id": "FLOW411",
+    "entry_point": "flujo_reunion",
+    "titulo": "Scripts para Seguro de crédito",
+    "resumen": "",
+    "categoria": "Etapa 10: Seguro de crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "scripts para seguro de crédito  etapa 10: seguro de crédito onboarding y descarga "
+  },
+  {
+    "id": "FLOW412",
+    "entry_point": "flujo_reunion",
+    "titulo": "Manejo de objeciones Seguro de crédito",
+    "resumen": "",
+    "categoria": "Etapa 10: Seguro de crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "manejo de objeciones seguro de crédito  etapa 10: seguro de crédito onboarding y descarga "
+  },
+  {
+    "id": "FLOW42",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 11:  Trae a un amigo",
+    "resumen": "",
+    "categoria": "Etapa 11:  Trae a un amigo",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 11:  trae a un amigo  etapa 11:  trae a un amigo onboarding y descarga "
+  },
+  {
+    "id": "FLOW43",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Trae a un amigo",
+    "resumen": "",
+    "categoria": "Etapa 11:  Trae a un amigo",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de trae a un amigo  etapa 11:  trae a un amigo onboarding y descarga "
+  },
+  {
+    "id": "FLOW44",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 12: Final",
+    "resumen": "",
+    "categoria": "Etapa 12: Final",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 12: final  etapa 12: final onboarding y descarga "
+  },
+  {
+    "id": "FLOW45",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Cuáles son los recordatorios de fin de reunión?",
+    "resumen": "",
+    "categoria": "Etapa 12: Final",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿cuáles son los recordatorios de fin de reunión?  etapa 12: final onboarding y descarga "
+  },
+  {
+    "id": "FLOW46",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Que pasa si la INE del cliente se encuentra vencida?",
+    "resumen": "",
+    "categoria": "Etapa 12: Final",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿que pasa si la ine del cliente se encuentra vencida?  etapa 12: final onboarding y descarga "
+  },
+  {
+    "id": "FLOW47",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Que pasa si el cliente tiene una actitud agresiva o violenta?",
+    "resumen": "",
+    "categoria": "Etapa 7: Preguntas extra",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿que pasa si el cliente tiene una actitud agresiva o violenta?  etapa 7: preguntas extra onboarding y descarga "
+  },
+  {
+    "id": "FLOW48",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué pasa si sospecho que el cliente está usurpando una identidad o su INE es falsa?",
+    "resumen": "",
+    "categoria": "Etapa 7: Preguntas extra",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué pasa si sospecho que el cliente está usurpando una identidad o su ine es falsa?  etapa 7: preguntas extra onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT54",
+    "entry_point": "scripts",
+    "titulo": "Script para manejar la objeción: “no tengo tiempo\" en venta cruzada de crédito a débito",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "script para manejar la objeción: “no tengo tiempo\" en venta cruzada de crédito a débito  plata cuenta onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT55",
+    "entry_point": "scripts",
+    "titulo": "Script para manejar la objeción “no la necesito” en venta cruzada de crédito a débito",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "script para manejar la objeción “no la necesito” en venta cruzada de crédito a débito  plata cuenta onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT56",
+    "entry_point": "scripts",
+    "titulo": "Script para manejar la objeción “No quiero gastar más dinero en cuentas” en venta cruzada de crédito a débito",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "script para manejar la objeción “no quiero gastar más dinero en cuentas” en venta cruzada de crédito a débito  plata cuenta onboarding y descarga "
+  },
+  {
+    "id": "SCRIPT57",
+    "entry_point": "scripts",
+    "titulo": "Script para manejar la objeción “no quiero otras cuentas” en venta cruzada de crédito a débito",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "script para manejar la objeción “no quiero otras cuentas” en venta cruzada de crédito a débito  plata cuenta onboarding y descarga "
+  },
+  {
+    "id": "FLOW261",
+    "entry_point": "flujo_reunion",
+    "titulo": "Venta Cruzada: Introduce Plata Cuenta",
+    "resumen": "",
+    "categoria": "Venta Cruzada",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "venta cruzada: introduce plata cuenta  venta cruzada onboarding y descarga "
+  },
+  {
+    "id": "FLOW262",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Cuáles son las reglas para la venta cruzada de Crédito a Débito (Cuenta)?",
+    "resumen": "",
+    "categoria": "Venta Cruzada",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  venta cruzada onboarding y descarga "
+  }
+]

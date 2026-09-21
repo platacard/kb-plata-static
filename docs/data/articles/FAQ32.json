@@ -1,0 +1,21 @@
+{
+  "id": "FAQ32",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Depósitos y transferencias entrantes",
+  "titulo": "¿Cómo puedo depositar en mi Plata Cuenta?",
+  "resumen": "",
+  "contenido_html": "El cliente podrá depositar a sus cuentas de débito de cuatro formas distintas:<p><p>\n\n-Con tarjeta desde otro banco (El cliente puede utilizar tanto una tarjeta de débito como una tarjeta de crédito para ingresar fondos en sus cuentas de débito. Sin embargo, para pagar la Plata Crédito, sólo podrá utilizar una tarjeta de DÉBITO de la cual también sea titular.) ,<p><p>\n\n-Con CLABE desde otro banco (a través de una transferencia SPEI),<p><p>\n\n-Desde sus cuentas en Plata (transferencias entre cuentas), y<p><p>\n\n-Con efectivo en tiendas (a través de un código de barras).",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

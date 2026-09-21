@@ -1,0 +1,21 @@
+{
+  "id": "FLOW17",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Se puede cargar un comprobante de domcilio en PDF?",
+  "resumen": "",
+  "contenido_html": "El cliente puede compartirte el PDF del comprobante por WhatsApp y tú los podrás cargar desde la app (en caso de que no lo tenga en físico).",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

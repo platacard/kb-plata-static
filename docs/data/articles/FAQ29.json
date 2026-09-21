@@ -1,0 +1,21 @@
+{
+  "id": "FAQ29",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Cashback",
+  "titulo": "¿El cashback reduce el monto de la deuda del cliente?",
+  "resumen": "",
+  "contenido_html": "Si el cliente tiene solo la cuenta de crédito, el cashback reduce el importe de la deuda. Si el cliente no tiene deuda, se muestra como saldo a favor.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

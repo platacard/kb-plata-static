@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT9",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script si el cliente acepta, pero dice: \"No tengo ningún recibo impreso aquí conmigo\"",
+  "resumen": "",
+  "contenido_html": "No hay ningún problema, no necesita ser impreso. Si lo tiene en su teléfono como un PDF, una foto o una captura de pantalla, puede enviarmelo a través de WhatsApp y lo podemos cargar ahora mismo.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

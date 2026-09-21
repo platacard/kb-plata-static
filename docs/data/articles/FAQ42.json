@@ -1,0 +1,21 @@
+{
+  "id": "FAQ42",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Retiros de efectivo y uso",
+  "titulo": "¿Plata Cuenta está pensada solo para depositar dinero o también la puedo utilizar para los gastos diarios?",
+  "resumen": "",
+  "contenido_html": "Sí, el cliente puede utilizar la tarjeta para sus compras diarias, ya que es su propio dinero.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

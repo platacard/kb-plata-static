@@ -1,0 +1,21 @@
+{
+  "id": "FAQ2",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Un mal historial afecta la aprobación de mi crédito?",
+  "resumen": "",
+  "contenido_html": "Plata determina individualmente la cantidad de crédito en la tarjeta para cada cliente. Esto depende de su historial crediticio y otras características. <p><p>En resumen: sí, un mal historial afecta en la aprobación del crédito, pero no es un factor que implique automáticamente un rechazo.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-14T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

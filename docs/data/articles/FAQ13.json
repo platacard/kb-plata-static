@@ -1,0 +1,21 @@
+{
+  "id": "FAQ13",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Costos, tasas y acuerdos",
+  "titulo": "¿Qué es la tasa de interés anual?",
+  "resumen": "",
+  "contenido_html": "Es el porcentaje de comisión anual, el rendimiento que genera el monto prestado por Banco Plata al cliente en un tiempo determinado.<p><p>Éste se expresa en porcentaje de forma anual y generalmente se paga de forma mensual. Los clientes tienen una tasa de interés que varía de cliente a cliente.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

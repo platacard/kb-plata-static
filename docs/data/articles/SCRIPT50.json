@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT50",
+  "entry_point": "scripts",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script si el cliente dice que tiene un mal historial crediticio, tiene miedo al rechazo en venta cruzada de Plata Crédito",
+  "resumen": "",
+  "contenido_html": "Entiendo su preocupación, pero que le hayan rechazado otras veces no significa que no se la vayan a conceder aquí. No pierde nada por intentarlo. ¿Por qué no la solicitamos?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

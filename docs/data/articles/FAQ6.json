@@ -1,0 +1,21 @@
+{
+  "id": "FAQ6",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Costos, tasas y acuerdos",
+  "titulo": "¿Existe una comisión de mantenimiento anual (anualidad)?",
+  "resumen": "",
+  "contenido_html": "Dependiendo de la tarifa del cliente y la promoción con la cual haya solicitado la tarjeta, el cliente no tendrá que pagar anualidad de por vida.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

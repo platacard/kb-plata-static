@@ -1,0 +1,21 @@
+{
+  "id": "FAQ92",
+  "entry_point": "faq",
+  "categoria": "Infraestructura bancaria y logística",
+  "subcategoria": "Seguridad de la cuenta",
+  "titulo": "¿Puedo vincular mi cuenta a un número de teléfono diferente si pierdo o cambio de tarjeta SIM?",
+  "resumen": "",
+  "contenido_html": "Sí, el cliente lo puede hacer directamente desde su app de Plata. Solo debe acceder a su perfil, a \"datos personales\" y pulsar sobre su teléfono  para editarlo.<p><p>\n\nSi el cliente no tiene acceso a su app, puede llamar a nuestro equipo de soporte para que le ayuden.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

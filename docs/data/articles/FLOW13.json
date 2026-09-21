@@ -1,0 +1,21 @@
+{
+  "id": "FLOW13",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Qué tipo de comprobantes de domicilio son aceptados?",
+  "resumen": "",
+  "contenido_html": "Documentos aceptados con vigencia máxima de 3 meses: <p><p>\n\nLuz (CFE), Agua, Internet/Teléfono (Telmex, Izzi, Totalplay), Estado de Cuenta Bancario o Gas Natural.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

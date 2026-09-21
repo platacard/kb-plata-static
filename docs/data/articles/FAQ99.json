@@ -1,0 +1,21 @@
+{
+  "id": "FAQ99",
+  "entry_point": "faq",
+  "categoria": "Plata Garantizada",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Por qué se llama Garantizada?",
+  "resumen": "",
+  "contenido_html": "Porque las personas elegibles tienen garantizada una línea de crédito de $500 MXN.<p><p>\r\n\r\nPero para activarla, el cliente necesita realizar el pago de una comisión por apertura de $500 MXN no reembolsable.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

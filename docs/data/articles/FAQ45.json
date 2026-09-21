@@ -1,0 +1,21 @@
+{
+  "id": "FAQ45",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Ahorros y titularidad de fondos",
+  "titulo": "¿La cuenta de débito genera algún interés o rendimiento sobre el saldo?",
+  "resumen": "",
+  "contenido_html": "Sí, la cuenta puede generar hasta 15% de interés anual si abre un Ahorro Fijo.<p><p>\n\nDesde la app, el cliente podrá consultar cuánto ganaría de intereses de acuerdo al monto que desea ahorrar.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

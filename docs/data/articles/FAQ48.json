@@ -1,0 +1,21 @@
+{
+  "id": "FAQ48",
+  "entry_point": "faq",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "BAF (Programa de referidos)",
+  "titulo": "¿Cómo funciona el programa de referidos Trae a un Amigo?",
+  "resumen": "",
+  "contenido_html": "El cliente puede invitar a un referido, es decir un conocido (familiar, amigo, cercano), a unirse a Banco Plata. <p><p> \n\nDe esta manera, si el referido del cliente se une a Banco Plata, el cliente puede obtener una bonificación si su conocido cumple las condiciones:<p><p>\n\n-Compras acumuladas de $500 MXN.<p><p>\n-En un lapso de 1 mes.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

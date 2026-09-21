@@ -1,0 +1,21 @@
+{
+  "id": "FAQ87",
+  "entry_point": "faq",
+  "categoria": "Infraestructura bancaria y logística",
+  "subcategoria": "Seguridad de la cuenta",
+  "titulo": "¿Cuál huella digital debería registrar para el inicio de sesión biométrico para que no se me olvide?",
+  "resumen": "",
+  "contenido_html": "La huella con la que el cliente se sienta más cómodo, puede ser el dedo pulgar para mayor comodidad. Pero cualquier otro dedo funciona, como el dedo índice.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

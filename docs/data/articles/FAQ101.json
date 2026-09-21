@@ -1,0 +1,21 @@
+{
+  "id": "FAQ101",
+  "entry_point": "faq",
+  "categoria": "Plata Garantizada",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Los $500 pesos de comisión por apertura son mi límite de crédito?",
+  "resumen": "",
+  "contenido_html": "No, los $500 pesos de la comisión por apertura los toma Banco Plata para aperturar la cuenta. <p><p>\n\nUna vez activa, Banco Plata le proporciona una línea de crédito de $500 pesos al cliente.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

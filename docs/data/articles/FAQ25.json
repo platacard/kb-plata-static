@@ -1,0 +1,21 @@
+{
+  "id": "FAQ25",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Puedo comenzar a realizar compras inmediatamente después de haber recibido mi tarjeta?",
+  "resumen": "",
+  "contenido_html": "Sí, si la tarjeta del cliente es aprobada, inmediatamente conocerá su límite de crédito y podrá hacer uso de la tarjeta en ese momento.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

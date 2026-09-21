@@ -1,0 +1,21 @@
+{
+  "id": "FLOW412",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 10: Seguro de crédito",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Manejo de objeciones Seguro de crédito",
+  "resumen": "",
+  "contenido_html": "OBJECIÓN · no le ve utilidad <p><p>\n— Comprendo que en este momento no vea necesario un seguro; sin embargo, sabemos que a veces hay situaciones fuera de nuestro control, así que contar con apoyo y protección siempre le dará tranquilidad. <p><p>\n\nOBJECIÓN · tiene otros seguros <p><p>\n— Lo entiendo, sin embargo, ¿está tomando en cuenta que un deducible en un seguro tradicional suele costar entre 5 y 10% del monto asegurado? En Plata nuestro costo es menor al 1%, protegiendo su crédito hasta por $200,000 MXN en caso de pérdida de empleo; esperamos que nunca le suceda, pero nunca está de más estar preparado. <p><p>\n\nOBJECIÓN · el costo es muy alto <p><p>\n— Solo le costará el 0.99% del saldo total utilizado, pero estará protegido; y si su saldo total utilizado es menor a $100 MXN, no le cobraremos el seguro. <p><p>\n\nOBJECIÓN · debe pensarlo <p><p>\n— Tenemos un periodo de prueba de 1 mes, no tiene que decidirlo ahora. Solo pruébelo. Puede cancelarlo después de que finalice el primer mes gratuito. <p><p>\n\nOBJECIÓN · son muchos documentos <p><p>\n— No se preocupe, nuestro equipo de soporte está las 24 horas, los 365 días del año, y le ayudará con todas sus dudas y le guiará fácilmente en el proceso. Verá el monto asegurado reflejado en su cuenta en un mínimo de 2 semanas.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

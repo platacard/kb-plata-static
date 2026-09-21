@@ -1,0 +1,21 @@
+{
+  "id": "FAQ7",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Costos, tasas y acuerdos",
+  "titulo": "¿Necesito hacer depósitos de seguridad para abrir la línea de crédito?",
+  "resumen": "",
+  "contenido_html": "No, en caso de ser aprobado para Plata Crédito la línea de crédito queda activa automáticamente. <p><p>Solamente si el cliente es aprobado con Plata Garantizada, tendrá que pagar un costo de comisión por apertura de $500 MXN.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

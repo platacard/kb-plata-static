@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT53",
+  "entry_point": "scripts",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script si el cliente simplemente no quiere o no está interesado, o ha dicho que no sin dar ninguna explicación en venta cruzada de Plata Crédito",
+  "resumen": "",
+  "contenido_html": "Lo entiendo, pero si ha solicitado su tarjeta de débito para sus compras, tengo buenas noticias: sale mejor pagar las compras con tarjeta de crédito, ya que el cashback es mayor, por lo que obtendrá más beneficios por sus compras. ¿Por qué no intentamos solicitarla?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

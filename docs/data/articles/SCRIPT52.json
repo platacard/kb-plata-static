@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT52",
+  "entry_point": "scripts",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script si el cliente quiere Plata Crédito para después, porque quiere probar Débito primero",
+  "resumen": "",
+  "contenido_html": "Lo entiendo. Pero puede conseguirla ahora mismo y no le costará nada. No hace falta que me de más datos para ello. ¿La solicitamos?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

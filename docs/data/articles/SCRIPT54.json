@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT54",
+  "entry_point": "scripts",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para manejar la objeción: “no tengo tiempo\" en venta cruzada de crédito a débito",
+  "resumen": "",
+  "contenido_html": "No nos tomará ni un momento aperturar su cuenta, nuestro sistema ya cuenta con toda la información necesaria para aperturarla por los detalles que me acaba de brindar con su tarjeta de crédito. ¿Continuamos con la apertura?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

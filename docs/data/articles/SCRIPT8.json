@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT8",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script si el cliente cuestiona por qué se pide si su dirección viene en la identificación",
+  "resumen": "",
+  "contenido_html": "Esto se debe a que el sistema necesita confirmar su dirección completa porque durante la captura de su INE, no se pudo leer correctamente el nombre de su calle o su clave de elector. No es una decisión que Banco Plata haya tomado sin motivo, sino que confirmar su dirección es un requerimiento legal para abrir una cuenta en México. Es mejor si lo cargamos en este momento, para que todos los beneficios estén activos de inmediato.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FAQ22",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Facturación, periodo de gracia y reembolsos",
+  "titulo": "¿Los fines de semana hay fechas de corte?",
+  "resumen": "",
+  "contenido_html": "No hay fechas de corte los fines de semana ni tampoco los días inhábiles, por lo cual, en caso de caer en una de estos días, la fecha de corte se recorrerá hasta el siguiente día hábil.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-14T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

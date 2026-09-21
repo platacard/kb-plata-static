@@ -1,0 +1,21 @@
+{
+  "id": "FAQ35",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Depósitos y transferencias entrantes",
+  "titulo": "¿Puedo recibir transferencias en mi Plata Cuenta inmediatamente después de activarla?",
+  "resumen": "",
+  "contenido_html": "Sí, de hecho es recomedable que el cliente realice un depósito de al menos $100 pesos para que pueda comprobar lo sencillo que es añadir fondos a su cuenta.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

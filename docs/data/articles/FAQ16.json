@@ -1,0 +1,21 @@
+{
+  "id": "FAQ16",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Facturación, periodo de gracia y reembolsos",
+  "titulo": "¿Qué es el periodo de facturación?",
+  "resumen": "",
+  "contenido_html": "Es el lapso de tiempo entre dos estados de cuenta, en el cual se toman en cuenta todas las operaciones realizadas. <p><p>El primer estado de cuenta se genera entre 10 a 15 días después de la primera operación de la cuenta del cliente.<p><p>Posteriormente, el periodo de facturación puede durar de 28 a 31 días.<p><p>Al final de cada periodo de facturación, el cliente recibe su estado de cuenta en su correo y en la app, con toda la información de su cuenta de crédito.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT43",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "Script obligatorio de Activación de tarjeta al cierre de la reunión",
+  "resumen": "",
+  "contenido_html": "Aproximadamente 10 minutos después de terminada esta reunión, le llegará una notificación en el que le indicarán si se aprobó su crédito; esta notificación puede llegar a la app de Plata, por medio de correo electrónico o SMS. En caso de ser aprobado, el mensaje también mencionará su línea de crédito y con esto queda activa su tarjeta Plata.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

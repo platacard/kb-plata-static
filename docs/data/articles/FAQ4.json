@@ -1,0 +1,21 @@
+{
+  "id": "FAQ4",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Cuánto tiempo tengo que esperar para volver a presentar la solicitud si me la rechazan?",
+  "resumen": "",
+  "contenido_html": "El cliente puede volver a intentarlo en 3 meses.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

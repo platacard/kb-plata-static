@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT3",
+  "entry_point": "scripts",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para anticipar al cliente sobre Trae a un Amigo",
+  "resumen": "",
+  "contenido_html": "Al finalizar su entrega, tiene la oportunidad de invitar a sus conocidos a Plata. ¿Qué le parece si seleccionamos a sus contactos más cercanos para que reciban su invitación y aseguren su beneficio desde ahora?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

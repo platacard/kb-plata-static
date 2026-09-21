@@ -1,0 +1,30 @@
+{
+  "id": "FLOW5",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Pantallas de verificación de INE",
+  "resumen": "",
+  "contenido_html": "",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [
+    "https://drive.google.com/file/d/1QeieE5GqjDyxTkShVBeJ9cbnXfKWtIlb/view?usp=drive_link",
+    "https://drive.google.com/file/d/1DjcQ0Kg_JiWqwh4olihspyggt5GZj-SP/view?usp=drive_link",
+    "https://drive.google.com/file/d/1J5c9zLxQDPd7xqSVS8ChpMt6P8M89XIs/view?usp=drive_link",
+    "https://drive.google.com/file/d/1JewcSQ3X9V55Q7r8vhGTgSJFa_57REZI/view?usp=drive_link",
+    "https://drive.google.com/file/d/1L-U9p8w1JiH5Q9sKE6SYnVd7OXLT_YXZ/view?usp=drive_link",
+    "https://drive.google.com/file/d/1F3xpUlAlUfQhXLc3_KNKW2YCdZeG88or/view?usp=drive_link",
+    "https://drive.google.com/file/d/1rwXPxdH97k6--MAMNIDYgbcGU2M7kbyh/view?usp=drive_link",
+    "https://drive.google.com/file/d/13PSUCb0xowLRnGWoRKUK-ym__GvCNVr5/view?usp=drive_link"
+  ],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text + Carousel",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

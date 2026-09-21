@@ -1,0 +1,21 @@
+{
+  "id": "FAQ69",
+  "entry_point": "faq",
+  "categoria": "Seguro de Crédito y Plata+",
+  "subcategoria": "Seguro de crédito",
+  "titulo": "¿Puedo desactivar o cancelar el seguro de crédito después desde la app de Plata?",
+  "resumen": "",
+  "contenido_html": "Sí, el cliente podrá cancelarlo en cualquier momento. Para ello, solo debe entrar en la opción de \"Seguro\" en los detalles de su cuenta. Ahí encontrará un botón  que dice \"Asegurar Plata Crédito\", el cual puede encenderse o apagarse en cualquier momento.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

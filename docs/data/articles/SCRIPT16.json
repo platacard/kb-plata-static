@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT16",
+  "entry_point": "scripts",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "1. Script para introducir Plata Cuenta",
+  "resumen": "",
+  "contenido_html": "Ya que estoy aquí, también podemos aperturar una cuenta de débito y una tarjeta digital para usted, es completamente gratis.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

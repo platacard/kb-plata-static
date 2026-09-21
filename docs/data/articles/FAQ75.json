@@ -1,0 +1,21 @@
+{
+  "id": "FAQ75",
+  "entry_point": "faq",
+  "categoria": "Seguro de Crédito y Plata+",
+  "subcategoria": "Seguro de crédito",
+  "titulo": "¿Cuánto cuesta el seguro de crédito?",
+  "resumen": "",
+  "contenido_html": "El precio del seguro de crédito dependerá del saldo total mensual, es decir, el saldo gastado (saldo total) durante el periodo de facturación anterior al momento de la activación.<p><p>\n\nSi el saldo total mensual es igual o superior a $100 MXN: El precio corresponderá al 0.99% sin IVA del saldo total mensual, pero no menos de $9.90 MXN.<p><p>\n\nSi el saldo total mensual es menor a $100 MXN: No cobraremos el costo del seguro de crédito en ese momento. En su lugar, vamos a esperar al periodo cuando el límite usado sea superior a $100 MXN.<p><p>\n\nDe esta manera, el seguro de crédito puede costar más de $100, todo dependerá del saldo total mensual y la equivalencia del 0.99%",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

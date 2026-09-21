@@ -1,0 +1,21 @@
+{
+  "id": "FAQ3",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Qué ocurre si me deniegan la solicitud de la tarjeta de crédito?",
+  "resumen": "",
+  "contenido_html": "El cliente puede volver a realizar la solicitud de una tarjeta de crédito después de 3 meses de la última solicitud.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

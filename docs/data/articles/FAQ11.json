@@ -1,0 +1,21 @@
+{
+  "id": "FAQ11",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Cómo se solicita Plata Crédito?",
+  "resumen": "",
+  "contenido_html": "Existen diferentes maneras de solicitar una Plata Crédito, por ejemplo: <p><p> A través del link de invitación de un amigo.<p><p>A través de una llamada de nuestros agentes de Televentas. <p><p> A través de nuestro sitio web<p><p>A través de nuestra app.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

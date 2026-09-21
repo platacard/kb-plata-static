@@ -1,0 +1,21 @@
+{
+  "id": "FLOW21",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 4: Cuestionario",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Etapa 4: Cuestionario",
+  "resumen": "",
+  "contenido_html": "En esta etapa, debes hacerle al cliente las preguntas que aparecen en la pantalla una a una.<p><p>\n\nEn caso de que no puedas registrar el domicilio correctamente, será necesario agregarlo en la pantalla de Respuestas Negativas de la app de Embajadores.<p><p>\n\nDebes confirmar los datos que te brinda el cliente con los que estás ingresando dentro de la app de embajador. Recuerda que el nombre debe ser el completo del cliente.<p><p>\r\n\r\nAsegúrate de mantener la consistencia entre el estado civil del cliente y la relación del contacto de emergencia para evitar errores por captura incorrecta.<p><p>\r\n\r\nEn caso de que el cliente no quiera brindar el contacto de referencia, es importante que le expliquemos que lo requerimos por disposición oficial y debemos solicitarlo de nueva cuenta.<p><p>\r\n\r\nSi el cliente solo quiere brindar un nombre del contacto de referencia, pero no el completo, debes de pedir el completo amablemente para poder continuar. En caso de que el cliente se niegue, puedes avanzar en el flujo de la reunión, pero solo si hiciste el intento de que te brindara el nombre completo.<p><p>\r\n\r\nLa pregunta de \"País de nacimiento\" puede o no aparecer dentro del flujo. Si te aparece, llena la pregunta.<p><p>\r\n\r\nPara la pregunta \"Domicilio\", asegúrate de realizar el sondeo correctamente. Ya que el domicilio que se debe ingresar debe ser donde vive el cliente, no el del trabajo, escuela ni otro lugar.<p><p>\r\n\r\nEn la pregunta de \"Educación\", debes seleccionar el último nivel de estudios concluido por el cliente. Por ejemplo, si todavía está cursando la Licenciatura, la opción correcta a elegir sería Preparatoria, porque es la que tiene concluida a la fecha del trámite.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FLOW12",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿El comprobante de domicilio aplica para todos?",
+  "resumen": "",
+  "contenido_html": "Actualmente la captura del comprobante de domicilio no aplica para todos los clientes, debes estar atento si la app de Embajadores lo solicita o no (solo en el caso de clientes extranjeros siempre se solicitará el comprobante de domicilio).<p><p>\n\nSi el cliente NO tiene el documento, puedes pulsar “Omitir” para continuar. El proceso no se detendrá.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

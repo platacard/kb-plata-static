@@ -1,0 +1,21 @@
+{
+  "id": "POD1",
+  "entry_point": "podcast",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "BAF (Programa de referidos)",
+  "titulo": "Episodio 1 - Trae a un Amigo y gana tu bono",
+  "resumen": "",
+  "contenido_html": "Escucha el primer episodio de Embajadores Podcast, en donde hablaremos sobre el programa de referidos \"Trae a un Amigo\"",
+  "imagen_url": "",
+  "audio_url": "https://drive.google.com/file/d/19YJbymquei9qrxkPFTB-lLQk03F7dj2r/view",
+  "audio_titulo": "Trae a un Amigo y gana tu bono",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Audio",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FAQ18",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Facturación, periodo de gracia y reembolsos",
+  "titulo": "¿Qué es una carátula?",
+  "resumen": "",
+  "contenido_html": "Es un documento que muestra los detalles importantes de la cuenta, como el nombre del tarjetahabiente, el número de cuenta, el límite de crédito, comisiones, entre otros datos. <p><p>Este documento también describe la tarifa del cliente. Además, puede encontrar ejemplos de cómo se calculan los intereses, todas las comisiones, los contactos de Plata y el CAT.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

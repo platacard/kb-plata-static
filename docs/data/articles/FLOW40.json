@@ -1,0 +1,21 @@
+{
+  "id": "FLOW40",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 10: Seguro de crédito",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Etapa 10: Seguro de crédito",
+  "resumen": "",
+  "contenido_html": "Después de la firma del cliente te aparecerá el Seguro de crédito y en ese momento se enviará un código OTP al cliente por medio de SMS y WhatsApp.<p><p>\n\nEn caso de que el cliente no desee el seguro de crédito, puedes Continuar sin seguro.<p><p>\n\nIngresa el código OTP que le fue enviado al cliente para poder activar el Seguro de crédito.<p><p>\n\nPuedes leer los beneficios que el Seguro de crédito ofrece al cliente y/o responder alguna de las preguntas frecuentes que puede llegar a tener.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

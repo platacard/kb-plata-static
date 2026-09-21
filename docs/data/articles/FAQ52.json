@@ -1,0 +1,21 @@
+{
+  "id": "FAQ52",
+  "entry_point": "faq",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "BAF (Programa de referidos)",
+  "titulo": "¿Puedo proporcionar solo el primer nombre o un apodo de un referido si no conozco su nombre completo con apellidos?",
+  "resumen": "",
+  "contenido_html": "Mientras que el número telefónico del referido sea correcto, el cliente puede brindar solo el primer nombre del referido en caso de que no conozca todo su apellido. Aunque lo recomendable siempre es que se obtenga el dato completo.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

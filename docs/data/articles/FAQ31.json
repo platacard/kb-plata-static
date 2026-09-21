@@ -1,0 +1,21 @@
+{
+  "id": "FAQ31",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Depósitos y transferencias entrantes",
+  "titulo": "¿Qué es Plata Cuenta?",
+  "resumen": "",
+  "contenido_html": "La Plata Cuenta, o cuenta de débito de Plata, es un nuevo producto financiero que ofrece una experiencia bancaria completa desde la app. Gracias a ella, el cliente tendrá: <p><p>\r\n\r\nAcceso inmediato a una tarjeta de débito virtual.<p><p>\r\n\r\nPosibilidad de solicitar una tarjeta de débito física.<p><p>\r\n\r\nLa opción de abrir Cuentas de Ahorro y Depósito con tasas de interés competitivas.<p><p>\r\n\r\nEl beneficio de recibir intereses sobre su saldo disponible (CON Plata+), incluso si no tiene Cuentas de Ahorro activas.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

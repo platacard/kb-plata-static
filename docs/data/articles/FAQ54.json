@@ -1,0 +1,21 @@
+{
+  "id": "FAQ54",
+  "entry_point": "faq",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "BAF (Programa de referidos)",
+  "titulo": "¿Cuáles son las condiciones de Trae a un Amigo?",
+  "resumen": "",
+  "contenido_html": "Los referidos del cliente deben realizar compras acumuladas por $500 pesos en los primeros 30 días naturales para hacer válida la promoción.<p><p>\n\nVálido solo para compras. No cuentan retiros de efectivo, transferencias ni pago de comisiones.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

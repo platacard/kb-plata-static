@@ -1,0 +1,21 @@
+{
+  "id": "FLOW32",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 7: Preguntas extra",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Etapa 7: Preguntas extra",
+  "resumen": "",
+  "contenido_html": "Las preguntas extra son solo para ti, por lo cual debes asegurarte de que el cliente no las pueda ver. <p><p>\n\nMenciónale que estás terminando el formulario.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

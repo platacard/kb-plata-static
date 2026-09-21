@@ -1,0 +1,21 @@
+{
+  "id": "FAQ86",
+  "entry_point": "faq",
+  "categoria": "Infraestructura bancaria y logística",
+  "subcategoria": "Seguridad de la cuenta",
+  "titulo": "¿Cómo creo un código de acceso para iniciar sesión en la aplicación por primera vez?",
+  "resumen": "",
+  "contenido_html": "Nuestra app de Plata le pedirá al cliente que genere un código de acceso, el cual el cliente debe ingresarlo una vez, esperar, y después lo debe volver a ingresar para confirmarlo. Pero debe ser el mismo código de acceso para poderlo establecer.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

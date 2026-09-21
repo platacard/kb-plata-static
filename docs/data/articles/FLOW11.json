@@ -1,0 +1,21 @@
+{
+  "id": "FLOW11",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Qué hago si hay problemas de red y veo la pantalla \"Algo salió mal\"?",
+  "resumen": "",
+  "contenido_html": "Pulsa el botón \"Actualizar\" para intentarlo nuevamente.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

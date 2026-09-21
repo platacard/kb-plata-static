@@ -1,0 +1,21 @@
+{
+  "id": "POD2",
+  "entry_point": "podcast",
+  "categoria": "Seguro de Crédito y Plata+",
+  "subcategoria": "Seguro de crédito",
+  "titulo": "Episodio 2 - El poder del seguro de crédito",
+  "resumen": "",
+  "contenido_html": "¡Acompáñanos en nuestro segundo episodio de Embajadores Podcast! En donde hablamos del Seguro de Crédito.",
+  "imagen_url": "",
+  "audio_url": "https://drive.google.com/file/d/1zFYv2hW8tVUhq0BWZWB_3dJN4MTGVsxB/view",
+  "audio_titulo": "El poder del seguro de crédito",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Audio",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

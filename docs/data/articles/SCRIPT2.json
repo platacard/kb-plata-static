@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT2",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script de registro para empezar la reunión",
+  "resumen": "",
+  "contenido_html": "Hola, mi nombre es [nombre del embajador], representante oficial de Banco Plata. Estoy aquí para completar su registro. Como su embajador, yo no tengo ninguna influencia en la aprobación de su tarjeta Plata, ¿de acuerdo?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT12",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script en caso de que el cliente dude de las preguntas de AML",
+  "resumen": "",
+  "contenido_html": "Por regulación bancaria, ahora que somos una Institución de Banca Múltiple debemos conocer la actividad económica de nuestros clientes. Le recuerdo que su información es confidencial y es tratada con los máximos estándares de seguridad.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

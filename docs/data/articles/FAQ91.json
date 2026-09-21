@@ -1,0 +1,21 @@
+{
+  "id": "FAQ91",
+  "entry_point": "faq",
+  "categoria": "Infraestructura bancaria y logística",
+  "subcategoria": "Seguridad de la cuenta",
+  "titulo": "¿Puedo cambiar el NIP de mi tarjeta por mi cuenta?",
+  "resumen": "",
+  "contenido_html": "Sí, el cliente solo debe dirigirse a su app de Plata, abrir la tarjeta de la cual desea cambiar el NIP y dirigirse hacia las opciones de seguridad, en donde está la opción \"cambiar NIP\". <p><p> \n\nDespués, el cliente tiene que activarlo en los próximos 3 días yendo a un cajero automático de BBVA, HSC o Santander para verificar su saldo.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-18T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

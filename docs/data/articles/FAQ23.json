@@ -1,0 +1,21 @@
+{
+  "id": "FAQ23",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Facturación, periodo de gracia y reembolsos",
+  "titulo": "¿Cuáles son los métodos de pago disponibles?",
+  "resumen": "",
+  "contenido_html": "La tarjeta de crédito Plata Crédito puede pagarse de diferentes maneras: <p><p>\n\n-Desde mi cuenta de Plata: si el cliente tiene una tarjeta de débito, podrá realizar el pago directamente entre ambas cuentas.<p><p>\n-Con CLABE desde otro banco: el cliente puede obtener los 18 dígitos de su CLABE para realizar la transferencia desde otro banco.<p><p>\n-Con efectivo en tiendas: el cliente puede obtener el código para pagar su tarjeta directamente en OXXO o en KIOSKO. Para hacerlo, el cliente solo le tiene que dictar los números al cajero. El servicio es tapipay y las tiendas pueden cobrar una comisión por el depósito (visible desde la app de Plata).<p><p>\n-Con efectivo en bancos: el cliente puede compartir el número de su tarjeta directamente en la ventanilla de uno de los siguientes bancos: BBVA, Banorte, HSBC, Banamex o BanBajío.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-14T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

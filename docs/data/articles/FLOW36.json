@@ -1,0 +1,21 @@
+{
+  "id": "FLOW36",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 8: Vinculación de la tarjeta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Es necesario que el cliente ingrese su tarjeta a un cajero para activarla?",
+  "resumen": "",
+  "contenido_html": "Después de vincular la tarjeta durante la reunión con el cliente, NO menciones que debe ingresarla a un cajero para activarla, ya que no es necesario hacerlo.<p><p>\r\n\r\nEl cliente conocerá si su tarjeta queda activa solo si recibe la notificación positiva en su Plata app.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

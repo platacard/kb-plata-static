@@ -1,0 +1,21 @@
+{
+  "id": "FAQ28",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Cashback",
+  "titulo": "¿Cómo se recibe el cashback en la cuenta del cliente?",
+  "resumen": "",
+  "contenido_html": "El cashback se ingresa el primer día del mes siguiente a la cuenta de débito (si el cliente la tiene) y hay que tener en cuenta que el monto de cashback no está vinculado a la fecha del estado de cuenta, sino que funciona de acuerdo a su propia lógica.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

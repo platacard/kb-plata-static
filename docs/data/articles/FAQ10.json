@@ -1,0 +1,21 @@
+{
+  "id": "FAQ10",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Qué es Plata Crédito?",
+  "resumen": "",
+  "contenido_html": "Plata Crédito es la tarjeta de crédito de Banco Plata, la cual le brinda al cliente diferentes beneficios como cashback, hasta 60 días para pagar y anualidad gratis de por vida.",
+  "imagen_url": "https://drive.google.com/file/d/1-67fcJNCV1uB0soQsd7RhLWsTJFftpwW/view",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

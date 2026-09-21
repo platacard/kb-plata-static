@@ -1,0 +1,21 @@
+{
+  "id": "FAQ12",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Costos, tasas y acuerdos",
+  "titulo": "¿Cuál es el costo de la anualidad?",
+  "resumen": "",
+  "contenido_html": "Es el monto cobrado por el mantenimiento de la cuenta por un año. La mayoría de las tarifas no tienen costo de anualidad.<p><p>Si el cliente tiene una tarifa con costo de anualidad, pagará $199 MXN + IVA.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-08",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FLOW1",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 1: Empezar la reunión",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Etapa 1: Empezar la reunión",
+  "resumen": "",
+  "contenido_html": "Paso 1: En tu app de embajadores selecciona la próxima reunión que tienes agendada.<p><p>\n\nPaso 2: Dentro de los detalles de la reunión, pulsa el botón que dice \"Empezar reunión\".<p><p>\n\nPaso 3: Asegúrate de tener lista la tarjeta antes de comenzar la reunión y en la pantalla que aparece pulsa \"Emitir tarjeta\".<p><p>\n\nPaso 4: Se enviará un código OTP al cliente automáticamente, tanto por SMS como por WhatsApp.<p><p>\n\nPaso 5: Solicítale al cliente que te indique el código OTP para poder iniciar la reunión.<p><p>\n\nSi el cliente no recibe el código OTP, puedes volverlo a enviar después de 30 segundos. Puedes elegir el canal por el cual se enviará.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [
+    "https://drive.google.com/file/d/12k-C3kLBhF3SjfiC_w_kA7g0vl1ddcRK/view",
+    "https://drive.google.com/file/d/1nMCwwETQtl7vZ8kkfcehLGD4mJZIM-_x/view",
+    "https://drive.google.com/file/d/1xx-np6gF8r34rOohYPKz2ABZYf7SoCak/view",
+    "https://drive.google.com/file/d/1MJgFUoWHJwU3n2bNNGF1Rs3zcIsZ3MW4/view",
+    "https://drive.google.com/file/d/1DAThGZ7T0OQFE4EbOHcSAOrQEp4BoixR/view"
+  ],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text + Carousel",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

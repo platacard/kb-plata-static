@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT57",
+  "entry_point": "scripts",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para manejar la objeción “no quiero otras cuentas” en venta cruzada de crédito a débito",
+  "resumen": "",
+  "contenido_html": "Lo comprendo, la ventaja es que puede tenerla disponible para gastos o compras específicas. ¿Qué le parece si la aperturamos para que descubra los beneficios usted mismo?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "FAQ77",
+  "entry_point": "faq",
+  "categoria": "Meses Sin Intereses",
+  "subcategoria": "Meses Sin Intereses",
+  "titulo": "¿La tarjeta Plata Crédito ofrece Meses Sin Intereses gratuitos como un beneficio?",
+  "resumen": "",
+  "contenido_html": "No, si el cliente desea diferir un movimiento desde su app de Plata, se le cobrará un porcentaje de comisión que el cliente siempre puede visualizar antes de diferir.<p><p>\n\nPor otro lado, el cliente podrá acceder a Meses Sin Intereses al diferir su compra directamente con algún negocio participante. La lista de dichos negocios la puede consultar el cliente desde su app de Plata.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-21T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

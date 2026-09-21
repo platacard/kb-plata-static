@@ -1,0 +1,21 @@
+{
+  "id": "FAQ38",
+  "entry_point": "faq",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Límites de las cuentas, comisiones e infraestructura",
+  "titulo": "¿Hay alguna comisión mensual de mantenimiento o cargos ocultos en la tarjeta de débito?",
+  "resumen": "",
+  "contenido_html": "No, nuestra tarjeta de débito es 100% transparente, no cuenta con un mínimo de uso mensual. Tampoco existen cargos ocultos, el cliente siempre podrá consultar todo desde su aplicación de Plata.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-16T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

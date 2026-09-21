@@ -1,0 +1,21 @@
+{
+  "id": "FAQ100",
+  "entry_point": "faq",
+  "categoria": "Plata Garantizada",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Me dieron Plata Garantizada por tener mal historial crediticio?",
+  "resumen": "",
+  "contenido_html": "Nuestro sistema es el que determina cuál tarjeta es la más recomendable para el clinte.<p><p>\n\nLa ventaja de tener una Plata Garantizada es que el cliente puede comenzar a construir su historial crediticio o mejorarlo.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

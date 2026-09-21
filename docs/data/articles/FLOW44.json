@@ -1,0 +1,21 @@
+{
+  "id": "FLOW44",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 12: Final",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Etapa 12: Final",
+  "resumen": "",
+  "contenido_html": "Sabrás que has llegado al final de la reunión cuando en la app de Embajadores veas la pantalla que dice ¡Los amigos fueron invitados!<p><p>\r\n\r\nPulsa el botón \"Finalizar reunión\" para concluir el proceso.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

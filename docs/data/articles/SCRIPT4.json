@@ -1,0 +1,21 @@
+{
+  "id": "SCRIPT4",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para la explicación del proceso",
+  "resumen": "",
+  "contenido_html": "A continuación, seguiremos un proceso en donde:<p><p>\n\n-Tomaremos fotos de su INE por ambos lados para validar su identidad.<p><p>\n-Tomaremos una foto facial o selfie.<p><p>\n-Realizaremos un pequeño cuestionario.<p><p>\n-Continuaremos con la firma del contrato y la consulta ante buró de crédito.<p><p>\n-Tomaremos una foto de usted con su kit de bienvenida sellado.<p><p>\n\nAl final de la reunión, tendrá la oportunidad de invitar a sus conocidos a Banco Plata y obtener un bono económico cuando se unan a Plata.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

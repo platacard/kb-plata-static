@@ -1,0 +1,21 @@
+{
+  "id": "FLOW38",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 9: Foto de cliente con paquete",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Etapa 9: Foto de cliente con paquete",
+  "resumen": "",
+  "contenido_html": "Al momento de tomar la foto del cliente con su kit de bienvenida, asegúrate de cumplir con los siguientes requerimientos:<p><p>\r\n\r\n-La fotografía debe ser de la cintura para arriba.<p><p>\r\n\n-El cliente debe sostener el kit de bienvenida a la altura del pecho.<p><p>\r\n\r\n-El kit de bienvenida debe mostrar el reverso, para que el código de barras sea visible.<p><p>\r\n\r\n-Debe mostrar que el kit de bienvenida está intacto.<p><p>\r\n\r\nImportante: En esta etapa, solo debes mencionarle al cliente dónde puede encontrar su NIP si lo pregunta proactivamente. En caso contrario, no hagas mención.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
