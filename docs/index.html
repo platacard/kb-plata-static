@@ -1383,9 +1383,16 @@
         hasAudio: !!(item.hasAudio || item.has_audio || audioUrl || item.audioId || item.audio_id),
         hasImage: !!(item.hasImage || item.has_image || imageUrl || item.imageId || item.image_id),
         hasGallery: !!(item.hasGallery || item.has_gallery || galleryUrls.length || galleryIds.length),
-        imageId: item.imageId || item.image_id || '',
-        audioId: item.audioId || item.audio_id || ''
+        imageId: item.imageId || item.image_id || extractDriveFileId(imageUrl) || '',
+        audioId: item.audioId || item.audio_id || extractDriveFileId(audioUrl) || ''
       });
+    }
+
+    function extractDriveFileId(value) {
+      const raw = String(value || '').trim();
+      if (!raw) return '';
+      const match = raw.match(/(?:drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?export=[^&]*&id=|thumbnail\?id=)|docs\.google\.com\/uc\?id=)([a-zA-Z0-9_-]{10,})/i);
+      return match ? match[1] : '';
     }
 
     function normalizeStaticEntryPayload(raw, entryId) {
@@ -2310,6 +2317,54 @@
       return null;
     }
 
+    function fetchStaticMedia(id) {
+      const cleanId = String(id || '').trim();
+      if (!cleanId) return Promise.resolve(null);
+      state.staticMediaPromises = state.staticMediaPromises || {};
+      if (state.staticMediaPromises[cleanId]) return state.staticMediaPromises[cleanId];
+      const promise = staticFetchJson('media/' + encodeURIComponent(cleanId) + '.json', { timeout: 4500 })
+        .then(function(raw) { return raw || null; })
+        .catch(function() { return null; });
+      state.staticMediaPromises[cleanId] = promise;
+      return promise;
+    }
+
+    function mergeStaticMediaIntoArticle(article, mediaRaw) {
+      if (!article || !mediaRaw) return article;
+      const media = Array.isArray(mediaRaw) ? (mediaRaw[0] || {}) : (mediaRaw.item || mediaRaw);
+      if (!media || typeof media !== 'object') return article;
+      const merged = Object.assign({}, article);
+      [
+        'imageUrl','imagen_url','image_url','imageId','image_id',
+        'audioUrl','audio_url','audioId','audio_id','audioTitle','audio_titulo',
+        'audioTranscript','audio_transcripcion','audioDuration','audio_duracion','audioType','audio_tipo',
+        'galleryUrls','gallery_urls','galleryIds','gallery_ids','galleryTitle','gallery_title',
+        'hasImage','has_image','hasAudio','has_audio','hasGallery','has_gallery'
+      ].forEach(function(key) {
+        if (media[key] !== undefined && media[key] !== null && media[key] !== '') merged[key] = media[key];
+      });
+      return normalizeStaticArticle(merged, article.id);
+    }
+
+    function hydrateArticleMediaStatic(id, article, triggerEl, clickEvent) {
+      const cleanId = String(id || '').trim();
+      if (!cleanId || !article) return;
+      const hasUsefulMedia = !!(article.imageUrl || article.audioUrl || (article.galleryUrls && article.galleryUrls.length) || article.imageId || article.audioId || (article.galleryIds && article.galleryIds.length));
+      if (hasUsefulMedia) return;
+
+      fetchStaticMedia(cleanId).then(function(mediaRaw) {
+        if (!mediaRaw) return;
+        const hydrated = mergeStaticMediaIntoArticle(article, mediaRaw);
+        if (!hydrated) return;
+        state.articleDetails[cleanId] = Object.assign({}, state.articleDetails[cleanId] || {}, hydrated, { isLite: false, isTextOnly: false, isMediaOnly: false });
+        state.articleTexts[cleanId] = Object.assign({}, state.articleDetails[cleanId], { isTextOnly: true });
+        mergeFullItemIntoEntryPayload(state.articleDetails[cleanId]);
+        if (state.pendingDetailId === cleanId || (state.currentItem && state.currentItem.id === cleanId)) {
+          renderItemDetail(state.articleDetails[cleanId], triggerEl, clickEvent, true);
+        }
+      });
+    }
+
     function saveDetailToSession(item) {
       // v31: no-op. Full detail/media is lightweight and should stay fresh.
     }
@@ -2385,6 +2440,7 @@
 
           if (state.pendingDetailId === id || (state.currentItem && state.currentItem.id === id)) {
             renderItemDetail(fullItem, triggerEl, clickEvent, !!silentRefresh);
+            hydrateArticleMediaStatic(id, fullItem, triggerEl, clickEvent);
           }
         })
         .catch(function(staticErr) {
@@ -2551,9 +2607,9 @@
       els.sheetSubtitle.textContent = [item.entryLabel, item.category, item.subCategory].filter(Boolean).join(' / ');
 
       const previousScroll = preserveScroll ? els.sheetBody.scrollTop : 0;
-      const img = item.hasImage && item.imageId ? `<div class="image-placeholder" id="imageSlot-${escapeAttr(item.id)}">Preparando imagen...</div>` : '';
-      const gallery = item.hasGallery && item.galleryIds && item.galleryIds.length ? renderImageGalleryShell(item) : '';
-      const audio = item.hasAudio && item.audioId ? renderAudioShell(item) : '';
+      const img = item.hasImage && (item.imageUrl || item.imageId) ? `<div class="image-placeholder" id="imageSlot-${escapeAttr(item.id)}">Preparando imagen...</div>` : '';
+      const gallery = item.hasGallery && ((item.galleryUrls && item.galleryUrls.length) || (item.galleryIds && item.galleryIds.length)) ? renderImageGalleryShell(item) : '';
+      const audio = item.hasAudio && (item.audioUrl || item.audioId) ? renderAudioShell(item) : '';
       const governanceBox = renderGovernanceBox(item);
       const mediaBlock = (img || gallery || audio) ? `
         <div class="content-first-media">
@@ -2621,9 +2677,9 @@
       saveRecent(item);
       els.sheetBody.scrollTop = preserveScroll ? previousScroll : 0;
 
-      if (item.hasImage && item.imageId) loadItemImage(item);
-      if (item.hasGallery && item.galleryIds && item.galleryIds.length) loadItemGallery(item);
-      if (item.hasAudio && item.audioId) loadItemAudio(item);
+      if (item.hasImage && (item.imageUrl || item.imageId)) loadItemImage(item);
+      if (item.hasGallery && ((item.galleryUrls && item.galleryUrls.length) || (item.galleryIds && item.galleryIds.length))) loadItemGallery(item);
+      if (item.hasAudio && (item.audioUrl || item.audioId)) loadItemAudio(item);
 
       positionDesktopModal(triggerEl, clickEvent);
       document.body.classList.add('modal-open');
@@ -2698,6 +2754,7 @@
       if (!slot) return;
 
       const directSrc = item.imageUrl || item.image_url || '';
+      const derivedImageId = item.imageId || item.image_id || extractDriveFileId(directSrc) || '';
       if (directSrc) {
         const img = document.createElement('img');
         img.className = 'hero-image';
@@ -2706,12 +2763,13 @@
         img.loading = 'lazy';
         img.decoding = 'async';
         img.src = directSrc;
-        img.onerror = function() { if (item.imageId) loadItemImageFallback(item, slotId); else { img.replaceWith(Object.assign(document.createElement('div'), { className: 'image-placeholder error', textContent: 'No se pudo cargar la imagen.' })); } };
+        img.onerror = function() { if (derivedImageId) { item.imageId = derivedImageId; loadItemImageFallback(item, slotId); } else { img.replaceWith(Object.assign(document.createElement('div'), { className: 'image-placeholder error', textContent: 'No se pudo cargar la imagen.' })); } };
         slot.replaceWith(img);
         return;
       }
 
-      if (item.imageId) {
+      if (derivedImageId) {
+        item.imageId = derivedImageId;
         const img = document.createElement('img');
         img.className = 'hero-image';
         img.id = slotId;
@@ -2928,13 +2986,16 @@
       if (!slot) return;
 
       const directUrl = item.audioUrl || item.audio_url || '';
+      const derivedAudioId = item.audioId || item.audio_id || extractDriveFileId(directUrl) || '';
+      if (derivedAudioId) item.audioId = derivedAudioId;
+
       if (directUrl) {
         renderDirectAudio(slot, directUrl, item.audioTitle || item.title, item);
         return;
       }
 
-      if (item.audioId) {
-        renderDrivePreviewAudio(slot, item.audioId, item.audioTitle || item.title, item);
+      if (derivedAudioId) {
+        renderDrivePreviewAudio(slot, derivedAudioId, item.audioTitle || item.title, item);
       }
     }
 
@@ -2949,9 +3010,11 @@
       audio.src = url;
       audio.setAttribute('aria-label', title || 'Audio de apoyo');
       audio.onerror = function() {
-        if (item && item.audioId) {
+        const fallbackId = item && (item.audioId || item.audio_id || extractDriveFileId(url)) || '';
+        if (fallbackId) {
+          if (item) item.audioId = fallbackId;
           wrap.innerHTML = '';
-          renderDrivePreviewAudio(wrap, item.audioId, title, item);
+          renderDrivePreviewAudio(wrap, fallbackId, title, item);
         }
       };
 
