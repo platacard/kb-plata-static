@@ -2042,11 +2042,11 @@
   {
     "id": "POD5",
     "entry_point": "podcast",
-    "titulo": "",
+    "titulo": "Test de actualización",
     "resumen": "",
     "categoria": "Plata Cuenta",
     "subcategoria": "Costos, tasas y acuerdos",
     "keywords": "",
-    "search_text": "  plata cuenta costos, tasas y acuerdos "
+    "search_text": "test de actualización  plata cuenta costos, tasas y acuerdos "
   }
 ]
