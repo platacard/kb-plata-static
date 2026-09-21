@@ -1337,17 +1337,52 @@
     }
 
     function toStringList(value) {
-      if (Array.isArray(value)) {
-        return value.map(function(x) { return String(x || '').trim(); }).filter(Boolean);
+      function normalizeEntry(entry) {
+        if (entry === null || entry === undefined) return [];
+        if (typeof entry === 'string' || typeof entry === 'number') {
+          const text = String(entry).trim();
+          return text ? [text] : [];
+        }
+        if (Array.isArray(entry)) {
+          return entry.reduce(function(acc, child) {
+            return acc.concat(normalizeEntry(child));
+          }, []);
+        }
+        if (typeof entry === 'object') {
+          const candidates = [
+            entry.url, entry.src, entry.href,
+            entry.image_url, entry.imageUrl, entry.imagen_url,
+            entry.file_url, entry.fileUrl,
+            entry.id, entry.file_id, entry.fileId, entry.image_id, entry.imageId
+          ];
+          for (let i = 0; i < candidates.length; i++) {
+            if (candidates[i] !== undefined && candidates[i] !== null && String(candidates[i]).trim()) {
+              return [String(candidates[i]).trim()];
+            }
+          }
+          const nested = entry.urls || entry.items || entry.images || entry.gallery_urls || entry.galleryUrls || entry.files;
+          if (nested) return normalizeEntry(nested);
+        }
+        return [];
+      }
+
+      if (Array.isArray(value) || (value && typeof value === 'object')) {
+        return normalizeEntry(value);
       }
       if (value === null || value === undefined) return [];
       const raw = String(value).trim();
       if (!raw) return [];
+
       try {
         const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) return parsed.map(function(x) { return String(x || '').trim(); }).filter(Boolean);
+        const parsedValues = normalizeEntry(parsed);
+        if (parsedValues.length) return parsedValues;
       } catch (e) {}
-      return raw.split(/(?:\r?\n|\s*[,;|]\s*)/).map(function(x) { return x.trim(); }).filter(Boolean);
+
+      return raw
+        .split(/(?:\r?\n|\s*[,;|]\s*)/)
+        .map(function(x) { return x.trim(); })
+        .filter(Boolean);
     }
 
     function uniqueList(values) {
@@ -2786,13 +2821,19 @@
     function buildImageCandidates(url, fileId, width) {
       const candidates = [];
       const raw = String(url || '').trim();
-      const id = String(fileId || extractDriveFileId(raw) || '').trim();
+      let id = String(fileId || '').trim();
+      if (!id) id = extractDriveFileId(raw);
+      // Some exported gallery cells contain a bare Drive file ID rather than a URL.
+      if (!id && /^[A-Za-z0-9_-]{10,}$/.test(raw)) id = raw;
+
       if (id) {
         candidates.push(buildDriveThumbnailUrl(id, width || 1400));
+        candidates.push('https://drive.google.com/uc?export=view&id=' + encodeURIComponent(id));
         candidates.push(buildDrivePreviewUrl(id));
       }
+
       if (raw && candidates.indexOf(raw) < 0) candidates.push(raw);
-      return candidates;
+      return uniqueList(candidates);
     }
 
     function loadItemImage(item) {
@@ -2881,19 +2922,45 @@
     }
 
     function getGallerySources(item) {
-      const urls = uniqueList(toStringList(item.galleryUrls));
-      const ids = uniqueList(toStringList(item.galleryIds));
-      const total = Math.max(urls.length, ids.length);
+      const rawGallery = item.galleryUrls !== undefined ? item.galleryUrls : (item.gallery_urls !== undefined ? item.gallery_urls : []);
+      const rawIds = item.galleryIds !== undefined ? item.galleryIds : (item.gallery_ids !== undefined ? item.gallery_ids : []);
+
+      function objectEntries(value) {
+        if (!Array.isArray(value)) value = [value];
+        const entries = [];
+        value.forEach(function(entry) {
+          if (!entry) return;
+          if (typeof entry === 'object' && !Array.isArray(entry)) {
+            entries.push({
+              url: entry.url || entry.src || entry.href || entry.image_url || entry.imageUrl || entry.imagen_url || entry.file_url || entry.fileUrl || '',
+              id: entry.id || entry.file_id || entry.fileId || entry.image_id || entry.imageId || ''
+            });
+          } else {
+            entries.push({ url: String(entry), id: '' });
+          }
+        });
+        return entries;
+      }
+
+      const directEntries = objectEntries(rawGallery);
+      const urls = uniqueList(toStringList(rawGallery));
+      const ids = uniqueList(toStringList(rawIds));
+      const total = Math.max(directEntries.length, urls.length, ids.length);
       const sources = [];
+
       for (let i = 0; i < total; i++) {
-        const rawUrl = urls[i] || '';
-        const rawId = ids[i] || extractDriveFileId(rawUrl) || '';
+        const direct = directEntries[i] || {};
+        const rawUrl = direct.url || urls[i] || '';
+        const rawId = direct.id || ids[i] || extractDriveFileId(rawUrl) || '';
         sources.push({
           url: rawUrl,
           id: rawId
         });
       }
-      return sources;
+
+      return sources.filter(function(source) {
+        return !!(source.url || source.id);
+      });
     }
 
     function renderImageGalleryShell(item) {
@@ -2995,33 +3062,19 @@
       const imageId = explicitId || source.id || extractDriveFileId(source.url);
       const media = document.getElementById('galleryMedia-' + item.id);
       const block = document.getElementById('gallery-' + item.id);
-      if (!media || !imageId || !block) return;
+      if (!media || !block) return;
 
       const currentIndex = Number(block.dataset.galleryIndex || 0);
       if (currentIndex !== index) return;
 
-      if (state.imageFallbackCache[imageId]) {
-        renderGalleryImageFromSrc(item, index, state.imageFallbackCache[imageId]);
+      // Last-resort local/static resolution only. Never depend on Apps Script here.
+      const candidates = buildImageCandidates(source.url, imageId, 1600);
+      if (!candidates.length) {
+        renderGalleryError(item);
         return;
       }
 
-      media.innerHTML = '<div class="gallery-placeholder">Preparando imagen en modo compatible...</div>';
-      staticRun()
-        .withSuccessHandler(function(response) {
-          const latestBlock = document.getElementById('gallery-' + item.id);
-          if (!latestBlock || Number(latestBlock.dataset.galleryIndex || 0) !== index) return;
-          if (response && response.ok && response.src) {
-            state.imageFallbackCache[imageId] = response.src;
-            renderGalleryImageFromSrc(item, index, response.src);
-          } else {
-            renderGalleryError(item);
-          }
-        })
-        .withFailureHandler(function(err) {
-          console.error(err);
-          renderGalleryError(item);
-        })
-        .getImageDataById(imageId);
+      renderGalleryImageFromSrc(item, index, candidates[0]);
     }
 
     function renderGalleryImageFromSrc(item, index, src) {
