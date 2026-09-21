@@ -434,6 +434,8 @@
     .gallery-img { display: block; width: 100%; max-height: 420px; object-fit: contain; background: #f8fafc; }
 .gallery-frame-wrap { width: 100%; min-height: 220px; height: min(420px, 68vh); background: #f8fafc; border-radius: 16px; overflow: hidden; }
     .gallery-preview-frame { display: block; width: 100%; height: 100%; min-height: 220px; border: 0; background: #fff; }
+    .single-image-preview-wrap { width: 100%; min-height: 220px; height: min(520px, 62vh); border-radius: 18px; overflow: hidden; background: #f8fafc; }
+    .single-image-preview-frame { display: block; width: 100%; height: 100%; min-height: 220px; border: 0; background: #fff; }
     .gallery-placeholder { width: 100%; min-height: 220px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px; color: var(--muted); font-weight: 900; }
     .gallery-placeholder.error { color: var(--danger); background: #fef2f2; }
     .gallery-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 42px; height: 42px; border-radius: 999px; border: 1px solid rgba(255,93,21,.22); background: rgba(255,255,255,.92); color: var(--brand-dark); font-size: 26px; line-height: 1; font-weight: 900; box-shadow: var(--shadow-soft); }
@@ -661,6 +663,8 @@
       .gallery-img { max-height: 300px; }
       .gallery-frame-wrap { height: min(300px, 62vh); min-height: 190px; }
       .gallery-preview-frame { min-height: 190px; }
+      .single-image-preview-wrap { min-height: 190px; height: min(360px, 58vh); }
+      .single-image-preview-frame { min-height: 190px; }
       .gallery-nav { width: 38px; height: 38px; font-size: 24px; }
       .gallery-nav.prev { left: 7px; }
       .gallery-nav.next { right: 7px; }
@@ -2859,17 +2863,33 @@
 
       const directSrc = item.imageUrl || item.image_url || item.imagen_url || '';
       const derivedImageId = item.imageId || item.image_id || extractDriveFileId(directSrc) || '';
+      const isMobile = !!(window.matchMedia && window.matchMedia('(max-width: 760px)').matches);
+
+      item.imageId = derivedImageId || item.imageId || '';
+
+      /*
+       * Mobile-specific fix:
+       * Google Drive image endpoints can fail inside mobile embedded browsers
+       * even when the same URL works on desktop. When the source is a Drive file,
+       * use the same Drive preview mechanism that is already proven to work for
+       * the gallery on mobile.
+       */
+      if (isMobile && item.imageId) {
+        renderSingleImageDrivePreview(item, slotId, item.imageId);
+        return;
+      }
+
       const candidates = buildImageCandidates(directSrc, derivedImageId, 1400);
 
       if (!candidates.length) return;
 
-      item.imageId = derivedImageId || item.imageId || '';
       const img = document.createElement('img');
       img.className = 'hero-image';
       img.id = slotId;
       img.alt = item.title || 'Imagen del contenido';
       img.loading = 'eager';
       img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
       let index = 0;
       img.src = candidates[index];
       img.onerror = function() {
@@ -2889,6 +2909,38 @@
         }
       };
       slot.replaceWith(img);
+    }
+
+    function renderSingleImageDrivePreview(item, slotId, imageId) {
+      const current = document.getElementById(slotId);
+      if (!current) return;
+
+      const wrap = document.createElement('div');
+      wrap.className = 'single-image-preview-wrap';
+      wrap.id = slotId;
+      wrap.style.width = '100%';
+      wrap.style.minHeight = '220px';
+      wrap.style.height = 'min(520px, 62vh)';
+      wrap.style.borderRadius = '18px';
+      wrap.style.overflow = 'hidden';
+      wrap.style.background = '#f8fafc';
+
+      const frame = document.createElement('iframe');
+      frame.className = 'single-image-preview-frame';
+      frame.src = buildDrivePreviewUrl(imageId);
+      frame.title = item.title || 'Imagen del contenido';
+      frame.setAttribute('loading', 'eager');
+      frame.setAttribute('allow', 'fullscreen');
+      frame.setAttribute('referrerpolicy', 'no-referrer');
+      frame.style.display = 'block';
+      frame.style.width = '100%';
+      frame.style.height = '100%';
+      frame.style.minHeight = '220px';
+      frame.style.border = '0';
+      frame.style.background = '#fff';
+
+      wrap.appendChild(frame);
+      current.replaceWith(wrap);
     }
 
     function loadItemImageFallback(item, slotId) {
