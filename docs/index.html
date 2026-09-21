@@ -432,6 +432,8 @@
     .gallery-viewport { position: relative; border: 1px solid var(--line); border-radius: 18px; background: #f8fafc; overflow: hidden; min-height: 220px; display: flex; align-items: center; justify-content: center; }
     .gallery-media { width: 100%; min-height: 220px; display: flex; align-items: center; justify-content: center; }
     .gallery-img { display: block; width: 100%; max-height: 420px; object-fit: contain; background: #f8fafc; }
+.gallery-frame-wrap { width: 100%; min-height: 220px; height: min(420px, 68vh); background: #f8fafc; border-radius: 16px; overflow: hidden; }
+    .gallery-preview-frame { display: block; width: 100%; height: 100%; min-height: 220px; border: 0; background: #fff; }
     .gallery-placeholder { width: 100%; min-height: 220px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px; color: var(--muted); font-weight: 900; }
     .gallery-placeholder.error { color: var(--danger); background: #fef2f2; }
     .gallery-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 42px; height: 42px; border-radius: 999px; border: 1px solid rgba(255,93,21,.22); background: rgba(255,255,255,.92); color: var(--brand-dark); font-size: 26px; line-height: 1; font-weight: 900; box-shadow: var(--shadow-soft); }
@@ -657,6 +659,8 @@
       .gallery-block { padding: 12px; border-radius: 18px; }
       .gallery-viewport, .gallery-media, .gallery-placeholder { min-height: 190px; }
       .gallery-img { max-height: 300px; }
+      .gallery-frame-wrap { height: min(300px, 62vh); min-height: 190px; }
+      .gallery-preview-frame { min-height: 190px; }
       .gallery-nav { width: 38px; height: 38px; font-size: 24px; }
       .gallery-nav.prev { left: 7px; }
       .gallery-nav.next { right: 7px; }
@@ -2826,13 +2830,25 @@
       // Some exported gallery cells contain a bare Drive file ID rather than a URL.
       if (!id && /^[A-Za-z0-9_-]{10,}$/.test(raw)) id = raw;
 
-      if (id) {
-        candidates.push(buildDriveThumbnailUrl(id, width || 1400));
-        candidates.push('https://drive.google.com/uc?export=view&id=' + encodeURIComponent(id));
-        candidates.push(buildDrivePreviewUrl(id));
+      const isMobile = !!(window.matchMedia && window.matchMedia('(max-width: 760px)').matches);
+
+      // IMPORTANT: drive.google.com/file/.../preview is an HTML document and cannot
+      // be rendered by <img>. It is kept separately for iframe fallback only.
+      // On mobile, prefer the original/source URL first because some Drive thumbnail
+      // transformations are less reliable in embedded mobile browsers.
+      if (isMobile && raw) {
+        candidates.push(raw);
       }
 
-      if (raw && candidates.indexOf(raw) < 0) candidates.push(raw);
+      if (id) {
+        candidates.push('https://drive.google.com/uc?export=view&id=' + encodeURIComponent(id));
+        candidates.push(buildDriveThumbnailUrl(id, width || 1400));
+      }
+
+      if (!isMobile && raw && candidates.indexOf(raw) < 0) {
+        candidates.push(raw);
+      }
+
       return uniqueList(candidates);
     }
 
@@ -3046,8 +3062,8 @@
           img.src = candidates[candidateIndex];
           return;
         }
-        if (source.id) {
-          loadGalleryImageFallback(item, index, source.id);
+        if (source.id || extractDriveFileId(source.url)) {
+          loadGalleryImageFallback(item, index, source.id || extractDriveFileId(source.url));
         } else {
           renderGalleryError(item);
         }
@@ -3067,14 +3083,27 @@
       const currentIndex = Number(block.dataset.galleryIndex || 0);
       if (currentIndex !== index) return;
 
-      // Last-resort local/static resolution only. Never depend on Apps Script here.
-      const candidates = buildImageCandidates(source.url, imageId, 1600);
-      if (!candidates.length) {
-        renderGalleryError(item);
+      // Mobile-safe fallback: use Drive's HTML preview in an iframe. This is
+      // intentionally separate from the <img> path because /file/.../preview
+      // returns an HTML document, not an image resource.
+      if (imageId) {
+        const frame = document.createElement('iframe');
+        frame.className = 'gallery-preview-frame';
+        frame.src = buildDrivePreviewUrl(imageId);
+        frame.title = (item.galleryTitle || item.title || 'Imagen de galería') + ' ' + (index + 1);
+        frame.setAttribute('loading', 'eager');
+        frame.setAttribute('allow', 'fullscreen');
+        frame.setAttribute('referrerpolicy', 'no-referrer');
+
+        const wrap = document.createElement('div');
+        wrap.className = 'gallery-frame-wrap';
+        wrap.appendChild(frame);
+        media.innerHTML = '';
+        media.appendChild(wrap);
         return;
       }
 
-      renderGalleryImageFromSrc(item, index, candidates[0]);
+      renderGalleryError(item);
     }
 
     function renderGalleryImageFromSrc(item, index, src) {
@@ -3086,6 +3115,7 @@
       img.alt = (item.galleryTitle || item.title || 'Imagen de galería') + ' ' + (index + 1);
       img.loading = 'eager';
       img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
       media.innerHTML = '';
       media.appendChild(img);
     }
