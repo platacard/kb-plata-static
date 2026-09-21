@@ -1445,31 +1445,5 @@
     "version": "",
     "gallery_urls": [],
     "gallery_title": ""
-  },
-  {
-    "id": "FLOW263",
-    "entry_point": "flujo_reunion",
-    "status": "published",
-    "categoria": "Plata Garantizada",
-    "subcategoria": "Seguro de crédito",
-    "titulo": "AUTO PUBLISH TEST",
-    "resumen": "",
-    "keywords": "",
-    "imagen_url": "",
-    "audio_url": "",
-    "audio_titulo": "",
-    "audio_duracion": "",
-    "audio_tipo": "",
-    "orden": 999999,
-    "badge": "",
-    "priority": "",
-    "criticality": "",
-    "is_featured": false,
-    "copy_enabled": false,
-    "content_type": "",
-    "ultima_actualizacion": "",
-    "version": "",
-    "gallery_urls": [],
-    "gallery_title": ""
   }
 ]
