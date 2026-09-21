@@ -1,0 +1,21 @@
+{
+  "id": "FAQ1",
+  "entry_point": "faq",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "¿Qué es mi límite de crédito?",
+  "resumen": "",
+  "contenido_html": "El límite de crédito es el monto máximo de dinero que Banco Plata está dispuesto a prestarle al cliente para hacer uso de su tarjeta de crédito Plata Crédito. Este límite de crédito se puede utilizar de forma recurrente (o también llamado, revolvente). <p><p> \n\nCuando el cliente paga el saldo pendiente de su tarjeta, el límite se restablece y puede volverlo a utilizar de inmediato. <p><p>\n\nNo hay una fórmula por la cual Banco Plata determine que un cliente puede acceder a una línea de crédito mayor o menor, esto es determinado por su historial crediticio, estado ante el buró de crédito y otros factores internos. <p><p>",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-14T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
