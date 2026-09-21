@@ -1336,17 +1336,45 @@
         });
     }
 
+    function toStringList(value) {
+      if (Array.isArray(value)) {
+        return value.map(function(x) { return String(x || '').trim(); }).filter(Boolean);
+      }
+      if (value === null || value === undefined) return [];
+      const raw = String(value).trim();
+      if (!raw) return [];
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed.map(function(x) { return String(x || '').trim(); }).filter(Boolean);
+      } catch (e) {}
+      return raw.split(/(?:\r?\n|\s*[,;|]\s*)/).map(function(x) { return x.trim(); }).filter(Boolean);
+    }
+
+    function uniqueList(values) {
+      const seen = {};
+      return (values || []).filter(function(value) {
+        const clean = String(value || '').trim();
+        if (!clean) return false;
+        const key = clean.toLowerCase();
+        if (seen[key]) return false;
+        seen[key] = true;
+        return true;
+      });
+    }
+
     function normalizeStaticArticle(raw, fallbackId) {
       const item = raw || {};
-      const galleryUrls = Array.isArray(item.gallery_urls) ? item.gallery_urls : (Array.isArray(item.galleryUrls) ? item.galleryUrls : []);
-      const galleryIds = Array.isArray(item.gallery_ids) ? item.gallery_ids : (Array.isArray(item.galleryIds) ? item.galleryIds : []);
-      const keywords = Array.isArray(item.keywords) ? item.keywords : (typeof item.keywords === 'string' ? item.keywords.split(/[,;|]/).map(function(x) { return x.trim(); }).filter(Boolean) : []);
-      const relatedIds = Array.isArray(item.related_ids) ? item.related_ids : (Array.isArray(item.relatedIds) ? item.relatedIds : []);
-      const recommendedIds = Array.isArray(item.recommended_ids) ? item.recommended_ids : (Array.isArray(item.recommendedIds) ? item.recommendedIds : []);
+      const galleryUrls = uniqueList(toStringList(item.gallery_urls !== undefined ? item.gallery_urls : item.galleryUrls));
+      const galleryIds = uniqueList(toStringList(item.gallery_ids !== undefined ? item.gallery_ids : item.galleryIds));
+      const keywords = Array.isArray(item.keywords) ? item.keywords : toStringList(item.keywords);
+      const relatedIds = Array.isArray(item.related_ids) ? item.related_ids : toStringList(item.related_ids !== undefined ? item.related_ids : item.relatedIds);
+      const recommendedIds = Array.isArray(item.recommended_ids) ? item.recommended_ids : toStringList(item.recommended_ids !== undefined ? item.recommended_ids : item.recommendedIds);
       const contentHtml = item.contentHtml || item.contenido_html || '';
-      const imageUrl = item.imageUrl || item.imagen_url || '';
+      const imageUrl = item.imageUrl || item.imagen_url || item.image_url || '';
       const audioUrl = item.audioUrl || item.audio_url || '';
       const articleId = item.id || fallbackId || '';
+      const derivedImageId = item.imageId || item.image_id || extractDriveFileId(imageUrl) || '';
+      const derivedAudioId = item.audioId || item.audio_id || extractDriveFileId(audioUrl) || '';
       return Object.assign({}, item, {
         id: articleId,
         entryPoint: item.entryPoint || item.entry_point || '',
@@ -1380,19 +1408,29 @@
         audience: item.audience || '',
         order: Number(item.order || item.orden || 9999),
         searchText: item.searchText || item.search_text || [item.titulo, item.resumen, item.categoria, item.subcategoria, keywords.join(' ')].filter(Boolean).join(' '),
-        hasAudio: !!(item.hasAudio || item.has_audio || audioUrl || item.audioId || item.audio_id),
-        hasImage: !!(item.hasImage || item.has_image || imageUrl || item.imageId || item.image_id),
+        hasAudio: !!(item.hasAudio || item.has_audio || audioUrl || derivedAudioId),
+        hasImage: !!(item.hasImage || item.has_image || imageUrl || derivedImageId),
         hasGallery: !!(item.hasGallery || item.has_gallery || galleryUrls.length || galleryIds.length),
-        imageId: item.imageId || item.image_id || extractDriveFileId(imageUrl) || '',
-        audioId: item.audioId || item.audio_id || extractDriveFileId(audioUrl) || ''
+        imageId: derivedImageId,
+        audioId: derivedAudioId
       });
     }
 
     function extractDriveFileId(value) {
       const raw = String(value || '').trim();
       if (!raw) return '';
-      const match = raw.match(/(?:drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?export=[^&]*&id=|thumbnail\?id=)|docs\.google\.com\/uc\?id=)([a-zA-Z0-9_-]{10,})/i);
-      return match ? match[1] : '';
+      const patterns = [
+        /drive\.google\.com\/(?:file\/d\/|open\?id=)([a-zA-Z0-9_-]{10,})/i,
+        /drive\.google\.com\/(?:uc|thumbnail)\?[^#]*?id=([a-zA-Z0-9_-]{10,})/i,
+        /drive\.google\.com\/view\?[^#]*?id=([a-zA-Z0-9_-]{10,})/i,
+        /docs\.google\.com\/uc\?[^#]*?id=([a-zA-Z0-9_-]{10,})/i,
+        /[?&]id=([a-zA-Z0-9_-]{10,})/i
+      ];
+      for (let i = 0; i < patterns.length; i++) {
+        const match = raw.match(patterns[i]);
+        if (match) return match[1];
+      }
+      return '';
     }
 
     function normalizeStaticEntryPayload(raw, entryId) {
@@ -2349,9 +2387,6 @@
     function hydrateArticleMediaStatic(id, article, triggerEl, clickEvent) {
       const cleanId = String(id || '').trim();
       if (!cleanId || !article) return;
-      const hasUsefulMedia = !!(article.imageUrl || article.audioUrl || (article.galleryUrls && article.galleryUrls.length) || article.imageId || article.audioId || (article.galleryIds && article.galleryIds.length));
-      if (hasUsefulMedia) return;
-
       fetchStaticMedia(cleanId).then(function(mediaRaw) {
         if (!mediaRaw) return;
         const hydrated = mergeStaticMediaIntoArticle(article, mediaRaw);
@@ -2748,39 +2783,55 @@
     }
 
 
+    function buildImageCandidates(url, fileId, width) {
+      const candidates = [];
+      const raw = String(url || '').trim();
+      const id = String(fileId || extractDriveFileId(raw) || '').trim();
+      if (id) {
+        candidates.push(buildDriveThumbnailUrl(id, width || 1400));
+        candidates.push(buildDrivePreviewUrl(id));
+      }
+      if (raw && candidates.indexOf(raw) < 0) candidates.push(raw);
+      return candidates;
+    }
+
     function loadItemImage(item) {
       const slotId = 'imageSlot-' + item.id;
       const slot = document.getElementById(slotId);
       if (!slot) return;
 
-      const directSrc = item.imageUrl || item.image_url || '';
+      const directSrc = item.imageUrl || item.image_url || item.imagen_url || '';
       const derivedImageId = item.imageId || item.image_id || extractDriveFileId(directSrc) || '';
-      if (directSrc) {
-        const img = document.createElement('img');
-        img.className = 'hero-image';
-        img.id = slotId;
-        img.alt = item.title || 'Imagen del contenido';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.src = directSrc;
-        img.onerror = function() { if (derivedImageId) { item.imageId = derivedImageId; loadItemImageFallback(item, slotId); } else { img.replaceWith(Object.assign(document.createElement('div'), { className: 'image-placeholder error', textContent: 'No se pudo cargar la imagen.' })); } };
-        slot.replaceWith(img);
-        return;
-      }
+      const candidates = buildImageCandidates(directSrc, derivedImageId, 1400);
 
-      if (derivedImageId) {
-        item.imageId = derivedImageId;
-        const img = document.createElement('img');
-        img.className = 'hero-image';
-        img.id = slotId;
-        img.alt = item.title || 'Imagen del contenido';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.src = buildDriveThumbnailUrl(item.imageId, 1400);
-        img.onerror = function() { loadItemImageFallback(item, slotId); };
-        slot.replaceWith(img);
-        return;
-      }
+      if (!candidates.length) return;
+
+      item.imageId = derivedImageId || item.imageId || '';
+      const img = document.createElement('img');
+      img.className = 'hero-image';
+      img.id = slotId;
+      img.alt = item.title || 'Imagen del contenido';
+      img.loading = 'eager';
+      img.decoding = 'async';
+      let index = 0;
+      img.src = candidates[index];
+      img.onerror = function() {
+        index += 1;
+        if (index < candidates.length) {
+          img.src = candidates[index];
+          return;
+        }
+        if (item.imageId) {
+          loadItemImageFallback(item, slotId);
+        } else {
+          const errorBox = document.createElement('div');
+          errorBox.className = 'image-placeholder error';
+          errorBox.id = slotId;
+          errorBox.textContent = 'No se pudo cargar la imagen.';
+          img.replaceWith(errorBox);
+        }
+      };
+      slot.replaceWith(img);
     }
 
     function loadItemImageFallback(item, slotId) {
@@ -2829,10 +2880,25 @@
       slot.replaceWith(img);
     }
 
-    function renderImageGalleryShell(item) {
-      const urls = Array.isArray(item.galleryUrls) ? item.galleryUrls : [];
-      const ids = Array.isArray(item.galleryIds) ? item.galleryIds : [];
+    function getGallerySources(item) {
+      const urls = uniqueList(toStringList(item.galleryUrls));
+      const ids = uniqueList(toStringList(item.galleryIds));
       const total = Math.max(urls.length, ids.length);
+      const sources = [];
+      for (let i = 0; i < total; i++) {
+        const rawUrl = urls[i] || '';
+        const rawId = ids[i] || extractDriveFileId(rawUrl) || '';
+        sources.push({
+          url: rawUrl,
+          id: rawId
+        });
+      }
+      return sources;
+    }
+
+    function renderImageGalleryShell(item) {
+      const sources = getGallerySources(item);
+      const total = sources.length;
       if (!total) return '';
       const title = item.galleryTitle || 'Galería de imágenes';
       const multiple = total > 1;
@@ -2854,9 +2920,8 @@
     }
 
     function loadItemGallery(item) {
-      const urls = Array.isArray(item.galleryUrls) ? item.galleryUrls : [];
-      const ids = Array.isArray(item.galleryIds) ? item.galleryIds : [];
-      const total = Math.max(urls.length, ids.length);
+      const sources = getGallerySources(item);
+      const total = sources.length;
       if (!total) return;
 
       const block = document.getElementById('gallery-' + item.id);
@@ -2886,32 +2951,48 @@
         setIndex((current + 1) % total);
       });
       dots.forEach(function(dot) { dot.addEventListener('click', function() { setIndex(Number(dot.dataset.galleryDot || 0)); }); });
-
       setIndex(0);
     }
 
     function renderGalleryImage(item, index) {
-      const urls = Array.isArray(item.galleryUrls) ? item.galleryUrls : [];
-      const ids = Array.isArray(item.galleryIds) ? item.galleryIds : [];
-      const directSrc = urls[index] || '';
-      const imageId = ids[index] || '';
+      const sources = getGallerySources(item);
+      const source = sources[index];
       const media = document.getElementById('galleryMedia-' + item.id);
-      if (!media || (!directSrc && !imageId)) return;
+      if (!media || !source) return;
+
+      const candidates = buildImageCandidates(source.url, source.id, 1600);
+      if (!candidates.length) {
+        renderGalleryError(item);
+        return;
+      }
 
       const img = document.createElement('img');
       img.className = 'gallery-img';
       img.alt = (item.galleryTitle || item.title || 'Imagen de galería') + ' ' + (index + 1);
       img.loading = index === 0 ? 'eager' : 'lazy';
       img.decoding = 'async';
-      img.src = directSrc || buildDriveThumbnailUrl(imageId, 1600);
-      img.onerror = function() { if (imageId) loadGalleryImageFallback(item, index); else renderGalleryError(item); };
+      let candidateIndex = 0;
+      img.src = candidates[candidateIndex];
+      img.onerror = function() {
+        candidateIndex += 1;
+        if (candidateIndex < candidates.length) {
+          img.src = candidates[candidateIndex];
+          return;
+        }
+        if (source.id) {
+          loadGalleryImageFallback(item, index, source.id);
+        } else {
+          renderGalleryError(item);
+        }
+      };
       media.innerHTML = '';
       media.appendChild(img);
     }
 
-    function loadGalleryImageFallback(item, index) {
-      const ids = Array.isArray(item.galleryIds) ? item.galleryIds : [];
-      const imageId = ids[index];
+    function loadGalleryImageFallback(item, index, explicitId) {
+      const sources = getGallerySources(item);
+      const source = sources[index] || {};
+      const imageId = explicitId || source.id || extractDriveFileId(source.url);
       const media = document.getElementById('galleryMedia-' + item.id);
       const block = document.getElementById('gallery-' + item.id);
       if (!media || !imageId || !block) return;
@@ -2950,7 +3031,7 @@
       img.className = 'gallery-img';
       img.src = src;
       img.alt = (item.galleryTitle || item.title || 'Imagen de galería') + ' ' + (index + 1);
-      img.loading = 'lazy';
+      img.loading = 'eager';
       img.decoding = 'async';
       media.innerHTML = '';
       media.appendChild(img);
