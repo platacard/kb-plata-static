@@ -1194,5 +1194,31 @@
     "version": "1",
     "gallery_urls": [],
     "gallery_title": ""
+  },
+  {
+    "id": "POD22",
+    "entry_point": "scripts",
+    "status": "published",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "titulo": "¿Qué pasó?",
+    "resumen": "",
+    "keywords": "",
+    "imagen_url": "https://drive.google.com/file/d/1_Qbq9-m0z_wrPsbgQEBwiNWnzxWwkMgy/view?usp=drive_link",
+    "audio_url": "",
+    "audio_titulo": "",
+    "audio_duracion": "",
+    "audio_tipo": "",
+    "orden": 999999,
+    "badge": "",
+    "priority": "",
+    "criticality": "",
+    "is_featured": false,
+    "copy_enabled": false,
+    "content_type": "",
+    "ultima_actualizacion": "",
+    "version": "",
+    "gallery_urls": [],
+    "gallery_title": ""
   }
 ]
