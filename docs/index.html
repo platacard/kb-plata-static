@@ -4056,26 +4056,26 @@
 
   <script>
   /*******************************************************
-   * BANCO PLATA KB - GITHUB ANALYTICS V2
+   * BANCO PLATA KB - GITHUB ANALYTICS V4
    *
-   * Compatible with the new Apps Script Analytics V1.
-   * Content and navigation remain GitHub-native.
-   * Analytics use GET requests only.
+   * GitHub Pages -> Apps Script /exec -> Google Sheets
+   *
+   * This block is deliberately independent from the KB UI.
+   * Analytics failures must never block content rendering.
    *******************************************************/
   (function () {
     'use strict';
 
-    if (window.__BP_KB_ANALYTICS_V2_INSTALLED__) return;
-    window.__BP_KB_ANALYTICS_V2_INSTALLED__ = true;
+    if (window.__BP_KB_ANALYTICS_V4_INSTALLED__) return;
+    window.__BP_KB_ANALYTICS_V4_INSTALLED__ = true;
 
     var ENDPOINT = 'https://script.google.com/a/macros/dif.tech/s/AKfycbyZXvVVDs3hRTH1UMHMH7hEleQ8k6417QBeWhlco-f_U3ywqWyV2112Fs9_X0-pwJGX/exec';
     var HEARTBEAT_MS = 60000;
     var SEARCH_DEBOUNCE_MS = 900;
-    var USER_KEY = 'bp_kb_analytics_user_v2';
-    var SESSION_KEY = 'bp_kb_analytics_session_v2';
-    var lifecycleSent = {};
-    var searchTimers = {};
-    var searchKeys = {};
+    var USER_KEY_STORAGE = 'bp_kb_analytics_user_v4';
+    var SESSION_KEY_STORAGE = 'bp_kb_analytics_session_v4';
+    var KB_OPEN_KEY = 'bp_kb_analytics_open_v4';
+
     var context = {
       view: 'home',
       entryPoint: '',
@@ -4083,48 +4083,61 @@
       articleTitle: ''
     };
 
-    function safeString(value, max) {
+    var timers = {};
+    var lastSearch = {
+      global: '',
+      section: ''
+    };
+
+    var lifecycleSent = {};
+    var activeImages = [];
+    var analyticsStarted = false;
+
+    function safe(value, max) {
       if (value === null || value === undefined) return '';
-      return String(value).slice(0, max || 1200);
+      return String(value).slice(0, max || 1500);
     }
 
     function enc(value) {
-      return encodeURIComponent(safeString(value, 2000));
+      return encodeURIComponent(safe(value, 2000));
     }
 
-    function randomId(prefix) {
+    function makeId(prefix) {
       return prefix + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 12);
     }
 
-    function userKey() {
+    function getUserKey() {
       try {
-        var existing = localStorage.getItem(USER_KEY);
+        var existing = localStorage.getItem(USER_KEY_STORAGE);
         if (existing) return existing;
-        var created = randomId('u_');
-        localStorage.setItem(USER_KEY, created);
+        var created = makeId('u_');
+        localStorage.setItem(USER_KEY_STORAGE, created);
         return created;
-      } catch (e) {
-        return randomId('u_');
+      } catch (err) {
+        return makeId('u_');
       }
     }
 
-    /* A page load starts a new analytics session. */
-    function createSession() {
-      var created = randomId('s_');
+    function getSessionId() {
       try {
-        sessionStorage.setItem(SESSION_KEY, created);
-      } catch (e) {}
+        var existing = sessionStorage.getItem(SESSION_KEY_STORAGE);
+        if (existing) return existing;
+      } catch (err) {}
+
+      var created = makeId('s_');
+      try {
+        sessionStorage.setItem(SESSION_KEY_STORAGE, created);
+      } catch (err2) {}
       return created;
     }
 
-    var CURRENT_SESSION_ID = createSession();
-
-    function sessionId() {
-      return CURRENT_SESSION_ID;
-    }
+    var SESSION_ID = getSessionId();
 
     function deviceType() {
-      var width = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0);
+      var width = Math.max(
+        window.innerWidth || 0,
+        document.documentElement.clientWidth || 0
+      );
       if (width <= 760) return 'mobile';
       if (width <= 1024) return 'tablet';
       return 'desktop';
@@ -4138,71 +4151,80 @@
       if (next.articleTitle !== undefined) context.articleTitle = next.articleTitle || '';
     }
 
-    /*
-     * IMPORTANT:
-     * These parameter names match the Apps Script backend exactly:
-     * event, session, user, view, entry, article, title, search,
-     * device, url, referrer, ua, client_ts, meta.
-     */
-    function buildUrl(eventType, extra) {
+    function currentUrl() {
+      try {
+        return window.location.href;
+      } catch (err) {
+        return '';
+      }
+    }
+
+    function buildEventUrl(eventType, extra) {
       extra = extra || {};
 
-      var params = {
+      var metadata = extra.metadata || {};
+      var metaString = '{}';
+      try {
+        metaString = JSON.stringify(metadata);
+      } catch (err) {
+        metaString = '{}';
+      }
+
+      var values = {
         event: eventType,
-        session: sessionId(),
-        user: userKey(),
+        session: SESSION_ID,
+        user: getUserKey(),
         view: extra.view !== undefined ? extra.view : context.view,
         entry: extra.entry_point !== undefined ? extra.entry_point : context.entryPoint,
         article: extra.article_id !== undefined ? extra.article_id : context.articleId,
         title: extra.article_title !== undefined ? extra.article_title : context.articleTitle,
         search: extra.search_query !== undefined ? extra.search_query : '',
         device: deviceType(),
-        url: window.location.href,
+        url: currentUrl(),
         referrer: document.referrer || '',
         ua: navigator.userAgent || '',
         client_ts: new Date().toISOString(),
-        meta: '{}'
+        meta: safe(metaString, 1800),
+        _: Date.now()
       };
 
-      if (extra.metadata !== undefined) {
-        try {
-          params.meta = JSON.stringify(extra.metadata || {});
-        } catch (e) {
-          params.meta = '{}';
-        }
-      }
-
-      var query = Object.keys(params).map(function (key) {
-        return encodeURIComponent(key) + '=' + enc(params[key]);
+      var query = Object.keys(values).map(function (key) {
+        return encodeURIComponent(key) + '=' + enc(values[key]);
       }).join('&');
 
-      return ENDPOINT + '?' + query + '&_=' + Date.now();
+      return ENDPOINT + '?' + query;
     }
 
+    /*
+     * Primary transport: image GET.
+     *
+     * We never inspect the response, so CORS is irrelevant.
+     * A tracking failure cannot prevent the KB from working.
+     */
     function send(eventType, extra, options) {
       if (!eventType) return;
       options = options || {};
 
-      var url = buildUrl(eventType, extra || {});
+      var url = buildEventUrl(eventType, extra || {});
 
-      /*
-       * Image GET is intentionally used as the primary transport.
-       * The browser does not need CORS permission to request an image,
-       * and the KB does not wait for a server response.
-       */
       try {
         var img = new Image();
         img.decoding = 'async';
+        activeImages.push(img);
+        img.onload = img.onerror = function () {
+          var index = activeImages.indexOf(img);
+          if (index >= 0) activeImages.splice(index, 1);
+        };
         img.src = url;
-        return;
-      } catch (e) {}
+        return true;
+      } catch (err) {}
 
-      /* Fallback */
       try {
         if (navigator.sendBeacon) {
           navigator.sendBeacon(url);
+          return true;
         }
-      } catch (e2) {}
+      } catch (err2) {}
 
       try {
         if (window.fetch) {
@@ -4213,143 +4235,177 @@
             credentials: 'omit',
             keepalive: options.keepalive !== false
           }).catch(function () {});
+          return true;
         }
-      } catch (e3) {}
+      } catch (err3) {}
+
+      return false;
     }
 
-    function articleIdFrom(el) {
-      if (!el || !el.dataset) return '';
-      return safeString(el.dataset.open || el.dataset.related || el.dataset.globalOpen || '', 500);
+    function articleIdFrom(element) {
+      if (!element || !element.dataset) return '';
+      return safe(
+        element.dataset.open ||
+        element.dataset.related ||
+        element.dataset.globalOpen ||
+        '',
+        500
+      );
     }
 
-    function articleTitleFrom(el) {
-      if (!el) return '';
-      var heading = el.querySelector('h2, h3, h4, strong');
-      if (heading && heading.textContent) return safeString(heading.textContent.trim(), 500);
-      return safeString(el.textContent.trim(), 500);
+    function articleTitleFrom(element) {
+      if (!element) return '';
+      try {
+        var heading = element.querySelector('h2, h3, h4, strong');
+        if (heading && heading.textContent) {
+          return safe(heading.textContent.trim(), 500);
+        }
+      } catch (err) {}
+      return safe(element.textContent || '', 500).trim();
     }
 
-    function entryPointFrom(el) {
-      if (!el || !el.dataset) return context.entryPoint || '';
-      return safeString(el.dataset.globalEntry || el.dataset.entry || context.entryPoint || '', 120);
-    }
-
-    function trackEntryOpen(el) {
-      var entry = safeString(el && el.dataset ? el.dataset.entry : '', 120);
-      if (!entry) return;
-      setContext({ view: 'entry_point', entryPoint: entry, articleId: '', articleTitle: '' });
-      send('entry_point_open', {
-        view: 'entry_point',
-        entry_point: entry,
-        metadata: { source: 'entry_card' }
-      });
-    }
-
-    function trackArticleOpen(el, source) {
-      var id = articleIdFrom(el);
-      if (!id) return;
-      var entry = entryPointFrom(el);
-      var title = articleTitleFrom(el);
-      setContext({ view: 'article', entryPoint: entry, articleId: id, articleTitle: title });
-      send('article_open', {
-        view: 'article',
-        entry_point: entry,
-        article_id: id,
-        article_title: title,
-        metadata: { source: source || 'article_card' }
-      });
-    }
-
-    function trackGlobalResultOpen(el) {
-      var id = safeString(el && el.dataset ? el.dataset.globalOpen : '', 500);
-      if (!id) return;
-      var entry = safeString(el.dataset.globalEntry || '', 120);
-      var title = articleTitleFrom(el);
-      send('global_result_open', {
-        view: 'home',
-        entry_point: entry,
-        article_id: id,
-        article_title: title,
-        search_query: globalSearchValue(),
-        metadata: { source: 'global_search_result' }
-      });
+    function entryFromElement(element) {
+      if (!element || !element.dataset) return context.entryPoint || '';
+      return safe(
+        element.dataset.globalEntry ||
+        element.dataset.entry ||
+        context.entryPoint ||
+        '',
+        120
+      );
     }
 
     function globalSearchValue() {
       var input = document.getElementById('homeGlobalSearchInput');
-      return input ? safeString(input.value.trim(), 500) : '';
+      return input ? safe(input.value || '', 500).trim() : '';
     }
 
     function sectionSearchValue() {
       var input = document.getElementById('searchInput');
-      return input ? safeString(input.value.trim(), 500) : '';
+      return input ? safe(input.value || '', 500).trim() : '';
     }
 
     function activeCategory() {
-      var node = document.querySelector('#categoryChips [data-cat].active');
-      return node && node.dataset ? safeString(node.dataset.cat || 'all', 200) : 'all';
+      var active = document.querySelector('#categoryChips [data-cat].active');
+      return active && active.dataset
+        ? safe(active.dataset.cat || 'all', 200)
+        : 'all';
     }
 
     function globalResultCount() {
       var root = document.getElementById('homeGlobalResults');
-      return root ? root.querySelectorAll('[data-global-open]').length : 0;
+      return root
+        ? root.querySelectorAll('[data-global-open]').length
+        : 0;
     }
 
     function sectionResultCount() {
       var root = document.getElementById('results');
-      return root ? root.querySelectorAll('[data-open]').length : 0;
+      return root
+        ? root.querySelectorAll('[data-open]').length
+        : 0;
     }
 
-    function registerGlobalSearch() {
+    function trackGlobalSearch() {
       var query = globalSearchValue();
       if (query.length < 2) return;
-      var key = query + '|' + globalResultCount();
-      if (searchKeys.global === key) return;
-      searchKeys.global = key;
+
+      var count = globalResultCount();
+      var key = query + '|' + count;
+      if (lastSearch.global === key) return;
+      lastSearch.global = key;
+
       send('global_search', {
         view: 'home',
         entry_point: 'global',
         search_query: query,
-        metadata: { results_count: globalResultCount() }
+        metadata: {
+          results_count: count
+        }
       });
     }
 
-    function registerSectionSearch() {
+    function trackSectionSearch() {
       var query = sectionSearchValue();
       var category = activeCategory();
       var entry = context.entryPoint || '';
+
       if (query.length < 2 && category === 'all') return;
-      var key = entry + '|' + query + '|' + category + '|' + sectionResultCount();
-      if (searchKeys.section === key) return;
-      searchKeys.section = key;
+
+      var count = sectionResultCount();
+      var key = entry + '|' + query + '|' + category + '|' + count;
+      if (lastSearch.section === key) return;
+      lastSearch.section = key;
+
       send('section_search', {
         view: 'entry_point',
         entry_point: entry,
         search_query: query,
         metadata: {
           category: category,
-          results_count: sectionResultCount()
+          results_count: count
         }
       });
     }
 
     function scheduleSearch(kind) {
-      clearTimeout(searchTimers[kind]);
-      searchTimers[kind] = setTimeout(function () {
-        if (kind === 'global') registerGlobalSearch();
-        else registerSectionSearch();
+      clearTimeout(timers[kind]);
+      timers[kind] = setTimeout(function () {
+        try {
+          if (kind === 'global') trackGlobalSearch();
+          else trackSectionSearch();
+        } catch (err) {
+          console.warn('Analytics search event failed', err);
+        }
       }, SEARCH_DEBOUNCE_MS);
     }
 
-    function trackFeedback(el) {
-      var helpful = !!(el && el.dataset && el.dataset.feedback === 'yes');
-      send(helpful ? 'feedback_yes' : 'feedback_no', {
-        view: 'article',
-        entry_point: context.entryPoint || '',
-        article_id: context.articleId || '',
-        article_title: context.articleTitle || '',
-        metadata: { source: 'article_feedback' }
+    function trackGlobalResult(element) {
+      var id = safe(
+        element && element.dataset
+          ? element.dataset.globalOpen || ''
+          : '',
+        500
+      );
+      if (!id) return;
+
+      var entry = safe(
+        element.dataset.globalEntry || '',
+        120
+      );
+      var title = articleTitleFrom(element);
+
+      send('global_result_open', {
+        view: 'home',
+        entry_point: entry,
+        article_id: id,
+        article_title: title,
+        search_query: globalSearchValue(),
+        metadata: {
+          source: 'global_search_result'
+        }
       });
+    }
+
+    function trackFeedback(element) {
+      var helpful = !!(
+        element &&
+        element.dataset &&
+        element.dataset.feedback === 'yes'
+      );
+
+      send(
+        helpful ? 'feedback_yes' : 'feedback_no',
+        {
+          view: 'article',
+          entry_point: context.entryPoint || '',
+          article_id: context.articleId || '',
+          article_title: context.articleTitle || '',
+          metadata: {
+            source: 'article_feedback'
+          }
+        }
+      );
     }
 
     function trackFavorite() {
@@ -4362,11 +4418,19 @@
     }
 
     function trackContentGap(source) {
+      var isGlobal = source === 'global';
+
       send('content_gap', {
-        view: source === 'global' ? 'home' : 'entry_point',
-        entry_point: source === 'global' ? 'global' : context.entryPoint || '',
-        search_query: source === 'global' ? globalSearchValue() : sectionSearchValue(),
-        metadata: { source: source === 'global' ? 'global_no_results' : 'section_no_results' }
+        view: isGlobal ? 'home' : 'entry_point',
+        entry_point: isGlobal ? 'global' : context.entryPoint || '',
+        search_query: isGlobal
+          ? globalSearchValue()
+          : sectionSearchValue(),
+        metadata: {
+          source: isGlobal
+            ? 'global_no_results'
+            : 'section_no_results'
+        }
       });
     }
 
@@ -4376,98 +4440,150 @@
         entry_point: context.entryPoint || '',
         article_id: context.articleId || '',
         article_title: context.articleTitle || '',
-        metadata: { heartbeat: true }
+        metadata: {
+          heartbeat: true
+        }
       });
     }
 
-    function lifecycleOnce(eventType) {
+    function lifecycle(eventType) {
       if (lifecycleSent[eventType]) return;
       lifecycleSent[eventType] = true;
+
       send(eventType, {
         view: context.view || 'home',
         entry_point: context.entryPoint || '',
         article_id: context.articleId || '',
         article_title: context.articleTitle || ''
-      }, { keepalive: true });
+      }, {
+        keepalive: true
+      });
     }
 
-    /* ===================================================
-       ANALYTICS FOR NON-NAVIGATION INTERACTIONS
-       =================================================== */
+    /* ---------------------------------------------------
+       Navigation hooks
+       --------------------------------------------------- */
+
+    function installNavigationHooks() {
+      try {
+        if (typeof window.openGlobalResult === 'function' && !window.__BP_WRAP_GLOBAL_RESULT_V4__) {
+          var originalGlobalResult = window.openGlobalResult;
+          window.openGlobalResult = function (id, entryPoint, triggerEl, clickEvent) {
+            try {
+              if (triggerEl) {
+                trackGlobalResult(triggerEl);
+              } else {
+                send('global_result_open', {
+                  view: 'home',
+                  entry_point: entryPoint || '',
+                  article_id: id || '',
+                  search_query: globalSearchValue(),
+                  metadata: { source: 'global_search_result' }
+                });
+              }
+            } catch (err) {
+              console.warn('Analytics global result hook failed', err);
+            }
+            return originalGlobalResult.apply(this, arguments);
+          };
+          window.__BP_WRAP_GLOBAL_RESULT_V4__ = true;
+        }
+      } catch (err2) {
+        console.warn('Analytics navigation hook install failed', err2);
+      }
+    }
+
+    /* ---------------------------------------------------
+       Delegated interaction tracking
+       --------------------------------------------------- */
 
     document.addEventListener('input', function (event) {
-      var target = event.target;
-      if (!target) return;
-      if (target.id === 'homeGlobalSearchInput') scheduleSearch('global');
-      if (target.id === 'searchInput') scheduleSearch('section');
+      try {
+        var target = event.target;
+        if (!target) return;
+        if (target.id === 'homeGlobalSearchInput') scheduleSearch('global');
+        if (target.id === 'searchInput') scheduleSearch('section');
+      } catch (err) {}
     }, true);
 
     document.addEventListener('click', function (event) {
-      var target = event.target;
-      if (!target || !target.closest) return;
+      try {
+        var target = event.target;
+        if (!target || !target.closest) return;
 
-      var feedback = target.closest('[data-feedback]');
-      if (feedback) {
-        trackFeedback(feedback);
-        return;
-      }
+        var feedback = target.closest('[data-feedback]');
+        if (feedback) {
+          trackFeedback(feedback);
+          return;
+        }
 
-      var favorite = target.closest('#favoriteArticleBtn');
-      if (favorite) {
-        trackFavorite();
-        return;
-      }
+        var favorite = target.closest('#favoriteArticleBtn');
+        if (favorite) {
+          trackFavorite();
+          return;
+        }
 
-      var globalGap = target.closest('#homeSendContentGap');
-      if (globalGap) {
-        trackContentGap('global');
-        return;
-      }
+        var globalGap = target.closest('#homeSendContentGap');
+        if (globalGap) {
+          trackContentGap('global');
+          return;
+        }
 
-      var sectionGap = target.closest('#sendContentGap');
-      if (sectionGap) {
-        trackContentGap('section');
+        var sectionGap = target.closest('#sendContentGap');
+        if (sectionGap) {
+          trackContentGap('section');
+        }
+      } catch (err2) {
+        console.warn('Analytics click tracking failed', err2);
       }
     }, true);
 
     document.addEventListener('click', function (event) {
-      var target = event.target;
-      if (!target || !target.closest) return;
-      var categoryButton = target.closest('#categoryChips [data-cat]');
-      if (!categoryButton) return;
-      setTimeout(function () {
-        registerSectionSearch();
-      }, 150);
+      try {
+        var target = event.target;
+        if (!target || !target.closest) return;
+
+        var categoryButton = target.closest('#categoryChips [data-cat]');
+        if (!categoryButton) return;
+
+        setTimeout(function () {
+          trackSectionSearch();
+        }, 150);
+      } catch (err) {}
     }, true);
 
-    /* ===================================================
-       LIFECYCLE
-       =================================================== */
+    /* ---------------------------------------------------
+       Lifecycle
+       --------------------------------------------------- */
 
     document.addEventListener('visibilitychange', function () {
-      if (document.hidden) {
-        lifecycleSent.tab_hidden = false;
-        lifecycleOnce('tab_hidden');
-      } else {
-        lifecycleSent.tab_visible = false;
-        lifecycleOnce('tab_visible');
-        heartbeat();
-      }
+      try {
+        if (document.hidden) {
+          lifecycleSent.tab_hidden = false;
+          lifecycle('tab_hidden');
+        } else {
+          lifecycleSent.tab_visible = false;
+          lifecycle('tab_visible');
+          heartbeat();
+        }
+      } catch (err) {}
     });
 
     window.addEventListener('pagehide', function () {
-      lifecycleOnce('session_close');
+      lifecycle('session_close');
     });
 
     window.addEventListener('beforeunload', function () {
-      lifecycleOnce('session_close');
+      lifecycle('session_close');
     });
 
-    /* ===================================================
-       START
-       =================================================== */
+    /* ---------------------------------------------------
+       Start
+       --------------------------------------------------- */
 
-    function initialize() {
+    function start() {
+      if (analyticsStarted) return;
+      analyticsStarted = true;
 
       setContext({
         view: 'home',
@@ -4476,7 +4592,7 @@
         articleTitle: ''
       });
 
-      /* Every page load is a new KB access/session. */
+      /* Every page load = one analytics session. */
       send('kb_open', {
         view: 'home',
         metadata: {
@@ -4486,26 +4602,30 @@
         }
       });
 
-      /* First heartbeat shortly after entering. */
+      /* Give the KB a moment to expose global functions. */
+      setTimeout(installNavigationHooks, 250);
+
+      /* First presence signal. */
       setTimeout(heartbeat, 1500);
 
-      /* Keep session active while the tab stays open. */
+      /* Keep presence alive. */
       setInterval(heartbeat, HEARTBEAT_MS);
     }
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function () {
-        setTimeout(initialize, 400);
+        setTimeout(start, 300);
       }, { once: true });
     } else {
-      setTimeout(initialize, 400);
+      setTimeout(start, 300);
     }
 
     window.BancoPlataKBAnalytics = {
       track: send,
       setContext: setContext,
-      getUserKey: userKey,
-      getSessionId: sessionId
+      getUserKey: getUserKey,
+      getSessionId: function () { return SESSION_ID; },
+      getEndpoint: function () { return ENDPOINT; }
     };
 
   })();
