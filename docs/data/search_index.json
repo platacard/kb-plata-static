@@ -2018,5 +2018,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  venta cruzada onboarding y descarga "
+  },
+  {
+    "id": "FLOW263",
+    "entry_point": "flujo_reunion",
+    "titulo": "",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "",
+    "keywords": "",
+    "search_text": "  plata crédito  "
   }
 ]
