@@ -1753,6 +1753,26 @@
     }
 
     function openEntryPoint(entryId) {
+      try {
+        if (window.BancoPlataKBAnalytics && window.BancoPlataKBAnalytics.setContext) {
+          window.BancoPlataKBAnalytics.setContext({
+            view: 'entry_point',
+            entryPoint: String(entryId || '').trim(),
+            articleId: '',
+            articleTitle: ''
+          });
+        }
+        if (window.BancoPlataKBAnalytics && window.BancoPlataKBAnalytics.track) {
+          window.BancoPlataKBAnalytics.track('entry_point_open', {
+            view: 'entry_point',
+            entry_point: String(entryId || '').trim(),
+            metadata: { source: 'openEntryPoint' }
+          });
+        }
+      } catch (analyticsError) {
+        console.warn('Entry point analytics failed', analyticsError);
+      }
+
       document.body.classList.add('has-entry-nav');
       state.entry = entryId;
       state.category = 'all';
@@ -3499,6 +3519,37 @@
 
     function logArticleView(item) {
       if (!item) return;
+
+      try {
+        if (window.BancoPlataKBAnalytics && window.BancoPlataKBAnalytics.setContext) {
+          window.BancoPlataKBAnalytics.setContext({
+            view: 'article',
+            entryPoint: item.entryPoint || state.entry || '',
+            articleId: item.id || '',
+            articleTitle: item.title || ''
+          });
+        }
+        if (window.BancoPlataKBAnalytics && window.BancoPlataKBAnalytics.track) {
+          window.BancoPlataKBAnalytics.track('article_open', {
+            view: 'article',
+            entry_point: item.entryPoint || state.entry || '',
+            article_id: item.id || '',
+            article_title: item.title || '',
+            search_query: state.query || '',
+            metadata: {
+              source: 'logArticleView',
+              category: item.category || '',
+              subCategory: item.subCategory || '',
+              hasAudio: !!item.hasAudio,
+              hasImage: !!item.hasImage,
+              hasGallery: !!item.hasGallery
+            }
+          });
+        }
+      } catch (analyticsError) {
+        console.warn('Article analytics failed', analyticsError);
+      }
+
       staticRun()
         .withFailureHandler(function(err) { console.warn('Article view log failed', err); })
         .logArticleView({
@@ -4341,31 +4392,19 @@
     }
 
     /* ===================================================
-       CAPTURE EVENTS
+       ANALYTICS FOR NON-NAVIGATION INTERACTIONS
        =================================================== */
+
+    document.addEventListener('input', function (event) {
+      var target = event.target;
+      if (!target) return;
+      if (target.id === 'homeGlobalSearchInput') scheduleSearch('global');
+      if (target.id === 'searchInput') scheduleSearch('section');
+    }, true);
 
     document.addEventListener('click', function (event) {
       var target = event.target;
       if (!target || !target.closest) return;
-
-      var entryCard = target.closest('[data-entry]');
-      if (entryCard) {
-        trackEntryOpen(entryCard);
-        return;
-      }
-
-      var globalCard = target.closest('[data-global-open]');
-      if (globalCard) {
-        trackGlobalResultOpen(globalCard);
-        trackArticleOpen(globalCard, 'global_search_result');
-        return;
-      }
-
-      var articleCard = target.closest('[data-open], [data-related]');
-      if (articleCard) {
-        trackArticleOpen(articleCard, 'article_card');
-        return;
-      }
 
       var feedback = target.closest('[data-feedback]');
       if (feedback) {
@@ -4389,13 +4428,6 @@
       if (sectionGap) {
         trackContentGap('section');
       }
-    }, true);
-
-    document.addEventListener('input', function (event) {
-      var target = event.target;
-      if (!target) return;
-      if (target.id === 'homeGlobalSearchInput') scheduleSearch('global');
-      if (target.id === 'searchInput') scheduleSearch('section');
     }, true);
 
     document.addEventListener('click', function (event) {
