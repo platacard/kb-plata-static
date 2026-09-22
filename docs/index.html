@@ -4056,25 +4056,29 @@
 
   <script>
   /*******************************************************
-   * BANCO PLATA KB - GITHUB ANALYTICS V4
+   * BANCO PLATA KB - GITHUB ANALYTICS V5
    *
    * GitHub Pages -> Apps Script /exec -> Google Sheets
    *
-   * This block is deliberately independent from the KB UI.
-   * Analytics failures must never block content rendering.
+   * Tracks navigation, searches, feedback, content gaps,
+   * favorites and lifecycle events.
+   *
+   * IMPORTANT:
+   * Feedback is captured by wrapping the real KB
+   * sendFeedback() function so reason/comment are taken
+   * from the same values that the KB actually submits.
    *******************************************************/
   (function () {
     'use strict';
 
-    if (window.__BP_KB_ANALYTICS_V4_INSTALLED__) return;
-    window.__BP_KB_ANALYTICS_V4_INSTALLED__ = true;
+    if (window.__BP_KB_ANALYTICS_V5_INSTALLED__) return;
+    window.__BP_KB_ANALYTICS_V5_INSTALLED__ = true;
 
     var ENDPOINT = 'https://script.google.com/a/macros/dif.tech/s/AKfycbyZXvVVDs3hRTH1UMHMH7hEleQ8k6417QBeWhlco-f_U3ywqWyV2112Fs9_X0-pwJGX/exec';
     var HEARTBEAT_MS = 60000;
     var SEARCH_DEBOUNCE_MS = 900;
-    var USER_KEY_STORAGE = 'bp_kb_analytics_user_v4';
-    var SESSION_KEY_STORAGE = 'bp_kb_analytics_session_v4';
-    var KB_OPEN_KEY = 'bp_kb_analytics_open_v4';
+    var USER_KEY_STORAGE = 'bp_kb_analytics_user_v5';
+    var SESSION_KEY_STORAGE = 'bp_kb_analytics_session_v5';
 
     var context = {
       view: 'home',
@@ -4092,6 +4096,9 @@
     var lifecycleSent = {};
     var activeImages = [];
     var analyticsStarted = false;
+    var feedbackHookInstalled = false;
+    var contentGapSearchHookInstalled = false;
+    var contentGapHomeHookInstalled = false;
 
     function safe(value, max) {
       if (value === null || value === undefined) return '';
@@ -4099,7 +4106,7 @@
     }
 
     function enc(value) {
-      return encodeURIComponent(safe(value, 2000));
+      return encodeURIComponent(safe(value, 5000));
     }
 
     function makeId(prefix) {
@@ -4152,11 +4159,7 @@
     }
 
     function currentUrl() {
-      try {
-        return window.location.href;
-      } catch (err) {
-        return '';
-      }
+      try { return window.location.href; } catch (err) { return ''; }
     }
 
     function buildEventUrl(eventType, extra) {
@@ -4164,11 +4167,7 @@
 
       var metadata = extra.metadata || {};
       var metaString = '{}';
-      try {
-        metaString = JSON.stringify(metadata);
-      } catch (err) {
-        metaString = '{}';
-      }
+      try { metaString = JSON.stringify(metadata); } catch (err) { metaString = '{}'; }
 
       var values = {
         event: eventType,
@@ -4186,7 +4185,7 @@
         referrer: document.referrer || '',
         ua: navigator.userAgent || '',
         client_ts: new Date().toISOString(),
-        meta: safe(metaString, 1800),
+        meta: safe(metaString, 4000),
         _: Date.now()
       };
 
@@ -4197,14 +4196,8 @@
       return ENDPOINT + '?' + query;
     }
 
-    /*
-     * Primary transport: image GET.
-     *
-     * We never inspect the response, so CORS is irrelevant.
-     * A tracking failure cannot prevent the KB from working.
-     */
     function send(eventType, extra, options) {
-      if (!eventType) return;
+      if (!eventType) return false;
       options = options || {};
 
       var url = buildEventUrl(eventType, extra || {});
@@ -4244,68 +4237,38 @@
       return false;
     }
 
-    function articleIdFrom(element) {
-      if (!element || !element.dataset) return '';
-      return safe(
-        element.dataset.open ||
-        element.dataset.related ||
-        element.dataset.globalOpen ||
-        '',
-        500
-      );
+    function globalSearchValue() {
+      var input = document.getElementById('homeGlobalSearchInput');
+      return input ? safe(input.value || '', 1000).trim() : '';
+    }
+
+    function sectionSearchValue() {
+      var input = document.getElementById('searchInput');
+      return input ? safe(input.value || '', 1000).trim() : '';
+    }
+
+    function activeCategory() {
+      var active = document.querySelector('#categoryChips [data-cat].active');
+      return active && active.dataset ? safe(active.dataset.cat || 'all', 200) : 'all';
+    }
+
+    function globalResultCount() {
+      var root = document.getElementById('homeGlobalResults');
+      return root ? root.querySelectorAll('[data-global-open]').length : 0;
+    }
+
+    function sectionResultCount() {
+      var root = document.getElementById('results');
+      return root ? root.querySelectorAll('[data-open]').length : 0;
     }
 
     function articleTitleFrom(element) {
       if (!element) return '';
       try {
         var heading = element.querySelector('h2, h3, h4, strong');
-        if (heading && heading.textContent) {
-          return safe(heading.textContent.trim(), 500);
-        }
+        if (heading && heading.textContent) return safe(heading.textContent.trim(), 1000);
       } catch (err) {}
-      return safe(element.textContent || '', 500).trim();
-    }
-
-    function entryFromElement(element) {
-      if (!element || !element.dataset) return context.entryPoint || '';
-      return safe(
-        element.dataset.globalEntry ||
-        element.dataset.entry ||
-        context.entryPoint ||
-        '',
-        120
-      );
-    }
-
-    function globalSearchValue() {
-      var input = document.getElementById('homeGlobalSearchInput');
-      return input ? safe(input.value || '', 500).trim() : '';
-    }
-
-    function sectionSearchValue() {
-      var input = document.getElementById('searchInput');
-      return input ? safe(input.value || '', 500).trim() : '';
-    }
-
-    function activeCategory() {
-      var active = document.querySelector('#categoryChips [data-cat].active');
-      return active && active.dataset
-        ? safe(active.dataset.cat || 'all', 200)
-        : 'all';
-    }
-
-    function globalResultCount() {
-      var root = document.getElementById('homeGlobalResults');
-      return root
-        ? root.querySelectorAll('[data-global-open]').length
-        : 0;
-    }
-
-    function sectionResultCount() {
-      var root = document.getElementById('results');
-      return root
-        ? root.querySelectorAll('[data-open]').length
-        : 0;
+      return safe(element.textContent || '', 1000).trim();
     }
 
     function trackGlobalSearch() {
@@ -4364,70 +4327,23 @@
 
     function trackGlobalResult(element) {
       var id = safe(
-        element && element.dataset
-          ? element.dataset.globalOpen || ''
-          : '',
+        element && element.dataset ? element.dataset.globalOpen || '' : '',
         500
       );
       if (!id) return;
 
       var entry = safe(
         element.dataset.globalEntry || '',
-        120
+        150
       );
-      var title = articleTitleFrom(element);
 
       send('global_result_open', {
         view: 'home',
         entry_point: entry,
         article_id: id,
-        article_title: title,
+        article_title: articleTitleFrom(element),
         search_query: globalSearchValue(),
-        metadata: {
-          source: 'global_search_result'
-        }
-      });
-    }
-
-    function trackFeedbackYes(element) {
-      if (element && element.disabled) return;
-
-      send('feedback_yes', {
-        view: 'article',
-        entry_point: context.entryPoint || '',
-        article_id: context.articleId || '',
-        article_title: context.articleTitle || '',
-        metadata: {
-          source: 'article_feedback_yes'
-        }
-      });
-    }
-
-    function trackFeedbackNoSubmit() {
-      var reasonElement = document.getElementById('negativeReason');
-      var commentElement = document.getElementById('negativeComment');
-
-      var reason = reasonElement
-        ? safe(reasonElement.value || '', 1000).trim()
-        : '';
-
-      var comment = commentElement
-        ? safe(commentElement.value || '', 5000).trim()
-        : '';
-
-      send('feedback_no', {
-        view: 'article',
-        entry_point: context.entryPoint || '',
-        article_id: context.articleId || '',
-        article_title: context.articleTitle || '',
-        search_query: sectionSearchValue(),
-        reason: reason,
-        comment: comment,
-        metadata: {
-          source: 'article_feedback_no_submit',
-          has_comment: !!comment,
-          has_reason: !!reason
-        }
+        metadata: { source: 'global_search_result' }
       });
     }
 
@@ -4440,19 +4356,18 @@
       });
     }
 
-    function trackContentGap(source) {
+    function trackContentGap(source, comment) {
       var isGlobal = source === 'global';
+      var query = isGlobal ? globalSearchValue() : sectionSearchValue();
 
       send('content_gap', {
         view: isGlobal ? 'home' : 'entry_point',
         entry_point: isGlobal ? 'global' : context.entryPoint || '',
-        search_query: isGlobal
-          ? globalSearchValue()
-          : sectionSearchValue(),
+        search_query: query,
+        comment: comment || '',
         metadata: {
-          source: isGlobal
-            ? 'global_no_results'
-            : 'section_no_results'
+          source: isGlobal ? 'global_no_results' : 'section_no_results',
+          comment: comment || ''
         }
       });
     }
@@ -4463,9 +4378,7 @@
         entry_point: context.entryPoint || '',
         article_id: context.articleId || '',
         article_title: context.articleTitle || '',
-        metadata: {
-          heartbeat: true
-        }
+        metadata: { heartbeat: true }
       });
     }
 
@@ -4478,19 +4391,104 @@
         entry_point: context.entryPoint || '',
         article_id: context.articleId || '',
         article_title: context.articleTitle || ''
-      }, {
-        keepalive: true
-      });
+      }, { keepalive: true });
     }
 
     /* ---------------------------------------------------
-       Navigation hooks
+       Direct hook into the REAL feedback function
        --------------------------------------------------- */
+    function installFeedbackHook() {
+      if (feedbackHookInstalled) return true;
 
+      try {
+        if (typeof window.sendFeedback !== 'function') return false;
+
+        var originalSendFeedback = window.sendFeedback;
+
+        window.sendFeedback = function (isHelpful, reason, comment) {
+          try {
+            send(
+              isHelpful ? 'feedback_yes' : 'feedback_no',
+              {
+                view: 'article',
+                entry_point: context.entryPoint || '',
+                article_id: context.articleId || '',
+                article_title: context.articleTitle || '',
+                search_query: sectionSearchValue(),
+                reason: reason || '',
+                comment: comment || '',
+                metadata: {
+                  source: 'sendFeedback_hook',
+                  reason: reason || '',
+                  comment: comment || '',
+                  has_reason: !!String(reason || '').trim(),
+                  has_comment: !!String(comment || '').trim()
+                }
+              }
+            );
+          } catch (analyticsError) {
+            console.warn('Feedback analytics failed:', analyticsError);
+          }
+
+          return originalSendFeedback.apply(this, arguments);
+        };
+
+        feedbackHookInstalled = true;
+        return true;
+      } catch (err) {
+        console.warn('Feedback hook install failed:', err);
+        return false;
+      }
+    }
+
+    /* ---------------------------------------------------
+       Content-gap hooks capture the user's written comment
+       --------------------------------------------------- */
+    function installContentGapHooks() {
+      try {
+        if (!contentGapSearchHookInstalled && typeof window.submitContentGapFromSearch === 'function') {
+          var originalSearchGap = window.submitContentGapFromSearch;
+          window.submitContentGapFromSearch = function () {
+            var commentEl = document.getElementById('contentGapComment');
+            var comment = commentEl ? safe(commentEl.value || '', 5000).trim() : '';
+            trackContentGap('section', comment);
+            contentGapSearchHookInstalled = true;
+            return originalSearchGap.apply(this, arguments);
+          };
+        }
+      } catch (err1) {
+        console.warn('Section content-gap hook failed:', err1);
+      }
+
+      try {
+        if (!contentGapHomeHookInstalled && typeof window.submitHomeContentGap === 'function') {
+          var originalHomeGap = window.submitHomeContentGap;
+          window.submitHomeContentGap = function () {
+            var commentEl = document.getElementById('homeContentGapComment');
+            var comment = commentEl ? safe(commentEl.value || '', 5000).trim() : '';
+            trackContentGap('global', comment);
+            contentGapHomeHookInstalled = true;
+            return originalHomeGap.apply(this, arguments);
+          };
+        }
+      } catch (err2) {
+        console.warn('Home content-gap hook failed:', err2);
+      }
+    }
+
+    function installFunctionHooks() {
+      installFeedbackHook();
+      installContentGapHooks();
+    }
+
+    /* ---------------------------------------------------
+       Global navigation hook
+       --------------------------------------------------- */
     function installNavigationHooks() {
       try {
-        if (typeof window.openGlobalResult === 'function' && !window.__BP_WRAP_GLOBAL_RESULT_V4__) {
+        if (typeof window.openGlobalResult === 'function' && !window.__BP_WRAP_GLOBAL_RESULT_V5__) {
           var originalGlobalResult = window.openGlobalResult;
+
           window.openGlobalResult = function (id, entryPoint, triggerEl, clickEvent) {
             try {
               if (triggerEl) {
@@ -4507,9 +4505,11 @@
             } catch (err) {
               console.warn('Analytics global result hook failed', err);
             }
+
             return originalGlobalResult.apply(this, arguments);
           };
-          window.__BP_WRAP_GLOBAL_RESULT_V4__ = true;
+
+          window.__BP_WRAP_GLOBAL_RESULT_V5__ = true;
         }
       } catch (err2) {
         console.warn('Analytics navigation hook install failed', err2);
@@ -4517,9 +4517,8 @@
     }
 
     /* ---------------------------------------------------
-       Delegated interaction tracking
+       Search listeners
        --------------------------------------------------- */
-
     document.addEventListener('input', function (event) {
       try {
         var target = event.target;
@@ -4529,25 +4528,55 @@
       } catch (err) {}
     }, true);
 
+    /* ---------------------------------------------------
+       Fallback interaction listeners
+       --------------------------------------------------- */
     document.addEventListener('click', function (event) {
       try {
         var target = event.target;
         if (!target || !target.closest) return;
 
-        var feedback = target.closest('[data-feedback]');
-        if (feedback) {
-          if (feedback.dataset && feedback.dataset.feedback === 'yes') {
-            trackFeedbackYes(feedback);
+        /*
+         * Feedback is normally tracked by sendFeedback() hook.
+         * The fallback only fires if the hook could not be installed.
+         */
+        if (!feedbackHookInstalled) {
+          var feedbackButton = target.closest('[data-feedback="yes"]');
+          if (feedbackButton) {
+            send('feedback_yes', {
+              view: 'article',
+              entry_point: context.entryPoint || '',
+              article_id: context.articleId || '',
+              article_title: context.articleTitle || '',
+              metadata: { source: 'feedback_fallback' }
+            });
+            return;
           }
-          return;
-        }
 
-        var negativeSubmit = target.closest('#sendNegativeFeedback');
-        if (negativeSubmit) {
-          if (!negativeSubmit.disabled) {
-            trackFeedbackNoSubmit();
+          var negativeSubmit = target.closest('#sendNegativeFeedback');
+          if (negativeSubmit && !negativeSubmit.disabled) {
+            var reasonElement = document.getElementById('negativeReason');
+            var commentElement = document.getElementById('negativeComment');
+            var reason = reasonElement ? safe(reasonElement.value || '', 1000).trim() : '';
+            var comment = commentElement ? safe(commentElement.value || '', 5000).trim() : '';
+
+            send('feedback_no', {
+              view: 'article',
+              entry_point: context.entryPoint || '',
+              article_id: context.articleId || '',
+              article_title: context.articleTitle || '',
+              search_query: sectionSearchValue(),
+              reason: reason,
+              comment: comment,
+              metadata: {
+                source: 'feedback_negative_fallback',
+                reason: reason,
+                comment: comment
+              }
+            });
+
+            return;
           }
-          return;
         }
 
         var favorite = target.closest('#favoriteArticleBtn');
@@ -4556,16 +4585,6 @@
           return;
         }
 
-        var globalGap = target.closest('#homeSendContentGap');
-        if (globalGap) {
-          trackContentGap('global');
-          return;
-        }
-
-        var sectionGap = target.closest('#sendContentGap');
-        if (sectionGap) {
-          trackContentGap('section');
-        }
       } catch (err2) {
         console.warn('Analytics click tracking failed', err2);
       }
@@ -4588,7 +4607,6 @@
     /* ---------------------------------------------------
        Lifecycle
        --------------------------------------------------- */
-
     document.addEventListener('visibilitychange', function () {
       try {
         if (document.hidden) {
@@ -4613,7 +4631,6 @@
     /* ---------------------------------------------------
        Start
        --------------------------------------------------- */
-
     function start() {
       if (analyticsStarted) return;
       analyticsStarted = true;
@@ -4625,7 +4642,6 @@
         articleTitle: ''
       });
 
-      /* Every page load = one analytics session. */
       send('kb_open', {
         view: 'home',
         metadata: {
@@ -4635,13 +4651,24 @@
         }
       });
 
-      /* Give the KB a moment to expose global functions. */
-      setTimeout(installNavigationHooks, 250);
+      /*
+       * These functions are already defined by the KB before
+       * this Analytics script. Install now and retry shortly.
+       */
+      installFunctionHooks();
+      installNavigationHooks();
 
-      /* First presence signal. */
+      setTimeout(function () {
+        installFunctionHooks();
+        installNavigationHooks();
+      }, 100);
+
+      setTimeout(function () {
+        installFunctionHooks();
+        installNavigationHooks();
+      }, 500);
+
       setTimeout(heartbeat, 1500);
-
-      /* Keep presence alive. */
       setInterval(heartbeat, HEARTBEAT_MS);
     }
 
