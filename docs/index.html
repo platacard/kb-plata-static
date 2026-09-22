@@ -4020,6 +4020,12 @@
     var usageFlushTimer = null;
     var usageFlushing = false;
 
+    /*
+     * Apps Script Web App endpoint used ONLY for analytics.
+     * The KB content itself continues to load directly from GitHub Pages.
+     */
+    var KB_USAGE_ENDPOINT = 'https://script.google.com/a/macros/dif.tech/s/AKfycbxUit04NOEMMZDpClijPq1YGBqftLFzvCb-cac147gurHT0_5iMkiTAazyG6jGpDvSu7Q/exec';
+
     var usageContext = {
       view: 'home',
       entryPoint: '',
@@ -4094,46 +4100,86 @@
       }
     }
 
-    function usageFlush() {
+    function sendUsagePayload(payload, preferBeacon) {
+      if (!KB_USAGE_ENDPOINT || !payload) return false;
+
+      var body = JSON.stringify(payload);
+
+      /*
+       * sendBeacon is ideal for analytics because it is designed to keep
+       * sending while the page is being hidden/unloaded. It also uses a
+       * simple text/plain request, which avoids a CORS preflight.
+       */
+      if (preferBeacon && navigator.sendBeacon) {
+        try {
+          var blob = new Blob([body], {
+            type: 'text/plain;charset=UTF-8'
+          });
+          if (navigator.sendBeacon(KB_USAGE_ENDPOINT, blob)) {
+            return true;
+          }
+        } catch (err) {}
+      }
+
+      /*
+       * Fallback for normal background delivery.
+       * no-cors is intentional: we only send analytics and never need the
+       * response body. Apps Script receives the POST in doPost(e).
+       */
+      try {
+        fetch(KB_USAGE_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=UTF-8'
+          },
+          body: body,
+          keepalive: true
+        }).catch(function() {});
+        return true;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    function usageFlush(preferBeacon) {
       clearTimeout(usageFlushTimer);
       usageFlushTimer = null;
 
-      if (!usageQueue.length || usageFlushing) return;
+      if (!usageQueue.length) return;
 
-      var batch = usageQueue.splice(0, 20);
-      usageFlushing = true;
+      /*
+       * Apps Script doPost(e) currently accepts one event object per POST.
+       * Send the small queue as individual lightweight requests rather than
+       * wrapping it into a synthetic event. This preserves the existing
+       * Usage_Events schema and keeps every event separately measurable.
+       */
+      var batch = usageQueue.splice(0, 8);
 
-      try {
-        staticRun()
-          .withSuccessHandler(function() {
-            usageFlushing = false;
-            if (usageQueue.length) {
-              usageFlushTimer = setTimeout(usageFlush, 600);
-            }
-          })
-          .withFailureHandler(function(err) {
-            usageFlushing = false;
-            if (usageQueue.length < 40) {
-              usageQueue = batch.slice(0, 10).concat(usageQueue);
-            }
-            console.warn('Usage analytics failed', err);
-          })
-          .kbRecordUsageEventsV42(batch);
-      } catch (err) {
-        usageFlushing = false;
+      batch.forEach(function(eventPayload, index) {
+        setTimeout(function() {
+          sendUsagePayload(eventPayload, !!preferBeacon);
+        }, index * 25);
+      });
+
+      if (usageQueue.length) {
+        usageFlushTimer = setTimeout(function() {
+          usageFlush(false);
+        }, 300);
       }
     }
 
     function usageHeartbeat() {
-      try {
-        staticRun()
-          .withFailureHandler(function(err) {
-            console.warn('Usage heartbeat failed', err);
-          })
-          .kbHeartbeatV42(usageBasePayload({
-            current_view: usageContext.view || 'home'
-          }));
-      } catch (err) {}
+      sendUsagePayload(
+        usageBasePayload({
+          event_type: 'session_active',
+          current_view: usageContext.view || 'home',
+          metadata: {
+            heartbeat: true
+          }
+        }),
+        false
+      );
     }
 
     function usageSetContext(next) {
@@ -4345,6 +4391,11 @@
         }
       });
 
+      /* Flush the initial open event quickly, without blocking rendering. */
+      setTimeout(function() {
+        usageFlush(false);
+      }, 300);
+
       setTimeout(usageHeartbeat, 1500);
       setInterval(usageHeartbeat, USAGE_HEARTBEAT_MS);
 
@@ -4358,9 +4409,14 @@
         }
       });
 
+      window.addEventListener('pagehide', function() {
+        usageTrack('session_close', { view: usageContext.view || '' });
+        usageFlush(true);
+      });
+
       window.addEventListener('beforeunload', function() {
         usageTrack('session_close', { view: usageContext.view || '' });
-        usageFlush();
+        usageFlush(true);
       });
     }
 
