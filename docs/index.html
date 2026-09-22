@@ -4005,375 +4005,462 @@
 
   <script>
   /*******************************************************
-   * MVP4 v42 - Live Usage Analytics frontend
-   * Anonymous usage tracking, non-blocking and batched.
+   * BANCO PLATA KB - GITHUB ANALYTICS V1
+   *
+   * The KB content/navigation stays fully native to GitHub.
+   * Analytics are sent independently to Apps Script using
+   * cross-origin GET requests, so GitHub Pages never needs
+   * google.script.run and the KB never waits for analytics.
    *******************************************************/
-  (function() {
-    if (window.__BP_KB_USAGE_V42_INSTALLED__) return;
-    window.__BP_KB_USAGE_V42_INSTALLED__ = true;
+  (function () {
+    'use strict';
 
-    var USAGE_FLUSH_DELAY = 2500;
-    var USAGE_HEARTBEAT_MS = 60000;
-    var USAGE_QUEUE_LIMIT = 8;
+    if (window.__BP_KB_ANALYTICS_V1_INSTALLED__) return;
+    window.__BP_KB_ANALYTICS_V1_INSTALLED__ = true;
 
-    var usageQueue = [];
-    var usageFlushTimer = null;
-    var usageFlushing = false;
-
-    var usageContext = {
+    var ENDPOINT = 'https://script.google.com/a/macros/dif.tech/s/AKfycbyZXvVVDs3hRTH1UMHMH7hEleQ8k6417QBeWhlco-f_U3ywqWyV2112Fs9_X0-pwJGX/exec';
+    var HEARTBEAT_MS = 60000;
+    var SEARCH_DEBOUNCE_MS = 900;
+    var SESSION_IDLE_MS = 120000;
+    var USER_KEY = 'bp_kb_analytics_user_v1';
+    var SESSION_KEY = 'bp_kb_analytics_session_v1';
+    var SESSION_START_KEY = 'bp_kb_analytics_session_start_v1';
+    var lifecycleSent = {};
+    var searchTimers = {};
+    var searchKeys = {};
+    var context = {
       view: 'home',
       entryPoint: '',
       articleId: '',
       articleTitle: ''
     };
 
-    function usageSessionId() {
+    function safeString(value, max) {
+      if (value === null || value === undefined) return '';
+      return String(value).slice(0, max || 1200);
+    }
+
+    function enc(value) {
+      return encodeURIComponent(safeString(value, 2000));
+    }
+
+    function getOrCreate(storage, key, prefix) {
       try {
-        var key = 'bp_kb_usage_session_v42';
-        var existing = sessionStorage.getItem(key);
+        var existing = storage.getItem(key);
         if (existing) return existing;
-        var id = 's_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
-        sessionStorage.setItem(key, id);
+        var id = prefix + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+        storage.setItem(key, id);
         return id;
       } catch (e) {
-        return 's_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+        return prefix + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
       }
     }
 
-    function usageUserKey() {
-      try {
-        var key = 'bp_kb_usage_user_v42';
-        var existing = localStorage.getItem(key);
-        if (existing) return existing;
-        var id = 'u_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
-        localStorage.setItem(key, id);
-        return id;
-      } catch (e) {
-        return 'anonymous';
-      }
+    function userKey() {
+      return getOrCreate(localStorage, USER_KEY, 'u_');
     }
 
-    function usageDeviceType() {
-      var w = window.innerWidth || document.documentElement.clientWidth || 0;
-      if (w <= 760) return 'mobile';
-      if (w <= 1024) return 'tablet';
+    function sessionId() {
+      return getOrCreate(sessionStorage, SESSION_KEY, 's_');
+    }
+
+    function sessionAgeMs() {
+      try {
+        var raw = sessionStorage.getItem(SESSION_START_KEY);
+        if (raw) return Math.max(0, Date.now() - Number(raw));
+        sessionStorage.setItem(SESSION_START_KEY, String(Date.now()));
+      } catch (e) {}
+      return 0;
+    }
+
+    function deviceType() {
+      var width = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0);
+      if (width <= 760) return 'mobile';
+      if (width <= 1024) return 'tablet';
       return 'desktop';
     }
 
-    function usageBasePayload(extra) {
+    function setContext(next) {
+      next = next || {};
+      if (next.view !== undefined) context.view = next.view || '';
+      if (next.entryPoint !== undefined) context.entryPoint = next.entryPoint || '';
+      if (next.articleId !== undefined) context.articleId = next.articleId || '';
+      if (next.articleTitle !== undefined) context.articleTitle = next.articleTitle || '';
+    }
+
+    function buildUrl(eventType, extra) {
       extra = extra || {};
-      return Object.assign({
-        session_id: usageSessionId(),
-        user_key: usageUserKey(),
-        view: usageContext.view || '',
-        entry_point: usageContext.entryPoint || '',
-        article_id: usageContext.articleId || '',
-        article_title: usageContext.articleTitle || '',
-        device_type: usageDeviceType(),
-        path: location.pathname + location.search,
+
+      var params = {
+        event_type: eventType,
+        session_id: sessionId(),
+        user_key: userKey(),
+        view: extra.view !== undefined ? extra.view : context.view,
+        entry_point: extra.entry_point !== undefined ? extra.entry_point : context.entryPoint,
+        article_id: extra.article_id !== undefined ? extra.article_id : context.articleId,
+        article_title: extra.article_title !== undefined ? extra.article_title : context.articleTitle,
+        search_query: extra.search_query !== undefined ? extra.search_query : '',
+        device_type: deviceType(),
+        page_url: window.location.href,
         referrer: document.referrer || '',
         user_agent: navigator.userAgent || '',
-        metadata: {}
-      }, extra);
-    }
+        client_timestamp: new Date().toISOString()
+      };
 
-    function usageTrack(eventType, extra) {
-      if (!eventType) return;
-
-      var payload = usageBasePayload(extra || {});
-      payload.event_type = eventType;
-      payload.client_timestamp = new Date().toISOString();
-
-      usageQueue.push(payload);
-
-      if (usageQueue.length >= USAGE_QUEUE_LIMIT) {
-        usageFlush();
+      if (extra.metadata !== undefined) {
+        try {
+          params.metadata = JSON.stringify(extra.metadata || {});
+        } catch (e) {
+          params.metadata = '{}';
+        }
       } else {
-        clearTimeout(usageFlushTimer);
-        usageFlushTimer = setTimeout(usageFlush, USAGE_FLUSH_DELAY);
+        params.metadata = '{}';
       }
+
+      var query = Object.keys(params).map(function (key) {
+        return encodeURIComponent(key) + '=' + enc(params[key]);
+      }).join('&');
+
+      return ENDPOINT + '?' + query + '&_=' + Date.now();
     }
 
-    function usageFlush() {
-      clearTimeout(usageFlushTimer);
-      usageFlushTimer = null;
+    function send(eventType, extra, options) {
+      if (!eventType) return;
+      options = options || {};
+      var url = buildUrl(eventType, extra || {});
 
-      if (!usageQueue.length || usageFlushing) return;
-
-      var batch = usageQueue.splice(0, 20);
-      usageFlushing = true;
-
+      /*
+       * Primary transport: fetch with no-cors + keepalive.
+       * It does not require CORS headers and does not block rendering.
+       */
       try {
-        staticRun()
-          .withSuccessHandler(function() {
-            usageFlushing = false;
-            if (usageQueue.length) {
-              usageFlushTimer = setTimeout(usageFlush, 600);
-            }
-          })
-          .withFailureHandler(function(err) {
-            usageFlushing = false;
-            if (usageQueue.length < 40) {
-              usageQueue = batch.slice(0, 10).concat(usageQueue);
-            }
-            console.warn('Usage analytics failed', err);
-          })
-          .kbRecordUsageEventsV42(batch);
-      } catch (err) {
-        usageFlushing = false;
-      }
-    }
-
-    function usageHeartbeat() {
-      try {
-        staticRun()
-          .withFailureHandler(function(err) {
-            console.warn('Usage heartbeat failed', err);
-          })
-          .kbHeartbeatV42(usageBasePayload({
-            current_view: usageContext.view || 'home'
-          }));
-      } catch (err) {}
-    }
-
-    function usageSetContext(next) {
-      next = next || {};
-      if (next.view !== undefined) usageContext.view = next.view || '';
-      if (next.entryPoint !== undefined) usageContext.entryPoint = next.entryPoint || '';
-      if (next.articleId !== undefined) usageContext.articleId = next.articleId || '';
-      if (next.articleTitle !== undefined) usageContext.articleTitle = next.articleTitle || '';
-    }
-
-    function usageSafeStateValue(prop, fallback) {
-      try {
-        if (typeof state !== 'undefined' && state && state[prop] !== undefined) return state[prop];
+        if (window.fetch) {
+          fetch(url, {
+            method: 'GET',
+            mode: 'no-cors',
+            cache: 'no-store',
+            credentials: 'omit',
+            keepalive: options.keepalive !== false
+          }).catch(function () {});
+          return;
+        }
       } catch (e) {}
-      return fallback;
-    }
 
-    function patchUsageFunctions() {
+      /* Fallback for older/mobile browsers. */
       try {
-        if (typeof openEntryPoint === 'function') {
-          var originalOpenEntryPoint = openEntryPoint;
-          openEntryPoint = function(entryId) {
-            usageSetContext({
-              view: 'entry_point',
-              entryPoint: entryId || '',
-              articleId: '',
-              articleTitle: ''
-            });
-            usageTrack('entry_point_open', {
-              entry_point: entryId || '',
-              metadata: { source: 'entry_card' }
-            });
-            return originalOpenEntryPoint.apply(this, arguments);
-          };
-        }
-
-        if (typeof logArticleView === 'function') {
-          var originalLogArticleView = logArticleView;
-          logArticleView = function(item) {
-            if (item && item.id) {
-              usageSetContext({
-                view: 'article',
-                entryPoint: item.entryPoint || '',
-                articleId: item.id || '',
-                articleTitle: item.title || ''
-              });
-              usageTrack('article_open', {
-                entry_point: item.entryPoint || '',
-                article_id: item.id || '',
-                article_title: item.title || '',
-                category_filter: item.category || '',
-                metadata: {
-                  category: item.category || '',
-                  subCategory: item.subCategory || '',
-                  hasAudio: !!item.hasAudio,
-                  hasImage: !!item.hasImage,
-                  hasGallery: !!item.hasGallery
-                }
-              });
-            }
-            return originalLogArticleView.apply(this, arguments);
-          };
-        }
-
-        if (typeof openGlobalResult === 'function') {
-          var originalOpenGlobalResult = openGlobalResult;
-          openGlobalResult = function(id, entryPoint, triggerEl, clickEvent) {
-            usageTrack('global_result_open', {
-              entry_point: entryPoint || '',
-              article_id: id || '',
-              search_query: usageSafeStateValue('homeSearchQuery', ''),
-              metadata: { source: 'global_search_result' }
-            });
-            return originalOpenGlobalResult.apply(this, arguments);
-          };
-        }
-
-        if (typeof scheduleGlobalSearchLog === 'function') {
-          var originalScheduleGlobalSearchLog = scheduleGlobalSearchLog;
-          scheduleGlobalSearchLog = function(resultsCount) {
-            var query = String(usageSafeStateValue('homeSearchQuery', '') || '').trim();
-            if (query && query.length >= 2) {
-              var key = 'global|' + query + '|' + String(resultsCount || 0);
-              window.__bpKbLastUsageGlobalSearch = window.__bpKbLastUsageGlobalSearch || '';
-              if (window.__bpKbLastUsageGlobalSearch !== key) {
-                window.__bpKbLastUsageGlobalSearch = key;
-                usageTrack('global_search', {
-                  view: 'home',
-                  entry_point: 'global',
-                  search_query: query,
-                  results_count: Number(resultsCount || 0)
-                });
-              }
-            }
-            return originalScheduleGlobalSearchLog.apply(this, arguments);
-          };
-        }
-
-        if (typeof scheduleSearchLog === 'function') {
-          var originalScheduleSearchLog = scheduleSearchLog;
-          scheduleSearchLog = function(resultsCount) {
-            var query = String(usageSafeStateValue('query', '') || '').trim();
-            var category = String(usageSafeStateValue('category', 'all') || 'all');
-            var entry = String(usageSafeStateValue('entry', '') || '');
-
-            if ((query && query.length >= 2) || category !== 'all') {
-              var key = entry + '|' + query + '|' + category + '|' + String(resultsCount || 0);
-              window.__bpKbLastUsageSectionSearch = window.__bpKbLastUsageSectionSearch || '';
-              if (window.__bpKbLastUsageSectionSearch !== key) {
-                window.__bpKbLastUsageSectionSearch = key;
-                usageTrack('section_search', {
-                  view: 'entry_point',
-                  entry_point: entry,
-                  search_query: query,
-                  category_filter: category,
-                  results_count: Number(resultsCount || 0)
-                });
-              }
-            }
-
-            return originalScheduleSearchLog.apply(this, arguments);
-          };
-        }
-
-        if (typeof sendFeedback === 'function') {
-          var originalSendFeedback = sendFeedback;
-          sendFeedback = function(isHelpful, reason, comment) {
-            var item = null;
-            try { item = state.currentItem; } catch (e) {}
-            if (window.__BP_KB_FEEDBACK_SHOULD_BLOCK__ && window.__BP_KB_FEEDBACK_SHOULD_BLOCK__(item)) {
-              return originalSendFeedback.apply(this, arguments);
-            }
-            usageTrack(isHelpful ? 'feedback_yes' : 'feedback_no', {
-              view: 'article',
-              entry_point: item && item.entryPoint ? item.entryPoint : '',
-              article_id: item && item.id ? item.id : '',
-              article_title: item && item.title ? item.title : '',
-              metadata: {
-                reason: reason || '',
-                commentProvided: !!comment
-              }
-            });
-            return originalSendFeedback.apply(this, arguments);
-          };
-        }
-
-        if (typeof submitContentGapFromSearch === 'function') {
-          var originalSubmitContentGapFromSearch = submitContentGapFromSearch;
-          submitContentGapFromSearch = function() {
-            usageTrack('content_gap', {
-              view: 'entry_point',
-              entry_point: usageSafeStateValue('entry', ''),
-              search_query: usageSafeStateValue('query', ''),
-              category_filter: usageSafeStateValue('category', 'all'),
-              metadata: { source: 'section_no_results' }
-            });
-            return originalSubmitContentGapFromSearch.apply(this, arguments);
-          };
-        }
-
-        if (typeof submitHomeContentGap === 'function') {
-          var originalSubmitHomeContentGap = submitHomeContentGap;
-          submitHomeContentGap = function() {
-            usageTrack('content_gap', {
-              view: 'home',
-              entry_point: 'global',
-              search_query: usageSafeStateValue('homeSearchQuery', ''),
-              category_filter: 'all',
-              metadata: { source: 'global_no_results' }
-            });
-            return originalSubmitHomeContentGap.apply(this, arguments);
-          };
-        }
-
-        if (typeof toggleFavorite === 'function') {
-          var originalToggleFavorite = toggleFavorite;
-          toggleFavorite = function(item) {
-            if (item && item.id) {
-              usageTrack('favorite_toggle', {
-                view: 'article',
-                entry_point: item.entryPoint || '',
-                article_id: item.id || '',
-                article_title: item.title || ''
-              });
-            }
-            return originalToggleFavorite.apply(this, arguments);
-          };
-        }
-      } catch (err) {
-        console.warn('Usage analytics patch failed', err);
-      }
+        var img = new Image();
+        img.src = url;
+      } catch (e2) {}
     }
 
-    function initUsageAnalytics() {
-      patchUsageFunctions();
+    function articleIdFrom(el) {
+      if (!el || !el.dataset) return '';
+      return safeString(el.dataset.open || el.dataset.related || el.dataset.globalOpen || '', 500);
+    }
 
-      usageSetContext({
-        view: 'home',
-        entryPoint: '',
-        articleId: '',
-        articleTitle: ''
+    function articleTitleFrom(el) {
+      if (!el) return '';
+      var heading = el.querySelector('h2, h3, h4, strong');
+      if (heading && heading.textContent) return safeString(heading.textContent.trim(), 500);
+      return safeString(el.textContent.trim(), 500);
+    }
+
+    function entryPointFrom(el) {
+      if (!el || !el.dataset) return context.entryPoint || '';
+      return safeString(el.dataset.globalEntry || el.dataset.entry || context.entryPoint || '', 120);
+    }
+
+    function trackEntryOpen(el) {
+      var entry = safeString(el && el.dataset ? el.dataset.entry : '', 120);
+      if (!entry) return;
+      setContext({ view: 'entry_point', entryPoint: entry, articleId: '', articleTitle: '' });
+      send('entry_point_open', {
+        view: 'entry_point',
+        entry_point: entry,
+        metadata: { source: 'entry_card' }
       });
+    }
 
-      usageTrack('kb_open', {
+    function trackArticleOpen(el, source) {
+      var id = articleIdFrom(el);
+      if (!id) return;
+      var entry = entryPointFrom(el);
+      var title = articleTitleFrom(el);
+      setContext({ view: 'article', entryPoint: entry, articleId: id, articleTitle: title });
+      send('article_open', {
+        view: 'article',
+        entry_point: entry,
+        article_id: id,
+        article_title: title,
+        metadata: { source: source || 'article_card' }
+      });
+    }
+
+    function trackGlobalResultOpen(el) {
+      var id = safeString(el && el.dataset ? el.dataset.globalOpen : '', 500);
+      if (!id) return;
+      var entry = safeString(el.dataset.globalEntry || '', 120);
+      var title = articleTitleFrom(el);
+      send('global_result_open', {
         view: 'home',
+        entry_point: entry,
+        article_id: id,
+        article_title: title,
+        search_query: globalSearchValue(),
+        metadata: { source: 'global_search_result' }
+      });
+    }
+
+    function globalSearchValue() {
+      var input = document.getElementById('homeGlobalSearchInput');
+      return input ? safeString(input.value.trim(), 500) : '';
+    }
+
+    function sectionSearchValue() {
+      var input = document.getElementById('searchInput');
+      return input ? safeString(input.value.trim(), 500) : '';
+    }
+
+    function activeCategory() {
+      var node = document.querySelector('#categoryChips [data-cat].active');
+      return node && node.dataset ? safeString(node.dataset.cat || 'all', 200) : 'all';
+    }
+
+    function globalResultCount() {
+      var root = document.getElementById('homeGlobalResults');
+      return root ? root.querySelectorAll('[data-global-open]').length : 0;
+    }
+
+    function sectionResultCount() {
+      var root = document.getElementById('results');
+      return root ? root.querySelectorAll('[data-open]').length : 0;
+    }
+
+    function registerGlobalSearch() {
+      var query = globalSearchValue();
+      if (query.length < 2) return;
+      var key = query + '|' + globalResultCount();
+      if (searchKeys.global === key) return;
+      searchKeys.global = key;
+      send('global_search', {
+        view: 'home',
+        entry_point: 'global',
+        search_query: query,
+        metadata: { results_count: globalResultCount() }
+      });
+    }
+
+    function registerSectionSearch() {
+      var query = sectionSearchValue();
+      var category = activeCategory();
+      var entry = context.entryPoint || '';
+      if (query.length < 2 && category === 'all') return;
+      var key = entry + '|' + query + '|' + category + '|' + sectionResultCount();
+      if (searchKeys.section === key) return;
+      searchKeys.section = key;
+      send('section_search', {
+        view: 'entry_point',
+        entry_point: entry,
+        search_query: query,
         metadata: {
-          screenWidth: window.innerWidth || 0,
-          screenHeight: window.innerHeight || 0
+          category: category,
+          results_count: sectionResultCount()
         }
       });
+    }
 
-      setTimeout(usageHeartbeat, 1500);
-      setInterval(usageHeartbeat, USAGE_HEARTBEAT_MS);
+    function scheduleSearch(kind) {
+      clearTimeout(searchTimers[kind]);
+      searchTimers[kind] = setTimeout(function () {
+        if (kind === 'global') registerGlobalSearch();
+        else registerSectionSearch();
+      }, SEARCH_DEBOUNCE_MS);
+    }
 
-      document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-          usageTrack('tab_hidden', { view: usageContext.view || '' });
-          usageFlush();
-        } else {
-          usageTrack('tab_visible', { view: usageContext.view || '' });
-          usageHeartbeat();
+    function trackFeedback(el) {
+      var helpful = !!(el && el.dataset && el.dataset.feedback === 'yes');
+      send(helpful ? 'feedback_yes' : 'feedback_no', {
+        view: 'article',
+        entry_point: context.entryPoint || '',
+        article_id: context.articleId || '',
+        article_title: context.articleTitle || '',
+        metadata: { source: 'article_feedback' }
+      });
+    }
+
+    function trackFavorite() {
+      send('favorite_toggle', {
+        view: 'article',
+        entry_point: context.entryPoint || '',
+        article_id: context.articleId || '',
+        article_title: context.articleTitle || ''
+      });
+    }
+
+    function trackContentGap(source) {
+      send('content_gap', {
+        view: source === 'global' ? 'home' : 'entry_point',
+        entry_point: source === 'global' ? 'global' : context.entryPoint || '',
+        search_query: source === 'global' ? globalSearchValue() : sectionSearchValue(),
+        metadata: { source: source === 'global' ? 'global_no_results' : 'section_no_results' }
+      });
+    }
+
+    function heartbeat() {
+      send('session_active', {
+        view: context.view || 'home',
+        entry_point: context.entryPoint || '',
+        article_id: context.articleId || '',
+        article_title: context.articleTitle || '',
+        metadata: {
+          heartbeat: true,
+          session_age_ms: sessionAgeMs(),
+          idle_window_ms: SESSION_IDLE_MS
         }
       });
+    }
 
-      window.addEventListener('beforeunload', function() {
-        usageTrack('session_close', { view: usageContext.view || '' });
-        usageFlush();
-      });
+    function lifecycleOnce(eventType) {
+      if (lifecycleSent[eventType]) return;
+      lifecycleSent[eventType] = true;
+      send(eventType, {
+        view: context.view || 'home',
+        entry_point: context.entryPoint || '',
+        article_id: context.articleId || '',
+        article_title: context.articleTitle || ''
+      }, { keepalive: true });
+    }
+
+    /*
+     * Capture listeners intentionally run independently from the existing
+     * KB click handlers. The KB can stop propagation without stopping our
+     * analytics listener because this listener is also registered at the
+     * document capture phase.
+     */
+    document.addEventListener('click', function (event) {
+      var target = event.target;
+      if (!target || !target.closest) return;
+
+      var entryCard = target.closest('[data-entry]');
+      if (entryCard) {
+        trackEntryOpen(entryCard);
+        return;
+      }
+
+      var globalCard = target.closest('[data-global-open]');
+      if (globalCard) {
+        trackGlobalResultOpen(globalCard);
+        trackArticleOpen(globalCard, 'global_search_result');
+        return;
+      }
+
+      var articleCard = target.closest('[data-open], [data-related]');
+      if (articleCard) {
+        trackArticleOpen(articleCard, 'article_card');
+        return;
+      }
+
+      var feedback = target.closest('[data-feedback]');
+      if (feedback) {
+        trackFeedback(feedback);
+        return;
+      }
+
+      var favorite = target.closest('#favoriteArticleBtn');
+      if (favorite) {
+        trackFavorite();
+        return;
+      }
+
+      var globalGap = target.closest('#homeSendContentGap');
+      if (globalGap) {
+        trackContentGap('global');
+        return;
+      }
+
+      var sectionGap = target.closest('#sendContentGap');
+      if (sectionGap) {
+        trackContentGap('section');
+      }
+    }, true);
+
+    document.addEventListener('input', function (event) {
+      var target = event.target;
+      if (!target) return;
+      if (target.id === 'homeGlobalSearchInput') scheduleSearch('global');
+      if (target.id === 'searchInput') scheduleSearch('section');
+    }, true);
+
+    document.addEventListener('click', function (event) {
+      var target = event.target;
+      if (!target || !target.closest) return;
+      var categoryButton = target.closest('#categoryChips [data-cat]');
+      if (!categoryButton) return;
+      setTimeout(function () {
+        registerSectionSearch();
+      }, 150);
+    }, true);
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) lifecycleOnce('tab_hidden');
+      else {
+        lifecycleSent.tab_hidden = false;
+        lifecycleOnce('tab_visible');
+        heartbeat();
+      }
+    });
+
+    window.addEventListener('pagehide', function () {
+      lifecycleOnce('session_close');
+    });
+
+    window.addEventListener('beforeunload', function () {
+      lifecycleOnce('session_close');
+    });
+
+    function initialize() {
+      setContext({ view: 'home', entryPoint: '', articleId: '', articleTitle: '' });
+      var firstOpen = false;
+      try {
+        firstOpen = sessionStorage.getItem('bp_kb_analytics_kb_open_v1') !== '1';
+      } catch (e) {
+        firstOpen = true;
+      }
+
+      if (firstOpen) {
+        send('kb_open', {
+          view: 'home',
+          metadata: {
+            screen_width: window.innerWidth || 0,
+            screen_height: window.innerHeight || 0,
+            device_type: deviceType()
+          }
+        });
+        try {
+          sessionStorage.setItem('bp_kb_analytics_kb_open_v1', '1');
+        } catch (e2) {}
+      }
+
+      setTimeout(heartbeat, 1500);
+      setInterval(heartbeat, HEARTBEAT_MS);
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(initUsageAnalytics, 1200);
-      });
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(initialize, 400);
+      }, { once: true });
     } else {
-      setTimeout(initUsageAnalytics, 1200);
+      setTimeout(initialize, 400);
     }
+
+    window.BancoPlataKBAnalytics = {
+      track: send,
+      setContext: setContext,
+      getUserKey: userKey,
+      getSessionId: sessionId
+    };
   })();
   </script>
-
 
   <script>
     if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
