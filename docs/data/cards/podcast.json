@@ -440,5 +440,31 @@
     "version": "",
     "gallery_urls": [],
     "gallery_title": ""
+  },
+  {
+    "id": "POD22",
+    "entry_point": "podcast",
+    "status": "published",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Costos, tasas y acuerdos",
+    "titulo": "",
+    "resumen": "",
+    "keywords": "",
+    "imagen_url": "",
+    "audio_url": "",
+    "audio_titulo": "",
+    "audio_duracion": "",
+    "audio_tipo": "",
+    "orden": 999999,
+    "badge": "",
+    "priority": "",
+    "criticality": "",
+    "is_featured": false,
+    "copy_enabled": false,
+    "content_type": "",
+    "ultima_actualizacion": "",
+    "version": "",
+    "gallery_urls": [],
+    "gallery_title": ""
   }
 ]
