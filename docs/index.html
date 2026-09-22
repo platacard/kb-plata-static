@@ -4005,26 +4005,23 @@
 
   <script>
   /*******************************************************
-   * BANCO PLATA KB - GITHUB ANALYTICS V1
+   * BANCO PLATA KB - GITHUB ANALYTICS V2
    *
-   * The KB content/navigation stays fully native to GitHub.
-   * Analytics are sent independently to Apps Script using
-   * cross-origin GET requests, so GitHub Pages never needs
-   * google.script.run and the KB never waits for analytics.
+   * Compatible with the new Apps Script Analytics V1.
+   * Content and navigation remain GitHub-native.
+   * Analytics use GET requests only.
    *******************************************************/
   (function () {
     'use strict';
 
-    if (window.__BP_KB_ANALYTICS_V1_INSTALLED__) return;
-    window.__BP_KB_ANALYTICS_V1_INSTALLED__ = true;
+    if (window.__BP_KB_ANALYTICS_V2_INSTALLED__) return;
+    window.__BP_KB_ANALYTICS_V2_INSTALLED__ = true;
 
     var ENDPOINT = 'https://script.google.com/a/macros/dif.tech/s/AKfycbyZXvVVDs3hRTH1UMHMH7hEleQ8k6417QBeWhlco-f_U3ywqWyV2112Fs9_X0-pwJGX/exec';
     var HEARTBEAT_MS = 60000;
     var SEARCH_DEBOUNCE_MS = 900;
-    var SESSION_IDLE_MS = 120000;
-    var USER_KEY = 'bp_kb_analytics_user_v1';
-    var SESSION_KEY = 'bp_kb_analytics_session_v1';
-    var SESSION_START_KEY = 'bp_kb_analytics_session_start_v1';
+    var USER_KEY = 'bp_kb_analytics_user_v2';
+    var SESSION_KEY = 'bp_kb_analytics_session_v2';
     var lifecycleSent = {};
     var searchTimers = {};
     var searchKeys = {};
@@ -4044,33 +4041,35 @@
       return encodeURIComponent(safeString(value, 2000));
     }
 
-    function getOrCreate(storage, key, prefix) {
-      try {
-        var existing = storage.getItem(key);
-        if (existing) return existing;
-        var id = prefix + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
-        storage.setItem(key, id);
-        return id;
-      } catch (e) {
-        return prefix + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
-      }
+    function randomId(prefix) {
+      return prefix + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 12);
     }
 
     function userKey() {
-      return getOrCreate(localStorage, USER_KEY, 'u_');
+      try {
+        var existing = localStorage.getItem(USER_KEY);
+        if (existing) return existing;
+        var created = randomId('u_');
+        localStorage.setItem(USER_KEY, created);
+        return created;
+      } catch (e) {
+        return randomId('u_');
+      }
     }
+
+    /* A page load starts a new analytics session. */
+    function createSession() {
+      var created = randomId('s_');
+      try {
+        sessionStorage.setItem(SESSION_KEY, created);
+      } catch (e) {}
+      return created;
+    }
+
+    var CURRENT_SESSION_ID = createSession();
 
     function sessionId() {
-      return getOrCreate(sessionStorage, SESSION_KEY, 's_');
-    }
-
-    function sessionAgeMs() {
-      try {
-        var raw = sessionStorage.getItem(SESSION_START_KEY);
-        if (raw) return Math.max(0, Date.now() - Number(raw));
-        sessionStorage.setItem(SESSION_START_KEY, String(Date.now()));
-      } catch (e) {}
-      return 0;
+      return CURRENT_SESSION_ID;
     }
 
     function deviceType() {
@@ -4088,33 +4087,38 @@
       if (next.articleTitle !== undefined) context.articleTitle = next.articleTitle || '';
     }
 
+    /*
+     * IMPORTANT:
+     * These parameter names match the Apps Script backend exactly:
+     * event, session, user, view, entry, article, title, search,
+     * device, url, referrer, ua, client_ts, meta.
+     */
     function buildUrl(eventType, extra) {
       extra = extra || {};
 
       var params = {
-        event_type: eventType,
-        session_id: sessionId(),
-        user_key: userKey(),
+        event: eventType,
+        session: sessionId(),
+        user: userKey(),
         view: extra.view !== undefined ? extra.view : context.view,
-        entry_point: extra.entry_point !== undefined ? extra.entry_point : context.entryPoint,
-        article_id: extra.article_id !== undefined ? extra.article_id : context.articleId,
-        article_title: extra.article_title !== undefined ? extra.article_title : context.articleTitle,
-        search_query: extra.search_query !== undefined ? extra.search_query : '',
-        device_type: deviceType(),
-        page_url: window.location.href,
+        entry: extra.entry_point !== undefined ? extra.entry_point : context.entryPoint,
+        article: extra.article_id !== undefined ? extra.article_id : context.articleId,
+        title: extra.article_title !== undefined ? extra.article_title : context.articleTitle,
+        search: extra.search_query !== undefined ? extra.search_query : '',
+        device: deviceType(),
+        url: window.location.href,
         referrer: document.referrer || '',
-        user_agent: navigator.userAgent || '',
-        client_timestamp: new Date().toISOString()
+        ua: navigator.userAgent || '',
+        client_ts: new Date().toISOString(),
+        meta: '{}'
       };
 
       if (extra.metadata !== undefined) {
         try {
-          params.metadata = JSON.stringify(extra.metadata || {});
+          params.meta = JSON.stringify(extra.metadata || {});
         } catch (e) {
-          params.metadata = '{}';
+          params.meta = '{}';
         }
-      } else {
-        params.metadata = '{}';
       }
 
       var query = Object.keys(params).map(function (key) {
@@ -4127,12 +4131,28 @@
     function send(eventType, extra, options) {
       if (!eventType) return;
       options = options || {};
+
       var url = buildUrl(eventType, extra || {});
 
       /*
-       * Primary transport: fetch with no-cors + keepalive.
-       * It does not require CORS headers and does not block rendering.
+       * Image GET is intentionally used as the primary transport.
+       * The browser does not need CORS permission to request an image,
+       * and the KB does not wait for a server response.
        */
+      try {
+        var img = new Image();
+        img.decoding = 'async';
+        img.src = url;
+        return;
+      } catch (e) {}
+
+      /* Fallback */
+      try {
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(url);
+        }
+      } catch (e2) {}
+
       try {
         if (window.fetch) {
           fetch(url, {
@@ -4142,15 +4162,8 @@
             credentials: 'omit',
             keepalive: options.keepalive !== false
           }).catch(function () {});
-          return;
         }
-      } catch (e) {}
-
-      /* Fallback for older/mobile browsers. */
-      try {
-        var img = new Image();
-        img.src = url;
-      } catch (e2) {}
+      } catch (e3) {}
     }
 
     function articleIdFrom(el) {
@@ -4312,11 +4325,7 @@
         entry_point: context.entryPoint || '',
         article_id: context.articleId || '',
         article_title: context.articleTitle || '',
-        metadata: {
-          heartbeat: true,
-          session_age_ms: sessionAgeMs(),
-          idle_window_ms: SESSION_IDLE_MS
-        }
+        metadata: { heartbeat: true }
       });
     }
 
@@ -4331,12 +4340,10 @@
       }, { keepalive: true });
     }
 
-    /*
-     * Capture listeners intentionally run independently from the existing
-     * KB click handlers. The KB can stop propagation without stopping our
-     * analytics listener because this listener is also registered at the
-     * document capture phase.
-     */
+    /* ===================================================
+       CAPTURE EVENTS
+       =================================================== */
+
     document.addEventListener('click', function (event) {
       var target = event.target;
       if (!target || !target.closest) return;
@@ -4401,10 +4408,16 @@
       }, 150);
     }, true);
 
+    /* ===================================================
+       LIFECYCLE
+       =================================================== */
+
     document.addEventListener('visibilitychange', function () {
-      if (document.hidden) lifecycleOnce('tab_hidden');
-      else {
+      if (document.hidden) {
         lifecycleSent.tab_hidden = false;
+        lifecycleOnce('tab_hidden');
+      } else {
+        lifecycleSent.tab_visible = false;
         lifecycleOnce('tab_visible');
         heartbeat();
       }
@@ -4418,30 +4431,33 @@
       lifecycleOnce('session_close');
     });
 
+    /* ===================================================
+       START
+       =================================================== */
+
     function initialize() {
-      setContext({ view: 'home', entryPoint: '', articleId: '', articleTitle: '' });
-      var firstOpen = false;
-      try {
-        firstOpen = sessionStorage.getItem('bp_kb_analytics_kb_open_v1') !== '1';
-      } catch (e) {
-        firstOpen = true;
-      }
 
-      if (firstOpen) {
-        send('kb_open', {
-          view: 'home',
-          metadata: {
-            screen_width: window.innerWidth || 0,
-            screen_height: window.innerHeight || 0,
-            device_type: deviceType()
-          }
-        });
-        try {
-          sessionStorage.setItem('bp_kb_analytics_kb_open_v1', '1');
-        } catch (e2) {}
-      }
+      setContext({
+        view: 'home',
+        entryPoint: '',
+        articleId: '',
+        articleTitle: ''
+      });
 
+      /* Every page load is a new KB access/session. */
+      send('kb_open', {
+        view: 'home',
+        metadata: {
+          screen_width: window.innerWidth || 0,
+          screen_height: window.innerHeight || 0,
+          device_type: deviceType()
+        }
+      });
+
+      /* First heartbeat shortly after entering. */
       setTimeout(heartbeat, 1500);
+
+      /* Keep session active while the tab stays open. */
       setInterval(heartbeat, HEARTBEAT_MS);
     }
 
@@ -4459,6 +4475,7 @@
       getUserKey: userKey,
       getSessionId: sessionId
     };
+
   })();
   </script>
 
