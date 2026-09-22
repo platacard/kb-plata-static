@@ -3,12 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <link rel="preconnect" href="https://platacard.github.io">
-  <link rel="dns-prefetch" href="https://platacard.github.io">
-  <link rel="preconnect" href="https://drive.google.com">
-  <link rel="dns-prefetch" href="https://drive.google.com">
-  <base target="_self">
-  <title>Banco Plata Knowledge Base</title>
+  <base target="_blank">
+  <title>Banco Plata Knowledge Base - GitHub Pages v47.3 Usage Analytics</title>
   <style>
     :root {
       --bg: #fff8f3;
@@ -432,10 +428,6 @@
     .gallery-viewport { position: relative; border: 1px solid var(--line); border-radius: 18px; background: #f8fafc; overflow: hidden; min-height: 220px; display: flex; align-items: center; justify-content: center; }
     .gallery-media { width: 100%; min-height: 220px; display: flex; align-items: center; justify-content: center; }
     .gallery-img { display: block; width: 100%; max-height: 420px; object-fit: contain; background: #f8fafc; }
-.gallery-frame-wrap { width: 100%; min-height: 220px; height: min(420px, 68vh); background: #f8fafc; border-radius: 16px; overflow: hidden; }
-    .gallery-preview-frame { display: block; width: 100%; height: 100%; min-height: 220px; border: 0; background: #fff; }
-    .single-image-preview-wrap { width: 100%; min-height: 220px; height: min(520px, 62vh); border-radius: 18px; overflow: hidden; background: #f8fafc; }
-    .single-image-preview-frame { display: block; width: 100%; height: 100%; min-height: 220px; border: 0; background: #fff; }
     .gallery-placeholder { width: 100%; min-height: 220px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px; color: var(--muted); font-weight: 900; }
     .gallery-placeholder.error { color: var(--danger); background: #fef2f2; }
     .gallery-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 42px; height: 42px; border-radius: 999px; border: 1px solid rgba(255,93,21,.22); background: rgba(255,255,255,.92); color: var(--brand-dark); font-size: 26px; line-height: 1; font-weight: 900; box-shadow: var(--shadow-soft); }
@@ -661,10 +653,6 @@
       .gallery-block { padding: 12px; border-radius: 18px; }
       .gallery-viewport, .gallery-media, .gallery-placeholder { min-height: 190px; }
       .gallery-img { max-height: 300px; }
-      .gallery-frame-wrap { height: min(300px, 62vh); min-height: 190px; }
-      .gallery-preview-frame { min-height: 190px; }
-      .single-image-preview-wrap { min-height: 190px; height: min(360px, 58vh); }
-      .single-image-preview-frame { min-height: 190px; }
       .gallery-nav { width: 38px; height: 38px; font-size: 24px; }
       .gallery-nav.prev { left: 7px; }
       .gallery-nav.next { right: 7px; }
@@ -965,6 +953,12 @@
       background: #fff8f4;
     }
 
+    .card,
+    .shelf-card,
+    .global-result-card,
+    .entry-card {
+      will-change: transform;
+    }
 
     .card h3,
     .shelf-card strong,
@@ -1028,46 +1022,7 @@
       <button class="ghost" id="changeEntryBtn" type="button" aria-label="Cambiar sección">↔️ Cambiar sección</button>
     </div>
 
-    <section id="view">
-      <section class="search-panel home-search-panel">
-        <div class="search-row">
-          <input id="homeGlobalSearchInput" type="search" placeholder="Busca por palabra clave, duda, proceso o script..." autocomplete="off">
-          <button class="refresh-btn" id="homeGlobalClear" type="button">Limpiar</button>
-        </div>
-      </section>
-      <div class="section-title">
-        <div>
-          <h2>Explora por sección</h2>
-          <p>Elige el camino que mejor se adapte a lo que necesitas consultar.</p>
-        </div>
-      </div>
-      <div class="entry-grid">
-        <button class="entry-card" type="button" data-entry="faq">
-          <span class="entry-icon">FAQ</span>
-          <h2>FAQ por temas</h2>
-          <p>Respuestas rápidas para resolver dudas frecuentes.</p>
-          <span class="entry-meta">Explorar sección →</span>
-        </button>
-        <button class="entry-card" type="button" data-entry="scripts">
-          <span class="entry-icon">SCR</span>
-          <h2>Scripts</h2>
-          <p>Guías de conversación listas para usar.</p>
-          <span class="entry-meta">Explorar sección →</span>
-        </button>
-        <button class="entry-card" type="button" data-entry="flujo_reunion">
-          <span class="entry-icon">FLU</span>
-          <h2>Flujo de la reunión</h2>
-          <p>Pasos clave para acompañar la reunión de inicio a cierre.</p>
-          <span class="entry-meta">Explorar sección →</span>
-        </button>
-        <button class="entry-card" type="button" data-entry="podcast">
-          <span class="entry-icon">POD</span>
-          <h2>Podcast</h2>
-          <p>Audios de refuerzo para repasar conceptos y buenas prácticas.</p>
-          <span class="entry-meta">Explorar sección →</span>
-        </button>
-      </div>
-    </section>
+    <section id="view"></section>
   </main>
 
   <div class="sheet-backdrop" id="backdrop"></div>
@@ -1087,7 +1042,7 @@
     <div class="feedback-modal-card">
       <div class="feedback-modal-icon" id="feedbackModalIcon"><span class="feedback-spinner" aria-hidden="true"></span></div>
       <h3 class="feedback-modal-title" id="feedbackModalTitle">Enviando</h3>
-      <p class="feedback-modal-message" id="feedbackModalMessage">Estamos preparando tu feedback.</p>
+      <p class="feedback-modal-message" id="feedbackModalMessage">Estamos guardando tu feedback.</p>
       <div class="feedback-modal-actions" id="feedbackModalActions">
         <button type="button" class="primary" id="feedbackModalClose">Listo</button>
       </div>
@@ -1095,142 +1050,6 @@
   </div>
 
   <script>
-    /* ============================================================
-     * GITHUB NATIVE DATA ADAPTER
-     * No Apps Script dependency for content/navigation.
-     * or local browser storage so the existing UI remains usable
-     * when hosted directly on GitHub Pages.
-     * ============================================================ */
-    function staticJsonUrl(path) {
-      const clean = String(path || '').replace(/^\/+/, '');
-      return STATIC_BASE_URL + '/' + clean;
-    }
-
-    function staticFetchJson(path, options) {
-      options = options || {};
-      const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-      const timeout = Number(options.timeout || 5000);
-      let timer = null;
-      if (controller) timer = setTimeout(function() { controller.abort(); }, timeout);
-      return fetch(staticJsonUrl(path), {
-        method: 'GET',
-        cache: options.cache || 'default',
-        credentials: 'omit',
-        headers: { 'Accept': 'application/json' },
-        signal: controller ? controller.signal : undefined
-      }).then(function(response) {
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-        return response.json();
-      }).finally(function() {
-        if (timer) clearTimeout(timer);
-      });
-    }
-
-    function staticLocalStore(key, value) {
-      try {
-        const current = JSON.parse(localStorage.getItem(key) || '[]');
-        current.push(Object.assign({ storedAt: new Date().toISOString() }, value || {}));
-        if (current.length > 500) current.splice(0, current.length - 500);
-        localStorage.setItem(key, JSON.stringify(current));
-      } catch (e) {}
-    }
-
-    function staticRun() {
-      let successHandler = null;
-      let failureHandler = null;
-
-      const chain = new Proxy({}, {
-        get: function(target, prop) {
-          if (prop === 'withSuccessHandler') {
-            return function(fn) { successHandler = typeof fn === 'function' ? fn : null; return chain; };
-          }
-          if (prop === 'withFailureHandler') {
-            return function(fn) { failureHandler = typeof fn === 'function' ? fn : null; return chain; };
-          }
-          if (prop === 'withUserObject') {
-            return function() { return chain; };
-          }
-          return function() {
-            const args = Array.prototype.slice.call(arguments);
-            const method = String(prop);
-            let operation;
-            try {
-              switch (method) {
-                case 'getKbDataByEntryPoint': {
-                  const entryId = String(args[0] || '').trim();
-                  operation = staticFetchJson('cards/' + encodeURIComponent(entryId) + '.json', { timeout: 6500 });
-                  break;
-                }
-                case 'getKbItemFastLive': {
-                  const id = String(args[0] || '').trim();
-                  operation = staticFetchJson('articles/' + encodeURIComponent(id) + '.json', { timeout: 6500 })
-                    .then(function(item) { return { ok: true, item: item }; });
-                  break;
-                }
-                case 'getKbItemMedia': {
-                  const id = String(args[0] || '').trim();
-                  operation = staticFetchJson('articles/' + encodeURIComponent(id) + '.json', { timeout: 6500 })
-                    .then(function(item) { return { ok: true, item: item }; });
-                  break;
-                }
-                case 'getImageDataById': {
-                  const id = String(args[0] || '').trim();
-                  operation = Promise.resolve({ ok: !!id, src: id ? ('https://drive.google.com/thumbnail?id=' + encodeURIComponent(id) + '&sz=w1400') : '' });
-                  break;
-                }
-                case 'getAudioDataById': {
-                  const id = String(args[0] || '').trim();
-                  operation = Promise.resolve({ ok: !!id, src: id ? ('https://drive.google.com/uc?export=download&id=' + encodeURIComponent(id)) : '' });
-                  break;
-                }
-                case 'clearKbCache':
-                  clearClientCaches();
-                  operation = Promise.resolve({ ok: true });
-                  break;
-                case 'logArticleView':
-                  staticLocalStore('bp_kb_static_events_v1', { type: 'article_view', payload: args[0] || {} });
-                  operation = Promise.resolve({ ok: true, local: true });
-                  break;
-                case 'logSearch':
-                  staticLocalStore('bp_kb_static_events_v1', { type: 'search', payload: args[0] || {} });
-                  operation = Promise.resolve({ ok: true, local: true });
-                  break;
-                case 'kbRecordUsageEventsV42':
-                  staticLocalStore('bp_kb_static_usage_v1', { type: 'usage_batch', payload: args[0] || [] });
-                  operation = Promise.resolve({ ok: true, local: true });
-                  break;
-                case 'kbHeartbeatV42':
-                  staticLocalStore('bp_kb_static_usage_v1', { type: 'heartbeat', payload: args[0] || {} });
-                  operation = Promise.resolve({ ok: true, local: true });
-                  break;
-                case 'submitFeedback':
-                  staticLocalStore('bp_kb_static_feedback_v1', { type: 'article_feedback', payload: args[0] || {} });
-                  operation = Promise.resolve({ ok: true, storedLocally: true });
-                  break;
-                case 'submitContentGap':
-                  staticLocalStore('bp_kb_static_feedback_v1', { type: 'content_gap', payload: args[0] || {} });
-                  operation = Promise.resolve({ ok: true, storedLocally: true });
-                  break;
-                default:
-                  operation = Promise.resolve({ ok: true, static: true });
-              }
-            } catch (error) {
-              operation = Promise.reject(error);
-            }
-            Promise.resolve(operation).then(function(value) {
-              if (successHandler) successHandler(value);
-            }).catch(function(error) {
-              if (failureHandler) failureHandler(error);
-              else console.warn('Static adapter error:', method, error);
-            });
-            return chain;
-          };
-        }
-      });
-
-      return chain;
-    }
-
     const STATIC_ENTRY_POINTS = [
       { id: 'faq', label: 'FAQ por temas', icon: 'FAQ', subtitle: 'Respuestas rápidas para resolver dudas frecuentes.' },
       { id: 'scripts', label: 'Scripts', icon: 'SCR', subtitle: 'Guías de conversación listas para usar.' },
@@ -1273,13 +1092,7 @@
       activePrefetches: 0,
       prefetchScheduled: false,
       feedbackSubmitting: false,
-      feedbackSentArticles: {},
-      staticConfig: null,
-      staticReady: false,
-      searchIndexItems: [],
-      searchIndexPromise: null,
-      staticArticlePromises: {},
-      staticConfigVersion: ''
+      feedbackSentArticles: {}
     };
 
     const els = {
@@ -1304,306 +1117,9 @@
 
 
 
-    const CLIENT_CACHE_PREFIX = 'bp_kb_v45_static_snapshot_';
+    const CLIENT_CACHE_PREFIX = 'bp_kb_v41_instant_snapshot_';
     const CLIENT_ENTRY_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
     const CLIENT_DETAIL_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
-
-    // v45: GitHub Pages is now the primary read layer. Apps Script remains
-    // as a background/fallback backend for feedback, analytics and recovery.
-    const STATIC_BASE_URL = new URL('./data/', window.location.href).href.replace(/\/$/, '');
-    const STATIC_REQUEST_TIMEOUT = 5000;
-    const STATIC_SEARCH_CACHE_MAX_AGE = 24 * 60 * 60 * 1000;
-    const STATIC_CONFIG_CACHE_MAX_AGE = 24 * 60 * 60 * 1000;
-
-    function staticUrl(path, cacheBust) {
-      const clean = String(path || '').replace(/^\/+/, '');
-      return STATIC_BASE_URL + '/' + clean + (clean.indexOf('?') >= 0 ? '&' : '?') + 'v=' + encodeURIComponent(cacheBust || state.revision || 'live');
-    }
-
-    function fetchStaticJson(url, options) {
-      options = options || {};
-      const timeout = Number(options.timeout || STATIC_REQUEST_TIMEOUT);
-      const cacheMode = options.cache || 'default';
-      const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-      let timer = null;
-      if (controller) timer = setTimeout(function() { controller.abort(); }, timeout);
-
-      return fetch(url, {
-        method: 'GET',
-        cache: cacheMode,
-        signal: controller ? controller.signal : undefined,
-        credentials: 'omit',
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(function(response) {
-          if (!response.ok) throw new Error('HTTP ' + response.status);
-          return response.json();
-        })
-        .finally(function() {
-          if (timer) clearTimeout(timer);
-        });
-    }
-
-    function toStringList(value) {
-      function normalizeEntry(entry) {
-        if (entry === null || entry === undefined) return [];
-        if (typeof entry === 'string' || typeof entry === 'number') {
-          const text = String(entry).trim();
-          return text ? [text] : [];
-        }
-        if (Array.isArray(entry)) {
-          return entry.reduce(function(acc, child) {
-            return acc.concat(normalizeEntry(child));
-          }, []);
-        }
-        if (typeof entry === 'object') {
-          const candidates = [
-            entry.url, entry.src, entry.href,
-            entry.image_url, entry.imageUrl, entry.imagen_url,
-            entry.file_url, entry.fileUrl,
-            entry.id, entry.file_id, entry.fileId, entry.image_id, entry.imageId
-          ];
-          for (let i = 0; i < candidates.length; i++) {
-            if (candidates[i] !== undefined && candidates[i] !== null && String(candidates[i]).trim()) {
-              return [String(candidates[i]).trim()];
-            }
-          }
-          const nested = entry.urls || entry.items || entry.images || entry.gallery_urls || entry.galleryUrls || entry.files;
-          if (nested) return normalizeEntry(nested);
-        }
-        return [];
-      }
-
-      if (Array.isArray(value) || (value && typeof value === 'object')) {
-        return normalizeEntry(value);
-      }
-      if (value === null || value === undefined) return [];
-      const raw = String(value).trim();
-      if (!raw) return [];
-
-      try {
-        const parsed = JSON.parse(raw);
-        const parsedValues = normalizeEntry(parsed);
-        if (parsedValues.length) return parsedValues;
-      } catch (e) {}
-
-      return raw
-        .split(/(?:\r?\n|\s*[,;|]\s*)/)
-        .map(function(x) { return x.trim(); })
-        .filter(Boolean);
-    }
-
-    function uniqueList(values) {
-      const seen = {};
-      return (values || []).filter(function(value) {
-        const clean = String(value || '').trim();
-        if (!clean) return false;
-        const key = clean.toLowerCase();
-        if (seen[key]) return false;
-        seen[key] = true;
-        return true;
-      });
-    }
-
-    function normalizeStaticArticle(raw, fallbackId) {
-      const item = raw || {};
-      const galleryUrls = uniqueList(toStringList(item.gallery_urls !== undefined ? item.gallery_urls : item.galleryUrls));
-      const galleryIds = uniqueList(toStringList(item.gallery_ids !== undefined ? item.gallery_ids : item.galleryIds));
-      const keywords = Array.isArray(item.keywords) ? item.keywords : toStringList(item.keywords);
-      const relatedIds = Array.isArray(item.related_ids) ? item.related_ids : toStringList(item.related_ids !== undefined ? item.related_ids : item.relatedIds);
-      const recommendedIds = Array.isArray(item.recommended_ids) ? item.recommended_ids : toStringList(item.recommended_ids !== undefined ? item.recommended_ids : item.recommendedIds);
-      const contentHtml = item.contentHtml || item.contenido_html || '';
-      const imageUrl = item.imageUrl || item.imagen_url || item.image_url || '';
-      const audioUrl = item.audioUrl || item.audio_url || '';
-      const articleId = item.id || fallbackId || '';
-      const derivedImageId = item.imageId || item.image_id || extractDriveFileId(imageUrl) || '';
-      const derivedAudioId = item.audioId || item.audio_id || extractDriveFileId(audioUrl) || '';
-      return Object.assign({}, item, {
-        id: articleId,
-        entryPoint: item.entryPoint || item.entry_point || '',
-        entryLabel: item.entryLabel || item.entry_label || '',
-        category: item.category || item.categoria || '',
-        subCategory: item.subCategory || item.subcategoria || '',
-        title: item.title || item.titulo || 'Artículo',
-        summary: item.summary || item.resumen || '',
-        contentHtml: contentHtml,
-        imageUrl: imageUrl,
-        audioUrl: audioUrl,
-        audioTitle: item.audioTitle || item.audio_titulo || '',
-        audioTranscript: item.audioTranscript || item.audio_transcripcion || '',
-        audioDuration: item.audioDuration || item.audio_duracion || '',
-        audioType: item.audioType || item.audio_tipo || '',
-        galleryUrls: galleryUrls,
-        galleryIds: galleryIds,
-        galleryTitle: item.galleryTitle || item.gallery_title || '',
-        keywords: keywords,
-        relatedIds: relatedIds,
-        recommendedIds: recommendedIds,
-        copyEnabled: item.copyEnabled !== undefined ? item.copyEnabled : item.copy_enabled,
-        contentType: item.contentType || item.content_type || '',
-        updatedAt: item.updatedAt || item.ultima_actualizacion || '',
-        version: item.version || '',
-        owner: item.owner || '',
-        isFeatured: !!(item.isFeatured || item.is_featured),
-        badge: item.badge || '',
-        priority: item.priority || '',
-        criticality: item.criticality || '',
-        audience: item.audience || '',
-        order: Number(item.order || item.orden || 9999),
-        searchText: item.searchText || item.search_text || [item.titulo, item.resumen, item.categoria, item.subcategoria, keywords.join(' ')].filter(Boolean).join(' '),
-        hasAudio: !!(item.hasAudio || item.has_audio || audioUrl || derivedAudioId),
-        hasImage: !!(item.hasImage || item.has_image || imageUrl || derivedImageId),
-        hasGallery: !!(item.hasGallery || item.has_gallery || galleryUrls.length || galleryIds.length),
-        imageId: derivedImageId,
-        audioId: derivedAudioId
-      });
-    }
-
-    function extractDriveFileId(value) {
-      const raw = String(value || '').trim();
-      if (!raw) return '';
-      const patterns = [
-        /drive\.google\.com\/(?:file\/d\/|open\?id=)([a-zA-Z0-9_-]{10,})/i,
-        /drive\.google\.com\/(?:uc|thumbnail)\?[^#]*?id=([a-zA-Z0-9_-]{10,})/i,
-        /drive\.google\.com\/view\?[^#]*?id=([a-zA-Z0-9_-]{10,})/i,
-        /docs\.google\.com\/uc\?[^#]*?id=([a-zA-Z0-9_-]{10,})/i,
-        /[?&]id=([a-zA-Z0-9_-]{10,})/i
-      ];
-      for (let i = 0; i < patterns.length; i++) {
-        const match = raw.match(patterns[i]);
-        if (match) return match[1];
-      }
-      return '';
-    }
-
-    function normalizeStaticEntryPayload(raw, entryId) {
-      raw = raw || {};
-      const rawItems = Array.isArray(raw) ? raw : (Array.isArray(raw.items) ? raw.items : []);
-      const items = rawItems.map(function(item) {
-        const normalized = normalizeStaticArticle(item, item && item.id);
-        normalized.entryPoint = normalized.entryPoint || entryId;
-        normalized.entryLabel = normalized.entryLabel || (getEntryPoint(entryId) || {}).label || entryId;
-        return normalized;
-      });
-      const categories = Array.isArray(raw.categories) ? raw.categories : uniqueStrings(items.map(function(item) { return item.category; })).map(function(name, index) {
-        return { name: name, order: index };
-      });
-      const synonyms = Array.isArray(raw.synonyms) ? raw.synonyms : [];
-      return {
-        ok: true,
-        revision: raw.revision || state.revision || '',
-        items: items,
-        categories: categories,
-        synonyms: synonyms,
-        entryPoints: raw.entryPoints || STATIC_ENTRY_POINTS,
-        counts: raw.counts || {},
-        entryPoint: entryId
-      };
-    }
-
-    function normalizeStaticSearchIndex(raw) {
-      const rawItems = Array.isArray(raw) ? raw : (Array.isArray(raw.items) ? raw.items : (Array.isArray(raw.records) ? raw.records : []));
-      return rawItems.map(function(item) {
-        const normalized = normalizeStaticArticle(item, item && item.id);
-        normalized.entryPoint = normalized.entryPoint || item.entry_point || '';
-        normalized.entryLabel = normalized.entryLabel || item.entry_label || (getEntryPoint(normalized.entryPoint) || {}).label || normalized.entryPoint;
-        normalized.category = normalized.category || item.category || item.categoria || '';
-        normalized.subCategory = normalized.subCategory || item.sub_category || item.subcategoria || '';
-        normalized.searchText = normalized.searchText || item.search_text || item.searchText || '';
-        return normalized;
-      });
-    }
-
-    function preloadSearchIndex() {
-      ensureStaticSearchIndex().catch(function(err) {
-        console.warn('No pudimos precargar la búsqueda', err);
-      });
-    }
-
-    function ensureStaticSearchIndex() {
-      if (state.searchIndexItems && state.searchIndexItems.length) return Promise.resolve(state.searchIndexItems);
-      if (state.searchIndexPromise) return state.searchIndexPromise;
-
-      const cached = loadClientCache('search-index', 'global', STATIC_SEARCH_CACHE_MAX_AGE);
-      if (cached && cached.items) {
-        state.searchIndexItems = cached.items.map(function(item) { return normalizeStaticArticle(item, item.id); });
-        state.searchIndexItems.forEach(function(item) { if (item && item.id) state.globalResultItems[item.id] = item; });
-        state.searchIndexPromise = Promise.resolve(state.searchIndexItems);
-        return state.searchIndexPromise;
-      }
-
-      const url = staticUrl('search_index.json');
-      state.searchIndexPromise = fetchStaticJson(url, { timeout: 6500 })
-        .then(function(raw) {
-          const items = normalizeStaticSearchIndex(raw);
-          state.searchIndexItems = items;
-          items.forEach(function(item) { if (item && item.id) state.globalResultItems[item.id] = item; });
-          saveClientCache('search-index', 'global', { items: items, revision: state.revision || '' });
-          return items;
-        })
-        .catch(function(err) {
-          state.searchIndexPromise = null;
-          throw err;
-        });
-      return state.searchIndexPromise;
-    }
-
-    function buildStaticSearchVariants(q) {
-      const base = normalizeText(q);
-      if (!base) return [];
-      const variants = [base];
-      const synonyms = (state.staticConfig && state.staticConfig.synonyms) || [];
-      (Array.isArray(synonyms) ? synonyms : []).forEach(function(row) {
-        const term = normalizeText(row.term);
-        const syns = (row.synonyms || []).map(normalizeText).filter(Boolean);
-        const haystack = [term].concat(syns);
-        if (haystack.some(function(v) { return v && (base.includes(v) || v.includes(base)); })) {
-          haystack.forEach(function(v) { if (v && variants.indexOf(v) < 0) variants.push(v); });
-        }
-      });
-      return variants.slice(0, 10);
-    }
-
-    function scoreStaticSearchItem(item, variants) {
-      const title = normalizeText(item.title);
-      const summary = normalizeText(item.summary);
-      const category = normalizeText((item.category || '') + ' ' + (item.subCategory || ''));
-      const keywords = normalizeText((item.keywords || []).join(' '));
-      const content = normalizeText(item.searchText || '');
-      let score = 0;
-      (variants || []).forEach(function(v, index) {
-        const weight = index === 0 ? 1 : .75;
-        if (title.includes(v)) score += 100 * weight;
-        if (keywords.includes(v)) score += 55 * weight;
-        if (category.includes(v)) score += 30 * weight;
-        if (summary.includes(v)) score += 25 * weight;
-        if (content.includes(v)) score += 12 * weight;
-        v.split(' ').filter(Boolean).forEach(function(token) {
-          if (title.includes(token)) score += 18 * weight;
-          if (keywords.includes(token)) score += 12 * weight;
-          if (summary.includes(token)) score += 7 * weight;
-          if (content.includes(token)) score += 3 * weight;
-        });
-      });
-      return score;
-    }
-
-    function fetchArticleStatic(id, force) {
-      const cleanId = String(id || '').trim();
-      if (!cleanId) return Promise.reject(new Error('Falta article id.'));
-      state.staticArticlePromises = state.staticArticlePromises || {};
-      if (!force && state.staticArticlePromises[cleanId]) return state.staticArticlePromises[cleanId];
-
-      const url = staticUrl('articles/' + encodeURIComponent(cleanId) + '.json', force ? Date.now() : (state.revision || 'live'));
-      const promise = fetchStaticJson(url, { cache: force ? 'no-store' : 'default', timeout: STATIC_REQUEST_TIMEOUT })
-        .then(function(raw) {
-          const article = normalizeStaticArticle(raw, cleanId);
-          article.entryLabel = article.entryLabel || (getEntryPoint(article.entryPoint || state.entry) || {}).label || '';
-          return article;
-        });
-      if (!force) state.staticArticlePromises[cleanId] = promise;
-      return promise;
-    }
 
     function clientCacheKey(type, id) {
       return CLIENT_CACHE_PREFIX + type + '_' + String(id || 'default');
@@ -1665,24 +1181,29 @@
     }
 
     function checkKbRevision(silent) {
-      const revisionUrl = STATIC_BASE_URL + '/config.json?v=' + Date.now();
-      fetchStaticJson(revisionUrl, { cache: 'no-store', timeout: 4500 })
-        .then(function(config) {
-          if (!config) return;
-          const nextRevision = String(config.revision || config.generated_at || '').trim();
-          if (!nextRevision) return;
-          const before = state.revision || localStorage.getItem(CLIENT_CACHE_PREFIX + 'revision') || '';
-          state.staticConfig = config;
-          state.staticReady = true;
-          applyFreshRevision(nextRevision);
-          if (before && before !== nextRevision && state.entry) {
-            loadEntryData(state.entry, true, true);
+      google.script.run
+        .withSuccessHandler(function(response) {
+          if (response && response.revision) {
+            const before = state.revision || localStorage.getItem(CLIENT_CACHE_PREFIX + 'revision') || '';
+            applyFreshRevision(response.revision);
+            if (before && before !== response.revision && state.entry) {
+              loadEntryData(state.entry, true, true);
+            }
           }
         })
-        .catch(function(err) {
-          if (!silent) console.warn('No pudimos validar la versión más reciente', err);
-        });
+        .withFailureHandler(function(err) {
+          if (!silent) console.warn('No pudimos validar actualizaciones recientes', err);
+        })
+        .getKbRevision();
     }
+
+    document.addEventListener('DOMContentLoaded', init);
+
+    // v27 diagnostic safety net: if a runtime error happens, surface it instead of failing silently.
+    window.addEventListener('error', function(event) {
+      console.error('KB runtime error:', event.error || event.message);
+      try { showToast('Error de interfaz. Revisa que Index y Code.gs estén actualizados.'); } catch (e) {}
+    });
 
     function init() {
       els.homeBtn.addEventListener('click', goHome);
@@ -1690,60 +1211,48 @@
       els.closeSheet.addEventListener('click', closeSheet);
       els.backdrop.addEventListener('click', closeSheet);
       document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSheet(); });
+      // v26: delegated click handler. This prevents cards from becoming non-clickable
+      // after progressive rendering, re-renders, Google Sites iframe focus changes or stale listeners.
       document.addEventListener('click', handleDelegatedArticleClick, true);
 
-      // v45: render the shell immediately. Static data loads independently.
+      // Fast initial load: show the shell immediately.
+      // Background refreshes are delayed slightly so first interaction remains responsive.
       renderHome();
-
-      // Background warm-up only. It never blocks the first paint.
-      setTimeout(function() { preloadShellData(false); }, 250);
-      setTimeout(function() { preloadSearchIndex(); }, 700);
-      setTimeout(function() { checkKbRevision(true); }, 1800);
+      setTimeout(function() { preloadShellData(false); }, 650);
+      setTimeout(function() { scheduleHomeEntryPrefetch(); }, 900);
+      setTimeout(function() { checkKbRevision(true); }, 2200);
       setInterval(function() { checkKbRevision(true); }, 120000);
     }
 
     function preloadShellData(force) {
-      const cachedConfig = loadClientCache('static-config', 'home', STATIC_CONFIG_CACHE_MAX_AGE);
-      if (cachedConfig && (cachedConfig.entryPoints || cachedConfig.entry_points)) {
-        state.staticConfig = cachedConfig;
-        state.staticReady = true;
-        state.shell = {
-          entryPoints: cachedConfig.entryPoints || cachedConfig.entry_points || STATIC_ENTRY_POINTS,
-          counts: cachedConfig.counts || {}
-        };
-        updateRevisionFromPayload(cachedConfig);
-        if (!state.entry) renderHome();
-      }
-
-      const url = STATIC_BASE_URL + '/config.json' + (force ? '?v=' + Date.now() : '');
-      fetchStaticJson(url, { cache: force ? 'no-store' : 'default', timeout: STATIC_REQUEST_TIMEOUT })
-        .then(function(config) {
-          if (!config) return;
-          state.staticConfig = config;
-          state.staticReady = true;
-          state.shell = {
-            entryPoints: (config.entryPoints || config.entry_points) && (config.entryPoints || config.entry_points).length ? (config.entryPoints || config.entry_points) : STATIC_ENTRY_POINTS,
-            counts: config.counts || {}
-          };
-          updateRevisionFromPayload(config);
-          saveClientCache('static-config', 'home', config);
+      google.script.run
+        .withSuccessHandler(function(payload) {
+          updateRevisionFromPayload(payload);
+          state.shell = payload || null;
+          if (payload) saveClientCache('shell', 'home', payload);
           if (!state.entry) renderHome();
         })
-        .catch(function(err) {
-          // Static config is optional for first paint because STATIC_ENTRY_POINTS is local.
-          console.warn('No se pudo precargar la configuración estática', err);
-        });
+        .withFailureHandler(function(err) {
+          console.warn('No se pudo cargar shell data en segundo plano', err);
+        })
+        .getKbShellData(!!force);
     }
 
+
     function scheduleHomeEntryPrefetch() {
-      // v45: do not preload entire entry points from the home screen.
-      // Cards are fetched only when the user opens a section.
+      const entries = STATIC_ENTRY_POINTS.map(function(ep) { return ep.id; });
+      const start = function() {
+        entries.forEach(function(entryId, index) {
+          setTimeout(function() { prefetchEntryPoint(entryId); }, 180 + index * 260);
+        });
+      };
+      if (window.requestIdleCallback) window.requestIdleCallback(start, { timeout: 900 });
+      else setTimeout(start, 650);
     }
 
     function prefetchEntryPoint(entryId) {
       const cleanEntry = String(entryId || '').trim();
-      if (!cleanEntry) return;
-      if (state.entryPayloads[cleanEntry] || state.loadingEntries[cleanEntry]) return;
+      if (!cleanEntry || state.entryPayloads[cleanEntry] || state.loadingEntries[cleanEntry]) return;
       const cachedPayload = loadClientCache('entry', cleanEntry, CLIENT_ENTRY_MAX_AGE);
       if (cachedPayload && cachedPayload.items) {
         state.entryPayloads[cleanEntry] = cachedPayload;
@@ -1754,23 +1263,6 @@
 
     function openEntryPoint(entryId) {
       document.body.classList.add('has-entry-nav');
-      try {
-        if (window.__BP_KB_USAGE_SET_CONTEXT_V47) {
-          window.__BP_KB_USAGE_SET_CONTEXT_V47({
-            view: 'entry_point',
-            entryPoint: entryId || '',
-            articleId: '',
-            articleTitle: ''
-          });
-        }
-        if (window.__BP_KB_USAGE_TRACK_V47) {
-          window.__BP_KB_USAGE_TRACK_V47('entry_point_open', {
-            view: 'entry_point',
-            entry_point: entryId || '',
-            metadata: { source: 'entry_card' }
-          });
-        }
-      } catch (usageErr) {}
       state.entry = entryId;
       state.category = 'all';
       state.audience = 'all';
@@ -1782,6 +1274,7 @@
         state.entryPayloads[entryId] = cachedPayload;
         state.data = cachedPayload;
         renderEntry();
+        // Stale-while-revalidate: show cached cards immediately, then refresh silently.
         loadEntryData(entryId, false, true);
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
@@ -1802,33 +1295,25 @@
     }
 
     function loadEntryData(entryId, force, silent) {
-      const cleanEntry = String(entryId || state.entry || '').trim();
+      const cleanEntry = entryId || state.entry;
       if (!cleanEntry) return;
-      if (state.loadingEntries[cleanEntry]) return;
       state.loadingEntries[cleanEntry] = true;
 
-      const versionParam = state.revision ? '&v=' + encodeURIComponent(state.revision) : '';
-      const url = STATIC_BASE_URL + '/cards/' + encodeURIComponent(cleanEntry) + '.json?fast=1' + versionParam;
-
-      fetchStaticJson(url, {
-        cache: force ? 'no-store' : 'default',
-        timeout: STATIC_REQUEST_TIMEOUT
-      })
-        .then(function(raw) {
-          const normalizedPayload = normalizeStaticEntryPayload(raw, cleanEntry);
+      google.script.run
+        .withSuccessHandler(function(payload) {
           state.loadingEntries[cleanEntry] = false;
-          if (!normalizedPayload || !normalizedPayload.items) {
-            throw new Error('La sección no devolvió contenidos válidos.');
-          }
+          updateRevisionFromPayload(payload);
+          const normalizedPayload = payload || { items: [], categories: [], synonyms: [], entryPoints: STATIC_ENTRY_POINTS, counts: {} };
           state.entryPayloads[cleanEntry] = normalizedPayload;
-          state.data = normalizedPayload;
-          updateRevisionFromPayload(normalizedPayload);
           saveClientCache('entry', cleanEntry, normalizedPayload);
-          if (state.entry === cleanEntry) renderEntry();
+          if (state.entry === cleanEntry) {
+            state.data = state.entryPayloads[cleanEntry];
+            renderEntry();
+          }
+          // v37: do not trigger an extra shell refresh here; it adds latency with no user benefit.
         })
-        .catch(function(staticErr) {
+        .withFailureHandler(function(err) {
           state.loadingEntries[cleanEntry] = false;
-          console.warn('Static entry load failed.', staticErr);
           if (!silent) {
             const cached = loadClientCache('entry', cleanEntry, CLIENT_ENTRY_MAX_AGE);
             if (cached && cached.items) {
@@ -1838,11 +1323,10 @@
               showToast('Mostrando la última versión disponible.');
               return;
             }
-            els.view.innerHTML = '<div class="error"><strong>No pudimos abrir esta sección.</strong><br><span>Revisa tu conexión e inténtalo de nuevo.</span><button type="button" class="refresh-btn" id="retryEntry" style="margin-top:16px">Reintentar</button></div>';
-            const retry = document.getElementById('retryEntry');
-            if (retry) retry.addEventListener('click', function() { loadEntryData(cleanEntry, true, false); });
+            els.view.innerHTML = '<div class="error"><strong>No pudimos abrir esta sección.</strong><br><span>Intenta actualizar la página. Si el problema continúa, repórtalo al equipo responsable.</span><br><small>' + escapeHtml(err.message || err) + '</small></div>';
           }
-        });
+        })
+        .getKbDataByEntryPoint(cleanEntry, !!force);
     }
 
     function loadData(force) {
@@ -1929,47 +1413,33 @@
     }
 
     function runHomeGlobalSearch(query) {
-      const cleanQuery = String(query || '').trim();
-      if (!cleanQuery) return;
       const requestId = Date.now() + Math.random();
       state.homeSearchRequestId = requestId;
       state.homeSearchLoading = true;
       state.homeSearchError = '';
       updateHomeGlobalResults();
 
-      ensureStaticSearchIndex()
-        .then(function(indexItems) {
+      google.script.run
+        .withSuccessHandler(function(payload) {
           if (state.homeSearchRequestId !== requestId) return;
-          const q = normalizeText(cleanQuery);
-          const variants = buildStaticSearchVariants(q);
-          const results = (indexItems || [])
-            .map(function(item) {
-              return { item: item, score: scoreStaticSearchItem(item, variants) };
-            })
-            .filter(function(x) { return x.score > 0; })
-            .sort(function(a, b) {
-              return b.score - a.score || sortItems(a.item, b.item);
-            })
-            .slice(0, 20)
-            .map(function(x) { return x.item; });
-
           state.homeSearchLoading = false;
-          state.homeSearchResults = results;
+          updateRevisionFromPayload(payload);
+          state.homeSearchResults = (payload && payload.results) ? payload.results : [];
           state.globalResultItems = state.globalResultItems || {};
-          results.forEach(function(item) {
-            if (item && item.id) state.globalResultItems[item.id] = item;
-          });
-          state.homeSearchTotal = results.length;
+          state.homeSearchResults.forEach(function(item) { if (item && item.id) state.globalResultItems[item.id] = item; });
+          updateRevisionFromPayload(payload);
+          state.homeSearchTotal = payload && payload.resultsCount ? payload.resultsCount : state.homeSearchResults.length;
+          state.homeSearchError = '';
           updateHomeGlobalResults();
-          scheduleGlobalSearchLog(results.length);
+          scheduleGlobalSearchLog(state.homeSearchTotal);
         })
-        .catch(function(err) {
+        .withFailureHandler(function(err) {
           if (state.homeSearchRequestId !== requestId) return;
           state.homeSearchLoading = false;
-          state.homeSearchError = 'No pudimos preparar la búsqueda. Intenta nuevamente.';
+          state.homeSearchError = (err && err.message) ? err.message : String(err || 'No se pudo buscar.');
           updateHomeGlobalResults();
-          console.error(err);
-        });
+        })
+        .globalSearchKb(query, 20);
     }
 
     function updateHomeGlobalResults() {
@@ -2079,19 +1549,9 @@
       const comment = commentEl ? commentEl.value.trim() : '';
       const query = (state.homeSearchQuery || '').trim();
       if (!query && !comment) return;
-      try {
-        if (window.__BP_KB_USAGE_TRACK_V47) {
-          window.__BP_KB_USAGE_TRACK_V47('content_gap', {
-            view: 'home',
-            entry_point: 'global',
-            search_query: query,
-            metadata: { source: 'global_no_results' }
-          });
-        }
-      } catch (usageErr) {}
       showToast('Enviando solicitud...');
-      staticRun()
-        .withSuccessHandler(function() { showToast('Feedback guardado en este navegador.'); })
+      google.script.run
+        .withSuccessHandler(function() { showToast('Gracias, lo revisaremos'); })
         .withFailureHandler(function(err) { showToast('No pudimos enviar la solicitud'); console.error(err); })
         .submitContentGap({
           query: query,
@@ -2108,17 +1568,7 @@
       const key = 'global|' + normalizeText(query) + '|' + resultsCount;
       if (state.lastLoggedGlobalSearchKey === key) return;
       state.lastLoggedGlobalSearchKey = key;
-      try {
-        if (window.__BP_KB_USAGE_TRACK_V47) {
-          window.__BP_KB_USAGE_TRACK_V47('global_search', {
-            view: 'home',
-            entry_point: 'global',
-            search_query: query,
-            metadata: { results_count: Number(resultsCount || 0) }
-          });
-        }
-      } catch (usageErr) {}
-      staticRun()
+      google.script.run
         .withFailureHandler(function(err) { console.warn('Global search log failed', err); })
         .logSearch({
           query: query,
@@ -2132,39 +1582,29 @@
     function openGlobalResult(id, entryPoint, triggerEl, clickEvent) {
       const cleanId = String(id || '').trim();
       if (!cleanId) return;
-      try {
-        if (window.__BP_KB_USAGE_TRACK_V47) {
-          window.__BP_KB_USAGE_TRACK_V47('global_result_open', {
-            view: 'article',
-            entry_point: entryPoint || '',
-            article_id: cleanId,
-            search_query: usageSafeStateValue('homeSearchQuery', ''),
-            metadata: { source: 'global_search_result' }
-          });
-        }
-      } catch (usageErr) {}
 
+      // v37: open the selected article directly from the global search result.
+      // Do not load the full entry point just to open one article.
       state.globalResultItems = state.globalResultItems || {};
       let searchItem = state.globalResultItems[cleanId] || null;
       if (!searchItem) {
-        searchItem = (state.homeSearchResults || []).find(function(item) {
-          return String(item.id || '').trim() === cleanId;
-        }) || null;
+        searchItem = (state.homeSearchResults || []).find(function(item) { return String(item.id || '').trim() === cleanId; }) || null;
       }
-
       if (searchItem) {
         state.articleDetails = state.articleDetails || {};
-        state.articleDetails[cleanId] = Object.assign({}, state.articleDetails[cleanId] || {}, searchItem, {
-          entryPoint: searchItem.entryPoint || entryPoint || '',
-          entryLabel: searchItem.entryLabel || ((getEntryPoint(searchItem.entryPoint || entryPoint) || {}).label || ''),
-          isLite: true
-        });
+        // Store as a lightweight item so the modal can show title/summary immediately.
+        if (!state.articleDetails[cleanId]) {
+          state.articleDetails[cleanId] = Object.assign({}, searchItem, {
+            entryPoint: searchItem.entryPoint || entryPoint || '',
+            entryLabel: searchItem.entryLabel || ((ENTRY_POINT_MAP[searchItem.entryPoint || entryPoint] || {}).label || ''),
+            isLite: true
+          });
+        }
       }
 
-      // v45: global search opens ONLY the selected article. The full entry point is not loaded.
       openItem(cleanId, triggerEl, clickEvent);
 
-      staticRun()
+      google.script.run
         .withFailureHandler(function(err) { console.warn('Selected global search log failed', err); })
         .logSearch({
           query: state.homeSearchQuery || '',
@@ -2197,7 +1637,7 @@
           <span class="entry-icon">${icon}</span>
           <h2>${escapeHtml(ep.label)}</h2>
           <p>${escapeHtml(getEntryDescription(ep))}</p>
-          <span class="entry-meta">${count ? count + ' contenidos' : 'Explorar sección'} →</span>
+          <span class="entry-meta">${count ? count + ' contenidos disponibles' : 'Abrir sección'} →</span>
         </button>`;
     }
 
@@ -2261,7 +1701,7 @@
 
       document.getElementById('refreshBtn').addEventListener('click', function() {
         showToast('Actualizando contenido...');
-        staticRun()
+        google.script.run
           .withSuccessHandler(function() {
             if (state.entry) delete state.entryPayloads[state.entry];
             loadEntryData(state.entry, true);
@@ -2383,6 +1823,7 @@
 
     function setupArticlePrefetch(items) {
       attachDetailPrefetchHandlers();
+      scheduleEntryDetailPrefetch(items || []);
     }
 
     function attachDetailPrefetchHandlers() {
@@ -2398,43 +1839,105 @@
     }
 
     function scheduleEntryDetailPrefetch(items) {
-      // v45: no automatic batch prefetch. Network requests happen only on user intent.
+      if (!items || !items.length) return;
+      // Prefetch only a small set, after cards are visible, so entry point load stays fast.
+      const priorityItems = items
+        .slice()
+        .sort(function(a, b) {
+          const aScore = (a.isFeatured ? 100 : 0) + (a.badge ? 20 : 0) + (isFavorite(a.id) ? 50 : 0);
+          const bScore = (b.isFeatured ? 100 : 0) + (b.badge ? 20 : 0) + (isFavorite(b.id) ? 50 : 0);
+          return bScore - aScore || sortItems(a, b);
+        })
+        .slice(0, 10);
+
+      const start = function() {
+        priorityItems.forEach(function(item) { enqueueDetailPrefetch(item.id, 'entry'); });
+      };
+
+      if (window.requestIdleCallback) {
+        window.requestIdleCallback(start, { timeout: 800 });
+      } else {
+        setTimeout(start, 350);
+      }
     }
 
     function enqueueDetailPrefetch(id, reason) {
       const cleanId = String(id || '').trim();
       if (!cleanId) return;
-      if (state.articleDetails && state.articleDetails[cleanId] && state.articleDetails[cleanId].contentHtml) return;
-      if (state.loadingTextPrefetches && state.loadingTextPrefetches[cleanId]) return;
+      state.articleDetails = state.articleDetails || {};
+      state.loadingTextPrefetches = state.loadingTextPrefetches || {};
+      state.prefetchQueue = state.prefetchQueue || [];
 
-      const cached = loadClientCache('detail', cleanId, CLIENT_DETAIL_MAX_AGE);
-      if (cached && cached.item && cached.item.contentHtml) {
-        const cachedItem = normalizeStaticArticle(cached.item);
-        state.articleDetails[cleanId] = cachedItem;
-        state.articleTexts[cleanId] = Object.assign({}, cachedItem, { isTextOnly: true });
-        mergeFullItemIntoEntryPayload(cachedItem);
+      if (state.articleTexts && state.articleTexts[cleanId]) return;
+      const storedText = loadTextFromSession(cleanId);
+      if (storedText) {
+        state.articleTexts = state.articleTexts || {};
+        state.articleTexts[cleanId] = storedText;
+        mergeFullItemIntoEntryPayload(storedText);
         return;
       }
+      if (state.loadingTextPrefetches[cleanId]) return;
+      if (state.prefetchQueue.indexOf(cleanId) >= 0) return;
 
-      state.loadingTextPrefetches = state.loadingTextPrefetches || {};
-      state.loadingTextPrefetches[cleanId] = true;
-      fetchArticleStatic(cleanId, false)
-        .then(function(article) {
-          state.loadingTextPrefetches[cleanId] = false;
-          if (!article) return;
-          state.articleDetails[cleanId] = article;
-          state.articleTexts[cleanId] = Object.assign({}, article, { isTextOnly: true });
-          mergeFullItemIntoEntryPayload(article);
-          saveClientCache('detail', cleanId, { ok: true, item: article, revision: state.revision || '' });
-        })
-        .catch(function(err) {
-          state.loadingTextPrefetches[cleanId] = false;
-          console.warn('Static article prefetch failed', reason, err);
-        });
+      state.prefetchQueue.push(cleanId);
+      processDetailPrefetchQueue();
     }
 
     function processDetailPrefetchQueue() {
-      // v45: retained for compatibility with older state, but intentionally unused.
+      state.prefetchQueue = state.prefetchQueue || [];
+      state.activePrefetches = state.activePrefetches || 0;
+      if (state.activePrefetches >= 1 || !state.prefetchQueue.length) return;
+
+      const batch = [];
+      while (state.prefetchQueue.length && batch.length < 4) {
+        const id = state.prefetchQueue.shift();
+        if (!id) continue;
+        if ((state.articleDetails && state.articleDetails[id]) || (state.loadingTextPrefetches && state.loadingTextPrefetches[id])) continue;
+        const cached = loadClientCache('detail', id, CLIENT_DETAIL_MAX_AGE);
+        if (cached && cached.item) {
+          const cachedItem = Object.assign({}, findItem(id) || {}, cached.item, { isLite: false, isTextOnly: false });
+          state.articleDetails[id] = cachedItem;
+          state.articleTexts[id] = Object.assign({}, cachedItem, { isTextOnly: true });
+          mergeFullItemIntoEntryPayload(cachedItem);
+          continue;
+        }
+        batch.push(id);
+      }
+
+      if (!batch.length) {
+        if (state.prefetchQueue.length) setTimeout(processDetailPrefetchQueue, 0);
+        return;
+      }
+
+      batch.forEach(function(id) { state.loadingTextPrefetches[id] = true; });
+      state.activePrefetches += 1;
+
+      google.script.run
+        .withSuccessHandler(function(response) {
+          state.activePrefetches = Math.max(0, (state.activePrefetches || 1) - 1);
+          updateRevisionFromPayload(response);
+          batch.forEach(function(id) { state.loadingTextPrefetches[id] = false; });
+          const items = response && response.ok && response.items ? response.items : [];
+          items.forEach(function(item) {
+            if (!item || !item.id) return;
+            const fullItem = Object.assign({}, findItem(item.id) || {}, item, { isLite: false, isTextOnly: false });
+            state.articleDetails[item.id] = fullItem;
+            state.articleTexts[item.id] = Object.assign({}, fullItem, { isTextOnly: true });
+            mergeFullItemIntoEntryPayload(fullItem);
+            saveClientCache('detail', item.id, { ok: true, item: fullItem, revision: (response && response.revision) || state.revision || '' });
+            if (state.pendingDetailId === item.id || (state.currentItem && state.currentItem.id === item.id)) {
+              renderItemDetail(fullItem, els.sheet, null, true);
+            }
+          });
+          setTimeout(processDetailPrefetchQueue, 120);
+        })
+        .withFailureHandler(function(err) {
+          state.activePrefetches = Math.max(0, (state.activePrefetches || 1) - 1);
+          batch.forEach(function(id) { state.loadingTextPrefetches[id] = false; });
+          console.warn('Prefetch detail batch failed', err);
+          setTimeout(processDetailPrefetchQueue, 420);
+        })
+        .getKbItemsFastLiveBatch(batch, 4, false);
     }
 
     function detailSessionKey(id) {
@@ -2444,51 +1947,6 @@
     function loadDetailFromSession(id) {
       // v31: do not reuse full article details from browser cache; KB_Content must stay live.
       return null;
-    }
-
-    function fetchStaticMedia(id) {
-      const cleanId = String(id || '').trim();
-      if (!cleanId) return Promise.resolve(null);
-      state.staticMediaPromises = state.staticMediaPromises || {};
-      if (state.staticMediaPromises[cleanId]) return state.staticMediaPromises[cleanId];
-      const promise = staticFetchJson('media/' + encodeURIComponent(cleanId) + '.json', { timeout: 4500 })
-        .then(function(raw) { return raw || null; })
-        .catch(function() { return null; });
-      state.staticMediaPromises[cleanId] = promise;
-      return promise;
-    }
-
-    function mergeStaticMediaIntoArticle(article, mediaRaw) {
-      if (!article || !mediaRaw) return article;
-      const media = Array.isArray(mediaRaw) ? (mediaRaw[0] || {}) : (mediaRaw.item || mediaRaw);
-      if (!media || typeof media !== 'object') return article;
-      const merged = Object.assign({}, article);
-      [
-        'imageUrl','imagen_url','image_url','imageId','image_id',
-        'audioUrl','audio_url','audioId','audio_id','audioTitle','audio_titulo',
-        'audioTranscript','audio_transcripcion','audioDuration','audio_duracion','audioType','audio_tipo',
-        'galleryUrls','gallery_urls','galleryIds','gallery_ids','galleryTitle','gallery_title',
-        'hasImage','has_image','hasAudio','has_audio','hasGallery','has_gallery'
-      ].forEach(function(key) {
-        if (media[key] !== undefined && media[key] !== null && media[key] !== '') merged[key] = media[key];
-      });
-      return normalizeStaticArticle(merged, article.id);
-    }
-
-    function hydrateArticleMediaStatic(id, article, triggerEl, clickEvent) {
-      const cleanId = String(id || '').trim();
-      if (!cleanId || !article) return;
-      fetchStaticMedia(cleanId).then(function(mediaRaw) {
-        if (!mediaRaw) return;
-        const hydrated = mergeStaticMediaIntoArticle(article, mediaRaw);
-        if (!hydrated) return;
-        state.articleDetails[cleanId] = Object.assign({}, state.articleDetails[cleanId] || {}, hydrated, { isLite: false, isTextOnly: false, isMediaOnly: false });
-        state.articleTexts[cleanId] = Object.assign({}, state.articleDetails[cleanId], { isTextOnly: true });
-        mergeFullItemIntoEntryPayload(state.articleDetails[cleanId]);
-        if (state.pendingDetailId === cleanId || (state.currentItem && state.currentItem.id === cleanId)) {
-          renderItemDetail(state.articleDetails[cleanId], triggerEl, clickEvent, true);
-        }
-      });
     }
 
     function saveDetailToSession(item) {
@@ -2510,25 +1968,26 @@
         item = {
           id: cleanId,
           entryPoint: state.entry || '',
-          entryLabel: (getEntryPoint(state.entry) || {}).label || '',
+          entryLabel: (ENTRY_POINT_MAP[state.entry] || {}).label || '',
           category: '',
           subCategory: '',
-          title: 'Abriendo artículo',
+          title: 'Abriendo contenido',
           summary: '',
           isLite: true
         };
       }
 
       const cachedDetail = state.articleDetails[cleanId];
-      if (cachedDetail && cachedDetail.contentHtml && !cachedDetail.isLite) {
+      if (cachedDetail && cachedDetail.contentHtml && !cachedDetail.isLite && !cachedDetail.isMediaOnly) {
         renderItemDetail(cachedDetail, triggerEl, clickEvent, false);
+        // Revalidate silently so Sheet edits still appear automatically.
         loadItemFastLive(cleanId, cachedDetail, triggerEl, clickEvent, true);
         return;
       }
 
       const stored = loadClientCache('detail', cleanId, CLIENT_DETAIL_MAX_AGE);
       if (stored && stored.item && stored.item.contentHtml) {
-        const storedItem = Object.assign({}, item, normalizeStaticArticle(stored.item), { isLite: false, isTextOnly: false });
+        const storedItem = Object.assign({}, item, stored.item, { isLite: false, isTextOnly: false });
         state.articleDetails[cleanId] = storedItem;
         state.articleTexts[cleanId] = Object.assign({}, storedItem, { isTextOnly: true });
         mergeFullItemIntoEntryPayload(storedItem);
@@ -2537,6 +1996,7 @@
         return;
       }
 
+      // Always show a visible modal immediately so the click never feels ignored.
       openItemLoading(item, triggerEl, clickEvent);
       loadItemFastLive(cleanId, item, triggerEl, clickEvent, false);
     }
@@ -2546,14 +2006,19 @@
       state.articleDetails = state.articleDetails || {};
       if (!id) return;
       if (state.loadingFullDetails[id]) return;
+
       state.loadingFullDetails[id] = true;
 
-      fetchArticleStatic(id, false)
-        .then(function(article) {
+      google.script.run
+        .withSuccessHandler(function(response) {
           state.loadingFullDetails[id] = false;
-          if (!article) throw new Error('No se encontró el artículo.');
+          updateRevisionFromPayload(response);
+          if (!response || !response.ok || !response.item) {
+            if (!silentRefresh) showDetailError((response && response.error) || 'No pudimos abrir este contenido.');
+            return;
+          }
 
-          const fullItem = Object.assign({}, baseItem || findItem(id) || {}, article, {
+          const fullItem = Object.assign({}, baseItem || findItem(id) || {}, response.item, {
             isLite: false,
             isTextOnly: false,
             isMediaOnly: false
@@ -2562,18 +2027,18 @@
           state.articleDetails[id] = fullItem;
           state.articleTexts[id] = Object.assign({}, fullItem, { isTextOnly: true });
           mergeFullItemIntoEntryPayload(fullItem);
-          saveClientCache('detail', id, { ok: true, item: fullItem, revision: state.revision || '' });
+          saveClientCache('detail', id, { ok: true, item: fullItem, revision: (response && response.revision) || state.revision || '' });
 
           if (state.pendingDetailId === id || (state.currentItem && state.currentItem.id === id)) {
             renderItemDetail(fullItem, triggerEl, clickEvent, !!silentRefresh);
-            hydrateArticleMediaStatic(id, fullItem, triggerEl, clickEvent);
           }
         })
-        .catch(function(staticErr) {
+        .withFailureHandler(function(err) {
           state.loadingFullDetails[id] = false;
-          console.warn('Static article load failed.', staticErr);
-          if (!silentRefresh) showDetailError('No pudimos abrir este contenido. Revisa tu conexión e inténtalo de nuevo.');
-        });
+          if (!silentRefresh) showDetailError((err && err.message) ? err.message : String(err || 'No pudimos abrir este contenido.'));
+          console.warn('No se pudo cargar el detalle rápido', err);
+        })
+        .getKbItemFastLive(id, false);
     }
 
     function openItemLoading(item, triggerEl, clickEvent) {
@@ -2631,21 +2096,61 @@
 
     function loadItemTextFirst(id, baseItem, triggerEl, clickEvent, forceLive) {
       state.articleTexts = state.articleTexts || {};
+      state.loadingTexts = state.loadingTexts || {};
+      state.contentFirstShown = state.contentFirstShown || {};
       if (!id) return;
-      if (!forceLive && state.articleTexts[id] && state.articleTexts[id].contentHtml) {
-        renderItemContentFirst(state.articleTexts[id], triggerEl, clickEvent, true);
-        return;
+      if (state.articleDetails && state.articleDetails[id] && state.articleDetails[id].contentHtml && !forceLive) return;
+
+      if (!forceLive) {
+        const stored = loadTextFromSession(id);
+        if (stored) {
+          const textItem = Object.assign({}, baseItem || findItem(id) || {}, stored, { isTextOnly: true });
+          state.articleTexts[id] = textItem;
+          renderItemContentFirst(textItem, triggerEl, clickEvent, true);
+          return;
+        }
       }
-      fetchArticleStatic(id, !!forceLive)
-        .then(function(article) {
-          state.articleTexts[id] = article;
-          mergeFullItemIntoEntryPayload(article);
-          renderItemContentFirst(article, triggerEl, clickEvent, true);
+
+      if (state.loadingTexts[id] && !forceLive) return;
+      state.loadingTexts[id] = true;
+
+      google.script.run
+        .withSuccessHandler(function(response) {
+          state.loadingTexts[id] = false;
+          if (!response || !response.ok || !response.item) {
+            if (!state.contentFirstShown[id]) showDetailError((response && response.error) || 'No pudimos preparar este contenido.');
+            return;
+          }
+          const existingMedia = state.articleDetails && state.articleDetails[id] ? state.articleDetails[id] : null;
+          const textItem = Object.assign({}, baseItem || findItem(id) || {}, existingMedia || {}, response.item, { isLite: false, isTextOnly: true });
+          state.articleTexts[id] = textItem;
+          saveTextToSession(textItem);
+          mergeFullItemIntoEntryPayload(textItem);
+          if (state.pendingDetailId === id || (state.currentItem && state.currentItem.id === id)) {
+            if (existingMedia && existingMedia.isMediaOnly) {
+              const combinedItem = Object.assign({}, existingMedia, textItem, {
+                contentHtml: textItem.contentHtml || '',
+                isMediaOnly: false,
+                isTextOnly: false,
+                isLite: false
+              });
+              state.articleDetails[id] = combinedItem;
+              renderItemDetail(combinedItem, triggerEl, clickEvent, true);
+            } else {
+              renderItemContentFirst(textItem, triggerEl, clickEvent, true);
+            }
+          }
         })
-        .catch(function(err) {
-          showDetailError('No pudimos preparar el contenido principal.');
-          console.warn(err);
-        });
+        .withFailureHandler(function(err) {
+          state.loadingTexts[id] = false;
+          if (!state.contentFirstShown[id]) {
+            showDetailError((err && err.message) ? err.message : String(err || 'No se pudo cargar el contenido principal.'));
+          } else {
+            updateComplementaryStatus('No pudimos actualizar la información en este momento. Puedes continuar leyendo.');
+          }
+          console.warn('No se pudo preparar contenido principal', err);
+        })
+        .getKbItemTextFirst(id, true);
     }
 
     function loadItemDetail(id, triggerEl, clickEvent, preserveContentFirst) {
@@ -2668,11 +2173,43 @@
         }
       }, 4500);
 
-      console.warn('Static media enrichment failed.');
-      state.loadingDetails[id] = false;
-      state.loadingFullDetails[id] = false;
-      if (state.contentFirstShown[id]) updateComplementaryStatus('Algunos recursos de apoyo no cargaron. Puedes continuar leyendo el contenido.');
+      google.script.run
+        .withSuccessHandler(function(response) {
+          clearTimeout(slowTimer);
+          state.loadingDetails[id] = false;
+          state.loadingFullDetails[id] = false;
+          if (!response || !response.ok || !response.item) {
+            if (!state.contentFirstShown[id]) showDetailError((response && response.error) || 'No pudimos preparar los recursos de apoyo.');
+            else updateComplementaryStatus('Algunos recursos de apoyo no cargaron. Puedes continuar leyendo el contenido.');
+            return;
+          }
 
+          const textItem = state.articleTexts && state.articleTexts[id] ? state.articleTexts[id] : null;
+          const fullItem = Object.assign({}, findItem(id) || {}, textItem || {}, response.item, {
+            contentHtml: (textItem && textItem.contentHtml) || (response.item && response.item.contentHtml) || '',
+            isLite: false,
+            isTextOnly: false
+          });
+          state.articleDetails[id] = fullItem;
+          mergeFullItemIntoEntryPayload(fullItem);
+
+          if (state.pendingDetailId === id || (state.currentItem && state.currentItem.id === id)) {
+            if (fullItem.contentHtml || state.contentFirstShown[id]) {
+              renderItemDetail(fullItem, triggerEl, clickEvent, !!preserveContentFirst || !!state.contentFirstShown[id]);
+            }
+          }
+        })
+        .withFailureHandler(function(err) {
+          clearTimeout(slowTimer);
+          state.loadingDetails[id] = false;
+          state.loadingFullDetails[id] = false;
+          if (!state.contentFirstShown[id]) {
+            showDetailError((err && err.message) ? err.message : String(err || 'No pudimos abrir este contenido.'));
+          } else {
+            updateComplementaryStatus('Algunos recursos de apoyo no cargaron. Puedes continuar leyendo el contenido.');
+          }
+        })
+        .getKbItemMedia(id, true);
     }
 
     function updateComplementaryStatus(message) {
@@ -2733,9 +2270,9 @@
       els.sheetSubtitle.textContent = [item.entryLabel, item.category, item.subCategory].filter(Boolean).join(' / ');
 
       const previousScroll = preserveScroll ? els.sheetBody.scrollTop : 0;
-      const img = item.hasImage && (item.imageUrl || item.imageId) ? `<div class="image-placeholder" id="imageSlot-${escapeAttr(item.id)}">Preparando imagen...</div>` : '';
-      const gallery = item.hasGallery && ((item.galleryUrls && item.galleryUrls.length) || (item.galleryIds && item.galleryIds.length)) ? renderImageGalleryShell(item) : '';
-      const audio = item.hasAudio && (item.audioUrl || item.audioId) ? renderAudioShell(item) : '';
+      const img = item.hasImage && item.imageId ? `<div class="image-placeholder" id="imageSlot-${escapeAttr(item.id)}">Preparando imagen...</div>` : '';
+      const gallery = item.hasGallery && item.galleryIds && item.galleryIds.length ? renderImageGalleryShell(item) : '';
+      const audio = item.hasAudio && item.audioId ? renderAudioShell(item) : '';
       const governanceBox = renderGovernanceBox(item);
       const mediaBlock = (img || gallery || audio) ? `
         <div class="content-first-media">
@@ -2803,9 +2340,9 @@
       saveRecent(item);
       els.sheetBody.scrollTop = preserveScroll ? previousScroll : 0;
 
-      if (item.hasImage && (item.imageUrl || item.imageId)) loadItemImage(item);
-      if (item.hasGallery && ((item.galleryUrls && item.galleryUrls.length) || (item.galleryIds && item.galleryIds.length))) loadItemGallery(item);
-      if (item.hasAudio && (item.audioUrl || item.audioId)) loadItemAudio(item);
+      if (item.hasImage && item.imageId) loadItemImage(item);
+      if (item.hasGallery && item.galleryIds && item.galleryIds.length) loadItemGallery(item);
+      if (item.hasAudio && item.audioId) loadItemAudio(item);
 
       positionDesktopModal(triggerEl, clickEvent);
       document.body.classList.add('modal-open');
@@ -2874,121 +2411,23 @@
     }
 
 
-    function buildImageCandidates(url, fileId, width) {
-      const candidates = [];
-      const raw = String(url || '').trim();
-      let id = String(fileId || '').trim();
-      if (!id) id = extractDriveFileId(raw);
-      // Some exported gallery cells contain a bare Drive file ID rather than a URL.
-      if (!id && /^[A-Za-z0-9_-]{10,}$/.test(raw)) id = raw;
-
-      const isMobile = !!(window.matchMedia && window.matchMedia('(max-width: 760px)').matches);
-
-      // IMPORTANT: drive.google.com/file/.../preview is an HTML document and cannot
-      // be rendered by <img>. It is kept separately for iframe fallback only.
-      // On mobile, prefer the original/source URL first because some Drive thumbnail
-      // transformations are less reliable in embedded mobile browsers.
-      if (isMobile && raw) {
-        candidates.push(raw);
-      }
-
-      if (id) {
-        candidates.push('https://drive.google.com/uc?export=view&id=' + encodeURIComponent(id));
-        candidates.push(buildDriveThumbnailUrl(id, width || 1400));
-      }
-
-      if (!isMobile && raw && candidates.indexOf(raw) < 0) {
-        candidates.push(raw);
-      }
-
-      return uniqueList(candidates);
-    }
-
     function loadItemImage(item) {
       const slotId = 'imageSlot-' + item.id;
       const slot = document.getElementById(slotId);
-      if (!slot) return;
+      if (!slot || !item.imageId) return;
 
-      const directSrc = item.imageUrl || item.image_url || item.imagen_url || '';
-      const derivedImageId = item.imageId || item.image_id || extractDriveFileId(directSrc) || '';
-      const isMobile = !!(window.matchMedia && window.matchMedia('(max-width: 760px)').matches);
-
-      item.imageId = derivedImageId || item.imageId || '';
-
-      /*
-       * Mobile-specific fix:
-       * Google Drive image endpoints can fail inside mobile embedded browsers
-       * even when the same URL works on desktop. When the source is a Drive file,
-       * use the same Drive preview mechanism that is already proven to work for
-       * the gallery on mobile.
-       */
-      if (isMobile && item.imageId) {
-        renderSingleImageDrivePreview(item, slotId, item.imageId);
-        return;
-      }
-
-      const candidates = buildImageCandidates(directSrc, derivedImageId, 1400);
-
-      if (!candidates.length) return;
-
+      const directSrc = buildDriveThumbnailUrl(item.imageId, 1400);
       const img = document.createElement('img');
       img.className = 'hero-image';
       img.id = slotId;
       img.alt = item.title || 'Imagen del contenido';
-      img.loading = 'eager';
+      img.loading = 'lazy';
       img.decoding = 'async';
-      img.referrerPolicy = 'no-referrer';
-      let index = 0;
-      img.src = candidates[index];
+      img.src = directSrc;
       img.onerror = function() {
-        index += 1;
-        if (index < candidates.length) {
-          img.src = candidates[index];
-          return;
-        }
-        if (item.imageId) {
-          loadItemImageFallback(item, slotId);
-        } else {
-          const errorBox = document.createElement('div');
-          errorBox.className = 'image-placeholder error';
-          errorBox.id = slotId;
-          errorBox.textContent = 'No se pudo cargar la imagen.';
-          img.replaceWith(errorBox);
-        }
+        loadItemImageFallback(item, slotId);
       };
       slot.replaceWith(img);
-    }
-
-    function renderSingleImageDrivePreview(item, slotId, imageId) {
-      const current = document.getElementById(slotId);
-      if (!current) return;
-
-      const wrap = document.createElement('div');
-      wrap.className = 'single-image-preview-wrap';
-      wrap.id = slotId;
-      wrap.style.width = '100%';
-      wrap.style.minHeight = '220px';
-      wrap.style.height = 'min(520px, 62vh)';
-      wrap.style.borderRadius = '18px';
-      wrap.style.overflow = 'hidden';
-      wrap.style.background = '#f8fafc';
-
-      const frame = document.createElement('iframe');
-      frame.className = 'single-image-preview-frame';
-      frame.src = buildDrivePreviewUrl(imageId);
-      frame.title = item.title || 'Imagen del contenido';
-      frame.setAttribute('loading', 'eager');
-      frame.setAttribute('allow', 'fullscreen');
-      frame.setAttribute('referrerpolicy', 'no-referrer');
-      frame.style.display = 'block';
-      frame.style.width = '100%';
-      frame.style.height = '100%';
-      frame.style.minHeight = '220px';
-      frame.style.border = '0';
-      frame.style.background = '#fff';
-
-      wrap.appendChild(frame);
-      current.replaceWith(wrap);
     }
 
     function loadItemImageFallback(item, slotId) {
@@ -3004,7 +2443,7 @@
       holder.textContent = 'Preparando imagen en modo compatible...';
       if (current) current.replaceWith(holder);
 
-      staticRun()
+      google.script.run
         .withSuccessHandler(function(response) {
           const latest = document.getElementById(slotId);
           if (!latest) return;
@@ -3037,75 +2476,31 @@
       slot.replaceWith(img);
     }
 
-    function getGallerySources(item) {
-      const rawGallery = item.galleryUrls !== undefined ? item.galleryUrls : (item.gallery_urls !== undefined ? item.gallery_urls : []);
-      const rawIds = item.galleryIds !== undefined ? item.galleryIds : (item.gallery_ids !== undefined ? item.gallery_ids : []);
-
-      function objectEntries(value) {
-        if (!Array.isArray(value)) value = [value];
-        const entries = [];
-        value.forEach(function(entry) {
-          if (!entry) return;
-          if (typeof entry === 'object' && !Array.isArray(entry)) {
-            entries.push({
-              url: entry.url || entry.src || entry.href || entry.image_url || entry.imageUrl || entry.imagen_url || entry.file_url || entry.fileUrl || '',
-              id: entry.id || entry.file_id || entry.fileId || entry.image_id || entry.imageId || ''
-            });
-          } else {
-            entries.push({ url: String(entry), id: '' });
-          }
-        });
-        return entries;
-      }
-
-      const directEntries = objectEntries(rawGallery);
-      const urls = uniqueList(toStringList(rawGallery));
-      const ids = uniqueList(toStringList(rawIds));
-      const total = Math.max(directEntries.length, urls.length, ids.length);
-      const sources = [];
-
-      for (let i = 0; i < total; i++) {
-        const direct = directEntries[i] || {};
-        const rawUrl = direct.url || urls[i] || '';
-        const rawId = direct.id || ids[i] || extractDriveFileId(rawUrl) || '';
-        sources.push({
-          url: rawUrl,
-          id: rawId
-        });
-      }
-
-      return sources.filter(function(source) {
-        return !!(source.url || source.id);
-      });
-    }
-
     function renderImageGalleryShell(item) {
-      const sources = getGallerySources(item);
-      const total = sources.length;
-      if (!total) return '';
+      const ids = Array.isArray(item.galleryIds) ? item.galleryIds : [];
+      if (!ids.length) return '';
       const title = item.galleryTitle || 'Galería de imágenes';
-      const multiple = total > 1;
+      const multiple = ids.length > 1;
       return `
         <section class="gallery-block" id="gallery-${escapeAttr(item.id)}" data-gallery-index="0">
           <div class="gallery-head">
             <h3>${escapeHtml(title)}</h3>
-            <span class="gallery-count" id="galleryCount-${escapeAttr(item.id)}">1 / ${total}</span>
+            <span class="gallery-count" id="galleryCount-${escapeAttr(item.id)}">1 / ${ids.length}</span>
           </div>
           <div class="gallery-viewport">
             <button type="button" class="gallery-nav prev" id="galleryPrev-${escapeAttr(item.id)}" aria-label="Imagen anterior" ${multiple ? '' : 'disabled'}>‹</button>
             <div class="gallery-media" id="galleryMedia-${escapeAttr(item.id)}"><div class="gallery-placeholder">Preparando galería...</div></div>
             <button type="button" class="gallery-nav next" id="galleryNext-${escapeAttr(item.id)}" aria-label="Imagen siguiente" ${multiple ? '' : 'disabled'}>›</button>
           </div>
-          ${multiple ? `<div class="gallery-dots" id="galleryDots-${escapeAttr(item.id)}">${Array.from({length: total}).map(function(_, index) {
+          ${multiple ? `<div class="gallery-dots" id="galleryDots-${escapeAttr(item.id)}">${ids.map(function(_, index) {
             return `<button type="button" class="gallery-dot ${index === 0 ? 'active' : ''}" data-gallery-dot="${index}" aria-label="Ver imagen ${index + 1}"></button>`;
           }).join('')}</div>` : ''}
         </section>`;
     }
 
     function loadItemGallery(item) {
-      const sources = getGallerySources(item);
-      const total = sources.length;
-      if (!total) return;
+      const ids = Array.isArray(item.galleryIds) ? item.galleryIds : [];
+      if (!ids.length) return;
 
       const block = document.getElementById('gallery-' + item.id);
       const media = document.getElementById('galleryMedia-' + item.id);
@@ -3116,94 +2511,81 @@
       if (!block || !media) return;
 
       function setIndex(nextIndex) {
-        const clamped = Math.max(0, Math.min(total - 1, Number(nextIndex) || 0));
+        const clamped = Math.max(0, Math.min(ids.length - 1, Number(nextIndex) || 0));
         block.dataset.galleryIndex = String(clamped);
-        if (count) count.textContent = (clamped + 1) + ' / ' + total;
-        if (prev) prev.disabled = total <= 1;
-        if (next) next.disabled = total <= 1;
-        dots.forEach(function(dot) { dot.classList.toggle('active', Number(dot.dataset.galleryDot) === clamped); });
+        if (count) count.textContent = (clamped + 1) + ' / ' + ids.length;
+        if (prev) prev.disabled = ids.length <= 1;
+        if (next) next.disabled = ids.length <= 1;
+        dots.forEach(function(dot) {
+          dot.classList.toggle('active', Number(dot.dataset.galleryDot) === clamped);
+        });
         renderGalleryImage(item, clamped);
       }
 
       if (prev) prev.addEventListener('click', function() {
         const current = Number(block.dataset.galleryIndex || 0);
-        setIndex((current - 1 + total) % total);
+        setIndex((current - 1 + ids.length) % ids.length);
       });
       if (next) next.addEventListener('click', function() {
         const current = Number(block.dataset.galleryIndex || 0);
-        setIndex((current + 1) % total);
+        setIndex((current + 1) % ids.length);
       });
-      dots.forEach(function(dot) { dot.addEventListener('click', function() { setIndex(Number(dot.dataset.galleryDot || 0)); }); });
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() { setIndex(Number(dot.dataset.galleryDot || 0)); });
+      });
+
       setIndex(0);
     }
 
     function renderGalleryImage(item, index) {
-      const sources = getGallerySources(item);
-      const source = sources[index];
+      const ids = Array.isArray(item.galleryIds) ? item.galleryIds : [];
+      const imageId = ids[index];
       const media = document.getElementById('galleryMedia-' + item.id);
-      if (!media || !source) return;
-
-      const candidates = buildImageCandidates(source.url, source.id, 1600);
-      if (!candidates.length) {
-        renderGalleryError(item);
-        return;
-      }
+      if (!media || !imageId) return;
 
       const img = document.createElement('img');
       img.className = 'gallery-img';
       img.alt = (item.galleryTitle || item.title || 'Imagen de galería') + ' ' + (index + 1);
-      img.loading = index === 0 ? 'eager' : 'lazy';
+      img.loading = 'lazy';
       img.decoding = 'async';
-      let candidateIndex = 0;
-      img.src = candidates[candidateIndex];
-      img.onerror = function() {
-        candidateIndex += 1;
-        if (candidateIndex < candidates.length) {
-          img.src = candidates[candidateIndex];
-          return;
-        }
-        if (source.id || extractDriveFileId(source.url)) {
-          loadGalleryImageFallback(item, index, source.id || extractDriveFileId(source.url));
-        } else {
-          renderGalleryError(item);
-        }
-      };
+      img.src = buildDriveThumbnailUrl(imageId, 1600);
+      img.onerror = function() { loadGalleryImageFallback(item, index); };
       media.innerHTML = '';
       media.appendChild(img);
     }
 
-    function loadGalleryImageFallback(item, index, explicitId) {
-      const sources = getGallerySources(item);
-      const source = sources[index] || {};
-      const imageId = explicitId || source.id || extractDriveFileId(source.url);
+    function loadGalleryImageFallback(item, index) {
+      const ids = Array.isArray(item.galleryIds) ? item.galleryIds : [];
+      const imageId = ids[index];
       const media = document.getElementById('galleryMedia-' + item.id);
       const block = document.getElementById('gallery-' + item.id);
-      if (!media || !block) return;
+      if (!media || !imageId || !block) return;
 
       const currentIndex = Number(block.dataset.galleryIndex || 0);
       if (currentIndex !== index) return;
 
-      // Mobile-safe fallback: use Drive's HTML preview in an iframe. This is
-      // intentionally separate from the <img> path because /file/.../preview
-      // returns an HTML document, not an image resource.
-      if (imageId) {
-        const frame = document.createElement('iframe');
-        frame.className = 'gallery-preview-frame';
-        frame.src = buildDrivePreviewUrl(imageId);
-        frame.title = (item.galleryTitle || item.title || 'Imagen de galería') + ' ' + (index + 1);
-        frame.setAttribute('loading', 'eager');
-        frame.setAttribute('allow', 'fullscreen');
-        frame.setAttribute('referrerpolicy', 'no-referrer');
-
-        const wrap = document.createElement('div');
-        wrap.className = 'gallery-frame-wrap';
-        wrap.appendChild(frame);
-        media.innerHTML = '';
-        media.appendChild(wrap);
+      if (state.imageFallbackCache[imageId]) {
+        renderGalleryImageFromSrc(item, index, state.imageFallbackCache[imageId]);
         return;
       }
 
-      renderGalleryError(item);
+      media.innerHTML = '<div class="gallery-placeholder">Preparando imagen en modo compatible...</div>';
+      google.script.run
+        .withSuccessHandler(function(response) {
+          const latestBlock = document.getElementById('gallery-' + item.id);
+          if (!latestBlock || Number(latestBlock.dataset.galleryIndex || 0) !== index) return;
+          if (response && response.ok && response.src) {
+            state.imageFallbackCache[imageId] = response.src;
+            renderGalleryImageFromSrc(item, index, response.src);
+          } else {
+            renderGalleryError(item);
+          }
+        })
+        .withFailureHandler(function(err) {
+          console.error(err);
+          renderGalleryError(item);
+        })
+        .getImageDataById(imageId);
     }
 
     function renderGalleryImageFromSrc(item, index, src) {
@@ -3213,9 +2595,8 @@
       img.className = 'gallery-img';
       img.src = src;
       img.alt = (item.galleryTitle || item.title || 'Imagen de galería') + ' ' + (index + 1);
-      img.loading = 'eager';
+      img.loading = 'lazy';
       img.decoding = 'async';
-      img.referrerPolicy = 'no-referrer';
       media.innerHTML = '';
       media.appendChild(img);
     }
@@ -3247,43 +2628,12 @@
     function loadItemAudio(item) {
       const slotId = 'audioSlot-' + item.id;
       const slot = document.getElementById(slotId);
-      if (!slot) return;
+      if (!slot || !item.audioId) return;
 
-      const directUrl = item.audioUrl || item.audio_url || '';
-      const derivedAudioId = item.audioId || item.audio_id || extractDriveFileId(directUrl) || '';
-      if (derivedAudioId) item.audioId = derivedAudioId;
-
-      if (directUrl) {
-        renderDirectAudio(slot, directUrl, item.audioTitle || item.title, item);
-        return;
-      }
-
-      if (derivedAudioId) {
-        renderDrivePreviewAudio(slot, derivedAudioId, item.audioTitle || item.title, item);
-      }
-    }
-
-    function renderDirectAudio(slot, url, title, item) {
-      if (!slot) return;
-      const wrap = document.createElement('div');
-      wrap.className = 'audio-player-wrap';
-
-      const audio = document.createElement('audio');
-      audio.controls = true;
-      audio.preload = 'metadata';
-      audio.src = url;
-      audio.setAttribute('aria-label', title || 'Audio de apoyo');
-      audio.onerror = function() {
-        const fallbackId = item && (item.audioId || item.audio_id || extractDriveFileId(url)) || '';
-        if (fallbackId) {
-          if (item) item.audioId = fallbackId;
-          wrap.innerHTML = '';
-          renderDrivePreviewAudio(wrap, fallbackId, title, item);
-        }
-      };
-
-      wrap.appendChild(audio);
-      slot.replaceWith(wrap);
+      // v10: Google Drive does not reliably allow HTML5 <audio> to play files through
+      // uc?export=download inside a Google Sites / Apps Script iframe. The Drive preview
+      // URL is more stable because it uses Google's own embedded media player.
+      renderDrivePreviewAudio(slot, item.audioId, item.audioTitle || item.title, item);
     }
 
     function renderDrivePreviewAudio(slot, fileId, title, item) {
@@ -3300,13 +2650,15 @@
 
       const helper = document.createElement('div');
       helper.className = 'audio-helper';
-      helper.textContent = 'Puedes reproducir el audio directamente aquí.';
+      helper.textContent = 'Si el audio no se reproduce, usa el modo compatible.';
 
       const fallback = document.createElement('button');
       fallback.type = 'button';
       fallback.className = 'audio-fallback-btn';
-      fallback.textContent = 'Abrir modo compatible';
-      fallback.addEventListener('click', function() { loadItemAudioFallback(item, wrap); });
+      fallback.textContent = 'Cargar en modo compatible';
+      fallback.addEventListener('click', function() {
+        loadItemAudioFallback(item, wrap);
+      });
 
       wrap.appendChild(frame);
       wrap.appendChild(helper);
@@ -3324,7 +2676,7 @@
         return;
       }
 
-      staticRun()
+      google.script.run
         .withSuccessHandler(function(response) {
           const slot = container.querySelector('.audio-placeholder') || container;
           if (response && response.ok && response.src) {
@@ -3421,19 +2773,9 @@
         showToast('Escribe qué estabas buscando');
         return;
       }
-      try {
-        if (window.__BP_KB_USAGE_TRACK_V47) {
-          window.__BP_KB_USAGE_TRACK_V47('content_gap', {
-            view: 'entry_point',
-            entry_point: state.entry || '',
-            search_query: state.query || '',
-            metadata: { source: 'section_no_results' }
-          });
-        }
-      } catch (usageErr) {}
-      staticRun()
+      google.script.run
         .withSuccessHandler(function() {
-          showToast('Solicitud guardada en este navegador.');
+          showToast('Solicitud guardada');
           hideContentGapPanel();
         })
         .withFailureHandler(function() { showToast('No se pudo guardar la solicitud'); })
@@ -3459,20 +2801,6 @@
     function sendFeedback(isHelpful, reason, comment) {
       const item = state.currentItem;
       if (!item) return;
-      try {
-        if (window.__BP_KB_USAGE_TRACK_V47) {
-          window.__BP_KB_USAGE_TRACK_V47(isHelpful ? 'feedback_yes' : 'feedback_no', {
-            view: 'article',
-            entry_point: item.entryPoint || '',
-            article_id: item.id || '',
-            article_title: item.title || '',
-            metadata: {
-              reason: reason || '',
-              commentProvided: !!comment
-            }
-          });
-        }
-      } catch (usageErr) {}
       if (isFeedbackBlocked(item)) {
         showFeedbackModal('success', 'Feedback recibido', 'Ya guardamos tu feedback para este artículo.');
         return;
@@ -3480,12 +2808,12 @@
 
       state.feedbackSubmitting = true;
       setFeedbackControlsDisabled(true);
-      showFeedbackModal('loading', 'Enviando', 'Estamos preparando tu feedback.');
+      showFeedbackModal('loading', 'Enviando', 'Estamos guardando tu feedback.');
 
-      staticRun()
+      google.script.run
         .withSuccessHandler(function() {
           markFeedbackSent();
-          showFeedbackModal('success', 'Feedback guardado', isHelpful ? 'Tu feedback quedó guardado en este navegador.' : 'Tu comentario quedó guardado en este navegador.');
+          showFeedbackModal('success', 'Feedback enviado', isHelpful ? 'Gracias por ayudarnos a mejorar la base de conocimientos.' : 'Gracias, guardamos tu comentario para revisar el contenido.');
           setTimeout(hideFeedbackModal, 1800);
         })
         .withFailureHandler(function() {
@@ -3557,20 +2885,7 @@
       clearTimeout(state.searchLogTimer);
       state.searchLogTimer = setTimeout(function() {
         state.lastLoggedSearchKey = key;
-        try {
-          if (window.__BP_KB_USAGE_TRACK_V47) {
-            window.__BP_KB_USAGE_TRACK_V47('section_search', {
-              view: 'entry_point',
-              entry_point: state.entry || '',
-              search_query: query,
-              metadata: {
-                category_filter: category,
-                results_count: Number(resultsCount || 0)
-              }
-            });
-          }
-        } catch (usageErr) {}
-        staticRun()
+        google.script.run
           .withFailureHandler(function(err) { console.warn('Search log failed', err); })
           .logSearch({
             query: query,
@@ -3584,32 +2899,7 @@
 
     function logArticleView(item) {
       if (!item) return;
-      try {
-        if (window.__BP_KB_USAGE_SET_CONTEXT_V47) {
-          window.__BP_KB_USAGE_SET_CONTEXT_V47({
-            view: 'article',
-            entryPoint: item.entryPoint || '',
-            articleId: item.id || '',
-            articleTitle: item.title || ''
-          });
-        }
-        if (window.__BP_KB_USAGE_TRACK_V47) {
-          window.__BP_KB_USAGE_TRACK_V47('article_open', {
-            view: 'article',
-            entry_point: item.entryPoint || '',
-            article_id: item.id || '',
-            article_title: item.title || '',
-            metadata: {
-              category: item.category || '',
-              subCategory: item.subCategory || '',
-              hasAudio: !!item.hasAudio,
-              hasImage: !!item.hasImage,
-              hasGallery: !!item.hasGallery
-            }
-          });
-        }
-      } catch (usageErr) {}
-      staticRun()
+      google.script.run
         .withFailureHandler(function(err) { console.warn('Article view log failed', err); })
         .logArticleView({
           articleId: item.id,
@@ -3623,7 +2913,7 @@
         });
 
       if ((state.query || '').trim()) {
-        staticRun()
+        google.script.run
           .withFailureHandler(function(err) { console.warn('Selected search log failed', err); })
           .logSearch({
             query: state.query || '',
@@ -3644,22 +2934,14 @@
     }
 
     function getEntryPoints() {
-      if (state.staticConfig && (state.staticConfig.entryPoints || state.staticConfig.entry_points) && (state.staticConfig.entryPoints || state.staticConfig.entry_points).length) {
-        const meta = {};
-        STATIC_ENTRY_POINTS.forEach(function(ep) { meta[ep.id] = ep; });
-        return (state.staticConfig.entryPoints || state.staticConfig.entry_points).map(function(id) {
-          return meta[id] || { id: id, label: id, subtitle: 'Contenido disponible.' };
-        });
-      }
       if (state.shell && state.shell.entryPoints && state.shell.entryPoints.length) return state.shell.entryPoints;
       if (state.data && state.data.entryPoints && state.data.entryPoints.length) return state.data.entryPoints;
       return STATIC_ENTRY_POINTS;
     }
 
     function getEntryCount(entryId) {
-      if (state.staticConfig && state.staticConfig.counts && state.staticConfig.counts[entryId] !== undefined) return state.staticConfig.counts[entryId];
-      if (state.shell && state.shell.counts && state.shell.counts[entryId] !== undefined) return state.shell.counts[entryId];
-      if (state.entryPayloads[entryId] && state.entryPayloads[entryId].items) return state.entryPayloads[entryId].items.length;
+      if (state.shell && state.shell.counts && state.shell.counts[entryId]) return state.shell.counts[entryId];
+      if (state.entryPayloads[entryId] && state.entryPayloads[entryId].counts && state.entryPayloads[entryId].counts[entryId]) return state.entryPayloads[entryId].counts[entryId];
       return 0;
     }
 
@@ -3673,13 +2955,10 @@
     }
 
     function getCategoriesForEntry(entry, items) {
-      const sourceCategories = (state.data && state.data.categories) || [];
-      const bySheet = sourceCategories.filter(function(c) { return c.entryPoint === entry; });
+      const bySheet = (state.data.categories || []).filter(function(c) { return c.entryPoint === entry; });
       const names = {};
       bySheet.forEach(function(c) { names[c.name] = c; });
-      (items || []).forEach(function(item) {
-        if (item.category && !names[item.category]) names[item.category] = { name: item.category, order: 9999 };
-      });
+      items.forEach(function(item) { if (!names[item.category]) names[item.category] = { name: item.category, order: 9999 }; });
       return Object.keys(names).map(function(k) { return names[k]; }).sort(function(a, b) {
         return (a.order || 9999) - (b.order || 9999) || String(a.name).localeCompare(String(b.name));
       });
@@ -3803,14 +3082,15 @@
       if (!base) return [];
       const variants = [base];
       const tokens = base.split(' ').filter(Boolean);
-      const synonyms = (state.data && state.data.synonyms) || [];
-      synonyms.forEach(function(row) {
-        if (row.entryPoint && state.entry && row.entryPoint !== state.entry) return;
+      (state.data.synonyms || []).forEach(function(row) {
+        if (row.entryPoint && row.entryPoint !== state.entry) return;
         const term = normalizeText(row.term);
         const syns = (row.synonyms || []).map(normalizeText).filter(Boolean);
         const haystack = [term].concat(syns);
         const matched = haystack.some(function(v) { return v && (base.includes(v) || tokens.indexOf(v) >= 0); });
-        if (matched) haystack.forEach(function(v) { if (v && variants.indexOf(v) < 0) variants.push(v); });
+        if (matched) {
+          haystack.forEach(function(v) { if (v && variants.indexOf(v) < 0) variants.push(v); });
+        }
       });
       return variants.slice(0, 12);
     }
@@ -3876,16 +3156,6 @@
 
     function toggleFavorite(item) {
       const ids = getFavoriteIds();
-      try {
-        if (item && item.id && window.__BP_KB_USAGE_TRACK_V47) {
-          window.__BP_KB_USAGE_TRACK_V47('favorite_toggle', {
-            view: 'article',
-            entry_point: item.entryPoint || '',
-            article_id: item.id || '',
-            article_title: item.title || ''
-          });
-        }
-      } catch (usageErr) {}
       const pos = ids.indexOf(item.id);
       if (pos >= 0) { ids.splice(pos, 1); showToast('Quitado de favoritos'); }
       else { ids.unshift(item.id); showToast('Guardado en favoritos'); }
@@ -3938,9 +3208,6 @@
         const item = state.globalResultItems[id];
         if (item && item.id && !seen[item.id]) { seen[item.id] = true; out.push(item); }
       });
-      (state.searchIndexItems || []).forEach(function(item) {
-        if (item && item.id && !seen[item.id]) { seen[item.id] = true; out.push(item); }
-      });
       if (state.data && state.data.items) {
         state.data.items.forEach(function(item) {
           if (item && item.id && !seen[item.id]) { seen[item.id] = true; out.push(item); }
@@ -3953,19 +3220,7 @@
       const targetId = String(id || '').trim();
       if (!targetId) return null;
       if (state.articleDetails && state.articleDetails[targetId]) return state.articleDetails[targetId];
-      if (state.globalResultItems && state.globalResultItems[targetId]) return state.globalResultItems[targetId];
-      if (state.entryPayloads) {
-        const fromEntry = Object.keys(state.entryPayloads).map(function(key) {
-          return (state.entryPayloads[key].items || []).find(function(item) {
-            return String(item.id || '').trim() === targetId;
-          }) || null;
-        }).find(Boolean);
-        if (fromEntry) return fromEntry;
-      }
-      if (state.searchIndexItems && state.searchIndexItems.length) {
-        return state.searchIndexItems.find(function(item) { return String(item.id || '').trim() === targetId; }) || null;
-      }
-      return null;
+      return getAllLoadedItems().find(function(item) { return String(item.id || '').trim() === targetId; }) || null;
     }
 
     function groupBy(items, getter) {
@@ -4100,51 +3355,28 @@
     };
 
     if (els.feedbackModalClose) els.feedbackModalClose.addEventListener('click', hideFeedbackModal);
-
-    // GitHub Pages boot: initialize the app without Apps Script HTML Service.
-    (function bootGitHubNativeKb() {
-      function start() {
-        try {
-          if (typeof init === 'function') init();
-        } catch (error) {
-          console.error('KB initialization failed:', error);
-          try {
-            if (typeof renderHome === 'function') renderHome();
-          } catch (fallbackError) {
-            console.error('KB emergency render failed:', fallbackError);
-          }
-        }
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', start, { once: true });
-      } else {
-        start();
-      }
-    })();
   </script>
 
   <script>
   /*******************************************************
-   * MVP4 v42 - Live Usage Analytics frontend
-   * Anonymous usage tracking, non-blocking and batched.
+   * Banco Plata KB - GitHub Pages Usage Analytics v47.3
+   *
+   * IMPORTANT:
+   * - The KB is served entirely from GitHub Pages.
+   * - Analytics is sent asynchronously to Apps Script /exec.
+   * - No google.script.run is used by this tracker.
+   * - Each event is sent as text/plain JSON, which avoids
+   *   a CORS preflight and works with Apps Script doPost(e).
    *******************************************************/
   (function() {
-    if (window.__BP_KB_USAGE_V42_INSTALLED__) return;
-    window.__BP_KB_USAGE_V42_INSTALLED__ = true;
+    'use strict';
 
-    var USAGE_FLUSH_DELAY = 2500;
-    var USAGE_HEARTBEAT_MS = 60000;
-    var USAGE_QUEUE_LIMIT = 8;
+    if (window.__BP_KB_USAGE_V47_3_INSTALLED__) return;
+    window.__BP_KB_USAGE_V47_3_INSTALLED__ = true;
 
-    var usageQueue = [];
-    var usageFlushTimer = null;
-    var usageFlushing = false;
-
-    /*
-     * Apps Script Web App endpoint used ONLY for analytics.
-     * The KB content itself continues to load directly from GitHub Pages.
-     */
-    var KB_USAGE_ENDPOINT = 'https://script.google.com/a/macros/dif.tech/s/AKfycbxUit04NOEMMZDpClijPq1YGBqftLFzvCb-cac147gurHT0_5iMkiTAazyG6jGpDvSu7Q/exec';
+    var USAGE_ENDPOINT = 'https://script.google.com/a/macros/dif.tech/s/AKfycbxUit04NOEMMZDpClijPq1YGBqftLFzvCb-cac147gurHT0_5iMkiTAazyG6jGpDvSu7Q/exec';
+    var HEARTBEAT_MS = 60000;
+    var SEARCH_DEBOUNCE_MS = 800;
 
     var usageContext = {
       view: 'home',
@@ -4153,49 +3385,82 @@
       articleTitle: ''
     };
 
-    function usageSessionId() {
+    var searchTimers = {};
+
+    function safeStateValue(prop, fallback) {
       try {
-        var key = 'bp_kb_usage_session_v42';
-        var existing = sessionStorage.getItem(key);
+        if (typeof state !== 'undefined' && state && state[prop] !== undefined) {
+          return state[prop];
+        }
+      } catch (e) {}
+      return fallback;
+    }
+
+    function getOrCreateId(storage, key, prefix) {
+      try {
+        var existing = storage.getItem(key);
         if (existing) return existing;
-        var id = 's_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
-        sessionStorage.setItem(key, id);
-        return id;
+
+        var generated = prefix + '_' +
+          Date.now().toString(36) + '_' +
+          Math.random().toString(36).slice(2, 10);
+
+        storage.setItem(key, generated);
+        return generated;
       } catch (e) {
-        return 's_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+        return prefix + '_' +
+          Date.now().toString(36) + '_' +
+          Math.random().toString(36).slice(2, 10);
       }
     }
 
-    function usageUserKey() {
-      try {
-        var key = 'bp_kb_usage_user_v42';
-        var existing = localStorage.getItem(key);
-        if (existing) return existing;
-        var id = 'u_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
-        localStorage.setItem(key, id);
-        return id;
-      } catch (e) {
-        return 'anonymous';
-      }
+    function userKey() {
+      return getOrCreateId(
+        window.localStorage,
+        'bp_kb_usage_user_v47',
+        'u'
+      );
     }
 
-    function usageDeviceType() {
-      var w = window.innerWidth || document.documentElement.clientWidth || 0;
-      if (w <= 760) return 'mobile';
-      if (w <= 1024) return 'tablet';
+    function sessionId() {
+      var id = getOrCreateId(
+        window.sessionStorage,
+        'bp_kb_usage_session_v47',
+        's'
+      );
+
+      try {
+        sessionStorage.setItem(
+          'bp_kb_usage_last_activity_v47',
+          String(Date.now())
+        );
+      } catch (e) {}
+
+      return id;
+    }
+
+    function deviceType() {
+      var width = Math.max(
+        window.innerWidth || 0,
+        document.documentElement.clientWidth || 0
+      );
+
+      if (width <= 767) return 'mobile';
+      if (width <= 1023) return 'tablet';
       return 'desktop';
     }
 
-    function usageBasePayload(extra) {
+    function currentPayload(extra) {
       extra = extra || {};
+
       return Object.assign({
-        session_id: usageSessionId(),
-        user_key: usageUserKey(),
+        session_id: sessionId(),
+        user_key: userKey(),
         view: usageContext.view || '',
         entry_point: usageContext.entryPoint || '',
         article_id: usageContext.articleId || '',
         article_title: usageContext.articleTitle || '',
-        device_type: usageDeviceType(),
+        device_type: deviceType(),
         path: location.pathname + location.search,
         referrer: document.referrer || '',
         user_agent: navigator.userAgent || '',
@@ -4203,106 +3468,55 @@
       }, extra);
     }
 
-    function usageTrack(eventType, extra) {
-      if (!eventType) return;
-
-      var payload = usageBasePayload(extra || {});
-      payload.event_type = eventType;
-      payload.client_timestamp = new Date().toISOString();
-
-      usageQueue.push(payload);
-
-      if (usageQueue.length >= USAGE_QUEUE_LIMIT) {
-        usageFlush();
-      } else {
-        clearTimeout(usageFlushTimer);
-        usageFlushTimer = setTimeout(usageFlush, USAGE_FLUSH_DELAY);
-      }
-    }
-
-    function sendUsagePayload(payload, preferBeacon) {
-      if (!KB_USAGE_ENDPOINT || !payload) return false;
+    function postEvent(payload, preferBeacon) {
+      if (!USAGE_ENDPOINT) return;
 
       var body = JSON.stringify(payload);
 
-      /*
-       * sendBeacon is ideal for analytics because it is designed to keep
-       * sending while the page is being hidden/unloaded. It also uses a
-       * simple text/plain request, which avoids a CORS preflight.
-       */
-      if (preferBeacon && navigator.sendBeacon) {
-        try {
-          var blob = new Blob([body], {
-            type: 'text/plain;charset=UTF-8'
-          });
-          if (navigator.sendBeacon(KB_USAGE_ENDPOINT, blob)) {
-            return true;
-          }
-        } catch (err) {}
-      }
-
-      /*
-       * Fallback for normal background delivery.
-       * no-cors is intentional: we only send analytics and never need the
-       * response body. Apps Script receives the POST in doPost(e).
-       */
       try {
-        fetch(KB_USAGE_ENDPOINT, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'text/plain;charset=UTF-8'
-          },
-          body: body,
-          keepalive: true
-        }).catch(function() {});
-        return true;
-      } catch (err) {
-        return false;
-      }
-    }
+        if (
+          preferBeacon &&
+          navigator.sendBeacon
+        ) {
+          var blob = new Blob(
+            [body],
+            { type: 'text/plain;charset=UTF-8' }
+          );
 
-    function usageFlush(preferBeacon) {
-      clearTimeout(usageFlushTimer);
-      usageFlushTimer = null;
-
-      if (!usageQueue.length) return;
-
-      /*
-       * Apps Script doPost(e) currently accepts one event object per POST.
-       * Send the small queue as individual lightweight requests rather than
-       * wrapping it into a synthetic event. This preserves the existing
-       * Usage_Events schema and keeps every event separately measurable.
-       */
-      var batch = usageQueue.splice(0, 8);
-
-      batch.forEach(function(eventPayload, index) {
-        setTimeout(function() {
-          sendUsagePayload(eventPayload, !!preferBeacon);
-        }, index * 25);
-      });
-
-      if (usageQueue.length) {
-        usageFlushTimer = setTimeout(function() {
-          usageFlush(false);
-        }, 300);
-      }
-    }
-
-    function usageHeartbeat() {
-      sendUsagePayload(
-        usageBasePayload({
-          event_type: 'session_active',
-          current_view: usageContext.view || 'home',
-          metadata: {
-            heartbeat: true
+          if (navigator.sendBeacon(USAGE_ENDPOINT, blob)) {
+            return;
           }
-        }),
-        false
-      );
+        }
+      } catch (e) {}
+
+      try {
+        fetch(
+          USAGE_ENDPOINT,
+          {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain;charset=UTF-8'
+            },
+            body: body,
+            keepalive: true,
+            credentials: 'omit'
+          }
+        ).catch(function() {});
+      } catch (e) {}
     }
 
-    function usageSetContext(next) {
+    function track(eventType, extra, preferBeacon) {
+      if (!eventType) return;
+
+      var payload = currentPayload(extra || {});
+      payload.event_type = eventType;
+      payload.client_timestamp = new Date().toISOString();
+
+      postEvent(payload, !!preferBeacon);
+    }
+
+    function setContext(next) {
       next = next || {};
       if (next.view !== undefined) usageContext.view = next.view || '';
       if (next.entryPoint !== undefined) usageContext.entryPoint = next.entryPoint || '';
@@ -4310,204 +3524,242 @@
       if (next.articleTitle !== undefined) usageContext.articleTitle = next.articleTitle || '';
     }
 
-    /* Expose a minimal, read-only bridge for the main KB application scope. */
-    window.__BP_KB_USAGE_TRACK_V47 = usageTrack;
-    window.__BP_KB_USAGE_SET_CONTEXT_V47 = usageSetContext;
+    function articleFromButton(button) {
+      if (!button) return null;
 
-    function usageSafeStateValue(prop, fallback) {
+      var id =
+        button.getAttribute('data-open') ||
+        button.getAttribute('data-related') ||
+        button.getAttribute('data-global-open') ||
+        '';
+
+      id = String(id || '').trim();
+      if (!id) return null;
+
+      var title = '';
       try {
-        if (typeof state !== 'undefined' && state && state[prop] !== undefined) return state[prop];
+        var titleEl = button.querySelector('h1,h2,h3,strong');
+        title = titleEl ? String(titleEl.textContent || '').trim() : '';
       } catch (e) {}
-      return fallback;
+
+      return {
+        id: id,
+        title: title,
+        entryPoint:
+          button.getAttribute('data-global-entry') ||
+          safeStateValue('entry', '') ||
+          ''
+      };
     }
 
-    function patchUsageFunctions() {
+    function countGlobalResults() {
       try {
-        if (typeof openEntryPoint === 'function') {
-          var originalOpenEntryPoint = openEntryPoint;
-          openEntryPoint = function(entryId) {
-            usageSetContext({
-              view: 'entry_point',
-              entryPoint: entryId || '',
-              articleId: '',
-              articleTitle: ''
-            });
-            usageTrack('entry_point_open', {
-              entry_point: entryId || '',
-              metadata: { source: 'entry_card' }
-            });
-            return originalOpenEntryPoint.apply(this, arguments);
-          };
-        }
-
-        if (typeof logArticleView === 'function') {
-          var originalLogArticleView = logArticleView;
-          logArticleView = function(item) {
-            if (item && item.id) {
-              usageSetContext({
-                view: 'article',
-                entryPoint: item.entryPoint || '',
-                articleId: item.id || '',
-                articleTitle: item.title || ''
-              });
-              usageTrack('article_open', {
-                entry_point: item.entryPoint || '',
-                article_id: item.id || '',
-                article_title: item.title || '',
-                category_filter: item.category || '',
-                metadata: {
-                  category: item.category || '',
-                  subCategory: item.subCategory || '',
-                  hasAudio: !!item.hasAudio,
-                  hasImage: !!item.hasImage,
-                  hasGallery: !!item.hasGallery
-                }
-              });
-            }
-            return originalLogArticleView.apply(this, arguments);
-          };
-        }
-
-        if (typeof openGlobalResult === 'function') {
-          var originalOpenGlobalResult = openGlobalResult;
-          openGlobalResult = function(id, entryPoint, triggerEl, clickEvent) {
-            usageTrack('global_result_open', {
-              entry_point: entryPoint || '',
-              article_id: id || '',
-              search_query: usageSafeStateValue('homeSearchQuery', ''),
-              metadata: { source: 'global_search_result' }
-            });
-            return originalOpenGlobalResult.apply(this, arguments);
-          };
-        }
-
-        if (typeof scheduleGlobalSearchLog === 'function') {
-          var originalScheduleGlobalSearchLog = scheduleGlobalSearchLog;
-          scheduleGlobalSearchLog = function(resultsCount) {
-            var query = String(usageSafeStateValue('homeSearchQuery', '') || '').trim();
-            if (query && query.length >= 2) {
-              var key = 'global|' + query + '|' + String(resultsCount || 0);
-              window.__bpKbLastUsageGlobalSearch = window.__bpKbLastUsageGlobalSearch || '';
-              if (window.__bpKbLastUsageGlobalSearch !== key) {
-                window.__bpKbLastUsageGlobalSearch = key;
-                usageTrack('global_search', {
-                  view: 'home',
-                  entry_point: 'global',
-                  search_query: query,
-                  results_count: Number(resultsCount || 0)
-                });
-              }
-            }
-            return originalScheduleGlobalSearchLog.apply(this, arguments);
-          };
-        }
-
-        if (typeof scheduleSearchLog === 'function') {
-          var originalScheduleSearchLog = scheduleSearchLog;
-          scheduleSearchLog = function(resultsCount) {
-            var query = String(usageSafeStateValue('query', '') || '').trim();
-            var category = String(usageSafeStateValue('category', 'all') || 'all');
-            var entry = String(usageSafeStateValue('entry', '') || '');
-
-            if ((query && query.length >= 2) || category !== 'all') {
-              var key = entry + '|' + query + '|' + category + '|' + String(resultsCount || 0);
-              window.__bpKbLastUsageSectionSearch = window.__bpKbLastUsageSectionSearch || '';
-              if (window.__bpKbLastUsageSectionSearch !== key) {
-                window.__bpKbLastUsageSectionSearch = key;
-                usageTrack('section_search', {
-                  view: 'entry_point',
-                  entry_point: entry,
-                  search_query: query,
-                  category_filter: category,
-                  results_count: Number(resultsCount || 0)
-                });
-              }
-            }
-
-            return originalScheduleSearchLog.apply(this, arguments);
-          };
-        }
-
-        if (typeof sendFeedback === 'function') {
-          var originalSendFeedback = sendFeedback;
-          sendFeedback = function(isHelpful, reason, comment) {
-            var item = null;
-            try { item = state.currentItem; } catch (e) {}
-            if (window.__BP_KB_FEEDBACK_SHOULD_BLOCK__ && window.__BP_KB_FEEDBACK_SHOULD_BLOCK__(item)) {
-              return originalSendFeedback.apply(this, arguments);
-            }
-            usageTrack(isHelpful ? 'feedback_yes' : 'feedback_no', {
-              view: 'article',
-              entry_point: item && item.entryPoint ? item.entryPoint : '',
-              article_id: item && item.id ? item.id : '',
-              article_title: item && item.title ? item.title : '',
-              metadata: {
-                reason: reason || '',
-                commentProvided: !!comment
-              }
-            });
-            return originalSendFeedback.apply(this, arguments);
-          };
-        }
-
-        if (typeof submitContentGapFromSearch === 'function') {
-          var originalSubmitContentGapFromSearch = submitContentGapFromSearch;
-          submitContentGapFromSearch = function() {
-            usageTrack('content_gap', {
-              view: 'entry_point',
-              entry_point: usageSafeStateValue('entry', ''),
-              search_query: usageSafeStateValue('query', ''),
-              category_filter: usageSafeStateValue('category', 'all'),
-              metadata: { source: 'section_no_results' }
-            });
-            return originalSubmitContentGapFromSearch.apply(this, arguments);
-          };
-        }
-
-        if (typeof submitHomeContentGap === 'function') {
-          var originalSubmitHomeContentGap = submitHomeContentGap;
-          submitHomeContentGap = function() {
-            usageTrack('content_gap', {
-              view: 'home',
-              entry_point: 'global',
-              search_query: usageSafeStateValue('homeSearchQuery', ''),
-              category_filter: 'all',
-              metadata: { source: 'global_no_results' }
-            });
-            return originalSubmitHomeContentGap.apply(this, arguments);
-          };
-        }
-
-        if (typeof toggleFavorite === 'function') {
-          var originalToggleFavorite = toggleFavorite;
-          toggleFavorite = function(item) {
-            if (item && item.id) {
-              usageTrack('favorite_toggle', {
-                view: 'article',
-                entry_point: item.entryPoint || '',
-                article_id: item.id || '',
-                article_title: item.title || ''
-              });
-            }
-            return originalToggleFavorite.apply(this, arguments);
-          };
-        }
-      } catch (err) {
-        console.warn('Usage analytics patch failed', err);
+        return document.querySelectorAll(
+          '[data-global-open]'
+        ).length;
+      } catch (e) {
+        return 0;
       }
     }
 
-    function initUsageAnalytics() {
-      patchUsageFunctions();
+    function countSectionResults() {
+      try {
+        var root = document.getElementById('results');
+        if (!root) return 0;
+        return root.querySelectorAll('[data-open]').length;
+      } catch (e) {
+        return 0;
+      }
+    }
 
-      usageSetContext({
+    function scheduleSearchEvent(input) {
+      if (!input) return;
+
+      var id = input.id || 'search';
+      clearTimeout(searchTimers[id]);
+
+      searchTimers[id] = setTimeout(function() {
+        var query = String(input.value || '').trim();
+        if (query.length < 2) return;
+
+        if (id === 'homeGlobalSearchInput') {
+          track('global_search', {
+            view: 'home',
+            entry_point: 'global',
+            search_query: query,
+            results_count: countGlobalResults()
+          });
+        } else if (id === 'searchInput') {
+          track('section_search', {
+            view: 'entry_point',
+            entry_point: safeStateValue('entry', ''),
+            search_query: query,
+            category_filter: safeStateValue('category', 'all'),
+            results_count: countSectionResults()
+          });
+        }
+      }, SEARCH_DEBOUNCE_MS);
+    }
+
+    function handleDocumentClick(event) {
+      var target = event.target;
+      if (!target || !target.closest) return;
+
+      var entryButton = target.closest('[data-entry]');
+      if (entryButton) {
+        var entryId = String(
+          entryButton.getAttribute('data-entry') || ''
+        ).trim();
+
+        if (entryId) {
+          setContext({
+            view: 'entry_point',
+            entryPoint: entryId,
+            articleId: '',
+            articleTitle: ''
+          });
+
+          track('entry_point_open', {
+            view: 'entry_point',
+            entry_point: entryId,
+            metadata: { source: 'entry_card' }
+          });
+        }
+
+        return;
+      }
+
+      var globalButton = target.closest('[data-global-open]');
+      if (globalButton) {
+        var globalArticle = articleFromButton(globalButton);
+        if (globalArticle) {
+          setContext({
+            view: 'article',
+            entryPoint: globalArticle.entryPoint,
+            articleId: globalArticle.id,
+            articleTitle: globalArticle.title
+          });
+
+          track('global_result_open', {
+            view: 'home',
+            entry_point: globalArticle.entryPoint || 'global',
+            article_id: globalArticle.id,
+            article_title: globalArticle.title,
+            search_query:
+              safeStateValue('homeSearchQuery', '') ||
+              (document.getElementById('homeGlobalSearchInput') || {}).value ||
+              '',
+            metadata: { source: 'global_search_result' }
+          });
+
+          track('article_open', {
+            view: 'article',
+            entry_point: globalArticle.entryPoint,
+            article_id: globalArticle.id,
+            article_title: globalArticle.title,
+            metadata: { source: 'global_search_result' }
+          });
+        }
+
+        return;
+      }
+
+      var articleButton = target.closest('[data-open], [data-related]');
+      if (articleButton) {
+        var article = articleFromButton(articleButton);
+        if (article) {
+          setContext({
+            view: 'article',
+            entryPoint: article.entryPoint,
+            articleId: article.id,
+            articleTitle: article.title
+          });
+
+          track('article_open', {
+            view: 'article',
+            entry_point: article.entryPoint,
+            article_id: article.id,
+            article_title: article.title,
+            metadata: { source: 'article_card' }
+          });
+        }
+
+        return;
+      }
+
+      var feedback = target.closest('[data-feedback]');
+      if (feedback) {
+        var itemId = safeStateValue('currentItem', null);
+        track(
+          feedback.getAttribute('data-feedback') === 'yes'
+            ? 'feedback_yes'
+            : 'feedback_no',
+          {
+            view: 'article',
+            article_id:
+              itemId && itemId.id ? itemId.id : usageContext.articleId,
+            article_title:
+              itemId && itemId.title ? itemId.title : usageContext.articleTitle
+          }
+        );
+        return;
+      }
+
+      var favorite = target.closest('.fav-inline');
+      if (favorite) {
+        track('favorite_toggle', {
+          view: 'article',
+          article_id: usageContext.articleId,
+          article_title: usageContext.articleTitle
+        });
+      }
+
+      var gap = target.closest('#sendContentGap, #homeSendContentGap');
+      if (gap) {
+        track('content_gap', {
+          view: usageContext.view || 'home',
+          entry_point: usageContext.entryPoint || '',
+          article_id: usageContext.articleId || '',
+          article_title: usageContext.articleTitle || '',
+          search_query:
+            safeStateValue('query', '') ||
+            safeStateValue('homeSearchQuery', '') ||
+            '',
+          metadata: { source: 'content_gap_button' }
+        });
+      }
+    }
+
+    function handleInput(event) {
+      var target = event.target;
+      if (!target) return;
+
+      if (
+        target.id === 'homeGlobalSearchInput' ||
+        target.id === 'searchInput'
+      ) {
+        scheduleSearchEvent(target);
+      }
+    }
+
+    function heartbeat() {
+      track('session_active', {
+        view: usageContext.view || 'home',
+        entry_point: usageContext.entryPoint || '',
+        article_id: usageContext.articleId || '',
+        article_title: usageContext.articleTitle || ''
+      });
+    }
+
+    function initialize() {
+      setContext({
         view: 'home',
         entryPoint: '',
         articleId: '',
         articleTitle: ''
       });
 
-      usageTrack('kb_open', {
+      track('kb_open', {
         view: 'home',
         metadata: {
           screenWidth: window.innerWidth || 0,
@@ -4515,54 +3767,62 @@
         }
       });
 
-      /* Flush the initial open event quickly, without blocking rendering. */
-      setTimeout(function() {
-        usageFlush(false);
-      }, 300);
+      setTimeout(heartbeat, 1500);
+      setInterval(heartbeat, HEARTBEAT_MS);
 
-      setTimeout(usageHeartbeat, 1500);
-      setInterval(usageHeartbeat, USAGE_HEARTBEAT_MS);
+      document.addEventListener(
+        'click',
+        handleDocumentClick,
+        true
+      );
 
-      document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-          usageTrack('tab_hidden', { view: usageContext.view || '' });
-          usageFlush();
-        } else {
-          usageTrack('tab_visible', { view: usageContext.view || '' });
-          usageHeartbeat();
-        }
-      });
+      document.addEventListener(
+        'input',
+        handleInput,
+        true
+      );
 
-      window.addEventListener('pagehide', function() {
-        usageTrack('session_close', { view: usageContext.view || '' });
-        usageFlush(true);
-      });
+      document.addEventListener(
+        'visibilitychange',
+        function() {
+          if (document.hidden) {
+            track('tab_hidden', {
+              view: usageContext.view || 'home'
+            }, true);
+          } else {
+            track('tab_visible', {
+              view: usageContext.view || 'home'
+            });
+            heartbeat();
+          }
+        },
+        true
+      );
 
-      window.addEventListener('beforeunload', function() {
-        usageTrack('session_close', { view: usageContext.view || '' });
-        usageFlush(true);
-      });
+      window.addEventListener(
+        'beforeunload',
+        function() {
+          track('session_close', {
+            view: usageContext.view || 'home'
+          }, true);
+        },
+        true
+      );
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(initUsageAnalytics, 1200);
-      });
+      document.addEventListener(
+        'DOMContentLoaded',
+        initialize,
+        { once: true }
+      );
     } else {
-      setTimeout(initUsageAnalytics, 1200);
+      initialize();
     }
+
   })();
   </script>
 
 
-  <script>
-    if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js').catch(function(err) {
-          console.warn('Service worker not available:', err);
-        });
-      });
-    }
-  </script>
 </body>
 </html>
