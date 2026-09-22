@@ -4179,6 +4179,8 @@
         article: extra.article_id !== undefined ? extra.article_id : context.articleId,
         title: extra.article_title !== undefined ? extra.article_title : context.articleTitle,
         search: extra.search_query !== undefined ? extra.search_query : '',
+        reason: extra.reason !== undefined ? extra.reason : '',
+        comment: extra.comment !== undefined ? extra.comment : '',
         device: deviceType(),
         url: currentUrl(),
         referrer: document.referrer || '',
@@ -4387,25 +4389,46 @@
       });
     }
 
-    function trackFeedback(element) {
-      var helpful = !!(
-        element &&
-        element.dataset &&
-        element.dataset.feedback === 'yes'
-      );
+    function trackFeedbackYes(element) {
+      if (element && element.disabled) return;
 
-      send(
-        helpful ? 'feedback_yes' : 'feedback_no',
-        {
-          view: 'article',
-          entry_point: context.entryPoint || '',
-          article_id: context.articleId || '',
-          article_title: context.articleTitle || '',
-          metadata: {
-            source: 'article_feedback'
-          }
+      send('feedback_yes', {
+        view: 'article',
+        entry_point: context.entryPoint || '',
+        article_id: context.articleId || '',
+        article_title: context.articleTitle || '',
+        metadata: {
+          source: 'article_feedback_yes'
         }
-      );
+      });
+    }
+
+    function trackFeedbackNoSubmit() {
+      var reasonElement = document.getElementById('negativeReason');
+      var commentElement = document.getElementById('negativeComment');
+
+      var reason = reasonElement
+        ? safe(reasonElement.value || '', 1000).trim()
+        : '';
+
+      var comment = commentElement
+        ? safe(commentElement.value || '', 5000).trim()
+        : '';
+
+      send('feedback_no', {
+        view: 'article',
+        entry_point: context.entryPoint || '',
+        article_id: context.articleId || '',
+        article_title: context.articleTitle || '',
+        search_query: sectionSearchValue(),
+        reason: reason,
+        comment: comment,
+        metadata: {
+          source: 'article_feedback_no_submit',
+          has_comment: !!comment,
+          has_reason: !!reason
+        }
+      });
     }
 
     function trackFavorite() {
@@ -4513,7 +4536,17 @@
 
         var feedback = target.closest('[data-feedback]');
         if (feedback) {
-          trackFeedback(feedback);
+          if (feedback.dataset && feedback.dataset.feedback === 'yes') {
+            trackFeedbackYes(feedback);
+          }
+          return;
+        }
+
+        var negativeSubmit = target.closest('#sendNegativeFeedback');
+        if (negativeSubmit) {
+          if (!negativeSubmit.disabled) {
+            trackFeedbackNoSubmit();
+          }
           return;
         }
 
