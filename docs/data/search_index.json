@@ -1410,16 +1410,6 @@
     "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW16",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Es necesario que el comprobante de domicilio esté a nombre del cliente?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿es necesario que el comprobante de domicilio esté a nombre del cliente?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW17",
     "entry_point": "flujo_reunion",
     "titulo": "¿Se puede cargar un comprobante de domcilio en PDF?",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "AML, lavado, dinero",
     "search_text": "script obligatorio para preguntar sobre las fuentes de ingreso del cliente (aml)  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "FLOW16",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script obligatorio para preguntar sobre el uso de los recursos (AML)",
+    "resumen": "",
+    "categoria": "Etapa 4: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "AML, lavado, dinero",
+    "search_text": "script obligatorio para preguntar sobre el uso de los recursos (aml)  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
   }
 ]
