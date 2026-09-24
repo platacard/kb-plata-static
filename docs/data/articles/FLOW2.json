@@ -1,11 +1,11 @@
 {
   "id": "FLOW2",
-  "entry_point": "flujo_reunion",
-  "categoria": "Etapa 1: Empezar la reunión",
+  "entry_point": "scripts",
+  "categoria": "Flujo de la primera reunión",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "¿En dónde se puede realizar una reunión?",
+  "titulo": "Script de confirmación por WhatsApp",
   "resumen": "",
-  "contenido_html": "Recuerda que durante la reunión tanto tú como el cliente deben sentirse seguros, por ello es importante que la entrega se realice en un lugar donde puedas finalizar el formulario con calma.<P><P>\r\n\r\nPor tu seguridad, debes considerar NO realizar entregas en algunos lugares, ya que puede ser peligroso y exponer tu integridad física.<P><P>\n\nLugares permitidos:<p><p>\n-Afuera del domicilio del cliente.<p><p>\n-Afuera de la oficina del cliente.<p><p>\n-Afueraa del lugar de trabajo del cliente.",
+  "contenido_html": "¡Hola [nombre completo del cliente]! Mi nombre es [nombre y apellido del embajador], soy el embajador asignado a la entrega de su Plata Card. Me comunico para confirmar su reunión de hoy [slot] en [calle, colonia y ciudad].<p><p>\n\nEstos son los documentos que va a necesitar para la entrega:\n-INE física y vigente.<p><p>\n-Comprobante de domicilio no mayor a 3 meses (opcional).<p><p>\nPara extranjeros:<p><p>\n-Permiso de residencia físico y vigente (temporal o permanente).<p><p>\n-Pasaporte físico y vigente (excepción: para ciudadanos de Venezuela, Cuba y Bielorrusia, también se acepta un pasaporte vencido).<p><p>\n-Comprobante de domicilio no mayor a 3 meses (opcional).<p><p>\n\nLe recomiendo descargar la app de Banco Plata para que la entrega sea más rápida.\nPara dejar todo listo, confírmeme por este medio que nos vemos hoy [slot] en [dirección del cliente]. Quedo pendiente de su respuesta. <p><p>¡Nos vemos en un rato!",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -13,9 +13,9 @@
   "audio_tipo": "",
   "gallery_urls": [],
   "gallery_title": "",
-  "copy_enabled": false,
+  "copy_enabled": true,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }
