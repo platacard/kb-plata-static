@@ -1,0 +1,21 @@
+{
+  "id": "FLOW101",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 12: Final",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Que pasa si la INE del cliente se encuentra vencida?",
+  "resumen": "",
+  "contenido_html": "Si llegamos a tener este caso NO podremos entregar la tarjeta, el cliente tendrá que reprogramar la reunión para la fecha en la que cuente con su INE física y vigente.<p><p>\r\n\r\nPodremos hacer la entrega únicamente bajo una situación muy específica: El cliente se comporta de manera agresiva o demasiado insistente.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

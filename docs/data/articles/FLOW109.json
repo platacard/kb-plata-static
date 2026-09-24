@@ -1,0 +1,21 @@
+{
+  "id": "FLOW109",
+  "entry_point": "flujo_reunion",
+  "categoria": "Venta Cruzada",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Cuáles son las reglas para la venta cruzada de Crédito a Débito (Cuenta)?",
+  "resumen": "",
+  "contenido_html": "Si el cliente rechaza Plata Cuenta la primera vez, vuelve a intentarlo una segunda vez. Si el cliente rechaza nuevamente, agradécele y continúa sin Plata Cuenta.\n\nCuando el cliente tenga varias preguntas, responde por lo menos dos de ellas. Para las demás, puedes sugerirle que contacten a nuestro equipo de soporte.\n\nSolo si el cliente aceptó Plata Cuenta, incentiva su uso, como un depósito de $100 pesos. En caso contrario, omite la recomendación.\n\nSi el cliente dice que sí antes de que termines tu script de ventas, debes confirmarlo verbalmente diciendo: “Muy bien, procedamos con la apertura de su cuenta de débito”.\n\nDurante tu discurso de ventas, debes mencionar la frase “cuenta de débito” por lo menos una vez.\n\nLa tarjeta será digital, Es decir, el kit que entregues al cliente NO CONTENDRÁ DOS TARJETAS. Solo tendrá la tarjeta de crédito en físico y la tarjeta de débito será en digital.\n\nDurante la reunión, se apertura una Cuenta de Débito con una tarjeta digital disponible al momento.\n\nPor eso es importante mencionar \"Cuenta de débito\" en la reunión.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "",
+  "ultima_actualizacion": "",
+  "version": "",
+  "owner": ""
+}

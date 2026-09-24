@@ -1,11 +1,11 @@
 {
   "id": "FLOW4",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "categoria": "Etapa 1: Empezar la reunión",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "Etapa 2: Proceso de verificación del cliente",
+  "titulo": "Script para anticipar al cliente sobre Trae a un Amigo",
   "resumen": "",
-  "contenido_html": "Paso 1<p><p>\r\n\r\nEn tu app de embajadores verás la pantalla que dice \"Proceso de verificación del cliente\", en donde debes pulsar \"Iniciar verificación\".<p><p>\r\n\r\nAntes de continuar, aparecerá una pantalla con el nombre completo del cliente y su fecha de nacimiento, para que te asegures que estos datos coincidan con los mostrados en la INE.<p><p>\r\n\r\nPaso 2<p><p>\r\n\r\nSe abrirá la cámara de tu celular con un contorno para posicionar el frente de la INE. Captura la foto presionando el botón que aparece en la pantalla para que el sistema comience a procesarla. <p><p>\r\n\r\nSi todo está bien, el sistema te indicará ¡Listo! y ahora deberás capturar el reverso de la INE dentro del contorno.<p><p>\r\n\r\nSi el cliente es extranjero, en lugar del INE, debes de capturar la tarjeta de residencia en la sección de toma de foto del INE. <p><p>\r\n\r\nConsejo: coloca el documento de identidad sobre una superficie plana, asegúrate de que la foto esté enfocada, con buena iluminación, evita reflejos y destellos en la identificación.<p><p>\r\n\r\nPaso 3<p><p>\r\n\r\nDespués de capturar la INE, deberás tomar una foto selfie del cliente. Indícale al cliente que para que la selfie sea exitosa, debe mantener su rostro descubierto y retirarse accesorios que cubran el rostro (lentes, gorra, sombrero, etc.).<p><p>\r\n\r\nDebes alinear el rostro del cliente con el marco de la app.<p><p>\r\n\r\nDespués hacer la captura de la INE y de la Selfie, el sistema procesará los datos y te arrojará un mensaje éxito.",
+  "contenido_html": "Al finalizar su entrega, tiene la oportunidad de invitar a sus conocidos a Plata. ¿Qué le parece si seleccionamos a sus contactos más cercanos para que reciban su invitación y aseguren su beneficio desde ahora?",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

@@ -1,12 +1,11 @@
 {
-  "revision": "20260921171713_633974",
-  "generated_at": "2026-09-21T23:17:13.975Z",
+  "revision": "20260924122729_449245",
+  "generated_at": "2026-09-24T18:27:29.245Z",
   "source": "KB_Content",
   "entry_points": [
     "faq",
     "flujo_reunion",
-    "podcast",
-    "scripts"
+    "podcast"
   ],
   "version": "v45",
   "delivery": "github-static-json"

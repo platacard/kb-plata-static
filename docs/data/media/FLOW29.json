@@ -5,11 +5,6 @@
   "audio_titulo": "",
   "audio_duracion": "",
   "audio_tipo": "",
-  "gallery_urls": [
-    "https://drive.google.com/file/d/1W5eAv3bxRlz72vav4wrQDINfZVQI_lcm/view?usp=drive_link",
-    "https://drive.google.com/file/d/1x1Ih3G3BPQLhy5oQhn3I6ygbihlT0Adc/view?usp=drive_link",
-    "https://drive.google.com/file/d/1yTKMLrFzfKYfML8baGEvLwU08MnIIGx9/view?usp=drive_link",
-    "https://drive.google.com/file/d/12Cbr2-XgdVzyBXWitecxwiNtTpSsJ8e2/view?usp=drive_link"
-  ],
+  "gallery_urls": [],
   "gallery_title": ""
 }

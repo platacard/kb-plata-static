@@ -1,0 +1,21 @@
+{
+  "id": "FLOW67",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 4: Cuestionario",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Qué son las preguntas AML?",
+  "resumen": "",
+  "contenido_html": "Las siguientes preguntas se realizan para cumplir con las regulaciones bancarias. No le digas al cliente que se tratan de preguntas sobre la prevención de lavado de dinero.<p><p>\r\n\r\nEstá prohibido y es una falla del proceso darle el teléfono al cliente para que él capture las preguntas por su cuenta. El cuestionario AML debe ser llenado completamente por el Embajador haciendo las preguntas pertinentes.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

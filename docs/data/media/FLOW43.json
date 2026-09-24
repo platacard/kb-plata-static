@@ -5,15 +5,6 @@
   "audio_titulo": "",
   "audio_duracion": "",
   "audio_tipo": "",
-  "gallery_urls": [
-    "https://drive.google.com/file/d/1lBR-gpAvxy1vx5DDu2VtLCqkQ4btJOrK/view?usp=drive_link",
-    "https://drive.google.com/file/d/10O3QiYkdwjmIoI5E9E6Fwh9uPbPGGFWj/view?usp=drive_link",
-    "https://drive.google.com/file/d/1NdGz1ImQSm6J966dpGM04sGhuMozc6W1/view?usp=drive_link",
-    "https://drive.google.com/file/d/1jHVX-38NRUiO3khVWT_ukVXi4v2dkULx/view?usp=drive_link",
-    "https://drive.google.com/file/d/1CIkUhsU4IojTY-Aiv4L32SayqsitEf37/view?usp=drive_link",
-    "https://drive.google.com/file/d/1Z-k4pPFyarRSlDQnKHpzS3gKpZll4pQi/view?usp=drive_link",
-    "https://drive.google.com/file/d/1XDVC03vk3hNRmkMDRUpkrDq04I9-euDS/view?usp=drive_link",
-    "https://drive.google.com/file/d/1eqyLB7SdkZ0EomMnG-OejhFE8zDbFg2W/view?usp=drive_link"
-  ],
+  "gallery_urls": [],
   "gallery_title": ""
 }

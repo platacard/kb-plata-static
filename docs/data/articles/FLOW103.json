@@ -1,0 +1,21 @@
+{
+  "id": "FLOW103",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 7: Preguntas extra",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Qué pasa si sospecho que el cliente está usurpando una identidad o su INE es falsa?",
+  "resumen": "",
+  "contenido_html": "En este caso podremos entregar la tarjeta, sin embargo debemos de realizar un par de acciones dentro de las preguntas de validación:<p>\r\n\r\nPaso 1. Pregunta: Revisión manual del INE<p>\r\n\r\nDebemos de colocar \"TODO OK 1\" para poder tener el registro de la situación en la parte de Preguntas extra de seguridad.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

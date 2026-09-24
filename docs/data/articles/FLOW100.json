@@ -1,0 +1,21 @@
+{
+  "id": "FLOW100",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 12: Final",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Cuáles son los recordatorios de fin de reunión?",
+  "resumen": "",
+  "contenido_html": "-Fecha de corte: Su fecha de corte se establece aproximadamente de 10 a 15 días después de su primera transacción.<p><p>\n-Incentivar el uso de la tarjeta: En caso de aprobación, puedes usar tu tarjeta inmediatamente en cuanto llegue el mensaje de límite de crédito. <p><p>\n-Activación de tarjeta:Aproximadamente 10 minutos después de terminada esta reunión te llegará una notificación en el que te indicarán si se aprobó tu crédito. Esta notificación puede llegar a la app de Plata, por medio de la app, correo electrónico o SMS. En caso de ser aprobado, el mensaje también mencionará tu línea de crédito y con esto queda activa tu tarjeta Plata.<p><p>\n-Fechas de pago: Tienes hasta 60 días después de tu fecha de corte para pagar tu tarjeta. Puedes ver tu fecha de pago en la aplicación de Plata, en la sección donde se encuentran tus tarjetas, así como tu estado de cuenta.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

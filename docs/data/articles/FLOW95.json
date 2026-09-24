@@ -1,0 +1,21 @@
+{
+  "id": "FLOW95",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 10: Seguro de crédito",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Scripts para Seguro de crédito",
+  "resumen": "",
+  "contenido_html": "Tenemos el beneficio de un mes gratis en su seguro de desempleo, ¿me proporciona el código de activación por favor?",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

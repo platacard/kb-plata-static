@@ -3,9 +3,9 @@
   "entry_point": "flujo_reunion",
   "categoria": "Etapa 1: Empezar la reunión",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "¿En dónde NO se puede realizar una reunión?",
+  "titulo": "Script de registro para empezar la reunión",
   "resumen": "",
-  "contenido_html": "Lugares no permitidos:<p><p>\n\n-En el paradero donde llega el cliente.<p><p>\n-Afuera del metro o en la calle.<p><p>\n-En el estacionamiento de un centro comercial.<p><p>\n-En parques.<p><p>\n-Jamás a bordo del vehículo del cliente o embajador.<p><p>\n-Nunca en la casa del embajador.<p><p>\n-Evita aceptar alimentos y/o bebidas.",
+  "contenido_html": "Hola, mi nombre es [nombre del embajador], representante oficial de Banco Plata. Estoy aquí para completar su registro. Como su embajador, yo no tengo ninguna influencia en la aprobación de su tarjeta Plata, ¿de acuerdo?",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

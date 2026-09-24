@@ -1,0 +1,21 @@
+{
+  "id": "FLOW102",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 7: Preguntas extra",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Que pasa si el cliente tiene una actitud agresiva o violenta?",
+  "resumen": "",
+  "contenido_html": "En caso de que el cliente tenga alguno de los comportamientos antes mencionados, podremos entregar la tarjeta, sin embargo debemos de realizar un par de acciones dentro de las preguntas de validación:<p>\r\n\r\nPaso 1. Pregunta: Revisión manual del INE.<p>\r\n\r\nDebemos de colocar \"Pasó\" para poder tener el registro de la situación,  en caso de que el INE sea real y cumpla con todas las medidas de seguridad.<p>\r\n\r\nPaso 2. Dejar comentarios en Comentarios.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
