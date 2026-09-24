@@ -1630,16 +1630,6 @@
     "search_text": "pantallas de constancia de situación fiscal  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
   },
   {
-    "id": "FLOW34",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 8: Vinculación de la tarjeta",
-    "resumen": "",
-    "categoria": "Etapa 8: Vinculación de la tarjeta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "etapa 8: vinculación de la tarjeta  etapa 8: vinculación de la tarjeta onboarding y descarga "
-  },
-  {
     "id": "FLOW35",
     "entry_point": "flujo_reunion",
     "titulo": "¿Se puede vincular la tarjeta manualmente?",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "recordatorios, finales, cierre, reunion",
     "search_text": "script para explicar la primera compra al cierre de la reunión  etapa 12: final onboarding y descarga recordatorios, finales, cierre, reunion"
+  },
+  {
+    "id": "FLOW34",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para para mencionar el seguro de crédito",
+    "resumen": "",
+    "categoria": "Etapa 10: Seguro de crédito",
+    "subcategoria": "Seguro de crédito",
+    "keywords": "seguro, credito",
+    "search_text": "script para para mencionar el seguro de crédito  etapa 10: seguro de crédito seguro de crédito seguro, credito"
   }
 ]
