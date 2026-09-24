@@ -220,16 +220,6 @@
     "search_text": "script de confirmación por whatsapp  flujo de la primera reunión onboarding y descarga whatsapp, confirmación"
   },
   {
-    "id": "SCRIPT2",
-    "entry_point": "scripts",
-    "titulo": "Script de registro para empezar la reunión",
-    "resumen": "",
-    "categoria": "Flujo de la primera reunión",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "registro, inicio",
-    "search_text": "script de registro para empezar la reunión  flujo de la primera reunión onboarding y descarga registro, inicio"
-  },
-  {
     "id": "SCRIPT3",
     "entry_point": "scripts",
     "titulo": "Script para anticipar al cliente sobre Trae a un Amigo",
@@ -2028,5 +2018,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "WhatsApp, confirmación",
     "search_text": "script de confirmación por whatsapp  etapa 1: empezar la reunión onboarding y descarga whatsapp, confirmación"
+  },
+  {
+    "id": "SCRIPT2",
+    "entry_point": "scripts",
+    "titulo": "Script de registro para empezar la reunión",
+    "resumen": "",
+    "categoria": "Etapa 1: Empezar la reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "registro, inicio",
+    "search_text": "script de registro para empezar la reunión  etapa 1: empezar la reunión onboarding y descarga registro, inicio"
   }
 ]
