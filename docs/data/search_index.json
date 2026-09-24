@@ -1410,16 +1410,6 @@
     "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW14",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Cuánto recibo por cada comprobante de domicilio correctamente cargado?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿cuánto recibo por cada comprobante de domicilio correctamente cargado?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW15",
     "entry_point": "flujo_reunion",
     "titulo": "¿Se puede tomar foto a comprobantes de domicilio digitales si el cliente no lo tiene en físico?",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "AML, lavado, dinero",
     "search_text": "script en caso de que el cliente dude de las preguntas de aml  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "FLOW14",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script obligatorio para preguntar sobre los movimientos (AML)",
+    "resumen": "",
+    "categoria": "Etapa 4: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "AML, lavado, dinero",
+    "search_text": "script obligatorio para preguntar sobre los movimientos (aml)  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
   }
 ]
