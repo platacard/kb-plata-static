@@ -1410,16 +1410,6 @@
     "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW5",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de verificación de INE",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de verificación de ine  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW6",
     "entry_point": "flujo_reunion",
     "titulo": "Pantallas de verificación de Comprobante de Domicilio",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "amigo, tip, oro",
     "search_text": "script para anticipar al cliente sobre trae a un amigo  etapa 1: empezar la reunión onboarding y descarga amigo, tip, oro"
+  },
+  {
+    "id": "FLOW5",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para la explicación del proceso",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "amigo, tip, oro",
+    "search_text": "script para la explicación del proceso  etapa 2: proceso de verificación del cliente onboarding y descarga amigo, tip, oro"
   }
 ]
