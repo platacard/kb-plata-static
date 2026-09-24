@@ -2352,5 +2352,31 @@
     "version": "1",
     "gallery_urls": [],
     "gallery_title": ""
+  },
+  {
+    "id": "FLOW71",
+    "entry_point": "flujo_reunion",
+    "status": "published",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "titulo": "¿Cuáles son las reglas para la venta cruzada de Débito a Crédito?",
+    "resumen": "",
+    "keywords": "",
+    "imagen_url": "",
+    "audio_url": "",
+    "audio_titulo": "",
+    "audio_duracion": "",
+    "audio_tipo": "",
+    "orden": 999999,
+    "badge": "BÁSICO",
+    "priority": "",
+    "criticality": "",
+    "is_featured": false,
+    "copy_enabled": false,
+    "content_type": "Text",
+    "ultima_actualizacion": "2026-07-22T01:00:00",
+    "version": "1",
+    "gallery_urls": [],
+    "gallery_title": ""
   }
 ]

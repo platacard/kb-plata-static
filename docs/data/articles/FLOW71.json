@@ -1,0 +1,21 @@
+{
+  "id": "FLOW71",
+  "entry_point": "flujo_reunion",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Cuáles son las reglas para la venta cruzada de Débito a Crédito?",
+  "resumen": "",
+  "contenido_html": "Si el cliente rechaza la oferta, intenta hacer manejo de objeciones dos veces; a la tercera, debes aceptar el rechazo. Una objeción no es un simple «no»: es una explicación del motivo del rechazo que da el cliente.<p><p>\r\n\r\nSi el cliente tiene preguntas, atiende al menos dos; para el resto, puedes sugerirle que consulte la aplicación y se ponga en contacto con el servicio de atención al cliente.<p><p>\r\n\r\nTras una venta satisfactoria, debes incentivar al cliente a utilizar la tarjeta. No lo hagas si el cliente la ha rechazado.<p><p>\r\n\r\nSi el cliente ha dado su consentimiento antes de que termines tu discurso de venta, debes confirmarlo verbalmente diciendo: «De acuerdo, vamos a proceder con la solicitud de la tarjeta de crédito».<p><p>\r\n\r\nDebes mencionar la palabra «tarjeta de crédito» al menos una vez durante la presentación de la tarjeta y la explicación de las ventajas.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
