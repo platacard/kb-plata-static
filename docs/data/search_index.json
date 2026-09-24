@@ -1410,16 +1410,6 @@
     "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW9",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Hay excepciones en los pasaportes vencidos?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿hay excepciones en los pasaportes vencidos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW10",
     "entry_point": "flujo_reunion",
     "titulo": "¿Si veo la pantalla \"Análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "POA, comprobante, domicilio",
     "search_text": "script si el cliente se nota o expresa desconfianza por el comprobante de domicilio  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
+  },
+  {
+    "id": "FLOW9",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script si el cliente cuestiona por qué se pide si su dirección viene en la identificación",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script si el cliente cuestiona por qué se pide si su dirección viene en la identificación  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
   }
 ]

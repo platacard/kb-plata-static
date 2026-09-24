@@ -295,7 +295,7 @@
     "id": "FLOW9",
     "entry_point": "flujo_reunion",
     "status": "published",
-    "categoria": "Flujo de la primera reunión",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
     "subcategoria": "Onboarding y descarga",
     "titulo": "Script si el cliente cuestiona por qué se pide si su dirección viene en la identificación",
     "resumen": "",
