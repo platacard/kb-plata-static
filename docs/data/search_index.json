@@ -1670,16 +1670,6 @@
     "search_text": "manejo de objeciones seguro de crédito  etapa 10: seguro de crédito onboarding y descarga "
   },
   {
-    "id": "FLOW46",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Que pasa si la INE del cliente se encuentra vencida?",
-    "resumen": "",
-    "categoria": "Etapa 12: Final",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿que pasa si la ine del cliente se encuentra vencida?  etapa 12: final onboarding y descarga "
-  },
-  {
     "id": "FLOW47",
     "entry_point": "flujo_reunion",
     "titulo": "¿Que pasa si el cliente tiene una actitud agresiva o violenta?",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "recordatorios, finales, cierre, reunion",
     "search_text": "script obligatorio de medios de contacto al cierre de la reunión  etapa 12: final onboarding y descarga recordatorios, finales, cierre, reunion"
+  },
+  {
+    "id": "FLOW46",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar la primera compra al cierre de la reunión",
+    "resumen": "",
+    "categoria": "Etapa 12: Final",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "recordatorios, finales, cierre, reunion",
+    "search_text": "script para explicar la primera compra al cierre de la reunión  etapa 12: final onboarding y descarga recordatorios, finales, cierre, reunion"
   }
 ]
