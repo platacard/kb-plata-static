@@ -1,6 +1,6 @@
 {
   "id": "FLOW1.12",
-  "entry_point": "scripts",
+  "entry_point": "flujo_reunion",
   "categoria": "Etapa 1: Empezar la reunión",
   "subcategoria": "Onboarding y descarga",
   "titulo": "Script de registro para empezar la reunión",
