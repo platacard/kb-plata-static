@@ -1410,16 +1410,6 @@
     "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW7",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de verificación de Pasaporte",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de verificación de pasaporte  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW8",
     "entry_point": "flujo_reunion",
     "titulo": "Pantallas de verificación de Foto Selfie",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "POA, comprobante, domicilio",
     "search_text": "script obligatorio para pedir el comprobante de domicilio (cuando aplique. único script obligatorio que puede adaptarse)  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
+  },
+  {
+    "id": "FLOW7",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script si el cliente pregunta si el comprobante de domicilio es forzoso",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script si el cliente pregunta si el comprobante de domicilio es forzoso  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
   }
 ]
