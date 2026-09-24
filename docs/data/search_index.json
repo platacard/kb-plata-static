@@ -1410,16 +1410,6 @@
     "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW13",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Qué tipo de comprobantes de domicilio son aceptados?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿qué tipo de comprobantes de domicilio son aceptados?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW14",
     "entry_point": "flujo_reunion",
     "titulo": "¿Cuánto recibo por cada comprobante de domicilio correctamente cargado?",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Contactos de emergencia Plata",
     "keywords": "referencia, contactos",
     "search_text": "script obligatorio para solicitar contactos de referencia  etapa 4: cuestionario contactos de emergencia plata referencia, contactos"
+  },
+  {
+    "id": "FLOW13",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script en caso de que el cliente dude de las preguntas de AML",
+    "resumen": "",
+    "categoria": "Etapa 4: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "AML, lavado, dinero",
+    "search_text": "script en caso de que el cliente dude de las preguntas de aml  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
   }
 ]
