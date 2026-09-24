@@ -1630,16 +1630,6 @@
     "search_text": "pantallas de constancia de situación fiscal  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
   },
   {
-    "id": "FLOW33",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de preguntas extra",
-    "resumen": "",
-    "categoria": "Etapa 7: Preguntas extra",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de preguntas extra  etapa 7: preguntas extra onboarding y descarga "
-  },
-  {
     "id": "FLOW34",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 8: Vinculación de la tarjeta",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "seguridad, empaque, kit, bienvenida",
     "search_text": "script obligatorio de seguridad del empaque  etapa 9: foto de cliente con paquete onboarding y descarga seguridad, empaque, kit, bienvenida"
+  },
+  {
+    "id": "FLOW33",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar la toma de la foto con el kit de bienvenida",
+    "resumen": "",
+    "categoria": "Etapa 9: Foto de cliente con paquete",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "kit, bienvenida, foto",
+    "search_text": "script para explicar la toma de la foto con el kit de bienvenida  etapa 9: foto de cliente con paquete onboarding y descarga kit, bienvenida, foto"
   }
 ]
