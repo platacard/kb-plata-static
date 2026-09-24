@@ -1670,16 +1670,6 @@
     "search_text": "manejo de objeciones seguro de crédito  etapa 10: seguro de crédito onboarding y descarga "
   },
   {
-    "id": "FLOW44",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 12: Final",
-    "resumen": "",
-    "categoria": "Etapa 12: Final",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "etapa 12: final  etapa 12: final onboarding y descarga "
-  },
-  {
     "id": "FLOW45",
     "entry_point": "flujo_reunion",
     "titulo": "¿Cuáles son los recordatorios de fin de reunión?",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Seguridad de los referidos y privacidad",
     "keywords": "",
     "search_text": "script si el cliente dice: “no he utilizado la tarjeta, ¿por qué debería recomendarla con amigos?”  etapa 11:  trae a un amigo seguridad de los referidos y privacidad "
+  },
+  {
+    "id": "FLOW44",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script obligatorio de Activación de tarjeta al cierre de la reunión",
+    "resumen": "",
+    "categoria": "Etapa 12: Final",
+    "subcategoria": "Parámetros del crédito y límites",
+    "keywords": "recordatorios, finales, cierre, reunion",
+    "search_text": "script obligatorio de activación de tarjeta al cierre de la reunión  etapa 12: final parámetros del crédito y límites recordatorios, finales, cierre, reunion"
   }
 ]
