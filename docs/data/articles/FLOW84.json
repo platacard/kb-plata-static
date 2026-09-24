@@ -1,0 +1,21 @@
+{
+  "id": "FLOW84",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Pantalla de e.firma",
+  "resumen": "",
+  "contenido_html": "",
+  "imagen_url": "https://drive.google.com/file/d/1L7OsMR9SA5nxZ5Y661_m1F8NdWPVoUHq/view?usp=drive_link",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

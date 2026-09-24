@@ -1,0 +1,26 @@
+{
+  "id": "FLOW90",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 8: Vinculación de la tarjeta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Pantallas de Vinculación de la tarjeta",
+  "resumen": "",
+  "contenido_html": "",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [
+    "https://drive.google.com/file/d/1QnSpB54MDMHF9KJban5c5IQmgu766lR_/view?usp=drive_link",
+    "https://drive.google.com/file/d/1fuwYwKfhVA3dGCqlVwKx3CqCneN7_j7f/view?usp=drive_link",
+    "https://drive.google.com/file/d/1MGSrPSmnh1QbAFIM3IP6eaCKytgabaVn/view?usp=drive_link",
+    "https://drive.google.com/file/d/1wSLG5K5LXivUmue6HNsuA_bwsDYyUW8_/view?usp=drive_link"
+  ],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

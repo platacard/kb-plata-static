@@ -1,0 +1,21 @@
+{
+  "id": "FLOW87",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 8: Vinculación de la tarjeta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Etapa 8: Vinculación de la tarjeta",
+  "resumen": "",
+  "contenido_html": "En el proceso de vinculación de la tarjeta, debes escanear el código de barras que se encuentra al reverso del paquete del kit de bienvenida.<p><p>\n\n¡No confundas el código de barras con el Código QR!<p><p>\n\nSiempre debes asegurarte de que los números del código que aparece en la app de Embajadores coincidan con el código de barras del kit de bienvenida.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

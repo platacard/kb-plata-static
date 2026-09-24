@@ -1,0 +1,26 @@
+{
+  "id": "FLOW82",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Pantallas de Beneficiarios",
+  "resumen": "",
+  "contenido_html": "",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [
+    "https://drive.google.com/file/d/1W5eAv3bxRlz72vav4wrQDINfZVQI_lcm/view?usp=drive_link",
+    "https://drive.google.com/file/d/1x1Ih3G3BPQLhy5oQhn3I6ygbihlT0Adc/view?usp=drive_link",
+    "https://drive.google.com/file/d/1yTKMLrFzfKYfML8baGEvLwU08MnIIGx9/view?usp=drive_link",
+    "https://drive.google.com/file/d/12Cbr2-XgdVzyBXWitecxwiNtTpSsJ8e2/view?usp=drive_link"
+  ],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

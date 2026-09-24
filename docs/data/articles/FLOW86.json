@@ -1,0 +1,28 @@
+{
+  "id": "FLOW86",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 7: Preguntas extra",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Pantallas de preguntas extra",
+  "resumen": "",
+  "contenido_html": "",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [
+    "https://drive.google.com/file/d/1AMt8MkaKzZxtqA47z1KO0sdblMQe7LBd/view?usp=drive_link",
+    "https://drive.google.com/file/d/1X_yy_koGIxncvg_A6gaVLpd-wacBcAO0/view?usp=drive_link",
+    "https://drive.google.com/file/d/1zEyWuBxZPqzj7NmvDjiqslqk6IsZ2NU7/view?usp=drive_link",
+    "https://drive.google.com/file/d/10OBVoEsk_stXItDcFB2rAF7XunvD3yVK/view?usp=drive_link",
+    "https://drive.google.com/file/d/1TAvBA2XOuXMALQJiIyficf7c2q7sYc39/view?usp=drive_link",
+    "https://drive.google.com/file/d/1TI_WJO7o8Nr9oBX0i3hO0fzt2MRopIzN/view?usp=drive_link"
+  ],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text + Carousel",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
