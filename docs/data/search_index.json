@@ -1410,16 +1410,6 @@
     "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW10",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Si veo la pantalla \"Análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿si veo la pantalla \"análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW11",
     "entry_point": "flujo_reunion",
     "titulo": "¿Qué hago si hay problemas de red y veo la pantalla \"Algo salió mal\"?",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "POA, comprobante, domicilio",
     "search_text": "script si el cliente cuestiona por qué se pide si su dirección viene en la identificación  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
+  },
+  {
+    "id": "FLOW10",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script si el cliente acepta, pero dice: \"No tengo ningún recibo impreso aquí conmigo\"",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script si el cliente acepta, pero dice: \"no tengo ningún recibo impreso aquí conmigo\"  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
   }
 ]
