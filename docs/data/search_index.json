@@ -1650,16 +1650,6 @@
     "search_text": "¿se puede vincular la tarjeta manualmente?  etapa 8: vinculación de la tarjeta onboarding y descarga "
   },
   {
-    "id": "FLOW36",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Es necesario que el cliente ingrese su tarjeta a un cajero para activarla?",
-    "resumen": "",
-    "categoria": "Etapa 8: Vinculación de la tarjeta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿es necesario que el cliente ingrese su tarjeta a un cajero para activarla?  etapa 8: vinculación de la tarjeta onboarding y descarga "
-  },
-  {
     "id": "FLOW37",
     "entry_point": "flujo_reunion",
     "titulo": "Pantallas de Vinculación de la tarjeta",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "kit, bienvenida, foto",
     "search_text": "script para explicar la toma de la foto con el kit de bienvenida  etapa 9: foto de cliente con paquete onboarding y descarga kit, bienvenida, foto"
+  },
+  {
+    "id": "FLOW36",
+    "entry_point": "flujo_reunion",
+    "titulo": "Opción 1 para solicitar contactos referidos (directa, con un gancho de 5 contactos)",
+    "resumen": "",
+    "categoria": "Etapa 11:  Trae a un amigo",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "opción 1 para solicitar contactos referidos (directa, con un gancho de 5 contactos)  etapa 11:  trae a un amigo baf (programa de referidos) "
   }
 ]
