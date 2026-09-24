@@ -1,11 +1,11 @@
 {
   "id": "FLOW15",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "categoria": "Flujo de la primera reunión",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "¿Se puede tomar foto a comprobantes de domicilio digitales si el cliente no lo tiene en físico?",
+  "titulo": "Script obligatorio para preguntar sobre las fuentes de ingreso del cliente (AML)",
   "resumen": "",
-  "contenido_html": "Sí está permitido tomar foto a documentos digitales (desde otro celular o pantalla *NO fotos de fotos*) si el cliente no lo tiene físico.",
+  "contenido_html": "Para completar su perfil de cliente, el sistema me pide confirmar, ¿cuáles son sus fuentes de ingreso?",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

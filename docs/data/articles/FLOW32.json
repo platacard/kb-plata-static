@@ -1,11 +1,11 @@
 {
   "id": "FLOW32",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 7: Preguntas extra",
+  "categoria": "Flujo de la primera reunión",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "Etapa 7: Preguntas extra",
+  "titulo": "Script obligatorio de seguridad del empaque",
   "resumen": "",
-  "contenido_html": "Las preguntas extra son solo para ti, por lo cual debes asegurarte de que el cliente no las pueda ver. <p><p>\n\nMenciónale que estás terminando el formulario.",
+  "contenido_html": "Opción 1\nRevise que el empaque donde viene su kit de bienvenida no se encuentre alterado, roto o abierto. Le pedimos abrirlo en privado por seguridad de su información.\n<p><p>\nOpción 2\nAsegúrese de que el empaque esté cerrado al recibirlo y le recomiendo que lo abra en privado.",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

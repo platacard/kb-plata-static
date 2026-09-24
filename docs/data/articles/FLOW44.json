@@ -1,11 +1,11 @@
 {
   "id": "FLOW44",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 12: Final",
-  "subcategoria": "Onboarding y descarga",
-  "titulo": "Etapa 12: Final",
+  "categoria": "Flujo de la primera reunión",
+  "subcategoria": "Parámetros del crédito y límites",
+  "titulo": "Script obligatorio de Activación de tarjeta al cierre de la reunión",
   "resumen": "",
-  "contenido_html": "Sabrás que has llegado al final de la reunión cuando en la app de Embajadores veas la pantalla que dice ¡Los amigos fueron invitados!<p><p>\r\n\r\nPulsa el botón \"Finalizar reunión\" para concluir el proceso.",
+  "contenido_html": "Aproximadamente 10 minutos después de terminada esta reunión, le llegará una notificación en el que le indicarán si se aprobó su crédito; esta notificación puede llegar a la app de Plata, por medio de correo electrónico o SMS. En caso de ser aprobado, el mensaje también mencionará su línea de crédito y con esto queda activa su tarjeta Plata.",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

@@ -1,0 +1,31 @@
+{
+  "id": "FLOW53",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Pantallas de verificación de Foto Selfie",
+  "resumen": "",
+  "contenido_html": "",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [
+    "https://drive.google.com/file/d/1Zzej5gzsH2pBPzu508FuHdZhO_We5AZq/view?usp=drive_link",
+    "https://drive.google.com/file/d/125CRX2_LORcuyjEQ_RKE2CkEkuRdD3-Q/view?usp=drive_link",
+    "https://drive.google.com/file/d/19WQOCKcvb5RLTRO3fHiOpXTyQasPLdYk/view?usp=drive_link",
+    "https://drive.google.com/file/d/1mfozgyv6cIbRmw8QdyBU5VChHCBn0_7W/view?usp=drive_link",
+    "https://drive.google.com/file/d/1HzEc4zIKPmAKBNn06JG2tN8nzLg08Ew9/view?usp=drive_link",
+    "https://drive.google.com/file/d/1zVRNcXJDtS5PkFqJ5sXu5TUIuNWkEWYK/view?usp=drive_link",
+    "https://drive.google.com/file/d/1mMvxXmjY3eJD57Mu-ayhTjn6U6xZr6Qp/view?usp=drive_link",
+    "https://drive.google.com/file/d/1HmqQ_lNO7yHWaztrcg4j4WlFchD1FRJL/view?usp=drive_link",
+    "https://drive.google.com/file/d/1ojvwc4G8t0OYTiWfyQqD4iWHNTESAUGB/view?usp=drive_link"
+  ],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text + Carousel",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

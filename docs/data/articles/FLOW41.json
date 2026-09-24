@@ -1,12 +1,12 @@
 {
   "id": "FLOW41",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 10: Seguro de crédito",
-  "subcategoria": "Onboarding y descarga",
-  "titulo": "Pantalla de Seguro de crédito",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "Seguridad de los referidos y privacidad",
+  "titulo": "Script si el cliente tiene miedo a que los referidos reciban múltiples llamadas por parte de Plata",
   "resumen": "",
-  "contenido_html": "",
-  "imagen_url": "https://drive.google.com/file/d/1OmaYmY0AMgDRU8WY-gKPK8_rmqDTa-P6/view?usp=drive_link",
+  "contenido_html": "No se preocupe, nadie les va a estar llamando sin parar. Si sus amigos no están interesados, simplemente dejamos de ponernos en contacto con ellos. No los presionamos en absoluto. Entonces, ¿qué opina? ¿A quién tiene en mente?",
+  "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
   "audio_duracion": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

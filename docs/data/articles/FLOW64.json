@@ -1,0 +1,21 @@
+{
+  "id": "FLOW64",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 3: Instalar la app",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Etapa 3: Instalar la app",
+  "resumen": "",
+  "contenido_html": "Hay dos formas de instalar la app.<p><p>\n\nForma 1: A través de un enlace de descarga para el cliente, el cual le llegará a través de un SMS.<p><p>\n\nForma 2: Mostrándole un código QR al cliente durante la reunión. El cliente puede escanear el código QR en su teléfono. Si es necesario, ayúdale a instalar la aplicación desde la App Store o Google Play Store.<p><p>\n\nCuando el cliente instale la app, es importante que lo ayudes a conceder los permisos que solicita la app.<p><p>\n\nSi el cliente decide no instalar la aplicación durante la reunión, envía un enlace de descarga por SMS pulsando Enviar link.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

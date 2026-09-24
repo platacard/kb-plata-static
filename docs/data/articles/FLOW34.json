@@ -1,11 +1,11 @@
 {
   "id": "FLOW34",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 8: Vinculación de la tarjeta",
-  "subcategoria": "Onboarding y descarga",
-  "titulo": "Etapa 8: Vinculación de la tarjeta",
+  "categoria": "Seguro de crédito",
+  "subcategoria": "Seguro de crédito",
+  "titulo": "Script para para mencionar el seguro de crédito",
   "resumen": "",
-  "contenido_html": "En el proceso de vinculación de la tarjeta, debes escanear el código de barras que se encuentra al reverso del paquete del kit de bienvenida.<p><p>\n\n¡No confundas el código de barras con el Código QR!<p><p>\n\nSiempre debes asegurarte de que los números del código que aparece en la app de Embajadores coincidan con el código de barras del kit de bienvenida.",
+  "contenido_html": "Tenemos el beneficio de un mes gratis en tu seguro de desempleo, ¿podemos dejarlo activo?",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

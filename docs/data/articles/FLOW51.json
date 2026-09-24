@@ -1,0 +1,31 @@
+{
+  "id": "FLOW51",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Pantallas de verificación de Comprobante de Domicilio",
+  "resumen": "",
+  "contenido_html": "",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [
+    "https://drive.google.com/file/d/1a3Nt348PygOPedCJHmyiViZ2m9MDEpU7/view?usp=drive_link..https://drive.google.com/file/d/1xSYTNiQIpIZxUt_C3Xwix035XBRKI2DJ/view?usp=drive_link",
+    "https://drive.google.com/file/d/1TVW51oCb7q5j5X5kqUiO0JhOICqS9i_8/view?usp=drive_link",
+    "https://drive.google.com/file/d/1TbFwHRXHUZ2kIBwycK4l2rQRAGOtIY-D/view?usp=drive_link",
+    "https://drive.google.com/file/d/1l24ujX1z1LPrI2TpE5nR7f3aCAwdwm-H/view?usp=drive_link",
+    "https://drive.google.com/file/d/1hgfAVRfMvpvQkZVSSMYX2vBu27y3cPJP/view?usp=drive_link",
+    "https://drive.google.com/file/d/1KN9SDjDQ5YW57ExvwzQLH-F8ADlNISgX/view?usp=drive_link",
+    "https://drive.google.com/file/d/1_rovRiL-AkogU9dAy0Km2Ubs5h8u7e1o/view?usp=drive_link",
+    "https://drive.google.com/file/d/1vgfeSkc9nnihB4YpBFQ1Qu6iw37nvaKk/view?usp=drive_link",
+    "https://drive.google.com/file/d/1BjS9cvZAgYNjwl37S86d0-9aM_sz_loT/view?usp=drive_link"
+  ],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text + Carousel",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

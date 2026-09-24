@@ -1,11 +1,11 @@
 {
   "id": "FLOW10",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "categoria": "Flujo de la primera reunión",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "¿Si veo la pantalla \"Análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?",
+  "titulo": "Script si el cliente acepta, pero dice: \"No tengo ningún recibo impreso aquí conmigo\"",
   "resumen": "",
-  "contenido_html": "Tendrás máximo 4 intentos para completar el paso.",
+  "contenido_html": "No hay ningún problema, no necesita ser impreso. Si lo tiene en su teléfono como un PDF, una foto o una captura de pantalla, puede enviarmelo a través de WhatsApp y lo podemos cargar ahora mismo.",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

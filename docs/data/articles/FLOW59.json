@@ -1,11 +1,11 @@
 {
-  "id": "FLOW16",
+  "id": "FLOW59",
   "entry_point": "flujo_reunion",
-  "categoria": "Flujo de la primera reunión",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "Script obligatorio para preguntar sobre el uso de los recursos (AML)",
+  "titulo": "¿Cuánto recibo por cada comprobante de domicilio correctamente cargado?",
   "resumen": "",
-  "contenido_html": "Ya para cerrar esta sección, ¿qué uso le dará a su tarjeta principalmente?",
+  "contenido_html": "Recibirás $10 pesos extra por cada comprobante válido (aplica solo para clientes nacionales).",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

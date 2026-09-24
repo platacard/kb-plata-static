@@ -1,0 +1,21 @@
+{
+  "id": "FLOW61",
+  "entry_point": "flujo_reunion",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "¿Es necesario que el comprobante de domicilio esté a nombre del cliente?",
+  "resumen": "",
+  "contenido_html": "No es necesario que el comprobante esté a nombre del cliente. Lo importante es que el domicilio sea el correcto.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

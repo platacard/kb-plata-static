@@ -1,26 +1,21 @@
 {
   "id": "FLOW37",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 8: Vinculación de la tarjeta",
-  "subcategoria": "Onboarding y descarga",
-  "titulo": "Pantallas de Vinculación de la tarjeta",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "BAF (Programa de referidos)",
+  "titulo": "Opción 2 para solicitar contactos referidos (suponiendo y preguntando por “quiénes”)",
   "resumen": "",
-  "contenido_html": "",
+  "contenido_html": "Estoy seguro que ya tiene en mente a unas cinco personas a las que les encantaría sacarle provecho a los beneficios de tener una tarjeta Plata. Usted obtiene dinero directamente en su tarjeta por cada uno que se convierta en cliente de Banco Plata y ellos obtendrán una tarjeta sin anualidad de por vida y beneficios como cashback especial. ¿Quiénes serían? Solo necesito el nombre y el número telefónico.",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
   "audio_duracion": "",
   "audio_tipo": "",
-  "gallery_urls": [
-    "https://drive.google.com/file/d/1QnSpB54MDMHF9KJban5c5IQmgu766lR_/view?usp=drive_link",
-    "https://drive.google.com/file/d/1fuwYwKfhVA3dGCqlVwKx3CqCneN7_j7f/view?usp=drive_link",
-    "https://drive.google.com/file/d/1MGSrPSmnh1QbAFIM3IP6eaCKytgabaVn/view?usp=drive_link",
-    "https://drive.google.com/file/d/1wSLG5K5LXivUmue6HNsuA_bwsDYyUW8_/view?usp=drive_link"
-  ],
+  "gallery_urls": [],
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

@@ -1,11 +1,11 @@
 {
   "id": "FLOW13",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 2: Proceso de verificación del cliente",
+  "categoria": "Flujo de la primera reunión",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "¿Qué tipo de comprobantes de domicilio son aceptados?",
+  "titulo": "Script en caso de que el cliente dude de las preguntas de AML",
   "resumen": "",
-  "contenido_html": "Documentos aceptados con vigencia máxima de 3 meses: <p><p>\n\nLuz (CFE), Agua, Internet/Teléfono (Telmex, Izzi, Totalplay), Estado de Cuenta Bancario o Gas Natural.",
+  "contenido_html": "Por regulación bancaria, ahora que somos una Institución de Banca Múltiple debemos conocer la actividad económica de nuestros clientes. Le recuerdo que su información es confidencial y es tratada con los máximos estándares de seguridad.",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-10T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

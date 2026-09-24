@@ -1,26 +1,21 @@
 {
   "id": "FLOW20",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 3: Instalar la app",
+  "categoria": "Plata Cuenta",
   "subcategoria": "Onboarding y descarga",
-  "titulo": "Pantallas para instalar la app.",
+  "titulo": "2. Script para mencionar beneficios de Plata Cuenta",
   "resumen": "",
-  "contenido_html": "",
+  "contenido_html": "Con esta cuenta, puede obtener hasta un 15 % de rendimiento anual sobre sus ahorros. Puede utilizar su tarjeta de crédito para las compras diarias y la cuenta de débito para ahorrar dinero para pagos más grandes, recibir su nómina y recibir transferencias de amigos. Puede retirar e ingresar dinero en tu cuenta en cualquier momento, lo cual resulta muy práctico.",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
   "audio_duracion": "",
   "audio_tipo": "",
-  "gallery_urls": [
-    "https://drive.google.com/file/d/1xvhR8LPzEYhXyM3PhXTLaEcI20LwAaK_/view?usp=drive_link",
-    "https://drive.google.com/file/d/1u5yzrdZ1VX2yT2mbf3zbCeANuke82-66/view?usp=drive_link",
-    "https://drive.google.com/file/d/1kfyAwKTb-zbRPpZxi6CpM_gIXl2_bqvV/view?usp=drive_link",
-    "https://drive.google.com/file/d/1FP-fi1gamqWXc7s7aRA8uVxzMBcwNAT4/view?usp=drive_link"
-  ],
+  "gallery_urls": [],
   "gallery_title": "",
   "copy_enabled": false,
-  "content_type": "Text + Carousel",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }

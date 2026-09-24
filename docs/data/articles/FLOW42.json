@@ -1,11 +1,11 @@
 {
   "id": "FLOW42",
   "entry_point": "flujo_reunion",
-  "categoria": "Etapa 11:  Trae a un amigo",
-  "subcategoria": "Onboarding y descarga",
-  "titulo": "Etapa 11:  Trae a un amigo",
+  "categoria": "BAF, Contactos y Beneficiarios",
+  "subcategoria": "Seguridad de los referidos y privacidad",
+  "titulo": "Script si el cliente dice: “Tengo que confirmarlo con mis contactos”, “No me atrevo a compartir sus datos”",
   "resumen": "",
-  "contenido_html": "Para agregar amigos, ingresa el nombre y el teléfono del amigo del cliente.<p><p>\n\nSi el amigo está presente en la reunión, puedes pulsar el botón que dice \"Completar solicitud y ganar...\" de esta manera, comenzará el proceso de \"Emisión de tarjeta instantánea\".<p><p>\n\nDespués de agregar a los amigos, puedes pulsar el botón \"Finalizar reunión\".<p><p>\n\nVerás la última pantalla del proceso que dice ¡Los amigos fueron invitados!, en donde aparecerán las siguientes indicaciones:<p><p>\n\n-Enséñale al cliente cómo invitar a amigos en la app de Plata.<p><p>\n\n-Asegúrate de que todas las preguntas hayan sido respondidas.<p><p>",
+  "contenido_html": "Lo entiendo, pero realmente es muy sencillo de su lado, solo indíqueme sus nombres y números telefónicos y nosotros les enviaremos un SMS con su link especial de referidos y ellos pueden hacer todo el proceso por su cuenta. ¿Qué opina? ¿Quiénes son los primeros que se le ocurren?",
   "imagen_url": "",
   "audio_url": "",
   "audio_titulo": "",
@@ -15,7 +15,7 @@
   "gallery_title": "",
   "copy_enabled": false,
   "content_type": "Text",
-  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
   "version": "1",
   "owner": "Edwin Nájera"
 }
