@@ -1670,16 +1670,6 @@
     "search_text": "manejo de objeciones seguro de crédito  etapa 10: seguro de crédito onboarding y descarga "
   },
   {
-    "id": "FLOW43",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de Trae a un amigo",
-    "resumen": "",
-    "categoria": "Etapa 11:  Trae a un amigo",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de trae a un amigo  etapa 11:  trae a un amigo onboarding y descarga "
-  },
-  {
     "id": "FLOW44",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 12: Final",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Seguridad de los referidos y privacidad",
     "keywords": "",
     "search_text": "script si el cliente dice: “tengo que confirmarlo con mis contactos”, “no me atrevo a compartir sus datos”  etapa 11:  trae a un amigo seguridad de los referidos y privacidad "
+  },
+  {
+    "id": "FLOW43",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script si el cliente dice: “No he utilizado la tarjeta, ¿por qué debería recomendarla con amigos?”",
+    "resumen": "",
+    "categoria": "Etapa 11:  Trae a un amigo",
+    "subcategoria": "Seguridad de los referidos y privacidad",
+    "keywords": "",
+    "search_text": "script si el cliente dice: “no he utilizado la tarjeta, ¿por qué debería recomendarla con amigos?”  etapa 11:  trae a un amigo seguridad de los referidos y privacidad "
   }
 ]
