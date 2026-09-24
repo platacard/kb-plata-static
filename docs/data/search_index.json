@@ -2038,5 +2038,15 @@
     "subcategoria": "Seguro de crédito",
     "keywords": "seguro, credito",
     "search_text": "script para para mencionar el seguro de crédito  etapa 10: seguro de crédito seguro de crédito seguro, credito"
+  },
+  {
+    "id": "FLOW70",
+    "entry_point": "flujo_reunion",
+    "titulo": "Venta Cruzada: Introduce Plata Crédito",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "venta cruzada: introduce plata crédito  plata crédito onboarding y descarga "
   }
 ]

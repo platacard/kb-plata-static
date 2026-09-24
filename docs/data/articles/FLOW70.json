@@ -1,0 +1,21 @@
+{
+  "id": "FLOW70",
+  "entry_point": "flujo_reunion",
+  "categoria": "Plata Crédito",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Venta Cruzada: Introduce Plata Crédito",
+  "resumen": "",
+  "contenido_html": "Cuando estés en una reunión con un cliente que haya solicitado una tarjeta de débito y veas la pantalla «Introduce Plata Crédito», debes ofrecerle la tarjeta de crédito y pedirle su consentimiento para solicitar la Plata Crédito. \n\n1. Introducir Plata Crédito\nYa que estoy aquí, también quería ofrecerle la posibilidad de abrir una tarjeta de crédito muy práctica para sus pagos diarios. Nuestras condiciones son de las mejores del mercado.\n\n 2. Explicar los beneficios (Valor personal) y cerrar la venta\nEsta tarjeta ofrece cashback de hasta el 15% en diversas categorías, lo que le permite recuperar parte del importe de sus compras diarias. Además, dispone de dos meses sin intereses para liquidar cada pago. Por otra parte, la tarjeta es gratis y no tiene comisiones de por vida.\n\n3. Pedir consentimiento\nLa tarjeta ya se encuentra en el kit junto con su tarjeta de débito. ¿Quiere seguir adelante? \n\n(Debes obtener el consentimiento explícito del cliente)\n\n4. Fomentar el uso (Solo después de una venta exitosa)\n¡Excelente! Le sugiero que, tras la reunión, configure sus preferencias de cashback de inmediato y empiece a utilizarla para recibir su primer cashback lo antes posible. Por ejemplo, podría comprar ese artículo que lleva tiempo deseando.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-22T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
