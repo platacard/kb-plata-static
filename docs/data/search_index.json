@@ -1630,16 +1630,6 @@
     "search_text": "pantallas de constancia de situación fiscal  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
   },
   {
-    "id": "FLOW31",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantalla de e.firma",
-    "resumen": "",
-    "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantalla de e.firma  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
-  },
-  {
     "id": "FLOW32",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 7: Preguntas extra",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "AML, lavado, dinero",
     "search_text": "script obligatorio para preguntar sobre el uso de los recursos (aml)  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "FLOW31",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script obligatorio de seguridad del NIP al ver la pantalla de vinculación de tarjeta",
+    "resumen": "",
+    "categoria": "Etapa 9: Foto de cliente con paquete",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "nip, pin",
+    "search_text": "script obligatorio de seguridad del nip al ver la pantalla de vinculación de tarjeta  etapa 9: foto de cliente con paquete onboarding y descarga nip, pin"
   }
 ]
