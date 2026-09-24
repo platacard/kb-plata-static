@@ -269,7 +269,7 @@
     "id": "FLOW8",
     "entry_point": "flujo_reunion",
     "status": "published",
-    "categoria": "Flujo de la primera reunión",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
     "subcategoria": "Onboarding y descarga",
     "titulo": "Script si el cliente se nota o expresa desconfianza por el comprobante de domicilio",
     "resumen": "",
