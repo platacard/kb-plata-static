@@ -1410,16 +1410,6 @@
     "search_text": "etapa 2: proceso de verificación del cliente  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW6",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de verificación de Comprobante de Domicilio",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de verificación de comprobante de domicilio  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW7",
     "entry_point": "flujo_reunion",
     "titulo": "Pantallas de verificación de Pasaporte",
@@ -2038,5 +2028,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "amigo, tip, oro",
     "search_text": "script para la explicación del proceso  etapa 2: proceso de verificación del cliente onboarding y descarga amigo, tip, oro"
+  },
+  {
+    "id": "FLOW6",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script obligatorio para pedir el comprobante de domicilio (cuando aplique. Único script obligatorio que puede adaptarse)",
+    "resumen": "",
+    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "POA, comprobante, domicilio",
+    "search_text": "script obligatorio para pedir el comprobante de domicilio (cuando aplique. único script obligatorio que puede adaptarse)  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
   }
 ]

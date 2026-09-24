@@ -1,7 +1,7 @@
 {
   "id": "FLOW6",
   "entry_point": "flujo_reunion",
-  "categoria": "Flujo de la primera reunión",
+  "categoria": "Etapa 2: Proceso de verificación del cliente",
   "subcategoria": "Onboarding y descarga",
   "titulo": "Script obligatorio para pedir el comprobante de domicilio (cuando aplique. Único script obligatorio que puede adaptarse)",
   "resumen": "",
