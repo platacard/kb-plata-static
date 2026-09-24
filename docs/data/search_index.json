@@ -1650,16 +1650,6 @@
     "search_text": "¿se puede vincular la tarjeta manualmente?  etapa 8: vinculación de la tarjeta onboarding y descarga "
   },
   {
-    "id": "FLOW37",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de Vinculación de la tarjeta",
-    "resumen": "",
-    "categoria": "Etapa 8: Vinculación de la tarjeta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de vinculación de la tarjeta  etapa 8: vinculación de la tarjeta onboarding y descarga "
-  },
-  {
     "id": "FLOW38",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 9: Foto de cliente con paquete",
@@ -2038,5 +2028,15 @@
     "subcategoria": "BAF (Programa de referidos)",
     "keywords": "",
     "search_text": "opción 1 para solicitar contactos referidos (directa, con un gancho de 5 contactos)  etapa 11:  trae a un amigo baf (programa de referidos) "
+  },
+  {
+    "id": "FLOW37",
+    "entry_point": "flujo_reunion",
+    "titulo": "Opción 2 para solicitar contactos referidos (suponiendo y preguntando por “quiénes”)",
+    "resumen": "",
+    "categoria": "Etapa 11:  Trae a un amigo",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "opción 2 para solicitar contactos referidos (suponiendo y preguntando por “quiénes”)  etapa 11:  trae a un amigo baf (programa de referidos) "
   }
 ]
