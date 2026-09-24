@@ -1650,16 +1650,6 @@
     "search_text": "¿se puede vincular la tarjeta manualmente?  etapa 8: vinculación de la tarjeta onboarding y descarga "
   },
   {
-    "id": "FLOW38",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 9: Foto de cliente con paquete",
-    "resumen": "",
-    "categoria": "Etapa 9: Foto de cliente con paquete",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "etapa 9: foto de cliente con paquete  etapa 9: foto de cliente con paquete onboarding y descarga "
-  },
-  {
     "id": "FLOW39",
     "entry_point": "flujo_reunion",
     "titulo": "Pantallas de Foto de cliente con paquete",
@@ -2038,5 +2028,15 @@
     "subcategoria": "BAF (Programa de referidos)",
     "keywords": "",
     "search_text": "opción 2 para solicitar contactos referidos (suponiendo y preguntando por “quiénes”)  etapa 11:  trae a un amigo baf (programa de referidos) "
+  },
+  {
+    "id": "FLOW38",
+    "entry_point": "flujo_reunion",
+    "titulo": "Opción 3 para solicitar contactos referidos (reciprocidad y ganar-ganar)",
+    "resumen": "",
+    "categoria": "Etapa 11:  Trae a un amigo",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "opción 3 para solicitar contactos referidos (reciprocidad y ganar-ganar)  etapa 11:  trae a un amigo baf (programa de referidos) "
   }
 ]
