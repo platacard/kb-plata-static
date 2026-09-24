@@ -2018,5 +2018,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  venta cruzada onboarding y descarga "
+  },
+  {
+    "id": "FLOW1.1",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script de confirmación por WhatsApp",
+    "resumen": "",
+    "categoria": "Etapa 1: Empezar la reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "WhatsApp, confirmación",
+    "search_text": "script de confirmación por whatsapp  etapa 1: empezar la reunión onboarding y descarga whatsapp, confirmación"
   }
 ]

@@ -35,7 +35,7 @@
     "id": "FLOW1.1",
     "entry_point": "flujo_reunion",
     "status": "published",
-    "categoria": "Flujo de la primera reunión",
+    "categoria": "Etapa 1: Empezar la reunión",
     "subcategoria": "Onboarding y descarga",
     "titulo": "Script de confirmación por WhatsApp",
     "resumen": "",
