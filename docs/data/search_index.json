@@ -1650,16 +1650,6 @@
     "search_text": "¿se puede vincular la tarjeta manualmente?  etapa 8: vinculación de la tarjeta onboarding y descarga "
   },
   {
-    "id": "FLOW40",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 10: Seguro de crédito",
-    "resumen": "",
-    "categoria": "Etapa 10: Seguro de crédito",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "etapa 10: seguro de crédito  etapa 10: seguro de crédito onboarding y descarga "
-  },
-  {
     "id": "FLOW41",
     "entry_point": "flujo_reunion",
     "titulo": "Pantalla de Seguro de crédito",
@@ -2038,5 +2028,15 @@
     "subcategoria": "BAF (Programa de referidos)",
     "keywords": "",
     "search_text": "opción 4 para solicitar contactos referidos (personal / “écheme la mano”)  etapa 11:  trae a un amigo baf (programa de referidos) "
+  },
+  {
+    "id": "FLOW40",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar las condiciones de “Traer a un amigo” SOLO si el cliente pregunta",
+    "resumen": "",
+    "categoria": "Etapa 11:  Trae a un amigo",
+    "subcategoria": "BAF (Programa de referidos)",
+    "keywords": "",
+    "search_text": "script para explicar las condiciones de “traer a un amigo” solo si el cliente pregunta  etapa 11:  trae a un amigo baf (programa de referidos) "
   }
 ]

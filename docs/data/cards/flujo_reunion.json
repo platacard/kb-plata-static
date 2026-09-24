@@ -815,7 +815,7 @@
     "id": "FLOW40",
     "entry_point": "flujo_reunion",
     "status": "published",
-    "categoria": "BAF, Contactos y Beneficiarios",
+    "categoria": "Etapa 11:  Trae a un amigo",
     "subcategoria": "BAF (Programa de referidos)",
     "titulo": "Script para explicar las condiciones de “Traer a un amigo” SOLO si el cliente pregunta",
     "resumen": "",
