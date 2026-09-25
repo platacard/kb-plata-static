@@ -1600,16 +1600,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de débito a crédito?  plata crédito onboarding y descarga "
   },
   {
-    "id": "FLOW75",
-    "entry_point": "flujo_reunion",
-    "titulo": "4. Script para fomentar el uso de Plata Crédito en venta cruzada (solo después de una venta exitosa)",
-    "resumen": "",
-    "categoria": "Plata Crédito",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "4. script para fomentar el uso de plata crédito en venta cruzada (solo después de una venta exitosa)  plata crédito onboarding y descarga "
-  },
-  {
     "id": "FLOW76",
     "entry_point": "flujo_reunion",
     "titulo": "Script si el cliente dice que tiene un mal historial crediticio, tiene miedo al rechazo en venta cruzada de Plata Crédito",
