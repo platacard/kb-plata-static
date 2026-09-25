@@ -1600,16 +1600,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de débito a crédito?  plata crédito onboarding y descarga "
   },
   {
-    "id": "FLOW76",
-    "entry_point": "flujo_reunion",
-    "titulo": "Script si el cliente dice que tiene un mal historial crediticio, tiene miedo al rechazo en venta cruzada de Plata Crédito",
-    "resumen": "",
-    "categoria": "Plata Crédito",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "script si el cliente dice que tiene un mal historial crediticio, tiene miedo al rechazo en venta cruzada de plata crédito  plata crédito onboarding y descarga "
-  },
-  {
     "id": "FLOW80",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 5: Firma del contrato",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "scripts para manejar de objeciones  plata cuenta onboarding y descarga "
+  },
+  {
+    "id": "FLOW76",
+    "entry_point": "flujo_reunion",
+    "titulo": "Scripts para manejar de objeciones",
+    "resumen": "",
+    "categoria": "Plata Crédito",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "scripts para manejar de objeciones  plata crédito onboarding y descarga "
   }
 ]
