@@ -1600,16 +1600,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de débito a crédito?  plata crédito onboarding y descarga "
   },
   {
-    "id": "FLOW73",
-    "entry_point": "flujo_reunion",
-    "titulo": "2. Script para explicar los beneficios de Plata Crédito en venta cruzada",
-    "resumen": "",
-    "categoria": "Plata Crédito",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "2. script para explicar los beneficios de plata crédito en venta cruzada  plata crédito onboarding y descarga "
-  },
-  {
     "id": "FLOW74",
     "entry_point": "flujo_reunion",
     "titulo": "3. Script para pedir consentimiento de Plata Crédito en ventaa cruzada",
