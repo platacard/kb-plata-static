@@ -360,16 +360,6 @@
     "search_text": "script obligatorio para preguntar sobre el uso de los recursos (aml)  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
   },
   {
-    "id": "FLOW19",
-    "entry_point": "flujo_reunion",
-    "titulo": "3. Script para cerrar la venta",
-    "resumen": "",
-    "categoria": "Plata Cuenta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "cuenta, debito, duo pack",
-    "search_text": "3. script para cerrar la venta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
-  },
-  {
     "id": "FLOW29",
     "entry_point": "flujo_reunion",
     "titulo": "4. Script para fomentar el uso (solo si el cliente aceptó explícitamente que desea continuar con la Plata Cuenta)",
