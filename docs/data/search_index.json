@@ -1610,16 +1610,6 @@
     "search_text": "script si el cliente dice que tiene un mal historial crediticio, tiene miedo al rechazo en venta cruzada de plata crédito  plata crédito onboarding y descarga "
   },
   {
-    "id": "FLOW77",
-    "entry_point": "flujo_reunion",
-    "titulo": "Script si el cliente está preocupado por costos o intereses de la tarjeta de crédito en venta cruzada de Plata Crédito",
-    "resumen": "",
-    "categoria": "Plata Crédito",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "script si el cliente está preocupado por costos o intereses de la tarjeta de crédito en venta cruzada de plata crédito  plata crédito onboarding y descarga "
-  },
-  {
     "id": "FLOW78",
     "entry_point": "flujo_reunion",
     "titulo": "Script si el cliente quiere Plata Crédito para después, porque quiere probar Débito primero",
