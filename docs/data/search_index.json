@@ -360,16 +360,6 @@
     "search_text": "script obligatorio para preguntar sobre el uso de los recursos (aml)  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
   },
   {
-    "id": "FLOW17",
-    "entry_point": "flujo_reunion",
-    "titulo": "1. Script para introducir Plata Cuenta",
-    "resumen": "",
-    "categoria": "Plata Cuenta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "Plata, cuenta, debito",
-    "search_text": "1. script para introducir plata cuenta  plata cuenta onboarding y descarga plata, cuenta, debito"
-  },
-  {
     "id": "FLOW19",
     "entry_point": "flujo_reunion",
     "titulo": "3. Script para cerrar la venta",
@@ -2018,5 +2008,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  plata cuenta onboarding y descarga "
+  },
+  {
+    "id": "FLOW17",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para Plata Cuenta",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "Plata, cuenta, debito",
+    "search_text": "script para plata cuenta  plata cuenta onboarding y descarga plata, cuenta, debito"
   }
 ]
