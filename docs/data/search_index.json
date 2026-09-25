@@ -2000,16 +2000,6 @@
     "search_text": "script para manejar la objeción “no quiero otras cuentas” en venta cruzada de crédito a débito  plata cuenta onboarding y descarga "
   },
   {
-    "id": "FLOW109",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Cuáles son las reglas para la venta cruzada de Crédito a Débito (Cuenta)?",
-    "resumen": "",
-    "categoria": "Venta Cruzada",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  venta cruzada onboarding y descarga "
-  },
-  {
     "id": "FLOW108",
     "entry_point": "flujo_reunion",
     "titulo": "Venta Cruzada: Introduce Plata Cuenta",
@@ -2018,5 +2008,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "venta cruzada: introduce plata cuenta  plata cuenta onboarding y descarga "
+  },
+  {
+    "id": "FLOW109",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Cuáles son las reglas para la venta cruzada de Crédito a Débito (Cuenta)?",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  plata cuenta onboarding y descarga "
   }
 ]
