@@ -1940,16 +1940,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  plata cuenta onboarding y descarga "
   },
   {
-    "id": "FLOW17",
-    "entry_point": "flujo_reunion",
-    "titulo": "Script para Plata Cuenta",
-    "resumen": "",
-    "categoria": "Plata Cuenta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "Plata, cuenta, debito",
-    "search_text": "script para plata cuenta  plata cuenta onboarding y descarga plata, cuenta, debito"
-  },
-  {
     "id": "FLOW104",
     "entry_point": "flujo_reunion",
     "titulo": "Scripts para manejar de objeciones",
