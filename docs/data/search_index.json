@@ -360,16 +360,6 @@
     "search_text": "script obligatorio para preguntar sobre el uso de los recursos (aml)  etapa 4: cuestionario onboarding y descarga aml, lavado, dinero"
   },
   {
-    "id": "FLOW29",
-    "entry_point": "flujo_reunion",
-    "titulo": "4. Script para fomentar el uso (solo si el cliente aceptó explícitamente que desea continuar con la Plata Cuenta)",
-    "resumen": "",
-    "categoria": "Plata Cuenta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "cuenta, debito, duo pack",
-    "search_text": "4. script para fomentar el uso (solo si el cliente aceptó explícitamente que desea continuar con la plata cuenta)  plata cuenta onboarding y descarga cuenta, debito, duo pack"
-  },
-  {
     "id": "FLOW31",
     "entry_point": "flujo_reunion",
     "titulo": "Script obligatorio de seguridad del NIP al ver la pantalla de vinculación de tarjeta",
