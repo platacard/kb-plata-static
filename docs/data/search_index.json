@@ -370,16 +370,6 @@
     "search_text": "3. script para cerrar la venta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
   },
   {
-    "id": "FLOW20",
-    "entry_point": "flujo_reunion",
-    "titulo": "2. Script para mencionar beneficios de Plata Cuenta",
-    "resumen": "",
-    "categoria": "Plata Cuenta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "cuenta, debito, duo pack",
-    "search_text": "2. script para mencionar beneficios de plata cuenta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
-  },
-  {
     "id": "FLOW29",
     "entry_point": "flujo_reunion",
     "titulo": "4. Script para fomentar el uso (solo si el cliente aceptó explícitamente que desea continuar con la Plata Cuenta)",
