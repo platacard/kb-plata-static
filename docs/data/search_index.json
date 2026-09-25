@@ -1920,16 +1920,6 @@
     "search_text": "¿qué pasa si sospecho que el cliente está usurpando una identidad o su ine es falsa?  etapa 7: preguntas extra onboarding y descarga "
   },
   {
-    "id": "FLOW107",
-    "entry_point": "flujo_reunion",
-    "titulo": "Script para manejar la objeción “no quiero otras cuentas” en venta cruzada de crédito a débito",
-    "resumen": "",
-    "categoria": "Plata Cuenta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "script para manejar la objeción “no quiero otras cuentas” en venta cruzada de crédito a débito  plata cuenta onboarding y descarga "
-  },
-  {
     "id": "FLOW108",
     "entry_point": "flujo_reunion",
     "titulo": "Venta Cruzada: Introduce Plata Cuenta",
