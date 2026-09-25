@@ -1610,16 +1610,6 @@
     "search_text": "script si el cliente dice que tiene un mal historial crediticio, tiene miedo al rechazo en venta cruzada de plata crédito  plata crédito onboarding y descarga "
   },
   {
-    "id": "FLOW79",
-    "entry_point": "flujo_reunion",
-    "titulo": "Script si el cliente simplemente no quiere o no está interesado, o ha dicho que no sin dar ninguna explicación en venta cruzada de Plata Crédito",
-    "resumen": "",
-    "categoria": "Plata Crédito",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "script si el cliente simplemente no quiere o no está interesado, o ha dicho que no sin dar ninguna explicación en venta cruzada de plata crédito  plata crédito onboarding y descarga "
-  },
-  {
     "id": "FLOW80",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 5: Firma del contrato",
