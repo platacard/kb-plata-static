@@ -1410,46 +1410,6 @@
     "search_text": "¿hay excepciones en los pasaportes vencidos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW55",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Si veo la pantalla \"Análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿si veo la pantalla \"análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
-    "id": "FLOW56",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Qué hago si hay problemas de red y veo la pantalla \"Algo salió mal\"?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿qué hago si hay problemas de red y veo la pantalla \"algo salió mal\"?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
-    "id": "FLOW57",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿El comprobante de domicilio aplica para todos?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿el comprobante de domicilio aplica para todos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
-    "id": "FLOW58",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Qué tipo de comprobantes de domicilio son aceptados?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿qué tipo de comprobantes de domicilio son aceptados?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW59",
     "entry_point": "flujo_reunion",
     "titulo": "¿Cuánto recibo por cada comprobante de domicilio correctamente cargado?",
@@ -1878,5 +1838,45 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "amigo, tip, oro",
     "search_text": "script para la explicación del proceso  etapa 02: proceso de verificación del cliente onboarding y descarga amigo, tip, oro"
+  },
+  {
+    "id": "FLOW55",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Si veo la pantalla \"Análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿si veo la pantalla \"análisis falló\" al capturar documentos del cliente, cuántos intentos tendré?  etapa 02: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW56",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué hago si hay problemas de red y veo la pantalla \"Algo salió mal\"?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué hago si hay problemas de red y veo la pantalla \"algo salió mal\"?  etapa 02: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW57",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿El comprobante de domicilio aplica para todos?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿el comprobante de domicilio aplica para todos?  etapa 02: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW58",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué tipo de comprobantes de domicilio son aceptados?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué tipo de comprobantes de domicilio son aceptados?  etapa 02: proceso de verificación del cliente onboarding y descarga "
   }
 ]
