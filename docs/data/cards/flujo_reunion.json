@@ -113,7 +113,7 @@
     "id": "FLOW5",
     "entry_point": "flujo_reunion",
     "status": "published",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
     "subcategoria": "Onboarding y descarga",
     "titulo": "Script para la explicación del proceso",
     "resumen": "",
