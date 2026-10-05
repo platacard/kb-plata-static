@@ -1370,16 +1370,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de débito a crédito?  plata crédito onboarding y descarga "
   },
   {
-    "id": "FLOW80",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 5: Firma del contrato",
-    "resumen": "",
-    "categoria": "Etapa 5: Firma del contrato",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "etapa 5: firma del contrato  etapa 5: firma del contrato onboarding y descarga "
-  },
-  {
     "id": "FLOW81",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 6: Benefeciarios, CSF/e firma",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "pantallas del cuestionario  etapa 04: cuestionario onboarding y descarga "
+  },
+  {
+    "id": "FLOW80",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 5: Firma del contrato",
+    "resumen": "",
+    "categoria": "Etapa 05: Firma del contrato",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 5: firma del contrato  etapa 05: firma del contrato onboarding y descarga "
   }
 ]
