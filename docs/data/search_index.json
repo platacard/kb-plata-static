@@ -1350,36 +1350,6 @@
     "search_text": "¿hay excepciones en los pasaportes vencidos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW67",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Qué son las preguntas AML?",
-    "resumen": "",
-    "categoria": "Etapa 4: Cuestionario",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿qué son las preguntas aml?  etapa 4: cuestionario onboarding y descarga "
-  },
-  {
-    "id": "FLOW68",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Qué pasa si el cliente no quiere dar contactos de referencia?",
-    "resumen": "",
-    "categoria": "Etapa 4: Cuestionario",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿qué pasa si el cliente no quiere dar contactos de referencia?  etapa 4: cuestionario onboarding y descarga "
-  },
-  {
-    "id": "FLOW69",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas del cuestionario",
-    "resumen": "",
-    "categoria": "Etapa 4: Cuestionario",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas del cuestionario  etapa 4: cuestionario onboarding y descarga "
-  },
-  {
     "id": "FLOW70",
     "entry_point": "flujo_reunion",
     "titulo": "Venta Cruzada: Introduce Plata Crédito",
@@ -1878,5 +1848,35 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "etapa 4: cuestionario  etapa 04: cuestionario onboarding y descarga "
+  },
+  {
+    "id": "FLOW67",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué son las preguntas AML?",
+    "resumen": "",
+    "categoria": "Etapa 04: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué son las preguntas aml?  etapa 04: cuestionario onboarding y descarga "
+  },
+  {
+    "id": "FLOW68",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Qué pasa si el cliente no quiere dar contactos de referencia?",
+    "resumen": "",
+    "categoria": "Etapa 04: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿qué pasa si el cliente no quiere dar contactos de referencia?  etapa 04: cuestionario onboarding y descarga "
+  },
+  {
+    "id": "FLOW69",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas del cuestionario",
+    "resumen": "",
+    "categoria": "Etapa 04: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas del cuestionario  etapa 04: cuestionario onboarding y descarga "
   }
 ]
