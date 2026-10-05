@@ -200,16 +200,6 @@
     "search_text": "episodio 1 - trae a un amigo y gana tu bono  baf, contactos y beneficiarios baf (programa de referidos) baf, trae, amigo, referido"
   },
   {
-    "id": "FLOW1",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 1: Empezar la reunión",
-    "resumen": "",
-    "categoria": "Etapa 1: Empezar la reunión",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "empezar, reunión",
-    "search_text": "etapa 1: empezar la reunión  etapa 1: empezar la reunión onboarding y descarga empezar, reunión"
-  },
-  {
     "id": "FLOW2",
     "entry_point": "flujo_reunion",
     "titulo": "Script de confirmación por WhatsApp",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "scripts para manejar objeciones de plata cuenta  plata cuenta onboarding y descarga "
+  },
+  {
+    "id": "FLOW1",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 1: Empezar la reunión",
+    "resumen": "",
+    "categoria": "Etapa 01: Empezar la reunión",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "empezar, reunión",
+    "search_text": "etapa 1: empezar la reunión  etapa 01: empezar la reunión onboarding y descarga empezar, reunión"
   }
 ]
