@@ -1350,16 +1350,6 @@
     "search_text": "¿hay excepciones en los pasaportes vencidos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW66",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 4: Cuestionario",
-    "resumen": "",
-    "categoria": "Etapa 4: Cuestionario",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "etapa 4: cuestionario  etapa 4: cuestionario onboarding y descarga "
-  },
-  {
     "id": "FLOW67",
     "entry_point": "flujo_reunion",
     "titulo": "¿Qué son las preguntas AML?",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "AML, lavado, dinero",
     "search_text": "script obligatorio para preguntar sobre el uso de los recursos (aml)  etapa 04: cuestionario onboarding y descarga aml, lavado, dinero"
+  },
+  {
+    "id": "FLOW66",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 4: Cuestionario",
+    "resumen": "",
+    "categoria": "Etapa 04: Cuestionario",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 4: cuestionario  etapa 04: cuestionario onboarding y descarga "
   }
 ]
