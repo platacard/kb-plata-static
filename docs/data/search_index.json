@@ -1410,56 +1410,6 @@
     "search_text": "¿hay excepciones en los pasaportes vencidos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW59",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Cuánto recibo por cada comprobante de domicilio correctamente cargado?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿cuánto recibo por cada comprobante de domicilio correctamente cargado?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
-    "id": "FLOW60",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Se puede tomar foto a comprobantes de domicilio digitales si el cliente no lo tiene en físico?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿se puede tomar foto a comprobantes de domicilio digitales si el cliente no lo tiene en físico?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
-    "id": "FLOW61",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Es necesario que el comprobante de domicilio esté a nombre del cliente?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿es necesario que el comprobante de domicilio esté a nombre del cliente?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
-    "id": "FLOW62",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Se puede cargar un comprobante de domcilio en PDF?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿se puede cargar un comprobante de domcilio en pdf?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
-    "id": "FLOW63",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿En todos los casos se pide el comprobante de domicilio?",
-    "resumen": "",
-    "categoria": "Etapa 2: Proceso de verificación del cliente",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿en todos los casos se pide el comprobante de domicilio?  etapa 2: proceso de verificación del cliente onboarding y descarga "
-  },
-  {
     "id": "FLOW64",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 3: Instalar la app",
@@ -1878,5 +1828,55 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "¿qué tipo de comprobantes de domicilio son aceptados?  etapa 02: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW59",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Cuánto recibo por cada comprobante de domicilio correctamente cargado?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿cuánto recibo por cada comprobante de domicilio correctamente cargado?  etapa 02: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW60",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Se puede tomar foto a comprobantes de domicilio digitales si el cliente no lo tiene en físico?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿se puede tomar foto a comprobantes de domicilio digitales si el cliente no lo tiene en físico?  etapa 02: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW61",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Es necesario que el comprobante de domicilio esté a nombre del cliente?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿es necesario que el comprobante de domicilio esté a nombre del cliente?  etapa 02: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW62",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Se puede cargar un comprobante de domcilio en PDF?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿se puede cargar un comprobante de domcilio en pdf?  etapa 02: proceso de verificación del cliente onboarding y descarga "
+  },
+  {
+    "id": "FLOW63",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿En todos los casos se pide el comprobante de domicilio?",
+    "resumen": "",
+    "categoria": "Etapa 02: Proceso de verificación del cliente",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿en todos los casos se pide el comprobante de domicilio?  etapa 02: proceso de verificación del cliente onboarding y descarga "
   }
 ]
