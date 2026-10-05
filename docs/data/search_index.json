@@ -1710,16 +1710,6 @@
     "search_text": "pantallas de preguntas extra  etapa 07: preguntas extra onboarding y descarga "
   },
   {
-    "id": "FLOW87",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 8: Vinculación de la tarjeta",
-    "resumen": "",
-    "categoria": "Etapa 8: Vinculación de la tarjeta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "etapa 8: vinculación de la tarjeta  etapa 8: vinculación de la tarjeta onboarding y descarga "
-  },
-  {
     "id": "FLOW88",
     "entry_point": "flujo_reunion",
     "titulo": "¿Se puede vincular la tarjeta manualmente?",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "¿qué pasa si sospecho que el cliente está usurpando una identidad o su ine es falsa?  etapa 07: preguntas extra onboarding y descarga "
+  },
+  {
+    "id": "FLOW87",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 8: Vinculación de la tarjeta",
+    "resumen": "",
+    "categoria": "Etapa 08: Vinculación de la tarjeta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 8: vinculación de la tarjeta  etapa 08: vinculación de la tarjeta onboarding y descarga "
   }
 ]
