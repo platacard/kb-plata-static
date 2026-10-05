@@ -1370,36 +1370,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de débito a crédito?  plata crédito onboarding y descarga "
   },
   {
-    "id": "FLOW82",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de Beneficiarios",
-    "resumen": "",
-    "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de beneficiarios  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
-  },
-  {
-    "id": "FLOW83",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de Constancia de Situación Fiscal",
-    "resumen": "",
-    "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de constancia de situación fiscal  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
-  },
-  {
-    "id": "FLOW84",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantalla de e.firma",
-    "resumen": "",
-    "categoria": "Etapa 6: Benefeciarios, CSF/e firma",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantalla de e.firma  etapa 6: benefeciarios, csf/e firma onboarding y descarga "
-  },
-  {
     "id": "FLOW85",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 7: Preguntas extra",
@@ -1878,5 +1848,35 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "etapa 6: benefeciarios, csf/e firma  etapa 06: benefeciarios, csf/e firma onboarding y descarga "
+  },
+  {
+    "id": "FLOW82",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Beneficiarios",
+    "resumen": "",
+    "categoria": "Etapa 06: Benefeciarios, CSF/e firma",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de beneficiarios  etapa 06: benefeciarios, csf/e firma onboarding y descarga "
+  },
+  {
+    "id": "FLOW83",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Constancia de Situación Fiscal",
+    "resumen": "",
+    "categoria": "Etapa 06: Benefeciarios, CSF/e firma",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de constancia de situación fiscal  etapa 06: benefeciarios, csf/e firma onboarding y descarga "
+  },
+  {
+    "id": "FLOW84",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantalla de e.firma",
+    "resumen": "",
+    "categoria": "Etapa 06: Benefeciarios, CSF/e firma",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantalla de e.firma  etapa 06: benefeciarios, csf/e firma onboarding y descarga "
   }
 ]
