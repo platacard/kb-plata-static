@@ -1410,16 +1410,6 @@
     "search_text": "¿hay excepciones en los pasaportes vencidos?  etapa 2: proceso de verificación del cliente onboarding y descarga "
   },
   {
-    "id": "FLOW65",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas para instalar la app.",
-    "resumen": "",
-    "categoria": "Etapa 3: Instalar la app",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas para instalar la app.  etapa 3: instalar la app onboarding y descarga "
-  },
-  {
     "id": "FLOW66",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 4: Cuestionario",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "etapa 3: instalar la app  etapa 03: instalar la app onboarding y descarga "
+  },
+  {
+    "id": "FLOW65",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas para instalar la app.",
+    "resumen": "",
+    "categoria": "Etapa 03: Instalar la app",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas para instalar la app.  etapa 03: instalar la app onboarding y descarga "
   }
 ]
