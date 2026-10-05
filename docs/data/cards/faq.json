@@ -17,7 +17,7 @@
     "badge": "BÁSICO",
     "priority": "Alta",
     "criticality": "",
-    "is_featured": true,
+    "is_featured": false,
     "copy_enabled": false,
     "content_type": "Text",
     "ultima_actualizacion": "2026-07-14T01:00:00",
