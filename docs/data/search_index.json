@@ -280,16 +280,6 @@
     "search_text": "script si el cliente acepta, pero dice: \"no tengo ningún recibo impreso aquí conmigo\"  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
   },
   {
-    "id": "FLOW31",
-    "entry_point": "flujo_reunion",
-    "titulo": "Script obligatorio de seguridad del NIP al ver la pantalla de vinculación de tarjeta",
-    "resumen": "",
-    "categoria": "Etapa 9: Foto de cliente con paquete",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "nip, pin",
-    "search_text": "script obligatorio de seguridad del nip al ver la pantalla de vinculación de tarjeta  etapa 9: foto de cliente con paquete onboarding y descarga nip, pin"
-  },
-  {
     "id": "FLOW32",
     "entry_point": "flujo_reunion",
     "titulo": "Script obligatorio de seguridad del empaque",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "pantallas de foto de cliente con paquete  etapa 09: foto de cliente con paquete onboarding y descarga "
+  },
+  {
+    "id": "FLOW31",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script obligatorio de seguridad del NIP al ver la pantalla de vinculación de tarjeta",
+    "resumen": "",
+    "categoria": "Etapa 09: Foto de cliente con paquete",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "nip, pin",
+    "search_text": "script obligatorio de seguridad del nip al ver la pantalla de vinculación de tarjeta  etapa 09: foto de cliente con paquete onboarding y descarga nip, pin"
   }
 ]
