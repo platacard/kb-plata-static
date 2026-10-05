@@ -1370,16 +1370,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de débito a crédito?  plata crédito onboarding y descarga "
   },
   {
-    "id": "FLOW85",
-    "entry_point": "flujo_reunion",
-    "titulo": "Etapa 7: Preguntas extra",
-    "resumen": "",
-    "categoria": "Etapa 7: Preguntas extra",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "etapa 7: preguntas extra  etapa 7: preguntas extra onboarding y descarga "
-  },
-  {
     "id": "FLOW86",
     "entry_point": "flujo_reunion",
     "titulo": "Pantallas de preguntas extra",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "pantalla de e.firma  etapa 06: benefeciarios, csf/e firma onboarding y descarga "
+  },
+  {
+    "id": "FLOW85",
+    "entry_point": "flujo_reunion",
+    "titulo": "Etapa 7: Preguntas extra",
+    "resumen": "",
+    "categoria": "Etapa 07: Preguntas extra",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "etapa 7: preguntas extra  etapa 07: preguntas extra onboarding y descarga "
   }
 ]
