@@ -280,16 +280,6 @@
     "search_text": "script si el cliente acepta, pero dice: \"no tengo ningún recibo impreso aquí conmigo\"  etapa 2: proceso de verificación del cliente onboarding y descarga poa, comprobante, domicilio"
   },
   {
-    "id": "FLOW11",
-    "entry_point": "flujo_reunion",
-    "titulo": "Script obligatorio para solicitar contactos de referencia",
-    "resumen": "",
-    "categoria": "Etapa 4: Cuestionario",
-    "subcategoria": "Contactos de emergencia Plata",
-    "keywords": "referencia, contactos",
-    "search_text": "script obligatorio para solicitar contactos de referencia  etapa 4: cuestionario contactos de emergencia plata referencia, contactos"
-  },
-  {
     "id": "FLOW12",
     "entry_point": "flujo_reunion",
     "titulo": "Script obligatorio para realizar las preguntas de AML",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "pantallas para instalar la app.  etapa 03: instalar la app onboarding y descarga "
+  },
+  {
+    "id": "FLOW11",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script obligatorio para solicitar contactos de referencia",
+    "resumen": "",
+    "categoria": "Etapa 04: Cuestionario",
+    "subcategoria": "Contactos de emergencia Plata",
+    "keywords": "referencia, contactos",
+    "search_text": "script obligatorio para solicitar contactos de referencia  etapa 04: cuestionario contactos de emergencia plata referencia, contactos"
   }
 ]
