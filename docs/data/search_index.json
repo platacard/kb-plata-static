@@ -1710,36 +1710,6 @@
     "search_text": "pantallas de preguntas extra  etapa 07: preguntas extra onboarding y descarga "
   },
   {
-    "id": "FLOW88",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Se puede vincular la tarjeta manualmente?",
-    "resumen": "",
-    "categoria": "Etapa 8: Vinculación de la tarjeta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿se puede vincular la tarjeta manualmente?  etapa 8: vinculación de la tarjeta onboarding y descarga "
-  },
-  {
-    "id": "FLOW89",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Es necesario que el cliente ingrese su tarjeta a un cajero para activarla?",
-    "resumen": "",
-    "categoria": "Etapa 8: Vinculación de la tarjeta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿es necesario que el cliente ingrese su tarjeta a un cajero para activarla?  etapa 8: vinculación de la tarjeta onboarding y descarga "
-  },
-  {
-    "id": "FLOW90",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de Vinculación de la tarjeta",
-    "resumen": "",
-    "categoria": "Etapa 8: Vinculación de la tarjeta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de vinculación de la tarjeta  etapa 8: vinculación de la tarjeta onboarding y descarga "
-  },
-  {
     "id": "FLOW91",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 9: Foto de cliente con paquete",
@@ -1878,5 +1848,35 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "etapa 8: vinculación de la tarjeta  etapa 08: vinculación de la tarjeta onboarding y descarga "
+  },
+  {
+    "id": "FLOW88",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Se puede vincular la tarjeta manualmente?",
+    "resumen": "",
+    "categoria": "Etapa 08: Vinculación de la tarjeta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿se puede vincular la tarjeta manualmente?  etapa 08: vinculación de la tarjeta onboarding y descarga "
+  },
+  {
+    "id": "FLOW89",
+    "entry_point": "flujo_reunion",
+    "titulo": "¿Es necesario que el cliente ingrese su tarjeta a un cajero para activarla?",
+    "resumen": "",
+    "categoria": "Etapa 08: Vinculación de la tarjeta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "¿es necesario que el cliente ingrese su tarjeta a un cajero para activarla?  etapa 08: vinculación de la tarjeta onboarding y descarga "
+  },
+  {
+    "id": "FLOW90",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Vinculación de la tarjeta",
+    "resumen": "",
+    "categoria": "Etapa 08: Vinculación de la tarjeta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de vinculación de la tarjeta  etapa 08: vinculación de la tarjeta onboarding y descarga "
   }
 ]
