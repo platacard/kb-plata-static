@@ -1710,16 +1710,6 @@
     "search_text": "pantallas de preguntas extra  etapa 07: preguntas extra onboarding y descarga "
   },
   {
-    "id": "FLOW92",
-    "entry_point": "flujo_reunion",
-    "titulo": "Pantallas de Foto de cliente con paquete",
-    "resumen": "",
-    "categoria": "Etapa 9: Foto de cliente con paquete",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "pantallas de foto de cliente con paquete  etapa 9: foto de cliente con paquete onboarding y descarga "
-  },
-  {
     "id": "FLOW93",
     "entry_point": "flujo_reunion",
     "titulo": "Etapa 10: Seguro de crédito",
@@ -1878,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "etapa 9: foto de cliente con paquete  etapa 09: foto de cliente con paquete onboarding y descarga "
+  },
+  {
+    "id": "FLOW92",
+    "entry_point": "flujo_reunion",
+    "titulo": "Pantallas de Foto de cliente con paquete",
+    "resumen": "",
+    "categoria": "Etapa 09: Foto de cliente con paquete",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "",
+    "search_text": "pantallas de foto de cliente con paquete  etapa 09: foto de cliente con paquete onboarding y descarga "
   }
 ]
