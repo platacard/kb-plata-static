@@ -390,16 +390,6 @@
     "search_text": "script para explicar la toma de la foto con el kit de bienvenida  etapa 09: foto de cliente con paquete onboarding y descarga kit, bienvenida, foto"
   },
   {
-    "id": "FLOW34",
-    "entry_point": "flujo_reunion",
-    "titulo": "Script para para mencionar el seguro de crédito",
-    "resumen": "",
-    "categoria": "Etapa 10: Seguro de crédito",
-    "subcategoria": "Seguro de crédito",
-    "keywords": "seguro, credito",
-    "search_text": "script para para mencionar el seguro de crédito  etapa 10: seguro de crédito seguro de crédito seguro, credito"
-  },
-  {
     "id": "FLOW36",
     "entry_point": "flujo_reunion",
     "titulo": "Opción 1 para solicitar contactos referidos (directa, con un gancho de 5 contactos)",
