@@ -1810,16 +1810,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  plata cuenta onboarding y descarga "
   },
   {
-    "id": "FAQ77",
-    "entry_point": "faq",
-    "titulo": "¿La tarjeta Plata Crédito ofrece Meses Sin Intereses gratuitos como un beneficio?",
-    "resumen": "",
-    "categoria": "Pagos a meses",
-    "subcategoria": "Meses Sin Intereses",
-    "keywords": "",
-    "search_text": "¿la tarjeta plata crédito ofrece meses sin intereses gratuitos como un beneficio?  pagos a meses meses sin intereses "
-  },
-  {
     "id": "FAQ78",
     "entry_point": "faq",
     "titulo": "¿Qué negocios ofrecen Meses Sin Intereses pagando con Plata?",
@@ -1868,5 +1858,15 @@
     "subcategoria": "Meses Sin Intereses",
     "keywords": "",
     "search_text": "¿se puede diferir a meses sin intereses cualquier operación pasada?  pagos a meses meses sin intereses "
+  },
+  {
+    "id": "FAQ77",
+    "entry_point": "faq",
+    "titulo": "¿La tarjeta Plata Crédito ofrece Meses Sin Intereses gratuitos como un beneficio?",
+    "resumen": "",
+    "categoria": "Pagos a meses",
+    "subcategoria": "Pagos a meses",
+    "keywords": "",
+    "search_text": "¿la tarjeta plata crédito ofrece meses sin intereses gratuitos como un beneficio?  pagos a meses pagos a meses "
   }
 ]
