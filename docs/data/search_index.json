@@ -1080,26 +1080,6 @@
     "search_text": "¿puedo activar los beneficios de plata+ después desde mi aplicación de plata?  seguro de crédito y plata+ plata plus "
   },
   {
-    "id": "FAQ81",
-    "entry_point": "faq",
-    "titulo": "¿Qué operaciones son aplicables para diferir a Meses Sin Intereses?",
-    "resumen": "",
-    "categoria": "Meses Sin Intereses",
-    "subcategoria": "Meses Sin Intereses",
-    "keywords": "",
-    "search_text": "¿qué operaciones son aplicables para diferir a meses sin intereses?  meses sin intereses meses sin intereses "
-  },
-  {
-    "id": "FAQ82",
-    "entry_point": "faq",
-    "titulo": "¿Se puede diferir a Meses Sin Intereses cualquier operación pasada?",
-    "resumen": "",
-    "categoria": "Meses Sin Intereses",
-    "subcategoria": "Meses Sin Intereses",
-    "keywords": "",
-    "search_text": "¿se puede diferir a meses sin intereses cualquier operación pasada?  meses sin intereses meses sin intereses "
-  },
-  {
     "id": "FAQ83",
     "entry_point": "faq",
     "titulo": "¿Cuál es el nombre oficial de su banco?",
@@ -1868,5 +1848,25 @@
     "subcategoria": "Meses Sin Intereses",
     "keywords": "",
     "search_text": "¿por qué se llaman meses sin intereses si cobran una comisión?  pagos a meses meses sin intereses "
+  },
+  {
+    "id": "FAQ81",
+    "entry_point": "faq",
+    "titulo": "¿Qué operaciones son aplicables para diferir a Meses Sin Intereses?",
+    "resumen": "",
+    "categoria": "Pagos a meses",
+    "subcategoria": "Meses Sin Intereses",
+    "keywords": "",
+    "search_text": "¿qué operaciones son aplicables para diferir a meses sin intereses?  pagos a meses meses sin intereses "
+  },
+  {
+    "id": "FAQ82",
+    "entry_point": "faq",
+    "titulo": "¿Se puede diferir a Meses Sin Intereses cualquier operación pasada?",
+    "resumen": "",
+    "categoria": "Pagos a meses",
+    "subcategoria": "Meses Sin Intereses",
+    "keywords": "",
+    "search_text": "¿se puede diferir a meses sin intereses cualquier operación pasada?  pagos a meses meses sin intereses "
   }
 ]
