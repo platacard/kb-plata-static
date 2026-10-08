@@ -1810,26 +1810,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  plata cuenta onboarding y descarga "
   },
   {
-    "id": "FAQ81",
-    "entry_point": "faq",
-    "titulo": "¿Qué operaciones son aplicables para diferir a Meses Sin Intereses?",
-    "resumen": "",
-    "categoria": "Pagos a meses",
-    "subcategoria": "Meses Sin Intereses",
-    "keywords": "",
-    "search_text": "¿qué operaciones son aplicables para diferir a meses sin intereses?  pagos a meses meses sin intereses "
-  },
-  {
-    "id": "FAQ82",
-    "entry_point": "faq",
-    "titulo": "¿Se puede diferir a Meses Sin Intereses cualquier operación pasada?",
-    "resumen": "",
-    "categoria": "Pagos a meses",
-    "subcategoria": "Meses Sin Intereses",
-    "keywords": "",
-    "search_text": "¿se puede diferir a meses sin intereses cualquier operación pasada?  pagos a meses meses sin intereses "
-  },
-  {
     "id": "FAQ77",
     "entry_point": "faq",
     "titulo": "¿La tarjeta Plata Crédito ofrece Meses Sin Intereses gratuitos como un beneficio?",
@@ -1868,5 +1848,25 @@
     "subcategoria": "Pagos a meses",
     "keywords": "",
     "search_text": "¿por qué se llaman meses sin intereses si cobran una comisión?  pagos a meses pagos a meses "
+  },
+  {
+    "id": "FAQ81",
+    "entry_point": "faq",
+    "titulo": "¿Qué operaciones son aplicables para diferir a Meses Sin Intereses?",
+    "resumen": "",
+    "categoria": "Pagos a meses",
+    "subcategoria": "Pagos a meses",
+    "keywords": "",
+    "search_text": "¿qué operaciones son aplicables para diferir a meses sin intereses?  pagos a meses pagos a meses "
+  },
+  {
+    "id": "FAQ82",
+    "entry_point": "faq",
+    "titulo": "¿Se puede diferir a Meses Sin Intereses cualquier operación pasada?",
+    "resumen": "",
+    "categoria": "Pagos a meses",
+    "subcategoria": "Pagos a meses",
+    "keywords": "",
+    "search_text": "¿se puede diferir a meses sin intereses cualquier operación pasada?  pagos a meses pagos a meses "
   }
 ]
