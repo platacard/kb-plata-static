@@ -1810,36 +1810,6 @@
     "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  plata cuenta onboarding y descarga "
   },
   {
-    "id": "FAQ78",
-    "entry_point": "faq",
-    "titulo": "¿Qué negocios ofrecen Meses Sin Intereses pagando con Plata?",
-    "resumen": "",
-    "categoria": "Pagos a meses",
-    "subcategoria": "Meses Sin Intereses",
-    "keywords": "",
-    "search_text": "¿qué negocios ofrecen meses sin intereses pagando con plata?  pagos a meses meses sin intereses "
-  },
-  {
-    "id": "FAQ79",
-    "entry_point": "faq",
-    "titulo": "¿A cuántas mensualidades se puede diferir una transacción?",
-    "resumen": "",
-    "categoria": "Pagos a meses",
-    "subcategoria": "Meses Sin Intereses",
-    "keywords": "",
-    "search_text": "¿a cuántas mensualidades se puede diferir una transacción?  pagos a meses meses sin intereses "
-  },
-  {
-    "id": "FAQ80",
-    "entry_point": "faq",
-    "titulo": "¿Por qué se llaman Meses Sin Intereses si cobran una comisión?",
-    "resumen": "",
-    "categoria": "Pagos a meses",
-    "subcategoria": "Meses Sin Intereses",
-    "keywords": "",
-    "search_text": "¿por qué se llaman meses sin intereses si cobran una comisión?  pagos a meses meses sin intereses "
-  },
-  {
     "id": "FAQ81",
     "entry_point": "faq",
     "titulo": "¿Qué operaciones son aplicables para diferir a Meses Sin Intereses?",
@@ -1868,5 +1838,35 @@
     "subcategoria": "Pagos a meses",
     "keywords": "",
     "search_text": "¿la tarjeta plata crédito ofrece meses sin intereses gratuitos como un beneficio?  pagos a meses pagos a meses "
+  },
+  {
+    "id": "FAQ78",
+    "entry_point": "faq",
+    "titulo": "¿Qué negocios ofrecen Meses Sin Intereses pagando con Plata?",
+    "resumen": "",
+    "categoria": "Pagos a meses",
+    "subcategoria": "Pagos a meses",
+    "keywords": "",
+    "search_text": "¿qué negocios ofrecen meses sin intereses pagando con plata?  pagos a meses pagos a meses "
+  },
+  {
+    "id": "FAQ79",
+    "entry_point": "faq",
+    "titulo": "¿A cuántas mensualidades se puede diferir una transacción?",
+    "resumen": "",
+    "categoria": "Pagos a meses",
+    "subcategoria": "Pagos a meses",
+    "keywords": "",
+    "search_text": "¿a cuántas mensualidades se puede diferir una transacción?  pagos a meses pagos a meses "
+  },
+  {
+    "id": "FAQ80",
+    "entry_point": "faq",
+    "titulo": "¿Por qué se llaman Meses Sin Intereses si cobran una comisión?",
+    "resumen": "",
+    "categoria": "Pagos a meses",
+    "subcategoria": "Pagos a meses",
+    "keywords": "",
+    "search_text": "¿por qué se llaman meses sin intereses si cobran una comisión?  pagos a meses pagos a meses "
   }
 ]
