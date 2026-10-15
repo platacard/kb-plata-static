@@ -1350,16 +1350,6 @@
     "search_text": "scripts para manejar objeciones de plata cuenta  plata cuenta onboarding y descarga "
   },
   {
-    "id": "FLOW109",
-    "entry_point": "flujo_reunion",
-    "titulo": "¿Cuáles son las reglas para la venta cruzada de Crédito a Débito (Cuenta)?",
-    "resumen": "",
-    "categoria": "Plata Cuenta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "¿cuáles son las reglas para la venta cruzada de crédito a débito (cuenta)?  plata cuenta onboarding y descarga "
-  },
-  {
     "id": "FAQ77",
     "entry_point": "faq",
     "titulo": "¿La tarjeta Plata Crédito ofrece pagos a meses gratuitos como un beneficio?",
