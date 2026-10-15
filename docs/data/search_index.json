@@ -1888,5 +1888,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "cuenta, debito, duo pack",
     "search_text": "script para explicar el cashback de plata cuenta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
+  },
+  {
+    "id": "FLOW23",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar el IPAB",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "script para explicar el ipab  plata cuenta onboarding y descarga cuenta, debito, duo pack"
   }
 ]

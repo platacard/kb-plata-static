@@ -1,0 +1,21 @@
+{
+  "id": "FLOW23",
+  "entry_point": "flujo_reunion",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para explicar el IPAB",
+  "resumen": "",
+  "contenido_html": "Sus ahorros estarán protegidos por el IPAB, lo que significa que tendrá un respaldo gubernamental en el caso extraordinario que Banco Plata deje de operar.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
