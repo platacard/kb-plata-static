@@ -2251,5 +2251,31 @@
     "version": "",
     "gallery_urls": [],
     "gallery_title": ""
+  },
+  {
+    "id": "FLOW21",
+    "entry_point": "flujo_reunion",
+    "status": "published",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "titulo": "Script para explicar por qué Plata Cuenta no tienen comisión anual de por vida",
+    "resumen": "",
+    "keywords": "cuenta, debito, duo pack",
+    "imagen_url": "",
+    "audio_url": "",
+    "audio_titulo": "",
+    "audio_duracion": "",
+    "audio_tipo": "",
+    "orden": 999999,
+    "badge": "",
+    "priority": "",
+    "criticality": "Sugerido",
+    "is_featured": false,
+    "copy_enabled": false,
+    "content_type": "Text",
+    "ultima_actualizacion": "2026-07-13T01:00:00",
+    "version": "1",
+    "gallery_urls": [],
+    "gallery_title": ""
   }
 ]

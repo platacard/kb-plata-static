@@ -1,0 +1,21 @@
+{
+  "id": "FLOW21",
+  "entry_point": "flujo_reunion",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para explicar por qué Plata Cuenta no tienen comisión anual de por vida",
+  "resumen": "",
+  "contenido_html": "Con Plata Cuenta nunca pagará anualidad de su tarjeta de débito, no tendrá comisiones por manejo de cuenta y no necesitará un mínimo de dinero mensual.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

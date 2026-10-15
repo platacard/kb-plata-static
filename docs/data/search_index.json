@@ -1868,5 +1868,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "",
     "search_text": "venta cruzada: introduce plata crédito  plata crédito onboarding y descarga "
+  },
+  {
+    "id": "FLOW21",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar por qué Plata Cuenta no tienen comisión anual de por vida",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "script para explicar por qué plata cuenta no tienen comisión anual de por vida  plata cuenta onboarding y descarga cuenta, debito, duo pack"
   }
 ]
