@@ -1350,16 +1350,6 @@
     "search_text": "scripts para manejar objeciones de plata cuenta  plata cuenta onboarding y descarga "
   },
   {
-    "id": "FLOW108",
-    "entry_point": "flujo_reunion",
-    "titulo": "Venta Cruzada: Introduce Plata Cuenta",
-    "resumen": "",
-    "categoria": "Plata Cuenta",
-    "subcategoria": "Onboarding y descarga",
-    "keywords": "",
-    "search_text": "venta cruzada: introduce plata cuenta  plata cuenta onboarding y descarga "
-  },
-  {
     "id": "FLOW109",
     "entry_point": "flujo_reunion",
     "titulo": "¿Cuáles son las reglas para la venta cruzada de Crédito a Débito (Cuenta)?",
