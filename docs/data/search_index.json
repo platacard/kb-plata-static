@@ -1908,5 +1908,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "cuenta, debito, duo pack",
     "search_text": "script para explicar los rendimientos de plata cuenta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
+  },
+  {
+    "id": "FLOW25",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar más detalles del rendimiento",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "script para explicar más detalles del rendimiento  plata cuenta onboarding y descarga cuenta, debito, duo pack"
   }
 ]

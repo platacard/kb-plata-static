@@ -1,0 +1,21 @@
+{
+  "id": "FLOW25",
+  "entry_point": "flujo_reunion",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para explicar más detalles del rendimiento",
+  "resumen": "",
+  "contenido_html": "Si apertura una Plata Cuenta, puede tener hasta 7% de rendimiento anual. Pero si después de abrir su Plata Cuenta decide abrir una cuenta de Ahorro Flexible o de Ahorro Fijo, podría obtener un mayor rendimiento anual.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
