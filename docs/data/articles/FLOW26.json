@@ -1,0 +1,21 @@
+{
+  "id": "FLOW26",
+  "entry_point": "flujo_reunion",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para explicar los tipos de cuenta de ahorro de Plata Cuenta",
+  "resumen": "",
+  "contenido_html": "Con una cuenta de ahorro flexible, usted puede retirar y depositar dinero cuantas veces quiera, funciona para metas a corto plazo. Pero si quiere juntar dinero para una meta a largo plazo, como un viaje o un gasto del hogar, el ahorro fijo es lo ideal, porque el dinero quedará resguardado y solo podrá disponer de él hasta que finalice el plazo que haya elegido.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

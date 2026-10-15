@@ -1918,5 +1918,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "cuenta, debito, duo pack",
     "search_text": "script para explicar más detalles del rendimiento  plata cuenta onboarding y descarga cuenta, debito, duo pack"
+  },
+  {
+    "id": "FLOW26",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar los tipos de cuenta de ahorro de Plata Cuenta",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "script para explicar los tipos de cuenta de ahorro de plata cuenta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
   }
 ]
