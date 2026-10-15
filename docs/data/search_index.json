@@ -1878,5 +1878,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "cuenta, debito, duo pack",
     "search_text": "script para explicar por qué plata cuenta no tienen comisión anual de por vida  plata cuenta onboarding y descarga cuenta, debito, duo pack"
+  },
+  {
+    "id": "FLOW22",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar el cashback de Plata Cuenta",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "script para explicar el cashback de plata cuenta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
   }
 ]

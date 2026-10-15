@@ -1,0 +1,21 @@
+{
+  "id": "FLOW22",
+  "entry_point": "flujo_reunion",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para explicar el cashback de Plata Cuenta",
+  "resumen": "",
+  "contenido_html": "Nuestra tarjeta de débito también le dará cashback en las categorías que usted elija. Este cashback es independiente al de su tarjeta de crédito, pero el límite máximo de cashback se comparte con su Plata Crédito.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}
