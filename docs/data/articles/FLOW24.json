@@ -1,0 +1,21 @@
+{
+  "id": "FLOW24",
+  "entry_point": "flujo_reunion",
+  "categoria": "Plata Cuenta",
+  "subcategoria": "Onboarding y descarga",
+  "titulo": "Script para explicar los rendimientos de Plata Cuenta",
+  "resumen": "",
+  "contenido_html": "Plata Cuenta le genera rendimientos solo por tener su dinero guardado con Plata, es decir, Plata le paga a usted por la confianza de mantener su dinero con nosotros. Con Plata Cuenta, su dinero crece todos los días y no se queda quieto. Entre más dinero guarde, más dinero ganará.",
+  "imagen_url": "",
+  "audio_url": "",
+  "audio_titulo": "",
+  "audio_duracion": "",
+  "audio_tipo": "",
+  "gallery_urls": [],
+  "gallery_title": "",
+  "copy_enabled": false,
+  "content_type": "Text",
+  "ultima_actualizacion": "2026-07-13T01:00:00",
+  "version": "1",
+  "owner": "Edwin Nájera"
+}

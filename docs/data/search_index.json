@@ -1898,5 +1898,15 @@
     "subcategoria": "Onboarding y descarga",
     "keywords": "cuenta, debito, duo pack",
     "search_text": "script para explicar el ipab  plata cuenta onboarding y descarga cuenta, debito, duo pack"
+  },
+  {
+    "id": "FLOW24",
+    "entry_point": "flujo_reunion",
+    "titulo": "Script para explicar los rendimientos de Plata Cuenta",
+    "resumen": "",
+    "categoria": "Plata Cuenta",
+    "subcategoria": "Onboarding y descarga",
+    "keywords": "cuenta, debito, duo pack",
+    "search_text": "script para explicar los rendimientos de plata cuenta  plata cuenta onboarding y descarga cuenta, debito, duo pack"
   }
 ]
