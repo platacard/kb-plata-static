@@ -1048,12 +1048,6 @@
           <p>Respuestas rápidas para resolver dudas frecuentes.</p>
           <span class="entry-meta">Explorar sección →</span>
         </button>
-        <button class="entry-card" type="button" data-entry="scripts">
-          <span class="entry-icon">SCR</span>
-          <h2>Scripts</h2>
-          <p>Guías de conversación listas para usar.</p>
-          <span class="entry-meta">Explorar sección →</span>
-        </button>
         <button class="entry-card" type="button" data-entry="flujo_reunion">
           <span class="entry-icon">FLU</span>
           <h2>Flujo de la reunión</h2>
@@ -1279,7 +1273,10 @@
       searchIndexItems: [],
       searchIndexPromise: null,
       staticArticlePromises: {},
-      staticConfigVersion: ''
+      staticConfigVersion: '',
+      articleOpenSequence: 0,
+      articleLoggedSequence: -1,
+      articleOpenSource: 'navigation'
     };
 
     const els = {
@@ -1684,6 +1681,92 @@
         });
     }
 
+    /* ============================================================
+     * ARTICLE DEEP LINKS — stable URL based on the KB_Content ID.
+     * Works with GitHub Pages independently of categories and titles.
+     * ============================================================ */
+    function getArticleIdFromUrl() {
+      try {
+        const id = String(new URL(window.location.href).searchParams.get('article') || '').trim();
+        // IDs in KB_Content are simple keys such as FAQ49 / FLOW49 / POD1.
+        // Reject malformed IDs so an external link cannot request arbitrary paths.
+        return /^[A-Za-z0-9_-]{1,120}$/.test(id) ? id : '';
+      } catch (err) {
+        return '';
+      }
+    }
+
+    function buildArticleShareUrl(id) {
+      // Always share the GitHub Pages landing URL, not the current filter/section.
+      const url = new URL('./', window.location.href);
+      url.search = '';
+      url.hash = '';
+      url.searchParams.set('article', String(id || '').trim());
+      return url.href;
+    }
+
+    function updateArticleUrl(id) {
+      try {
+        const url = new URL(window.location.href);
+        if (url.searchParams.get('article') === id) return;
+        url.searchParams.set('article', id);
+        const previousState = window.history.state && typeof window.history.state === 'object'
+          ? window.history.state : {};
+        window.history.pushState(Object.assign({}, previousState, { bpKbArticle: id }), '', url.href);
+      } catch (err) {
+        console.warn('No pudimos actualizar la URL del artículo', err);
+      }
+    }
+
+    function clearArticleUrl() {
+      try {
+        const url = new URL(window.location.href);
+        if (!url.searchParams.has('article')) return;
+        url.searchParams.delete('article');
+        const previousState = window.history.state && typeof window.history.state === 'object'
+          ? window.history.state : {};
+        window.history.replaceState(Object.assign({}, previousState, { bpKbArticle: '' }), '', url.href);
+      } catch (err) {
+        console.warn('No pudimos limpiar la URL del artículo', err);
+      }
+    }
+
+    function handleArticleHistoryNavigation() {
+      const id = getArticleIdFromUrl();
+      if (!id) {
+        closeSheet({ skipUrlUpdate: true });
+        return;
+      }
+      if (state.pendingDetailId === id && els.sheet.classList.contains('show')) return;
+      openItem(id, null, null, { skipHistory: true, source: 'browser_history' });
+    }
+
+    function copyCurrentArticleLink() {
+      const item = state.currentItem;
+      if (!item || !item.id) {
+        showToast('Este artículo no tiene un enlace disponible.');
+        return;
+      }
+      const url = buildArticleShareUrl(item.id);
+      const status = document.getElementById('shareLinkStatus');
+      function done(ok) {
+        showToast(ok ? 'Enlace del artículo copiado' : 'No se pudo copiar el enlace');
+        if (status) {
+          status.textContent = ok ? 'Enlace copiado' : 'Error al copiar';
+          if (ok) setTimeout(function() {
+            if (status.isConnected) status.textContent = '';
+          }, 2200);
+        }
+      }
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        navigator.clipboard.writeText(url)
+          .then(function() { done(true); })
+          .catch(function() { fallbackCopyText(url, done); });
+      } else {
+        fallbackCopyText(url, done);
+      }
+    }
+
     function init() {
       els.homeBtn.addEventListener('click', goHome);
       els.changeEntryBtn.addEventListener('click', goHome);
@@ -1691,9 +1774,19 @@
       els.backdrop.addEventListener('click', closeSheet);
       document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSheet(); });
       document.addEventListener('click', handleDelegatedArticleClick, true);
+      window.addEventListener('popstate', handleArticleHistoryNavigation);
 
       // v45: render the shell immediately. Static data loads independently.
       renderHome();
+
+      // Deep links open ONLY the requested article JSON, with no section download.
+      // The existing responsive sheet, multimedia and analytics remain unchanged.
+      const deepLinkedId = getArticleIdFromUrl();
+      if (deepLinkedId) {
+        openItem(deepLinkedId, null, null, { skipHistory: true, source: 'deep_link' });
+      } else if (new URL(window.location.href).searchParams.has('article')) {
+        showToast('El enlace del artículo no es válido.');
+      }
 
       // Background warm-up only. It never blocks the first paint.
       setTimeout(function() { preloadShellData(false); }, 250);
@@ -2467,9 +2560,14 @@
       // v31: no-op. Full detail/media is lightweight and should stay fresh.
     }
 
-    function openItem(id, triggerEl, clickEvent) {
+    function openItem(id, triggerEl, clickEvent, routeOptions) {
       const cleanId = String(id || '').trim();
       if (!cleanId) return;
+
+      routeOptions = routeOptions || {};
+      state.articleOpenSequence += 1;
+      state.articleOpenSource = routeOptions.source || 'navigation';
+      if (!routeOptions.skipHistory) updateArticleUrl(cleanId);
 
       state.articleDetails = state.articleDetails || {};
       state.articleTexts = state.articleTexts || {};
@@ -2544,7 +2642,9 @@
         .catch(function(staticErr) {
           state.loadingFullDetails[id] = false;
           console.warn('Static article load failed.', staticErr);
-          if (!silentRefresh) showDetailError('No pudimos abrir este contenido. Revisa tu conexión e inténtalo de nuevo.');
+          if (!silentRefresh && state.pendingDetailId === id) {
+            showDetailError('El artículo no está disponible o no se pudo cargar. Comprueba el enlace e inténtalo de nuevo.');
+          }
         });
     }
 
@@ -2726,6 +2826,8 @@
         </div>
         <div class="article-actions">
           <button type="button" class="fav-inline ${isFavorite(item.id) ? 'active' : ''}" id="favoriteArticleBtn">${isFavorite(item.id) ? '❤️ Quitar de favoritos' : '❤️ Añadir a favoritos'}</button>
+          <button type="button" class="secondary-btn" id="shareArticleBtn" aria-label="Copiar enlace directo del artículo">🔗 Copiar enlace</button>
+          <span class="copy-status" id="shareLinkStatus" role="status" aria-live="polite"></span>
           ${shouldShowCopyButton(item) ? '<button type="button" class="copy-btn" id="copyArticleBtn">Copiar respuesta</button><span class="copy-status" id="copyStatus"></span>' : ''}
         </div>
         <div class="feedback">
@@ -2765,13 +2867,19 @@
       const cancelNegative = document.getElementById('cancelNegativeFeedback');
       const sendNegative = document.getElementById('sendNegativeFeedback');
       const copyBtn = document.getElementById('copyArticleBtn');
+      const shareBtn = document.getElementById('shareArticleBtn');
       const favoriteBtn = document.getElementById('favoriteArticleBtn');
       if (cancelNegative) cancelNegative.addEventListener('click', hideNegativeFeedbackForm);
       if (sendNegative) sendNegative.addEventListener('click', submitNegativeFeedback);
       if (copyBtn) copyBtn.addEventListener('click', copyCurrentArticle);
+      if (shareBtn) shareBtn.addEventListener('click', copyCurrentArticleLink);
       if (favoriteBtn) favoriteBtn.addEventListener('click', function() { toggleFavorite(item); updateFavoriteButton(favoriteBtn, item); });
 
-      logArticleView(item);
+      // Media hydration re-renders this detail. Count a view only once per opening.
+      if (state.articleLoggedSequence !== state.articleOpenSequence) {
+        state.articleLoggedSequence = state.articleOpenSequence;
+        logArticleView(item);
+      }
       saveRecent(item);
       els.sheetBody.scrollTop = preserveScroll ? previousScroll : 0;
 
@@ -3345,7 +3453,9 @@
       }
     }
 
-    function closeSheet() {
+    function closeSheet(options) {
+      // popstate already points to the desired URL: avoid rewriting history.
+      if (!options || options.skipUrlUpdate !== true) clearArticleUrl();
       els.backdrop.classList.remove('show');
       els.sheet.classList.remove('show');
       document.body.classList.remove('modal-open');
@@ -3537,7 +3647,8 @@
             article_title: item.title || '',
             search_query: state.query || '',
             metadata: {
-              source: 'logArticleView',
+              source: state.articleOpenSource === 'deep_link' ? 'direct_link' :
+                (state.articleOpenSource === 'browser_history' ? 'browser_history' : 'logArticleView'),
               category: item.category || '',
               subCategory: item.subCategory || '',
               hasAudio: !!item.hasAudio,
@@ -4635,11 +4746,16 @@
       if (analyticsStarted) return;
       analyticsStarted = true;
 
+      // A direct article link can finish loading before Analytics starts.
+      // Preserve that article context instead of resetting it to Home.
+      var initialArticleId = typeof getArticleIdFromUrl === 'function' ? getArticleIdFromUrl() : '';
+      var initialArticle = (typeof state !== 'undefined' && state.currentItem &&
+        state.currentItem.id === initialArticleId) ? state.currentItem : null;
       setContext({
-        view: 'home',
-        entryPoint: '',
-        articleId: '',
-        articleTitle: ''
+        view: initialArticleId ? 'article' : 'home',
+        entryPoint: initialArticle ? (initialArticle.entryPoint || '') : '',
+        articleId: initialArticleId,
+        articleTitle: initialArticle ? (initialArticle.title || '') : ''
       });
 
       send('kb_open', {
