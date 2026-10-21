@@ -291,6 +291,19 @@
       box-shadow: 0 10px 24px rgba(15,23,42,.05);
     }
     details.group[open] { border-color: rgba(255,93,21,.36); }
+    .category-group-wrap { position: relative; margin: 10px 0; }
+    .category-group-wrap details.group { margin: 0; }
+    .category-group-wrap summary.group-head { position: relative; padding-right: 154px; }
+    .category-group-wrap .category-count { position: absolute; right: 132px; top: 50%; transform: translateY(-50%); }
+    .category-share-btn {
+      position: absolute; z-index: 4; top: 9px; right: 10px;
+      min-height: 38px; border: 1px solid #ffd9c7; background: #fff3ed;
+      color: var(--brand-dark); border-radius: 999px; padding: 8px 10px;
+      font-size: 12px; line-height: 1.1; font-weight: 900; white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(16,24,40,.04);
+    }
+    .category-share-btn:hover { background: #ffe6d8; border-color: rgba(255,93,21,.42); }
+    .category-share-btn:focus-visible { outline: 3px solid rgba(255,93,21,.28); outline-offset: 2px; }
     summary.group-head {
       list-style: none;
       padding: 16px;
@@ -635,6 +648,9 @@
       .filter-row { display: grid; grid-template-columns: 1fr; }
       .filter-select { width: 100%; }
       summary.group-head { padding: 14px; }
+      .category-group-wrap summary.group-head { padding-right: 134px; }
+      .category-group-wrap .category-count { right: 112px; }
+      .category-share-btn { top: 7px; right: 7px; min-height: 36px; padding: 7px 8px; font-size: 11px; }
       .meta-grid { grid-template-columns: 1fr; }
       .governance-list { grid-template-columns: 1fr; }
       .related-list { grid-template-columns: 1fr; }
@@ -1276,7 +1292,8 @@
       staticConfigVersion: '',
       articleOpenSequence: 0,
       articleLoggedSequence: -1,
-      articleOpenSource: 'navigation'
+      articleOpenSource: 'navigation',
+      pendingCategoryDeepLink: null
     };
 
     const els = {
@@ -1696,6 +1713,77 @@
       }
     }
 
+    function getCategoryDeepLinkFromUrl() {
+      try {
+        const url = new URL(window.location.href);
+        const entryPoint = String(url.searchParams.get('entry') || '').trim();
+        const category = String(url.searchParams.get('category') || '').trim();
+        if (!/^[A-Za-z0-9_-]{1,120}$/.test(entryPoint) || !category || category.length > 300) return null;
+        return { entryPoint: entryPoint, category: category };
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function buildCategoryShareUrl(entryPoint, category) {
+      const url = new URL('./', window.location.href);
+      url.search = '';
+      url.hash = '';
+      url.searchParams.set('entry', String(entryPoint || '').trim());
+      url.searchParams.set('category', String(category || '').trim());
+      return url.href;
+    }
+
+    function copyCategoryLink(entryPoint, category, button) {
+      const url = buildCategoryShareUrl(entryPoint, category);
+      const originalText = button ? button.textContent : '';
+      function done(ok) {
+        showToast(ok ? 'Enlace de categoría copiado' : 'No se pudo copiar el enlace');
+        if (button && button.isConnected) {
+          button.textContent = ok ? '✓ Copiado' : 'Error al copiar';
+          setTimeout(function() {
+            if (button.isConnected) button.textContent = originalText || '🔗 Copiar enlace';
+          }, 2000);
+        }
+      }
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        navigator.clipboard.writeText(url).then(function() { done(true); }).catch(function() { fallbackCopyText(url, done); });
+      } else {
+        fallbackCopyText(url, done);
+      }
+    }
+
+    function applyPendingCategoryDeepLink() {
+      const pending = state.pendingCategoryDeepLink;
+      if (!pending || state.entry !== pending.entryPoint) return;
+      const wrappers = Array.from(els.view.querySelectorAll('[data-category-panel]'));
+      const wrapper = wrappers.find(function(node) {
+        return node.dataset.categoryPanel === pending.category;
+      });
+      if (!wrapper) {
+        state.pendingCategoryDeepLink = null;
+        showToast('No encontramos esa categoría. Puede haber cambiado de nombre.');
+        return;
+      }
+      const details = wrapper.querySelector('details.group');
+      if (details) details.open = true;
+      state.pendingCategoryDeepLink = null;
+      try { wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+      try {
+        if (window.BancoPlataKBAnalytics && window.BancoPlataKBAnalytics.setContext) {
+          window.BancoPlataKBAnalytics.setContext({ view: 'entry_point', entryPoint: pending.entryPoint, articleId: '', articleTitle: '' });
+        }
+        if (window.BancoPlataKBAnalytics && window.BancoPlataKBAnalytics.track) {
+          window.BancoPlataKBAnalytics.track('category_deep_link_open', {
+            view: 'entry_point', entry_point: pending.entryPoint,
+            metadata: { source: 'category_deep_link', category: pending.category }
+          });
+        }
+      } catch (analyticsError) {
+        console.warn('Category deep-link analytics failed', analyticsError);
+      }
+    }
+
     function buildArticleShareUrl(id) {
       // Always share the GitHub Pages landing URL, not the current filter/section.
       const url = new URL('./', window.location.href);
@@ -1782,10 +1870,14 @@
       // Deep links open ONLY the requested article JSON, with no section download.
       // The existing responsive sheet, multimedia and analytics remain unchanged.
       const deepLinkedId = getArticleIdFromUrl();
+      const categoryLink = getCategoryDeepLinkFromUrl();
       if (deepLinkedId) {
         openItem(deepLinkedId, null, null, { skipHistory: true, source: 'deep_link' });
       } else if (new URL(window.location.href).searchParams.has('article')) {
         showToast('El enlace del artículo no es válido.');
+      } else if (categoryLink) {
+        state.pendingCategoryDeepLink = categoryLink;
+        openEntryPoint(categoryLink.entryPoint);
       }
 
       // Background warm-up only. It never blocks the first paint.
@@ -2354,8 +2446,17 @@
       if (gapCancel) gapCancel.addEventListener('click', hideContentGapPanel);
       if (gapSend) gapSend.addEventListener('click', submitContentGapFromSearch);
 
+      els.view.querySelectorAll('[data-share-category]').forEach(function(btn) {
+        btn.addEventListener('click', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          copyCategoryLink(btn.dataset.categoryEntry || state.entry, btn.dataset.shareCategory || '', btn);
+        });
+      });
+
       scheduleSearchLog(filtered.length);
       setupArticlePrefetch(filtered);
+      applyPendingCategoryDeepLink();
     }
 
     function renderNoResults() {
@@ -2383,12 +2484,15 @@
       return Object.keys(groups).sort().map(function(category, i) {
         const groupItems = groups[category];
         return `
-          <details class="group" ${i < 3 ? 'open' : ''}>
-            <summary class="group-head"><span>${escapeHtml(category)}</span><span class="badge">${groupItems.length}</span></summary>
-            <div class="cards">
-              ${groupItems.map(renderItemCard).join('')}
-            </div>
-          </details>`;
+          <div class="category-group-wrap" data-category-panel="${escapeAttr(category)}">
+            <details class="group" ${i < 3 ? 'open' : ''}>
+              <summary class="group-head"><span>${escapeHtml(category)}</span><span class="badge category-count">${groupItems.length}</span></summary>
+              <div class="cards">
+                ${groupItems.map(renderItemCard).join('')}
+              </div>
+            </details>
+            <button type="button" class="category-share-btn" data-share-category="${escapeAttr(category)}" data-category-entry="${escapeAttr(state.entry || '')}" aria-label="Copiar enlace de la categoría ${escapeAttr(category)}" title="Copiar enlace de categoría">🔗 Copiar enlace</button>
+          </div>`;
       }).join('');
     }
 
