@@ -291,7 +291,7 @@
       box-shadow: 0 10px 24px rgba(15,23,42,.05);
     }
     details.group[open] { border-color: rgba(255,93,21,.36); }
-    .category-group-wrap { position: relative; margin: 10px 0; }
+    .category-group-wrap { position: relative; margin: 10px 0; scroll-margin-top: 145px; }
     .category-group-wrap details.group { margin: 0; }
     .category-group-wrap summary.group-head { position: relative; padding-right: 154px; }
     .category-group-wrap .category-count { position: absolute; right: 132px; top: 50%; transform: translateY(-50%); }
@@ -1293,7 +1293,10 @@
       articleOpenSequence: 0,
       articleLoggedSequence: -1,
       articleOpenSource: 'navigation',
-      pendingCategoryDeepLink: null
+      pendingCategoryDeepLink: null,
+      // Keeps all category groups visible for a shared category link while
+      // highlighting and expanding only the requested category.
+      categoryDeepLinkFocus: ''
     };
 
     const els = {
@@ -1756,19 +1759,60 @@
     function applyPendingCategoryDeepLink() {
       const pending = state.pendingCategoryDeepLink;
       if (!pending || state.entry !== pending.entryPoint) return;
+
       const wrappers = Array.from(els.view.querySelectorAll('[data-category-panel]'));
+      const targetName = String(state.categoryDeepLinkFocus || pending.category || '').trim();
       const wrapper = wrappers.find(function(node) {
-        return node.dataset.categoryPanel === pending.category;
+        return normalizeText(node.dataset.categoryPanel || '') === normalizeText(targetName);
       });
+
       if (!wrapper) {
         state.pendingCategoryDeepLink = null;
+        state.categoryDeepLinkFocus = '';
+        state.category = 'all';
+        renderEntry();
         showToast('No encontramos esa categoría. Puede haber cambiado de nombre.');
         return;
       }
-      const details = wrapper.querySelector('details.group');
-      if (details) details.open = true;
+
+      // Keep every category in the section, but open only the category named
+      // by the shared URL. This also makes all of its article cards visible.
+      wrappers.forEach(function(node) {
+        const details = node.querySelector('details.group');
+        if (details) details.open = node === wrapper;
+      });
+
+      // Highlight the matching category chip without filtering the other
+      // category groups out of the page.
+      const actualName = wrapper.dataset.categoryPanel || pending.category;
+      state.categoryDeepLinkFocus = actualName;
+      state.category = actualName;
+      pending.category = actualName;
+      const chips = Array.from(els.view.querySelectorAll('#categoryChips [data-cat]'));
+      chips.forEach(function(chip) {
+        const active = normalizeText(chip.dataset.cat || '') === normalizeText(actualName);
+        chip.classList.toggle('active', active);
+        if (active) chip.setAttribute('aria-current', 'true');
+        else chip.removeAttribute('aria-current');
+      });
+
       state.pendingCategoryDeepLink = null;
-      try { wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+      try {
+        // Wait for the category cards and sticky navigation to finish layout
+        // before scrolling; this is more reliable on mobile and embedded pages.
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            if (!wrapper.isConnected) return;
+            try { wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            catch (err) { wrapper.scrollIntoView(true); }
+          });
+        });
+      } catch (err) {
+        setTimeout(function() {
+          if (wrapper.isConnected) wrapper.scrollIntoView(true);
+        }, 120);
+      }
+
       try {
         if (window.BancoPlataKBAnalytics && window.BancoPlataKBAnalytics.setContext) {
           window.BancoPlataKBAnalytics.setContext({ view: 'entry_point', entryPoint: pending.entryPoint, articleId: '', articleTitle: '' });
@@ -1776,7 +1820,7 @@
         if (window.BancoPlataKBAnalytics && window.BancoPlataKBAnalytics.track) {
           window.BancoPlataKBAnalytics.track('category_deep_link_open', {
             view: 'entry_point', entry_point: pending.entryPoint,
-            metadata: { source: 'category_deep_link', category: pending.category }
+            metadata: { source: 'category_deep_link', category: actualName }
           });
         }
       } catch (analyticsError) {
@@ -1961,6 +2005,9 @@
       document.body.classList.add('has-entry-nav');
       state.entry = entryId;
       state.category = 'all';
+      state.categoryDeepLinkFocus = (state.pendingCategoryDeepLink && state.pendingCategoryDeepLink.entryPoint === entryId)
+        ? String(state.pendingCategoryDeepLink.category || '').trim()
+        : '';
       state.audience = 'all';
       state.query = '';
       els.topbar.hidden = false;
@@ -2376,9 +2423,35 @@
       els.topbar.hidden = false;
       const ep = getEntryPoint(state.entry);
       const allItems = getItemsForEntry(state.entry);
-      const filtered = filterAndRank(allItems, state.query, state.category, 'all');
       const categories = getCategoriesForEntry(state.entry, allItems);
-      const showCurated = !state.query && state.category === 'all';
+
+      // A category deep link highlights a chip and opens its group, but keeps
+      // the full list of groups rendered so the non-target groups remain
+      // visible and collapsed rather than disappearing from the page.
+      if (state.categoryDeepLinkFocus) {
+        const categoryMatch = categories.find(function(c) {
+          return normalizeText(c.name || '') === normalizeText(state.categoryDeepLinkFocus || '');
+        });
+        if (categoryMatch) {
+          state.categoryDeepLinkFocus = categoryMatch.name;
+          state.category = categoryMatch.name;
+          if (state.pendingCategoryDeepLink && state.pendingCategoryDeepLink.entryPoint === state.entry) {
+            state.pendingCategoryDeepLink.category = categoryMatch.name;
+          }
+        } else if (state.pendingCategoryDeepLink && state.pendingCategoryDeepLink.entryPoint === state.entry) {
+          // Let applyPendingCategoryDeepLink report a renamed/missing category.
+          state.category = 'all';
+        } else {
+          state.categoryDeepLinkFocus = '';
+          state.category = 'all';
+        }
+      }
+
+      const categoryFocusMode = !!state.categoryDeepLinkFocus && state.category === state.categoryDeepLinkFocus;
+      const filtered = categoryFocusMode
+        ? filterAndRank(allItems, state.query, 'all', 'all')
+        : filterAndRank(allItems, state.query, state.category, 'all');
+      const showCurated = !state.query && state.category === 'all' && !categoryFocusMode;
 
       els.view.innerHTML = `
         <section class="search-panel">
@@ -2430,6 +2503,9 @@
 
       document.getElementById('categoryChips').querySelectorAll('[data-cat]').forEach(function(btn) {
         btn.addEventListener('click', function() {
+          // A user-selected filter takes precedence over the initial shared link.
+          state.pendingCategoryDeepLink = null;
+          state.categoryDeepLinkFocus = '';
           state.category = btn.dataset.cat;
           renderEntry();
         });
@@ -2481,11 +2557,19 @@
 
     function renderGroups(items) {
       const groups = groupBy(items, function(item) { return item.category || 'Sin categoría'; });
+      const focusCategory = state.categoryDeepLinkFocus && state.category === state.categoryDeepLinkFocus
+        ? state.categoryDeepLinkFocus
+        : '';
       return Object.keys(groups).sort().map(function(category, i) {
         const groupItems = groups[category];
+        // Normal browsing keeps the familiar first-three-open behavior. When
+        // arriving via a category link, exactly the requested group is open.
+        const shouldOpen = focusCategory
+          ? normalizeText(category) === normalizeText(focusCategory)
+          : i < 3;
         return `
           <div class="category-group-wrap" data-category-panel="${escapeAttr(category)}">
-            <details class="group" ${i < 3 ? 'open' : ''}>
+            <details class="group" ${shouldOpen ? 'open' : ''}>
               <summary class="group-head"><span>${escapeHtml(category)}</span><span class="badge category-count">${groupItems.length}</span></summary>
               <div class="cards">
                 ${groupItems.map(renderItemCard).join('')}
