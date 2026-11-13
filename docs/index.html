@@ -5076,5 +5076,545 @@
       });
     }
   </script>
+
+  <!-- =====================================================================
+    KB i18n · Toggle Español / English con traducción automática en vivo
+    ---------------------------------------------------------------------
+    Pegar este bloque completo justo ANTES de </body> en docs/index.html.
+    No modifica el resto del código ni la fuente de datos (Sheets/JSON):
+    traduce lo que ya está pintado en pantalla y todo lo que se renderice
+    después (secciones, búsquedas, artículos en el bottom sheet, modales).
+
+    Motor de traducción (en este orden):
+      1) Translator API de Chrome (on-device, gratis, sin API key, el
+         contenido no sale del equipo). Chrome de escritorio 138+.
+      2) Respaldo: endpoint público de Google Translate (opcional,
+         CONFIG.fallback = 'none' para desactivarlo).
+    Las traducciones se guardan en caché local para que la segunda vez
+    sea instantánea.
+
+    Para excluir algo de la traducción: añade translate="no" o la clase
+    "notranslate" al elemento.
+  ====================================================================== -->
+  <style>
+    .kb-lang-toggle {
+      position: fixed; top: 14px; right: 14px; z-index: 9999;
+      display: inline-flex; align-items: center; gap: 2px; padding: 3px;
+      background: var(--surface, #fff); border: 1px solid var(--line, #f0ded4);
+      border-radius: 999px; box-shadow: var(--shadow-soft, 0 10px 28px rgba(120,43,0,.08));
+      font: inherit;
+    }
+    .kb-lang-toggle button {
+      border: 0; background: transparent; color: var(--muted, #6b7280);
+      font: inherit; font-size: 13px; font-weight: 800; letter-spacing: .02em;
+      padding: 7px 12px; border-radius: 999px; cursor: pointer; line-height: 1;
+    }
+    .kb-lang-toggle button:hover { color: var(--brand-dark, #b93800); }
+    .kb-lang-toggle button[aria-pressed="true"] { background: var(--brand, #ff5d15); color: #fff; }
+    .kb-lang-toggle button:focus-visible { outline: 2px solid var(--brand-dark, #b93800); outline-offset: 2px; }
+    .kb-lang-spinner {
+      display: none; width: 12px; height: 12px; margin: 0 6px 0 4px;
+      border: 2px solid var(--brand, #ff5d15); border-right-color: transparent; border-radius: 50%;
+      animation: kb-lang-spin .8s linear infinite;
+    }
+    .kb-lang-toggle[aria-busy="true"] .kb-lang-spinner { display: inline-block; }
+    @keyframes kb-lang-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .kb-lang-spinner { animation: none; } }
+    @media (max-width: 560px) { .kb-lang-toggle { top: 10px; right: 10px; } }
+  </style>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* ------------------------------------------------------------------ *
+     * CONFIGURACIÓN
+     * ------------------------------------------------------------------ */
+    var CONFIG = {
+      source: 'es',
+      target: 'en',
+      storageKey: 'kb_lang',
+      cacheKey: 'kb_i18n_cache_v1',
+      maxCacheEntries: 5000,
+      fallback: 'google',          // 'google' | 'none'
+      concurrency: 4,
+      attributes: ['placeholder', 'aria-label', 'title', 'alt'],
+
+      // Selectores que nunca se traducen (códigos cortos de las tarjetas: FAQ, FLU, POD).
+      skipSelectors: ['.entry-icon'],
+
+      // Términos que NUNCA se traducen (si no, "Banco Plata" sale como "Silver Bank").
+      protectedTerms: ['Banco Plata', 'Plata Card', 'Plata', 'SPEI', 'CLABE', 'OXXO', 'CoDi', 'CURP', 'RFC', 'INE', 'SAT', 'IMSS'],
+
+      // Traducciones fijas para textos de interfaz (coincidencia exacta, sin espacios extremos).
+      overrides: {
+        'Base de conocimientos': 'Knowledge base',
+        'Encuentra respuestas, scripts, guías y recursos de apoyo en un solo lugar.': 'Find answers, scripts, guides and support resources in one place.',
+        'Inicio': 'Home',
+        '🏠 Inicio': '🏠 Home',
+        'Volver al inicio': 'Back to home',
+        'Cambiar sección': 'Change section',
+        '↔️ Cambiar sección': '↔️ Change section',
+        'Busca directamente o explora por sección.': 'Search directly or browse by section.',
+        'Explora por sección': 'Browse by section',
+        'Elige el camino que mejor se adapte a lo que necesitas consultar.': 'Choose the path that best fits what you need to look up.',
+        'FAQ por temas': 'FAQ by topic',
+        'Respuestas rápidas para resolver dudas frecuentes.': 'Quick answers to common questions.',
+        'Pasos clave para acompañar la reunión de inicio a cierre.': 'Key steps to guide the meeting from start to finish.',
+        'Audios de refuerzo para repasar conceptos y buenas prácticas.': 'Refresher audios to review concepts and best practices.',
+        'Limpiar': 'Clear',
+        'Explorar sección →': 'Explore section →',
+        'Copiar respuesta': 'Copy answer',
+        'Cerrar': 'Close',
+        'Busca por palabra clave, duda, proceso o script...': 'Search in Spanish: keyword, question, process or script...',
+        'Flujo de la reunión': 'Meeting flow',
+        'Podcast': 'Podcast'
+      },
+
+      // Correcciones finales opcionales sobre el texto traducido: [regex, reemplazo]
+      postFixes: [
+        [/\bSilver Bank\b/g, 'Banco Plata']
+      ]
+    };
+
+    var ROOT = document.body;
+    var TOKEN_PREFIX = 'KBQZ';
+    var SKIP_SELECTOR = ['script', 'style', 'noscript', 'textarea', 'code', 'pre', 'svg',
+      '[translate="no"]', '.notranslate', '.kb-lang-toggle'].concat(CONFIG.skipSelectors || []).join(', ');
+
+    /* ------------------------------------------------------------------ *
+     * ESTADO
+     * ------------------------------------------------------------------ */
+    var lang = 'es';
+    var engine = null;              // { name, translate(text) -> Promise<string> }
+    var textState = new WeakMap();  // Text -> { orig, applied }
+    var attrState = new WeakMap();  // Element -> { [attr]: { orig, applied } }
+    var cache = loadCache();
+    var inflight = new Map();
+    var pendingNodes = new Set();
+    var flushTimer = null;
+    var activeJobs = 0;
+    var jobQueue = [];
+    var busyCount = 0;
+    var originalTitle = document.title;
+    var originalHtmlLang = document.documentElement.getAttribute('lang') || CONFIG.source;
+
+    /* ------------------------------------------------------------------ *
+     * UTILIDADES
+     * ------------------------------------------------------------------ */
+    function safeGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+    function safeSet(key, v) { try { localStorage.setItem(key, v); } catch (e) {} }
+
+    function loadCache() {
+      var m = new Map();
+      try {
+        var raw = JSON.parse(safeGet(CONFIG.cacheKey) || '{}');
+        Object.keys(raw).forEach(function (k) { m.set(k, raw[k]); });
+      } catch (e) {}
+      return m;
+    }
+    var saveTimer = null;
+    function saveCacheSoon() {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(function () {
+        var entries = Array.from(cache.entries());
+        if (entries.length > CONFIG.maxCacheEntries) entries = entries.slice(-CONFIG.maxCacheEntries);
+        var obj = {};
+        entries.forEach(function (e) { obj[e[0]] = e[1]; });
+        safeSet(CONFIG.cacheKey, JSON.stringify(obj));
+      }, 800);
+    }
+
+    function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    var protectedRegexes = CONFIG.protectedTerms
+      .slice().sort(function (a, b) { return b.length - a.length; })
+      .map(function (term) {
+        return new RegExp('(?<![\\p{L}\\p{N}])' + escapeRegex(term) + '(?![\\p{L}\\p{N}])', 'gu');
+      });
+
+    function protect(text) {
+      var found = [];
+      var out = text;
+      protectedRegexes.forEach(function (re) {
+        out = out.replace(re, function (m) { found.push(m); return TOKEN_PREFIX + (found.length - 1) + 'X'; });
+      });
+      return { text: out, terms: found };
+    }
+    function unprotect(text, terms) {
+      return text.replace(new RegExp(TOKEN_PREFIX + '\\s*(\\d+)\\s*X', 'gi'), function (m, i) {
+        return terms[+i] != null ? terms[+i] : m;
+      });
+    }
+    function postFix(text) {
+      CONFIG.postFixes.forEach(function (f) { text = text.replace(f[0], f[1]); });
+      return text;
+    }
+
+    function needsTranslation(s) {
+      var t = s.trim();
+      if (!t || !/\p{L}/u.test(t)) return false;                       // sin letras
+      if (/^(https?:\/\/|www\.)\S+$/i.test(t)) return false;           // URL
+      if (/^[\w.+-]+@[\w-]+\.[\w.]+$/.test(t)) return false;           // email
+      var stripped = t;
+      protectedRegexes.forEach(function (re) { stripped = stripped.replace(re, ''); });
+      return /\p{L}{2,}/u.test(stripped);                               // solo términos protegidos
+    }
+
+    function isExcluded(el) {
+      if (!el || el.nodeType !== 1) return true;
+      return !!el.closest(SKIP_SELECTOR);
+    }
+
+    function setBusy(delta) {
+      busyCount = Math.max(0, busyCount + delta);
+      var t = document.getElementById('kbLangToggle');
+      if (t) t.setAttribute('aria-busy', busyCount > 0 ? 'true' : 'false');
+    }
+
+    /* ------------------------------------------------------------------ *
+     * MOTORES DE TRADUCCIÓN
+     * ------------------------------------------------------------------ */
+    function createChromeEngine() {
+      if (!('Translator' in self)) return Promise.reject(new Error('Translator API no disponible'));
+      return self.Translator.create({ sourceLanguage: CONFIG.source, targetLanguage: CONFIG.target })
+        .then(function (tr) {
+          return { name: 'chrome', translate: function (text) { return tr.translate(text); } };
+        });
+    }
+
+    function googleRequest(text) {
+      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&dt=t' +
+        '&sl=' + CONFIG.source + '&tl=' + CONFIG.target + '&q=' + encodeURIComponent(text);
+      return fetch(url).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).then(function (d) {
+        return (d && d[0] || []).map(function (x) { return x[0]; }).join('');
+      });
+    }
+    function chunkText(text, max) {
+      if (text.length <= max) return [text];
+      var parts = text.match(/[^.!?¡¿\n]+[.!?]*\s*|\n+/g) || [text];
+      var chunks = [], cur = '';
+      parts.forEach(function (p) {
+        if ((cur + p).length > max && cur) { chunks.push(cur); cur = ''; }
+        cur += p;
+      });
+      if (cur) chunks.push(cur);
+      return chunks;
+    }
+    function createGoogleEngine() {
+      return Promise.resolve({
+        name: 'google',
+        translate: function (text) {
+          return Promise.all(chunkText(text, 1500).map(googleRequest)).then(function (r) { return r.join(''); });
+        }
+      });
+    }
+
+    var enginePromise = null;
+    function getEngine() {
+      if (engine) return Promise.resolve(engine);
+      if (enginePromise) return enginePromise;
+      // Translator.create() se llama de inmediato para aprovechar el clic del usuario
+      // (lo necesita si Chrome tiene que descargar el modelo de idioma la primera vez).
+      enginePromise = createChromeEngine()
+        .catch(function (err) {
+          if (CONFIG.fallback === 'google') return createGoogleEngine();
+          throw err;
+        })
+        .then(function (e) { engine = e; return e; })
+        .finally(function () { enginePromise = null; });
+      return enginePromise;
+    }
+
+    function runLimited(fn) {
+      return new Promise(function (resolve, reject) {
+        jobQueue.push(function () {
+          activeJobs++;
+          fn().then(resolve, reject).finally(function () { activeJobs--; next(); });
+        });
+        next();
+      });
+      function next() {
+        while (activeJobs < CONFIG.concurrency && jobQueue.length) jobQueue.shift()();
+      }
+    }
+
+    function cachedTranslation(core) {
+      if (Object.prototype.hasOwnProperty.call(CONFIG.overrides, core)) return CONFIG.overrides[core];
+      return cache.has(core) ? cache.get(core) : null;
+    }
+
+    function translateCore(core) {
+      var hit = cachedTranslation(core);
+      if (hit != null) return Promise.resolve(hit);
+      if (inflight.has(core)) return inflight.get(core);
+      setBusy(1);
+      var p = getEngine().then(function (eng) {
+        var prot = protect(core.replace(/\s+/g, ' '));
+        return runLimited(function () { return eng.translate(prot.text); }).then(function (out) {
+          var result = postFix(unprotect(out, prot.terms));
+          cache.set(core, result);
+          saveCacheSoon();
+          return result;
+        });
+      }).finally(function () { inflight.delete(core); setBusy(-1); });
+      inflight.set(core, p);
+      return p;
+    }
+
+    function splitWhitespace(s) {
+      var m = s.match(/^(\s*)([\s\S]*?)(\s*)$/);
+      return { lead: m[1], core: m[2], trail: m[3] };
+    }
+
+    /* ------------------------------------------------------------------ *
+     * APLICAR / REVERTIR EN EL DOM
+     * ------------------------------------------------------------------ */
+    function processText(node) {
+      var cur = node.nodeValue;
+      var st = textState.get(node);
+      if (st && st.applied === cur) return;           // ya es nuestra traducción
+      if (!node.parentElement || isExcluded(node.parentElement)) return;
+      if (!needsTranslation(cur)) return;
+
+      st = { orig: cur, applied: null };
+      textState.set(node, st);
+      var parts = splitWhitespace(cur);
+
+      var apply = function (tr) {
+        if (lang !== 'en' || node.nodeValue !== cur) return;
+        st.applied = parts.lead + tr + parts.trail;
+        node.nodeValue = st.applied;
+      };
+      var hit = cachedTranslation(parts.core);
+      if (hit != null) { apply(hit); return; }        // síncrono: sin parpadeo
+      translateCore(parts.core).then(apply).catch(function () {});
+    }
+
+    function processAttrs(el) {
+      if (isExcluded(el)) return;
+      CONFIG.attributes.forEach(function (attr) {
+        if (!el.hasAttribute(attr)) return;
+        var cur = el.getAttribute(attr);
+        var map = attrState.get(el) || {};
+        var st = map[attr];
+        if (st && st.applied === cur) return;
+        if (!needsTranslation(cur)) return;
+        st = map[attr] = { orig: cur, applied: null };
+        attrState.set(el, map);
+        var core = cur.trim();
+        var apply = function (tr) {
+          if (lang !== 'en' || el.getAttribute(attr) !== cur) return;
+          st.applied = tr;
+          el.setAttribute(attr, tr);
+        };
+        var hit = cachedTranslation(core);
+        if (hit != null) { apply(hit); return; }
+        translateCore(core).then(apply).catch(function () {});
+      });
+    }
+
+    function walk(root, fn) {
+      if (root.nodeType === 3) { fn(root); return; }
+      if (root.nodeType !== 1) return;
+      fn(root);
+      var tw = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+      var n;
+      while ((n = tw.nextNode())) fn(n);
+    }
+
+    function translateTree(root) {
+      walk(root, function (n) {
+        if (n.nodeType === 3) processText(n);
+        else processAttrs(n);
+      });
+    }
+
+    function restoreTree(root) {
+      walk(root, function (n) {
+        if (n.nodeType === 3) {
+          var st = textState.get(n);
+          if (st && st.applied != null && n.nodeValue === st.applied) n.nodeValue = st.orig;
+          textState.delete(n);
+        } else {
+          var map = attrState.get(n);
+          if (!map) return;
+          Object.keys(map).forEach(function (attr) {
+            var st = map[attr];
+            if (st.applied != null && n.getAttribute(attr) === st.applied) n.setAttribute(attr, st.orig);
+          });
+          attrState.delete(n);
+        }
+      });
+    }
+
+    function translateTitle() {
+      var t = originalTitle;
+      if (!needsTranslation(t)) return;
+      translateCore(t.trim()).then(function (tr) { if (lang === 'en') document.title = tr; }).catch(function () {});
+    }
+
+    /* ------------------------------------------------------------------ *
+     * OBSERVAR RENDERS DINÁMICOS
+     * ------------------------------------------------------------------ */
+    var observer = new MutationObserver(function (mutations) {
+      if (lang !== 'en') return;
+      mutations.forEach(function (m) {
+        if (m.type === 'childList') m.addedNodes.forEach(function (n) { pendingNodes.add(n); });
+        else pendingNodes.add(m.target);
+      });
+      if (!flushTimer) flushTimer = setTimeout(flush, 16);
+    });
+
+    function flush() {
+      flushTimer = null;
+      var nodes = Array.from(pendingNodes);
+      pendingNodes.clear();
+      nodes.forEach(function (n) {
+        if (!n.isConnected) return;
+        if (n.nodeType === 3) processText(n);
+        else if (n.nodeType === 1) {
+          // mutación de atributo: solo atributos; nodo nuevo: todo el subárbol
+          translateTree(n);
+        }
+      });
+    }
+
+    function startObserving() {
+      observer.observe(ROOT, {
+        childList: true, subtree: true, characterData: true,
+        attributes: true, attributeFilter: CONFIG.attributes
+      });
+    }
+
+    /* ------------------------------------------------------------------ *
+     * CAMBIO DE IDIOMA
+     * ------------------------------------------------------------------ */
+    function setLang(next) {
+      if (next === lang) return;
+      if (next === 'en') {
+        // Arrancar el motor dentro del gesto del usuario.
+        getEngine().catch(function (err) {
+          console.warn('[kb-i18n] Sin motor de traducción:', err);
+          setLang('es');
+          var t = document.getElementById('kbLangToggle');
+          if (t) t.title = 'La traducción automática no está disponible en este navegador.';
+        });
+        lang = 'en';
+        document.documentElement.setAttribute('lang', CONFIG.target);
+        translateTree(ROOT);
+        translateTitle();
+        startObserving();
+      } else {
+        lang = 'es';
+        observer.disconnect();
+        pendingNodes.clear();
+        restoreTree(ROOT);
+        document.title = originalTitle;
+        document.documentElement.setAttribute('lang', originalHtmlLang);
+      }
+      safeSet(CONFIG.storageKey, lang);
+      updateToggle();
+    }
+
+    /* ------------------------------------------------------------------ *
+     * TOGGLE
+     * ------------------------------------------------------------------ */
+    function buildToggle() {
+      var wrap = document.createElement('div');
+      wrap.className = 'kb-lang-toggle notranslate';
+      wrap.id = 'kbLangToggle';
+      wrap.setAttribute('role', 'group');
+      wrap.setAttribute('aria-label', 'Idioma / Language');
+      wrap.setAttribute('translate', 'no');
+      wrap.innerHTML =
+        '<span class="kb-lang-spinner" aria-hidden="true"></span>' +
+        '<button type="button" data-lang="es" lang="es" title="Ver en español">Español</button>' +
+        '<button type="button" data-lang="en" lang="en" title="View in English">English</button>';
+      wrap.addEventListener('click', function (e) {
+        var b = e.target.closest('button[data-lang]');
+        if (b) setLang(b.getAttribute('data-lang'));
+      });
+      document.body.appendChild(wrap);
+    }
+
+    function updateToggle() {
+      var t = document.getElementById('kbLangToggle');
+      if (!t) return;
+      t.querySelectorAll('button[data-lang]').forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+      });
+    }
+
+    /* ------------------------------------------------------------------ *
+     * "COPIAR RESPUESTA" EN INGLÉS
+     * El botón original copia desde los datos (español). En modo English
+     * copiamos el texto traducido que se ve en el bottom sheet.
+     * ------------------------------------------------------------------ */
+    document.addEventListener('click', function (e) {
+      if (lang !== 'en') return;
+      var btn = e.target.closest && e.target.closest('#copyArticleBtn');
+      if (!btn) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      var parts = [];
+      ['sheetTitle', 'sheetSubtitle'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && el.innerText.trim()) parts.push(el.innerText.trim());
+      });
+      var body = document.getElementById('sheetBody');
+      if (body) {
+        var holder = document.createElement('div');
+        holder.setAttribute('translate', 'no');
+        holder.setAttribute('aria-hidden', 'true');
+        holder.style.cssText = 'position:fixed;left:-99999px;top:0;width:800px;';
+        var clone = body.cloneNode(true);
+        clone.querySelectorAll('button, .copy-status, script, style, audio, video, iframe').forEach(function (n) { n.remove(); });
+        holder.appendChild(clone);
+        document.body.appendChild(holder);
+        var txt = clone.innerText.replace(/\n{3,}/g, '\n\n').trim();
+        holder.remove();
+        if (txt) parts.push(txt);
+      }
+      var text = parts.join('\n\n');
+
+      var status = document.getElementById('copyStatus');
+      function done(ok) {
+        if (!status) return;
+        var msg = ok ? 'Copied' : 'Could not copy';
+        status.textContent = msg;
+        if (status.firstChild) textState.set(status.firstChild, { orig: msg, applied: msg });
+        setTimeout(function () { status.textContent = ''; }, 1800);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;';
+        document.body.appendChild(ta); ta.select();
+        var ok = false; try { ok = document.execCommand('copy'); } catch (err) {}
+        ta.remove(); done(ok);
+      }
+    }, true);
+
+    /* ------------------------------------------------------------------ *
+     * INICIO
+     * ------------------------------------------------------------------ */
+    buildToggle();
+    updateToggle();
+    if (safeGet(CONFIG.storageKey) === 'en') setLang('en');
+
+    // API mínima para depurar desde la consola: kbI18n.setLang('en'), kbI18n.clearCache()
+    window.kbI18n = {
+      setLang: setLang,
+      get lang() { return lang; },
+      get engine() { return engine && engine.name; },
+      clearCache: function () { cache.clear(); safeSet(CONFIG.cacheKey, '{}'); }
+    };
+  })();
+  </script>
 </body>
 </html>
